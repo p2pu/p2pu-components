@@ -12,6 +12,10 @@ msgstr ""
 "Language: ro\n"
 "Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));\n"
 
+#: src/Search/Search.jsx:148
+msgid "There are no active learning circles right now."
+msgstr "In acest moment nu exista cercuri de invatare active."
+
 #: src/Courses/CourseCard.jsx:13
 msgid "Always available"
 msgstr "Întotdeauna disponibil"
@@ -54,13 +58,13 @@ msgstr "Platforma"
 msgid "Access"
 msgstr "Acces"
 
-#: src/Courses/CourseCard.jsx:90 src/Courses/CourseCard.jsx:94
+#: src/Courses/CourseCard.jsx:90
 msgid "More details"
 msgstr "Mai multe detalii"
 
-#: src/Search/Search.jsx:148
-msgid "There are no active learning circles right now."
-msgstr "In acest moment nu exista cercuri de invatare active."
+#: src/Courses/CourseCard.jsx:94
+msgid "Course website"
+msgstr "Pagina cursului"
 
 #: src/Courses/Browse.jsx:32
 msgid "Use this course"
@@ -102,8 +106,8 @@ msgstr ""
 "startDate } pentru ${ learningCircle.weeks } săptămâni."
 
 #: src/LearningCircleSignup/LearningCircleSignup.jsx:51
-msgid "At ${ venueLink }, ${ learningCircle.venue_address }"
-msgstr "La ${ venueLink }, ${ learningCircle.venue_address }"
+msgid "At ${ venueLink }"
+msgstr "La ${ venueLink }"
 
 #: src/LearningCircles/LearningCircleCard.jsx:13
 #, javascript-format
@@ -119,8 +123,8 @@ msgstr ""
 msgid "${ learningCircle.weeks } weeks starting ${ formattedDate }"
 msgstr "${ learningCircle.weeks } săptămâni începând cu ${ formattedDate }"
 
-#: src/LearningCircleSignup/SignupForm.jsx:185
-#: src/LearningCircleSignup/SignupForm.jsx:186
+#: src/LearningCircleSignup/SignupForm.jsx:188
+#: src/LearningCircleSignup/SignupForm.jsx:189
 #: src/LearningCircles/LearningCircleCard.jsx:20
 #: src/LearningCircles/LearningCircleCard.jsx:26
 msgid "Sign up"
@@ -182,15 +186,26 @@ msgstr "Cuvinte cheie, organizație, facilitator, etc..."
 msgid "Title, subject, etc..."
 msgstr "Titlu, subiect, etc...."
 
-#: src/LearningCircleSignup/SignupForm.jsx:109
+#: src/LearningCircleSignup/SignupForm.jsx:104
+msgid "More information."
+msgstr ""
+
+#: src/LearningCircleSignup/SignupForm.jsx:105
+#, javascript-format
+msgid ""
+"I consent that P2PU may process my personal data provided here for the "
+"purpose of participating in this learning circle. ${ gdprLink }"
+msgstr ""
+
+#: src/LearningCircleSignup/SignupForm.jsx:112
 msgid "Name"
 msgstr "Nume"
 
-#: src/LearningCircleSignup/SignupForm.jsx:118
+#: src/LearningCircleSignup/SignupForm.jsx:121
 msgid "Email address"
 msgstr "Adresă de e-mail"
 
-#: src/LearningCircleSignup/SignupForm.jsx:127
+#: src/LearningCircleSignup/SignupForm.jsx:130
 msgid ""
 "If you'd like to receive weekly text messages reminding you of upcoming "
 "learning circle meetings, put your phone number here."
@@ -199,15 +214,15 @@ msgstr ""
 "următoarele întâlniri ale cercului tău de învățare, introdu numărul tău de "
 "telefon aici."
 
-#: src/LearningCircleSignup/SignupForm.jsx:135
+#: src/LearningCircleSignup/SignupForm.jsx:138
 msgid "Your number won't be shared with other participants."
 msgstr "Numărul tău de telefon nu va fi oferit celorlalți participanți."
 
-#: src/LearningCircleSignup/SignupForm.jsx:137
+#: src/LearningCircleSignup/SignupForm.jsx:140
 msgid "Why do you want to learn this topic?"
 msgstr "De ce doresti să înveți despre această temă?"
 
-#: src/LearningCircleSignup/SignupForm.jsx:146
+#: src/LearningCircleSignup/SignupForm.jsx:149
 msgid ""
 "A successful study group requires the support of all of its members. How "
 "will you help your peers achieve their goals?"
@@ -215,17 +230,7 @@ msgstr ""
 "Un grup de învățare de succes necesită sprijinul tuturor membrilor. Cum îți "
 "vei ajuta colegii să își atingă obiectivele?"
 
-#: src/LearningCircleSignup/SignupForm.jsx:167
-msgid ""
-"I consent that P2PU can share my signup information with the learning circle"
-" facilitator and send me emails and/or text messages related to this "
-"learning circle."
-msgstr ""
-"Sunt de acord ca P2PU să împărtășească datele mele de înscriere cu "
-"facilitatorul cercului de învățare și să îmi trimită e-mail-uri sau mesaje "
-"text cu privire la acest cerc de învățare."
-
-#: src/LearningCircleSignup/SignupForm.jsx:177
+#: src/LearningCircleSignup/SignupForm.jsx:180
 msgid ""
 "I would like to receive emails about other future learning opportunities "
 "from P2PU."
@@ -233,11 +238,11 @@ msgstr ""
 "Doresc să primesc e-mail-uri despre alte oportunități de învățare de la "
 "P2PU."
 
-#: src/LearningCircleSignup/SignupForm.jsx:189
+#: src/LearningCircleSignup/SignupForm.jsx:192
 msgid "Back to search"
 msgstr "Înapoi la căutare"
 
-#: src/LearningCircleSignup/SignupForm.jsx:193
+#: src/LearningCircleSignup/SignupForm.jsx:196
 msgid "Submitting..."
 msgstr "Se trimite..."
 
@@ -286,14 +291,6 @@ msgstr ""
 "facilitatorului tău și îți vom trimite reminder cu două zile înainte de "
 "fiecare întâlnire."
 
-#: src/Card/UsageBadge.jsx:7
-#, javascript-format
-msgid "Used by ${ number } learning circle"
-msgid_plural "Used by ${ number } learning circles"
-msgstr[0] "Folosit în ${ number } cercuri de învățare "
-msgstr[1] "Folosit în ${ number } cercuri de învățare "
-msgstr[2] "Folosit în ${ number } cercuri de învățare "
-
 #: src/Filters/FiltersSection.jsx:21
 msgid "Filter"
 msgstr "Filtru"
@@ -301,6 +298,14 @@ msgstr "Filtru"
 #: src/Filters/FilterButton.jsx:10 src/Filters/SortSection.jsx:30
 msgid "Sort by"
 msgstr "Sortează după"
+
+#: src/Card/UsageBadge.jsx:7
+#, javascript-format
+msgid "Used by ${ number } learning circle"
+msgid_plural "Used by ${ number } learning circles"
+msgstr[0] "Folosit în ${ number } cercuri de învățare "
+msgstr[1] "Folosit în ${ number } cercuri de învățare "
+msgstr[2] "Folosit în ${ number } cercuri de învățare "
 
 #: src/Filters/FilterButton.jsx:6
 msgid "Location"
@@ -370,14 +375,6 @@ msgstr "Începe să tastezi numele localității"
 msgid "No results for this city"
 msgstr "Nici un rezultat pentru această localitate"
 
-#: src/Filters/LanguageFilterForm.jsx:61
-msgid "What languages are you interested in?"
-msgstr "Ce limbi străine te interesează?"
-
-#: src/Filters/LanguageFilterForm.jsx:67
-msgid "Select as many languages as you want"
-msgstr "Selectează câte limbi străine dorești"
-
 #: src/Filters/OerFilterForm.jsx:8
 msgid "Only open educational resources (OER)"
 msgstr "Numai resurse educaționale deschise (OER)"
@@ -385,3 +382,11 @@ msgstr "Numai resurse educaționale deschise (OER)"
 #: src/Filters/OerFilterForm.jsx:9
 msgid "All courses"
 msgstr "Toate cursurile"
+
+#: src/Filters/LanguageFilterForm.jsx:61
+msgid "What languages are you interested in?"
+msgstr "Ce limbi străine te interesează?"
+
+#: src/Filters/LanguageFilterForm.jsx:67
+msgid "Select as many languages as you want"
+msgstr "Selectează câte limbi străine dorești"

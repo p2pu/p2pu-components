@@ -12,6 +12,10 @@ msgstr ""
 "Language: fi\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#: src/Search/Search.jsx:148
+msgid "There are no active learning circles right now."
+msgstr "Tällä hetkellä ei ole käynnissä olevia opintopiirejä."
+
 #: src/Courses/CourseCard.jsx:13
 msgid "Always available"
 msgstr "Aina saatavilla"
@@ -54,13 +58,13 @@ msgstr "Alusta"
 msgid "Access"
 msgstr "Pääsy"
 
-#: src/Courses/CourseCard.jsx:90 src/Courses/CourseCard.jsx:94
+#: src/Courses/CourseCard.jsx:90
 msgid "More details"
 msgstr "Lisätietoja"
 
-#: src/Search/Search.jsx:148
-msgid "There are no active learning circles right now."
-msgstr "Tällä hetkellä ei ole käynnissä olevia opintopiirejä."
+#: src/Courses/CourseCard.jsx:94
+msgid "Course website"
+msgstr "Kurssisivu"
 
 #: src/Courses/Browse.jsx:32
 msgid "Use this course"
@@ -102,8 +106,8 @@ msgstr ""
 "learningCircle.weeks } viikon ajan."
 
 #: src/LearningCircleSignup/LearningCircleSignup.jsx:51
-msgid "At ${ venueLink }, ${ learningCircle.venue_address }"
-msgstr "Paikka: ${ venueLink }, ${ learningCircle.venue_address }"
+msgid "At ${ venueLink }"
+msgstr "Paikka: ${ venueLink }"
 
 #: src/LearningCircles/LearningCircleCard.jsx:13
 #, javascript-format
@@ -119,8 +123,8 @@ msgstr ""
 msgid "${ learningCircle.weeks } weeks starting ${ formattedDate }"
 msgstr "${ learningCircle.weeks } viikkoa alkaen ${ formattedDate }"
 
-#: src/LearningCircleSignup/SignupForm.jsx:185
-#: src/LearningCircleSignup/SignupForm.jsx:186
+#: src/LearningCircleSignup/SignupForm.jsx:188
+#: src/LearningCircleSignup/SignupForm.jsx:189
 #: src/LearningCircles/LearningCircleCard.jsx:20
 #: src/LearningCircles/LearningCircleCard.jsx:26
 msgid "Sign up"
@@ -182,15 +186,28 @@ msgstr "Avainsana, organisaatio, ohjaaja, jne..."
 msgid "Title, subject, etc..."
 msgstr "Otsikko, aihe, jne..."
 
-#: src/LearningCircleSignup/SignupForm.jsx:109
+#: src/LearningCircleSignup/SignupForm.jsx:104
+msgid "More information."
+msgstr "Lisätietoja."
+
+#: src/LearningCircleSignup/SignupForm.jsx:105
+#, javascript-format
+msgid ""
+"I consent that P2PU may process my personal data provided here for the "
+"purpose of participating in this learning circle. ${ gdprLink }"
+msgstr ""
+"Hyväksyn sen, että P2PU voi käsitellä täällä annettuja henkilötietojani "
+"osallistuakseni opintopiiriin. ${ gdprLink }"
+
+#: src/LearningCircleSignup/SignupForm.jsx:112
 msgid "Name"
 msgstr "Nimi"
 
-#: src/LearningCircleSignup/SignupForm.jsx:118
+#: src/LearningCircleSignup/SignupForm.jsx:121
 msgid "Email address"
 msgstr "Sähköpostiosoite"
 
-#: src/LearningCircleSignup/SignupForm.jsx:127
+#: src/LearningCircleSignup/SignupForm.jsx:130
 msgid ""
 "If you'd like to receive weekly text messages reminding you of upcoming "
 "learning circle meetings, put your phone number here."
@@ -198,15 +215,15 @@ msgstr ""
 "Jos haluat saada tekstiviestitse muistutuksen tapaamisista, lisää "
 "puhelinnumerosi tähän."
 
-#: src/LearningCircleSignup/SignupForm.jsx:135
+#: src/LearningCircleSignup/SignupForm.jsx:138
 msgid "Your number won't be shared with other participants."
 msgstr "Puhelinnumeroasi ei jaeta muille osallistujille."
 
-#: src/LearningCircleSignup/SignupForm.jsx:137
+#: src/LearningCircleSignup/SignupForm.jsx:140
 msgid "Why do you want to learn this topic?"
 msgstr "Miksi olet kiinnostunut tästä aiheesta?"
 
-#: src/LearningCircleSignup/SignupForm.jsx:146
+#: src/LearningCircleSignup/SignupForm.jsx:149
 msgid ""
 "A successful study group requires the support of all of its members. How "
 "will you help your peers achieve their goals?"
@@ -214,27 +231,17 @@ msgstr ""
 "Opintopiiri onnistuu parhaiten, kun kaikki osallistujat tukevat toisiaan. "
 "Miten voisit edistää yhteistä oppimista?"
 
-#: src/LearningCircleSignup/SignupForm.jsx:167
-msgid ""
-"I consent that P2PU can share my signup information with the learning circle"
-" facilitator and send me emails and/or text messages related to this "
-"learning circle."
-msgstr ""
-"Hyväksyn, että ilmoittautumistietoni luovutetaan opintopiirin ohjaajalle ja "
-"että minulle lähetetään sähköpostia tai tekstiviestejä tähän opintopiiriin "
-"liittyen."
-
-#: src/LearningCircleSignup/SignupForm.jsx:177
+#: src/LearningCircleSignup/SignupForm.jsx:180
 msgid ""
 "I would like to receive emails about other future learning opportunities "
 "from P2PU."
 msgstr "Haluaisin saada sähköpostitse tietoa tulevista opintopiireistä."
 
-#: src/LearningCircleSignup/SignupForm.jsx:189
+#: src/LearningCircleSignup/SignupForm.jsx:192
 msgid "Back to search"
 msgstr "Takaisin hakuun"
 
-#: src/LearningCircleSignup/SignupForm.jsx:193
+#: src/LearningCircleSignup/SignupForm.jsx:196
 msgid "Submitting..."
 msgstr "Lähetetään..."
 
@@ -279,13 +286,6 @@ msgstr ""
 "selviää opintopiirisi ohjaaja. Lähetämme muistutusviestin 2 päivää ennen "
 "jokaista tapaamista."
 
-#: src/Card/UsageBadge.jsx:7
-#, javascript-format
-msgid "Used by ${ number } learning circle"
-msgid_plural "Used by ${ number } learning circles"
-msgstr[0] "Käytetty ${ number } opintopiiriin"
-msgstr[1] "Käytetty ${ number } opintopiirissä"
-
 #: src/Filters/FiltersSection.jsx:21
 msgid "Filter"
 msgstr "Rajaa"
@@ -293,6 +293,13 @@ msgstr "Rajaa"
 #: src/Filters/FilterButton.jsx:10 src/Filters/SortSection.jsx:30
 msgid "Sort by"
 msgstr "Lajittele"
+
+#: src/Card/UsageBadge.jsx:7
+#, javascript-format
+msgid "Used by ${ number } learning circle"
+msgid_plural "Used by ${ number } learning circles"
+msgstr[0] "Käytetty ${ number } opintopiiriin"
+msgstr[1] "Käytetty ${ number } opintopiirissä"
 
 #: src/Filters/FilterButton.jsx:6
 msgid "Location"
@@ -362,14 +369,6 @@ msgstr "Kirjoita kaupungin nimi"
 msgid "No results for this city"
 msgstr "Ei tuloksia tälle kaupungille"
 
-#: src/Filters/LanguageFilterForm.jsx:61
-msgid "What languages are you interested in?"
-msgstr "Mistä kielistä olet kiinnostunut?"
-
-#: src/Filters/LanguageFilterForm.jsx:67
-msgid "Select as many languages as you want"
-msgstr "Valitse niin monta kieltä kuin haluat"
-
 #: src/Filters/OerFilterForm.jsx:8
 msgid "Only open educational resources (OER)"
 msgstr "Vain avoimet oppimateriaalit (OER)"
@@ -377,3 +376,11 @@ msgstr "Vain avoimet oppimateriaalit (OER)"
 #: src/Filters/OerFilterForm.jsx:9
 msgid "All courses"
 msgstr "Kaikki kurssit"
+
+#: src/Filters/LanguageFilterForm.jsx:61
+msgid "What languages are you interested in?"
+msgstr "Mistä kielistä olet kiinnostunut?"
+
+#: src/Filters/LanguageFilterForm.jsx:67
+msgid "Select as many languages as you want"
+msgstr "Valitse niin monta kieltä kuin haluat"

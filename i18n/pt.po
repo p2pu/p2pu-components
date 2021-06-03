@@ -1,16 +1,20 @@
 # 
 # Translators:
 # Teresa Goncalves <teresa.goncalves@blcs.pt>, 2020
-# Isabel Soares <isabel.soares@blcs.pt>, 2020
 # Dirk Uys <dirkcuys@gmail.com>, 2020
+# Isabel Soares <isabel.soares@blcs.pt>, 2021
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Dirk Uys <dirkcuys@gmail.com>, 2020\n"
+"Last-Translator: Isabel Soares <isabel.soares@blcs.pt>, 2021\n"
 "Language-Team: Portuguese (https://www.transifex.com/p2pu/teams/103124/pt/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: pt\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: src/Search/Search.jsx:148
+msgid "There are no active learning circles right now."
+msgstr "De momento não existem círculos de aprendizagem ativos."
 
 #: src/Courses/CourseCard.jsx:13
 msgid "Always available"
@@ -32,11 +36,11 @@ msgstr "${ rating_number } classificação"
 #: src/Courses/CourseCard.jsx:32
 #, javascript-format
 msgid "Used in ${ usage_number } learning circles"
-msgstr "Usado em ${ usage_number } círculos de aprendizagem"
+msgstr "Utilizado em ${ usage_number } círculos de aprendizagem"
 
 #: src/Courses/CourseCard.jsx:34
 msgid "Used in ${ usage_number } learning circle"
-msgstr "Usado em ${ usage_number } círculo de aprendizagem"
+msgstr "Utilizado em ${ usage_number } círculo de aprendizagem"
 
 #: src/Courses/CourseCard.jsx:61 src/Filters/FilterButton.jsx:8
 msgid "Topics"
@@ -54,17 +58,17 @@ msgstr "Plataforma"
 msgid "Access"
 msgstr "Acesso"
 
-#: src/Courses/CourseCard.jsx:90 src/Courses/CourseCard.jsx:94
+#: src/Courses/CourseCard.jsx:90
 msgid "More details"
 msgstr "Mais detalhes"
 
-#: src/Search/Search.jsx:148
-msgid "There are no active learning circles right now."
-msgstr "De momento não existem círculos de aprendizagem ativos."
+#: src/Courses/CourseCard.jsx:94
+msgid "Course website"
+msgstr "Sítio do curso"
 
 #: src/Courses/Browse.jsx:32
 msgid "Use this course"
-msgstr "Use este curso"
+msgstr "Utilize este curso"
 
 #: src/LearningCircleSignup/LearningCircleSignup.jsx:32
 #, javascript-format
@@ -88,7 +92,7 @@ msgid ""
 " } (${ learningCircle.time_zone }), ${ startDate }."
 msgstr ""
 "Este círculo de aprendizagem realizar-se-á ${ meetingDay } das ${ startTime "
-"} às ${ endTime } (${ learningCircle.time_zone }), ${ startDate }."
+"} h às ${ endTime } h (${ learningCircle.time_zone }), ${ startDate }."
 
 #: src/LearningCircleSignup/LearningCircleSignup.jsx:49
 #, javascript-format
@@ -102,8 +106,8 @@ msgstr ""
 "startDate } durante ${ learningCircle.weeks } semanas."
 
 #: src/LearningCircleSignup/LearningCircleSignup.jsx:51
-msgid "At ${ venueLink }, ${ learningCircle.venue_address }"
-msgstr "Em ${ venueLink }, ${ learningCircle.venue_address }"
+msgid "At ${ venueLink }"
+msgstr "Em ${ venueLink }"
 
 #: src/LearningCircles/LearningCircleCard.jsx:13
 #, javascript-format
@@ -111,7 +115,7 @@ msgid ""
 "${ weekDay } from ${ formattedStartTime } to ${ formattedEndTime } (${ "
 "learningCircle.time_zone })"
 msgstr ""
-"${ weekDay } das ${ formattedStartTime } às ${ formattedEndTime } (${ "
+"${ weekDay } das ${ formattedStartTime } h às ${ formattedEndTime } h (${ "
 "learningCircle.time_zone })"
 
 #: src/LearningCircles/LearningCircleCard.jsx:14
@@ -119,12 +123,12 @@ msgstr ""
 msgid "${ learningCircle.weeks } weeks starting ${ formattedDate }"
 msgstr "${ learningCircle.weeks } Inicia a ${ formattedDate }"
 
-#: src/LearningCircleSignup/SignupForm.jsx:185
-#: src/LearningCircleSignup/SignupForm.jsx:186
+#: src/LearningCircleSignup/SignupForm.jsx:188
+#: src/LearningCircleSignup/SignupForm.jsx:189
 #: src/LearningCircles/LearningCircleCard.jsx:20
 #: src/LearningCircles/LearningCircleCard.jsx:26
 msgid "Sign up"
-msgstr "Iniciar sessão"
+msgstr "Inscrever-se"
 
 #: src/LearningCircles/LearningCircleCard.jsx:64
 msgid "Meeting at ${ learningCircle.venue }"
@@ -132,27 +136,27 @@ msgstr "Reunião em ${ learningCircle.venue }"
 
 #: src/utils/constants.js:4 src/utils/i18n.js:4
 msgid "Monday"
-msgstr "segunda feira"
+msgstr "segunda-feira"
 
 #: src/utils/constants.js:5 src/utils/i18n.js:5
 msgid "Tuesday"
-msgstr "terça feira"
+msgstr "terça-feira"
 
 #: src/utils/constants.js:6 src/utils/i18n.js:6
 msgid "Wednesday"
-msgstr "quarta feira"
+msgstr "quarta-feira"
 
 #: src/utils/constants.js:7 src/utils/i18n.js:7
 msgid "Thursday"
-msgstr "quinta feira"
+msgstr "quinta-feira"
 
 #: src/utils/constants.js:8 src/utils/i18n.js:8
 msgid "Friday"
-msgstr "sexta feira"
+msgstr "sexta-feira"
 
 #: src/utils/constants.js:9 src/utils/i18n.js:9
 msgid "Saturday"
-msgstr "Sábado"
+msgstr "sábado"
 
 #: src/utils/constants.js:10 src/utils/i18n.js:10
 msgid "Sunday"
@@ -176,37 +180,50 @@ msgstr "Adicionado recentemente"
 
 #: src/utils/constants.js:28
 msgid "Keyword, organization, facilitator, etc..."
-msgstr "Palavra-chave, organização, facilitador, etc..."
+msgstr "Palavra-chave, organização, facilitador, etc. ..."
 
 #: src/utils/constants.js:33
 msgid "Title, subject, etc..."
-msgstr "Título, assunto, etc ..."
+msgstr "Título, assunto, etc. ..."
 
-#: src/LearningCircleSignup/SignupForm.jsx:109
+#: src/LearningCircleSignup/SignupForm.jsx:104
+msgid "More information."
+msgstr "Mais informação."
+
+#: src/LearningCircleSignup/SignupForm.jsx:105
+#, javascript-format
+msgid ""
+"I consent that P2PU may process my personal data provided here for the "
+"purpose of participating in this learning circle. ${ gdprLink }"
+msgstr ""
+"Autorizo ​​que P2PU processe os meus dados pessoais, aqui fornecidos, com o "
+"propósito de participar deste círculo de aprendizagem. ${ gdprLink }"
+
+#: src/LearningCircleSignup/SignupForm.jsx:112
 msgid "Name"
 msgstr "Nome"
 
-#: src/LearningCircleSignup/SignupForm.jsx:118
+#: src/LearningCircleSignup/SignupForm.jsx:121
 msgid "Email address"
 msgstr "Endereço de e-mail"
 
-#: src/LearningCircleSignup/SignupForm.jsx:127
+#: src/LearningCircleSignup/SignupForm.jsx:130
 msgid ""
 "If you'd like to receive weekly text messages reminding you of upcoming "
 "learning circle meetings, put your phone number here."
 msgstr ""
-"Se desejar receber um SMS semanal a lembrar as próximas reuniões dos "
-"círculos de aprendizagem, introduza o seu número de telefone aqui."
+"Se desejar receber um SMS semanal a lembrar as próximas reuniões do círculo "
+"de aprendizagem, introduza o seu número de telefone aqui."
 
-#: src/LearningCircleSignup/SignupForm.jsx:135
+#: src/LearningCircleSignup/SignupForm.jsx:138
 msgid "Your number won't be shared with other participants."
 msgstr "O seu número não será partilhado com outros participantes."
 
-#: src/LearningCircleSignup/SignupForm.jsx:137
+#: src/LearningCircleSignup/SignupForm.jsx:140
 msgid "Why do you want to learn this topic?"
-msgstr "Porque quer aprender este tópico?"
+msgstr "Por que motivo deseja aprender este tópico?"
 
-#: src/LearningCircleSignup/SignupForm.jsx:146
+#: src/LearningCircleSignup/SignupForm.jsx:149
 msgid ""
 "A successful study group requires the support of all of its members. How "
 "will you help your peers achieve their goals?"
@@ -214,17 +231,7 @@ msgstr ""
 "Um grupo de estudo bem-sucedido requer o apoio de todos os membros. Como "
 "poderá ajudar os seus colegas a alcançar os seus objetivos?"
 
-#: src/LearningCircleSignup/SignupForm.jsx:167
-msgid ""
-"I consent that P2PU can share my signup information with the learning circle"
-" facilitator and send me emails and/or text messages related to this "
-"learning circle."
-msgstr ""
-"Concordo que a P2PU  partilhe as minhas informações de inscrição com o "
-"facilitador do círculo de aprendizagem e a enviar e-mails e / ou mensagens "
-"de texto relacionadas a esse círculo de aprendizagem."
-
-#: src/LearningCircleSignup/SignupForm.jsx:177
+#: src/LearningCircleSignup/SignupForm.jsx:180
 msgid ""
 "I would like to receive emails about other future learning opportunities "
 "from P2PU."
@@ -232,11 +239,11 @@ msgstr ""
 "Gostaria de receber e-mails da P2PU sobre futuras oportunidades de "
 "aprendizagem."
 
-#: src/LearningCircleSignup/SignupForm.jsx:189
+#: src/LearningCircleSignup/SignupForm.jsx:192
 msgid "Back to search"
 msgstr "Voltar à pesquisa"
 
-#: src/LearningCircleSignup/SignupForm.jsx:193
+#: src/LearningCircleSignup/SignupForm.jsx:196
 msgid "Submitting..."
 msgstr "A submeter..."
 
@@ -277,13 +284,6 @@ msgstr ""
 "Obrigado por inscrever-se. Enviaremos um e-mail a apresentar o seu "
 "facilitador e um lembrete dois dias antes de cada reunião."
 
-#: src/Card/UsageBadge.jsx:7
-#, javascript-format
-msgid "Used by ${ number } learning circle"
-msgid_plural "Used by ${ number } learning circles"
-msgstr[0] "Usado em ${ number } círculo de aprendizagem"
-msgstr[1] "Usado em ${ number } círculos de aprendizagem"
-
 #: src/Filters/FiltersSection.jsx:21
 msgid "Filter"
 msgstr "Filtro"
@@ -291,6 +291,13 @@ msgstr "Filtro"
 #: src/Filters/FilterButton.jsx:10 src/Filters/SortSection.jsx:30
 msgid "Sort by"
 msgstr "Ordenar por"
+
+#: src/Card/UsageBadge.jsx:7
+#, javascript-format
+msgid "Used by ${ number } learning circle"
+msgid_plural "Used by ${ number } learning circles"
+msgstr[0] "Usado em ${ number } círculo de aprendizagem"
+msgstr[1] "Utilizado em ${ number } círculos de aprendizagem"
 
 #: src/Filters/FilterButton.jsx:6
 msgid "Location"
@@ -318,23 +325,23 @@ msgstr "Selecione os tópicos que desejar"
 
 #: src/Filters/LocationFilterForm.jsx:45
 msgid "Unable to detect location."
-msgstr "Não foi possível detectar a localização."
+msgstr "Não foi possível detetar a localização."
 
 #: src/Filters/LocationFilterForm.jsx:56
 msgid "Geolocation is not supported by this browser."
-msgstr "A localização não é suportada por este navegador."
+msgstr "A geolocalização não é suportada por este navegador."
 
 #: src/Filters/LocationFilterForm.jsx:72
 msgid "Use my current location"
-msgstr "Usar a minha localização atual"
+msgstr "Utilizar a minha localização atual"
 
 #: src/Filters/LocationFilterForm.jsx:77
 msgid "Detecting your location..."
-msgstr "A procurar localização"
+msgstr "A procurar a sua localização"
 
 #: src/Filters/LocationFilterForm.jsx:79
 msgid "Using your current location"
-msgstr "A usar a localização atual"
+msgstr "A utilizar a sua localização atual"
 
 #: src/Filters/LocationFilterForm.jsx:100
 msgid "miles"
@@ -350,7 +357,7 @@ msgstr "ou"
 
 #: src/Filters/LocationFilterForm.jsx:139
 msgid "Select a location"
-msgstr "Selecionar localização"
+msgstr "Selecione uma localização"
 
 #: src/Filters/LocationFilterForm.jsx:145
 msgid "Start typing a city name"
@@ -360,14 +367,6 @@ msgstr "Procurar por cidade"
 msgid "No results for this city"
 msgstr "Nenhum resultado para esta cidade"
 
-#: src/Filters/LanguageFilterForm.jsx:61
-msgid "What languages are you interested in?"
-msgstr "Em que idiomas está interessado?"
-
-#: src/Filters/LanguageFilterForm.jsx:67
-msgid "Select as many languages as you want"
-msgstr "Selecione os idiomas que quiser"
-
 #: src/Filters/OerFilterForm.jsx:8
 msgid "Only open educational resources (OER)"
 msgstr "Apenas recursos educativos abertos (REA)"
@@ -375,3 +374,11 @@ msgstr "Apenas recursos educativos abertos (REA)"
 #: src/Filters/OerFilterForm.jsx:9
 msgid "All courses"
 msgstr "Todos os cursos"
+
+#: src/Filters/LanguageFilterForm.jsx:61
+msgid "What languages are you interested in?"
+msgstr "Em que idiomas está interessado?"
+
+#: src/Filters/LanguageFilterForm.jsx:67
+msgid "Select as many languages as you want"
+msgstr "Selecione os idiomas que desejar"
