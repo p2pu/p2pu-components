@@ -40,7 +40,7 @@ const LearningCircleSignup = ({ learningCircle, ...rest }) => {
             {learningCircle.weeks > 1 &&
                 jt`This learning circle meets every ${meetingDay} from ${startTime} to ${endTime} (${learningCircle.time_zone}) starting ${startDate} for ${learningCircle.weeks} weeks.`}
               </p>
-              <p>{jt`At ${venueLink}, ${learningCircle.venue_address}`}</p>
+              <p>{jt`At ${venueLink}`}</p>
         </div>
 
         <div className="col-md-8">
