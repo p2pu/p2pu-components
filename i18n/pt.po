@@ -1,12 +1,12 @@
 # 
 # Translators:
 # Teresa Goncalves <teresa.goncalves@blcs.pt>, 2020
-# Dirk Uys <dirkcuys@gmail.com>, 2020
 # Isabel Soares <isabel.soares@blcs.pt>, 2021
+# Dirk Uys <dirkcuys@gmail.com>, 2021
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Isabel Soares <isabel.soares@blcs.pt>, 2021\n"
+"Last-Translator: Dirk Uys <dirkcuys@gmail.com>, 2021\n"
 "Language-Team: Portuguese (https://www.transifex.com/p2pu/teams/103124/pt/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: pt\n"
@@ -186,6 +186,31 @@ msgstr "Palavra-chave, organização, facilitador, etc. ..."
 msgid "Title, subject, etc..."
 msgstr "Título, assunto, etc. ..."
 
+#: src/Filters/LocationFilterForm.jsx:102 src/Search/SearchTags.jsx:111
+#, javascript-format
+msgid "Within ${ value } ${ unit }"
+msgstr "No interior ${ value } ${ unit }"
+
+#: src/Search/SearchTags.jsx:180
+#, javascript-format
+msgid ""
+"Showing ${ props.searchResults.length } of ${ props.totalResults } result"
+msgid_plural ""
+"Showing ${ props.searchResults.length } of ${ props.totalResults } results"
+msgstr[0] ""
+" ${ props.searchResults.length } de ${ props.totalResults } resultados"
+msgstr[1] ""
+" ${ props.searchResults.length } de ${ props.totalResults } resultados"
+
+#: src/Search/SearchTags.jsx:214
+msgid "reset the search form"
+msgstr "redefinir o formulário de pesquisa"
+
+#: src/Search/SearchTags.jsx:223
+#, javascript-format
+msgid "To see more results, either remove some filters or ${ resetButton }"
+msgstr "Para ver mais resultados, remova alguns filtros ou ${ resetButton }"
+
 #: src/LearningCircleSignup/SignupForm.jsx:104
 msgid "More information."
 msgstr "Mais informação."
@@ -247,31 +272,6 @@ msgstr "Voltar à pesquisa"
 msgid "Submitting..."
 msgstr "A submeter..."
 
-#: src/Filters/LocationFilterForm.jsx:102 src/Search/SearchTags.jsx:111
-#, javascript-format
-msgid "Within ${ value } ${ unit }"
-msgstr "No interior ${ value } ${ unit }"
-
-#: src/Search/SearchTags.jsx:180
-#, javascript-format
-msgid ""
-"Showing ${ props.searchResults.length } of ${ props.totalResults } result"
-msgid_plural ""
-"Showing ${ props.searchResults.length } of ${ props.totalResults } results"
-msgstr[0] ""
-" ${ props.searchResults.length } de ${ props.totalResults } resultados"
-msgstr[1] ""
-" ${ props.searchResults.length } de ${ props.totalResults } resultados"
-
-#: src/Search/SearchTags.jsx:214
-msgid "reset the search form"
-msgstr "redefinir o formulário de pesquisa"
-
-#: src/Search/SearchTags.jsx:223
-#, javascript-format
-msgid "To see more results, either remove some filters or ${ resetButton }"
-msgstr "Para ver mais resultados, remova alguns filtros ou ${ resetButton }"
-
 #: src/Search/SearchBar.jsx:17
 msgid "Search"
 msgstr "Procurar"
@@ -322,6 +322,14 @@ msgstr "Em que tópicos tem interesse?"
 #: src/Filters/TopicsFilterForm.jsx:68
 msgid "Select as many topics as you want"
 msgstr "Selecione os tópicos que desejar"
+
+#: src/Filters/LanguageFilterForm.jsx:61
+msgid "What languages are you interested in?"
+msgstr "Em que idiomas está interessado?"
+
+#: src/Filters/LanguageFilterForm.jsx:67
+msgid "Select as many languages as you want"
+msgstr "Selecione os idiomas que desejar"
 
 #: src/Filters/LocationFilterForm.jsx:45
 msgid "Unable to detect location."
@@ -374,11 +382,3 @@ msgstr "Apenas recursos educativos abertos (REA)"
 #: src/Filters/OerFilterForm.jsx:9
 msgid "All courses"
 msgstr "Todos os cursos"
-
-#: src/Filters/LanguageFilterForm.jsx:61
-msgid "What languages are you interested in?"
-msgstr "Em que idiomas está interessado?"
-
-#: src/Filters/LanguageFilterForm.jsx:67
-msgid "Select as many languages as you want"
-msgstr "Selecione os idiomas que desejar"

@@ -2,11 +2,11 @@
 # Translators:
 # Tuulikki Alamettälä <tuulikki.alamettala@gmail.com>, 2020
 # Piia Keihäs <piia.keihas@eoppimiskeskus.fi>, 2020
-# Dirk Uys <dirkcuys@gmail.com>, 2020
+# Dirk Uys <dirkcuys@gmail.com>, 2021
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Dirk Uys <dirkcuys@gmail.com>, 2020\n"
+"Last-Translator: Dirk Uys <dirkcuys@gmail.com>, 2021\n"
 "Language-Team: Finnish (https://www.transifex.com/p2pu/teams/103124/fi/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: fi\n"
@@ -186,6 +186,34 @@ msgstr "Avainsana, organisaatio, ohjaaja, jne..."
 msgid "Title, subject, etc..."
 msgstr "Otsikko, aihe, jne..."
 
+#: src/Filters/LocationFilterForm.jsx:102 src/Search/SearchTags.jsx:111
+#, javascript-format
+msgid "Within ${ value } ${ unit }"
+msgstr "Etsi ${ value } ${ unit } säteellä"
+
+#: src/Search/SearchTags.jsx:180
+#, javascript-format
+msgid ""
+"Showing ${ props.searchResults.length } of ${ props.totalResults } result"
+msgid_plural ""
+"Showing ${ props.searchResults.length } of ${ props.totalResults } results"
+msgstr[0] ""
+"Näytetään ${ props.searchResults.length } yhteensä ${ props.totalResults } "
+"tuloksesta."
+msgstr[1] ""
+"Näytetään ${ props.searchResults.length } yhteensä ${ props.totalResults } "
+"tuloksesta."
+
+#: src/Search/SearchTags.jsx:214
+msgid "reset the search form"
+msgstr "tyhjennä hakulomake"
+
+#: src/Search/SearchTags.jsx:223
+#, javascript-format
+msgid "To see more results, either remove some filters or ${ resetButton }"
+msgstr ""
+"Nähdäksesi lisää hakutuloksia vähennä kriteereitä tai ${ resetButton }"
+
 #: src/LearningCircleSignup/SignupForm.jsx:104
 msgid "More information."
 msgstr "Lisätietoja."
@@ -196,8 +224,8 @@ msgid ""
 "I consent that P2PU may process my personal data provided here for the "
 "purpose of participating in this learning circle. ${ gdprLink }"
 msgstr ""
-"Hyväksyn sen, että P2PU voi käsitellä täällä annettuja henkilötietojani "
-"osallistuakseni opintopiiriin. ${ gdprLink }"
+"Hyväksyn, että P2PU voi käsitellä täällä annettuja henkilötietojani "
+"opintopiiriin osallistumiseen liittyen. ${ gdprLink }"
 
 #: src/LearningCircleSignup/SignupForm.jsx:112
 msgid "Name"
@@ -244,34 +272,6 @@ msgstr "Takaisin hakuun"
 #: src/LearningCircleSignup/SignupForm.jsx:196
 msgid "Submitting..."
 msgstr "Lähetetään..."
-
-#: src/Filters/LocationFilterForm.jsx:102 src/Search/SearchTags.jsx:111
-#, javascript-format
-msgid "Within ${ value } ${ unit }"
-msgstr "Etsi ${ value } ${ unit } säteellä"
-
-#: src/Search/SearchTags.jsx:180
-#, javascript-format
-msgid ""
-"Showing ${ props.searchResults.length } of ${ props.totalResults } result"
-msgid_plural ""
-"Showing ${ props.searchResults.length } of ${ props.totalResults } results"
-msgstr[0] ""
-"Näytetään ${ props.searchResults.length } yhteensä ${ props.totalResults } "
-"tuloksesta."
-msgstr[1] ""
-"Näytetään ${ props.searchResults.length } yhteensä ${ props.totalResults } "
-"tuloksesta."
-
-#: src/Search/SearchTags.jsx:214
-msgid "reset the search form"
-msgstr "tyhjennä hakulomake"
-
-#: src/Search/SearchTags.jsx:223
-#, javascript-format
-msgid "To see more results, either remove some filters or ${ resetButton }"
-msgstr ""
-"Nähdäksesi lisää hakutuloksia vähennä kriteereitä tai ${ resetButton }"
 
 #: src/Search/SearchBar.jsx:17
 msgid "Search"
@@ -325,6 +325,14 @@ msgstr "Mistä aiheista olet kiinnostunut?"
 msgid "Select as many topics as you want"
 msgstr "Valitse niin monta aihetta kuin haluat"
 
+#: src/Filters/LanguageFilterForm.jsx:61
+msgid "What languages are you interested in?"
+msgstr "Mistä kielistä olet kiinnostunut?"
+
+#: src/Filters/LanguageFilterForm.jsx:67
+msgid "Select as many languages as you want"
+msgstr "Valitse niin monta kieltä kuin haluat"
+
 #: src/Filters/LocationFilterForm.jsx:45
 msgid "Unable to detect location."
 msgstr "Sijaintia ei pystytä määrittämään"
@@ -376,11 +384,3 @@ msgstr "Vain avoimet oppimateriaalit (OER)"
 #: src/Filters/OerFilterForm.jsx:9
 msgid "All courses"
 msgstr "Kaikki kurssit"
-
-#: src/Filters/LanguageFilterForm.jsx:61
-msgid "What languages are you interested in?"
-msgstr "Mistä kielistä olet kiinnostunut?"
-
-#: src/Filters/LanguageFilterForm.jsx:67
-msgid "Select as many languages as you want"
-msgstr "Valitse niin monta kieltä kuin haluat"

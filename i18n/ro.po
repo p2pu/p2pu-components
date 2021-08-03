@@ -2,11 +2,11 @@
 # Translators:
 # Ovidiu Ana <office@progressfoundation.ro>, 2020
 # Anca Rapeanu <anca.rapeanu@progressfoundation.ro>, 2020
-# Dirk Uys <dirkcuys@gmail.com>, 2020
+# Dirk Uys <dirkcuys@gmail.com>, 2021
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Dirk Uys <dirkcuys@gmail.com>, 2020\n"
+"Last-Translator: Dirk Uys <dirkcuys@gmail.com>, 2021\n"
 "Language-Team: Romanian (https://www.transifex.com/p2pu/teams/103124/ro/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: ro\n"
@@ -186,9 +186,41 @@ msgstr "Cuvinte cheie, organizație, facilitator, etc..."
 msgid "Title, subject, etc..."
 msgstr "Titlu, subiect, etc...."
 
+#: src/Filters/LocationFilterForm.jsx:102 src/Search/SearchTags.jsx:111
+#, javascript-format
+msgid "Within ${ value } ${ unit }"
+msgstr "În ${ value } ${ unit }"
+
+#: src/Search/SearchTags.jsx:180
+#, javascript-format
+msgid ""
+"Showing ${ props.searchResults.length } of ${ props.totalResults } result"
+msgid_plural ""
+"Showing ${ props.searchResults.length } of ${ props.totalResults } results"
+msgstr[0] ""
+"Afișare ${ props.searchResults.length } din ${ props.totalResults } rezultat"
+" "
+msgstr[1] ""
+"Afișare ${ props.searchResults.length } din ${ props.totalResults } "
+"rezultate"
+msgstr[2] ""
+"Afișare ${ props.searchResults.length } din ${ props.totalResults } "
+"rezultate"
+
+#: src/Search/SearchTags.jsx:214
+msgid "reset the search form"
+msgstr "Resetează formularul de căutare"
+
+#: src/Search/SearchTags.jsx:223
+#, javascript-format
+msgid "To see more results, either remove some filters or ${ resetButton }"
+msgstr ""
+"Pentru a vedea mai multe rezultate, renunță la anumite filtre sau ${ "
+"resetButton }"
+
 #: src/LearningCircleSignup/SignupForm.jsx:104
 msgid "More information."
-msgstr ""
+msgstr "Mai multe informații aici."
 
 #: src/LearningCircleSignup/SignupForm.jsx:105
 #, javascript-format
@@ -196,6 +228,9 @@ msgid ""
 "I consent that P2PU may process my personal data provided here for the "
 "purpose of participating in this learning circle. ${ gdprLink }"
 msgstr ""
+"Sunt de acord ca cei de la P2PU să proceseze datele mele personale, oferite "
+"în cadrul formularului, cu scopul de a participa la cercurile de învățare. "
+"${ gdprLink }"
 
 #: src/LearningCircleSignup/SignupForm.jsx:112
 msgid "Name"
@@ -245,38 +280,6 @@ msgstr "Înapoi la căutare"
 #: src/LearningCircleSignup/SignupForm.jsx:196
 msgid "Submitting..."
 msgstr "Se trimite..."
-
-#: src/Filters/LocationFilterForm.jsx:102 src/Search/SearchTags.jsx:111
-#, javascript-format
-msgid "Within ${ value } ${ unit }"
-msgstr "În ${ value } ${ unit }"
-
-#: src/Search/SearchTags.jsx:180
-#, javascript-format
-msgid ""
-"Showing ${ props.searchResults.length } of ${ props.totalResults } result"
-msgid_plural ""
-"Showing ${ props.searchResults.length } of ${ props.totalResults } results"
-msgstr[0] ""
-"Afișare ${ props.searchResults.length } din ${ props.totalResults } rezultat"
-" "
-msgstr[1] ""
-"Afișare ${ props.searchResults.length } din ${ props.totalResults } "
-"rezultate"
-msgstr[2] ""
-"Afișare ${ props.searchResults.length } din ${ props.totalResults } "
-"rezultate"
-
-#: src/Search/SearchTags.jsx:214
-msgid "reset the search form"
-msgstr "Resetează formularul de căutare"
-
-#: src/Search/SearchTags.jsx:223
-#, javascript-format
-msgid "To see more results, either remove some filters or ${ resetButton }"
-msgstr ""
-"Pentru a vedea mai multe rezultate, renunță la anumite filtre sau ${ "
-"resetButton }"
 
 #: src/Search/SearchBar.jsx:17
 msgid "Search"
@@ -331,6 +334,14 @@ msgstr "Ce teme te interesează?"
 msgid "Select as many topics as you want"
 msgstr "Selectează cât de multe teme dorești"
 
+#: src/Filters/LanguageFilterForm.jsx:61
+msgid "What languages are you interested in?"
+msgstr "Ce limbi străine te interesează?"
+
+#: src/Filters/LanguageFilterForm.jsx:67
+msgid "Select as many languages as you want"
+msgstr "Selectează câte limbi străine dorești"
+
 #: src/Filters/LocationFilterForm.jsx:45
 msgid "Unable to detect location."
 msgstr "Locul de desfășurare nu poate fi identificat"
@@ -382,11 +393,3 @@ msgstr "Numai resurse educaționale deschise (OER)"
 #: src/Filters/OerFilterForm.jsx:9
 msgid "All courses"
 msgstr "Toate cursurile"
-
-#: src/Filters/LanguageFilterForm.jsx:61
-msgid "What languages are you interested in?"
-msgstr "Ce limbi străine te interesează?"
-
-#: src/Filters/LanguageFilterForm.jsx:67
-msgid "Select as many languages as you want"
-msgstr "Selectează câte limbi străine dorești"

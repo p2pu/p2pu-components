@@ -2,11 +2,11 @@
 # Translators:
 # Małgorzata Makowska <malgorzata.makowska@frsi.org.pl>, 2020
 # Agnieszka Koszowska <agnieszka.koszowska@frsi.org.pl>, 2020
-# Dirk Uys <dirkcuys@gmail.com>, 2020
+# Dirk Uys <dirkcuys@gmail.com>, 2021
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Dirk Uys <dirkcuys@gmail.com>, 2020\n"
+"Last-Translator: Dirk Uys <dirkcuys@gmail.com>, 2021\n"
 "Language-Team: Polish (https://www.transifex.com/p2pu/teams/103124/pl/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: pl\n"
@@ -186,9 +186,40 @@ msgstr "Słowa kluczowe, organizacja, moderator, itp."
 msgid "Title, subject, etc..."
 msgstr "Tytuł, temat, itp."
 
+#: src/Filters/LocationFilterForm.jsx:102 src/Search/SearchTags.jsx:111
+#, javascript-format
+msgid "Within ${ value } ${ unit }"
+msgstr "Z ${ value } ${ unit }"
+
+#: src/Search/SearchTags.jsx:180
+#, javascript-format
+msgid ""
+"Showing ${ props.searchResults.length } of ${ props.totalResults } result"
+msgid_plural ""
+"Showing ${ props.searchResults.length } of ${ props.totalResults } results"
+msgstr[0] ""
+"Wyświetla się ${ props.searchResults.length } z ${ props.totalResults } "
+"wyników."
+msgstr[1] ""
+"Wyświetla się ${ props.searchResults.length } z ${ props.totalResults } "
+"wyników"
+msgstr[2] ""
+"Showing ${ props.searchResults.length } of ${ props.totalResults } results"
+msgstr[3] ""
+"Showing ${ props.searchResults.length } of ${ props.totalResults } results"
+
+#: src/Search/SearchTags.jsx:214
+msgid "reset the search form"
+msgstr "Nowe wyszukiwanie"
+
+#: src/Search/SearchTags.jsx:223
+#, javascript-format
+msgid "To see more results, either remove some filters or ${ resetButton }"
+msgstr "Żeby zobaczyć więcej rezultatów, wyczyść filtry lub ${ resetButton }"
+
 #: src/LearningCircleSignup/SignupForm.jsx:104
 msgid "More information."
-msgstr ""
+msgstr "Więcej informacji."
 
 #: src/LearningCircleSignup/SignupForm.jsx:105
 #, javascript-format
@@ -196,6 +227,8 @@ msgid ""
 "I consent that P2PU may process my personal data provided here for the "
 "purpose of participating in this learning circle. ${ gdprLink }"
 msgstr ""
+"Wyrażam zgodę na przetwarzanie przez P2PU podanych tutaj moich danych "
+"osobowych w celu uczestnictwa w tym klubie wiedzy. ${ gdprLink }"
 
 #: src/LearningCircleSignup/SignupForm.jsx:112
 msgid "Name"
@@ -243,37 +276,6 @@ msgstr "Wróć do wyszukiwania"
 #: src/LearningCircleSignup/SignupForm.jsx:196
 msgid "Submitting..."
 msgstr "Trwa przetwarzanie zgłoszenia..."
-
-#: src/Filters/LocationFilterForm.jsx:102 src/Search/SearchTags.jsx:111
-#, javascript-format
-msgid "Within ${ value } ${ unit }"
-msgstr "Z ${ value } ${ unit }"
-
-#: src/Search/SearchTags.jsx:180
-#, javascript-format
-msgid ""
-"Showing ${ props.searchResults.length } of ${ props.totalResults } result"
-msgid_plural ""
-"Showing ${ props.searchResults.length } of ${ props.totalResults } results"
-msgstr[0] ""
-"Wyświetla się ${ props.searchResults.length } z ${ props.totalResults } "
-"wyników."
-msgstr[1] ""
-"Wyświetla się ${ props.searchResults.length } z ${ props.totalResults } "
-"wyników"
-msgstr[2] ""
-"Showing ${ props.searchResults.length } of ${ props.totalResults } results"
-msgstr[3] ""
-"Showing ${ props.searchResults.length } of ${ props.totalResults } results"
-
-#: src/Search/SearchTags.jsx:214
-msgid "reset the search form"
-msgstr "Nowe wyszukiwanie"
-
-#: src/Search/SearchTags.jsx:223
-#, javascript-format
-msgid "To see more results, either remove some filters or ${ resetButton }"
-msgstr "Żeby zobaczyć więcej rezultatów, wyczyść filtry lub ${ resetButton }"
 
 #: src/Search/SearchBar.jsx:17
 msgid "Search"
@@ -328,6 +330,14 @@ msgstr "Jakie tematy Cię interesują?"
 msgid "Select as many topics as you want"
 msgstr "Wybierz dowolną liczbę tematów"
 
+#: src/Filters/LanguageFilterForm.jsx:61
+msgid "What languages are you interested in?"
+msgstr "Jakie języki Cię interesują?"
+
+#: src/Filters/LanguageFilterForm.jsx:67
+msgid "Select as many languages as you want"
+msgstr "Wybierz dowolna liczbę języków"
+
 #: src/Filters/LocationFilterForm.jsx:45
 msgid "Unable to detect location."
 msgstr "Nie można rozpoznać lokalizacji. "
@@ -379,11 +389,3 @@ msgstr "Tylko ogólnodostępne materiały"
 #: src/Filters/OerFilterForm.jsx:9
 msgid "All courses"
 msgstr "Wszystkie kursy"
-
-#: src/Filters/LanguageFilterForm.jsx:61
-msgid "What languages are you interested in?"
-msgstr "Jakie języki Cię interesują?"
-
-#: src/Filters/LanguageFilterForm.jsx:67
-msgid "Select as many languages as you want"
-msgstr "Wybierz dowolna liczbę języków"
