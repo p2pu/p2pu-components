@@ -68,7 +68,7 @@ const LearningCircleCard = (props) => {
   }
 
   return (
-    <div class="result-item grid-item col-md-6 col-lg-4">
+    <div class="result-item grid-item col-md-6 col-lg-4" onClick={onClick}>
       <div class={`card learning-circle ${cardFormatting[status].class}`}>
         <div class="status-tag"><span>{t(cardLabel)}</span></div>
         <div class="card-image">
