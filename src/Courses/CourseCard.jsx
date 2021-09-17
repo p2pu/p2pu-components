@@ -36,18 +36,22 @@ const CourseCard = (props) => {
 
   return (
     <div className="card col-12 course horizontal in-progress">
-      <div className="status-tag">in progress</div>
       <div className="row g-0">
         <div className="col-12 col-md-6 col-lg-12 col-xl-7">
           <div className="card-header">
             <h3 className="card-title">{ props.course.title }</h3>
             <div className="lowbrow row">
               <div className="stars mb-2 pe-md-0 d-flex col-12 col-md-auto">
-                <i className="material-icons">star</i>
-                <i className="material-icons">star</i>
-                <i className="material-icons">star</i>
-                <i className="material-icons">star</i>
-                <i className="material-icons">star_half</i>
+                { [1,2,3,4,5].map(num => {
+                  const rating = Math.round(props.course.overall_rating * 2)/2;
+                  if (rating >= num) {
+                    return <i className="material-icons" key={`star-${num}`}>star</i>
+                  } else if (rating == num - 0.5) {
+                    return <i className="material-icons" key={`star-${num}`}>star_half</i>
+                  } else {
+                    return <i className="material-icons" key={`star-${num}`}>star_border</i>
+                  }
+                })}
               </div>
               <div className="col-12 col-md-auto mb-2">{rating} | {usage}</div>
             </div>

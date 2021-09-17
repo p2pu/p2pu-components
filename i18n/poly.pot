@@ -67,36 +67,36 @@ msgstr ""
 msgid "Used in ${ usage_number } learning circle"
 msgstr ""
 
-#: src/Courses/CourseCard.jsx:78
-#: src/Courses/CourseCard.jsx:153
+#: src/Courses/CourseCard.jsx:82
+#: src/Courses/CourseCard.jsx:157
 msgid "Provider"
 msgstr ""
 
-#: src/Courses/CourseCard.jsx:83
-#: src/Courses/CourseCard.jsx:158
+#: src/Courses/CourseCard.jsx:87
+#: src/Courses/CourseCard.jsx:162
 msgid "Platform"
 msgstr ""
 
-#: src/Courses/CourseCard.jsx:88
+#: src/Courses/CourseCard.jsx:92
 msgid "Website"
 msgstr ""
 
-#: src/Courses/CourseCard.jsx:94
-#: src/Courses/CourseCard.jsx:163
+#: src/Courses/CourseCard.jsx:98
+#: src/Courses/CourseCard.jsx:167
 msgid "Access"
 msgstr ""
 
-#: src/Courses/CourseCard.jsx:103
-#: src/Courses/CourseCard.jsx:173
+#: src/Courses/CourseCard.jsx:107
+#: src/Courses/CourseCard.jsx:177
 msgid "More details"
 msgstr ""
 
-#: src/Courses/CourseCard.jsx:144
+#: src/Courses/CourseCard.jsx:148
 #: src/Filters/FilterButton.jsx:8
 msgid "Topics"
 msgstr ""
 
-#: src/Courses/CourseCard.jsx:177
+#: src/Courses/CourseCard.jsx:181
 msgid "Course website"
 msgstr ""
 
