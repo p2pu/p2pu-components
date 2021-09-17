@@ -8,7 +8,8 @@ import { OPEN_TAB_TEXT, CLOSED_TAB_TEXT } from '../utils/constants'
 import LearningCircleCard from './LearningCircleCard.jsx'
 import 'react-tabs/style/react-tabs.css';
 
-const BrowseLearningCircles = ({ results, onSelectResult, locale, columnBreakpoints, resultsCount, signupOpenCount, signupClosedCount, resultsTab, updateResultsTab, NoResultsComponent, showNoResultsComponent, contact, isLoading }) => {
+const BrowseLearningCircles = (props) => {
+  const { results, onSelectResult, locale, columnBreakpoints, resultsCount, signupOpenCount, signupClosedCount, resultsTab, updateResultsTab, NoResultsComponent, showNoResultsComponent, contact, isLoading } = props;
 
   return (
     <Tabs selectedIndex={resultsTab} onSelect={updateResultsTab}>
@@ -29,6 +30,7 @@ const BrowseLearningCircles = ({ results, onSelectResult, locale, columnBreakpoi
                   classes="col-md-4 col-md-4 my-3"
                   onSelectResult={onSelectResult}
                   isSignupOpen={true}
+                  defaultImageUrl={props.defaultImageUrl}
                 />
               ))
             }
@@ -48,6 +50,7 @@ const BrowseLearningCircles = ({ results, onSelectResult, locale, columnBreakpoi
                   classes="col-md-4 my-4"
                   onSelectResult={onSelectResult}
                   isSignupOpen={false}
+                  defaultImageUrl={props.defaultImageUrl}
                 />
               ))
             }

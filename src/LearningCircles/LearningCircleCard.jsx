@@ -66,13 +66,17 @@ const LearningCircleCard = (props) => {
       window.location.href = learningCircle.url;
     }
   }
+  let imageUrl = props.defaultImageUrl;
+  if (learningCircle.image_url){
+    imageUrl = learningCircle.image_url;
+  }
 
   return (
     <div class="result-item grid-item col-md-6 col-lg-4" onClick={onClick}>
       <div class={`card learning-circle ${cardFormatting[status].class}`}>
         <div class="status-tag"><span>{t(cardLabel)}</span></div>
         <div class="card-image">
-          <img src={learningCircle.image_url} alt={name} class="card-img-top" />
+          <img src={imageUrl} alt={name} class="card-img-top" />
         </div>
         <div class="card-header">
           <span class="eyebrow">Started June 9, 2021</span>

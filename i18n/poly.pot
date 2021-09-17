@@ -9,7 +9,7 @@ msgid "Sign up for ${ course.title }"
 msgstr ""
 
 #: src/LearningCircleSignup/LearningCircleSignup.jsx:34
-#: src/LearningCircles/LearningCircleCard.jsx:95
+#: src/LearningCircles/LearningCircleCard.jsx:99
 msgid "Facilitated by ${ learningCircle.facilitator }"
 msgstr ""
 
@@ -216,16 +216,16 @@ msgstr ""
 msgid "Starting ${ formattedStartDate }"
 msgstr ""
 
-#: src/LearningCircles/LearningCircleCard.jsx:99
+#: src/LearningCircles/LearningCircleCard.jsx:103
 msgid "Meeting at ${ learningCircle.venue }"
 msgstr ""
 
 #: src/LearningCircleSignup/SignupForm.jsx:183
-#: src/LearningCircles/LearningCircleCard.jsx:104
+#: src/LearningCircles/LearningCircleCard.jsx:108
 msgid "Sign up"
 msgstr ""
 
-#: src/LearningCircles/LearningCircleCard.jsx:104
+#: src/LearningCircles/LearningCircleCard.jsx:108
 msgid "View details"
 msgstr ""
 
