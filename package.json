@@ -30,7 +30,7 @@
     "p2pu-theme": "^1.1.2"
   },
   "devDependencies": {
-    "@babel/cli": "^7.10.1",
+    "@babel/cli": "^7.15.7",
     "@babel/core": "7.7.7",
     "@babel/plugin-proposal-class-properties": "7.7.4",
     "@babel/plugin-proposal-decorators": "7.7.4",
@@ -45,7 +45,7 @@
     "@babel/polyfill": "^7.10.4",
     "@babel/preset-env": "^7.9.0",
     "@babel/preset-react": "^7.9.4",
-    "axios": "^0.19.1",
+    "axios": "^0.21.4",
     "babel-jest": "^26.0.1",
     "babel-loader": "^8.0.6",
     "babel-plugin-module-resolver": "^3.2.0",
@@ -76,7 +76,7 @@
     "style-loader": "^1.2.1",
     "svg-url-loader": "^6.0.0",
     "ttag": "^1.7.22",
-    "ttag-cli": "^1.7.24",
+    "ttag-cli": "^1.9.3",
     "wait-for-expect": "^3.0.2",
     "webpack": "^4.41.2",
     "webpack-bundle-analyzer": "^3.6.0",

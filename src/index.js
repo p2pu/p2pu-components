@@ -4,6 +4,7 @@ import 'custom-event-polyfill'
 import './stylesheets/search.scss'
 
 import Search from './Search/Search';
+import SearchProvider from './Search/SearchProvider';
 import CourseCard from './Courses/CourseCard';
 import BrowseCourses from './Courses/Browse';
 import BrowseLearningCircles from './LearningCircles/Browse';
@@ -32,6 +33,7 @@ export {
   BrowseCourses,
   BrowseLearningCircles,
   Search,
+  SearchProvider,
   LearningCircleSignup,
   CitySelect,
   CheckboxWithLabel,

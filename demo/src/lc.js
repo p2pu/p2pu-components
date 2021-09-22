@@ -2,6 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 
 import Search from "../../src/Search/Search";
+import SearchProvider from "../../src/Search/SearchProvider";
 import BrowseLearningCircles from "../../src/LearningCircles/Browse";
 import LearningCircleSignup from "../../src/LearningCircleSignup/LearningCircleSignup";
 
@@ -41,14 +42,16 @@ class App extends React.Component {
             />
         }
         <div className={this.state.selectedLearningCircle?'d-none':''}>
-          <Search
+          <SearchProvider 
             searchSubject={'learningCircles'}
             locale="en"
             onSelectResult={this.handleLearningCircleSelection}
             Browse={BrowseLearningCircles}
             contact="sharon@p2pu.org"
             origin="https://learningcircles.p2pu.org"
-          />
+          >
+            <Search/>
+          </SearchProvider>
         </div>
       </div>
     );
