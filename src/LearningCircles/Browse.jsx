@@ -1,5 +1,4 @@
 import React from 'react'
-import Masonry from 'react-masonry-component'
 import { t } from "ttag";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
@@ -20,7 +19,7 @@ const BrowseLearningCircles = (props) => {
       <TabPanel>
         { !isLoading && results.length === 0 ?
           <NoResultsComponent updateResultsTab={updateResultsTab} tabIndex={resultsTab} contact={contact} /> :
-          <Masonry className={"search-results row grid"}>
+          <div className="search-results row grid">
             {
               results.map((circle, index) => (
                 <LearningCircleCard
@@ -34,13 +33,13 @@ const BrowseLearningCircles = (props) => {
                 />
               ))
             }
-          </Masonry>
+          </div>
         }
       </TabPanel>
       <TabPanel>
         { !isLoading && results.length === 0 ?
           <NoResultsComponent updateResultsTab={updateResultsTab} tabIndex={resultsTab} contact={contact} /> :
-          <Masonry className={"search-results row grid"}>
+          <div className="search-results row grid">
             {
               results.map((circle, index) => (
                 <LearningCircleCard
@@ -54,7 +53,7 @@ const BrowseLearningCircles = (props) => {
                 />
               ))
             }
-          </Masonry>
+          </div>
         }
       </TabPanel>
     </Tabs>

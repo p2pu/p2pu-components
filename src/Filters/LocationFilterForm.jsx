@@ -107,6 +107,7 @@ export default class LocationFilterForm extends Component {
 
     return(
       <div>
+        <label for="search-input" class="form-label">Location</label>
         <CheckboxWithLabel
           classes='col-sm-12'
           name='geolocation'
@@ -131,7 +132,7 @@ export default class LocationFilterForm extends Component {
         </div>
         <CitySelect
           label={t`Select a location`}
-          classes='city-select col-sm-12'
+          classes='city-select col-sm-12 search-input'
           name='city'
           value={this.props.city}
           handleChange={this.handleCitySelect}

@@ -8,7 +8,6 @@ import { SEARCH_PROPS, API_ENDPOINTS, OPEN_TAB_TEXT, CLOSED_TAB_TEXT } from '../
 import ApiHelper from '../utils/apiHelper'
 
 
-
 export default class Search extends Component {
   constructor(props) {
     super(props)
@@ -17,7 +16,7 @@ export default class Search extends Component {
   render() {
     const Browse = this.props.Browse;
     return(
-      <div className="page">
+      <>
         <SearchAndFilter
           {...this.props}
         />
@@ -31,7 +30,7 @@ export default class Search extends Component {
           this.props.isLoading &&
           <div className="loader" />
         }
-      </div>
+      </>
     )
   }
 }

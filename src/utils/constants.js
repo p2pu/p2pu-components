@@ -24,7 +24,7 @@ export const SEARCH_SUBJECTS = {
 
 export const SEARCH_PROPS = {
   learningCircles: {
-    filters: ['location', 'topics', 'meetingDays'],
+    filters: ['location'],
     placeholder: t`Keyword, organization, facilitator, etc...`,
   },
   courses: {

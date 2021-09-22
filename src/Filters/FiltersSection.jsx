@@ -15,6 +15,17 @@ export default class FilterSection extends Component {
   }
 
   render() {
+    if (this.props.filterCollection.length == 1){
+      return  (
+        <div className="filter-section">
+            <FilterForm
+              activeFilter={this.props.filterCollection[0]}
+              updateActiveFilter={()=>{}}
+              {...this.props}
+            />
+        </div>
+      )
+    }
     return(
       <div className="filter-section">
         <div className='label'>

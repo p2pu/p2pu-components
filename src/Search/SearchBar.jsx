@@ -12,23 +12,20 @@ const SearchBar = ({ placeholder, updateQueryParams, q }) => {
     e.preventDefault();
   }
 
-  return(
-    <form className='search-bar' onSubmit={onSubmit}>
-      <div className='label'>
-        {t`Search`}
-      </div>
-      <div className="input">
-        <div className='wrapper'>
-          <i className="material-icons">search</i>
-          <input
-            id="search-input"
-            type="search"
-            className='search-input'
-            placeholder={placeholder}
-            onChange={onChange}
-            value={q||''}
-          />
-        </div>
+  return (
+    <form className="search" onSubmit={onSubmit}>
+      <label htmlFor="search-input" className="form-label">{t`Search`}</label>
+      <div className="input-group">
+        <input 
+          id="search-input"
+          type="search"
+          className="form-control search-input"
+          placeholder={placeholder}
+          onChange={onChange}
+          value={q||''}
+          aria-label="search terms"
+          aria-describedby="search-icon"/>
+        <span className="input-group-text" id="search-icon"><i className="material-icons">search</i></span>
       </div>
     </form>
   )
