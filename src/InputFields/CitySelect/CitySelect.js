@@ -1,49 +1,40 @@
-import React, { Component } from 'react'
+import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import Select from 'react-select'
 import jsonp from 'jsonp'
 
 import InputWrapper from '../InputWrapper'
 
-export default class CitySelect extends Component {
-  constructor(props) {
-    super(props)
-    this.state = { cities: [] }
-    this.populateCities();
-  }
 
-  onChange = (selected) => {
-    const query = selected ? selected.label : selected;
+export const CitySelectInput = props => {
+  const [cities, setCities] = useState([])
 
-    this.props.handleChange({ [this.props.name]: query })
-  }
-
-  populateCities = () => {
+  useEffect(() => {
     const url = 'https://learningcircles.p2pu.org/api/learningcircles/cities'
     jsonp(url, null, (err, res) => {
       if (err) {
         console.log(err)
       } else {
         if (res.items) {
-          this.filterCitiesFromResults(res.items);
+          let cities_ = res.items.filter( city => city );
+          const uniqBy = (arr, fn) => [...new Map(arr.map((x) => [typeof fn === 'function' ? fn(x) : x[fn], x])).values()]
+          cities_ = uniqBy(cities_, el => el.value);
+          setCities(cities_);
         } else {
           console.log(res)
         }
       }
-    })
+    });
+  }, [])
+
+
+  const onChange = (selected) => {
+    const query = selected ? selected.label : selected;
+    props.handleChange({ [props.name]: query })
   }
 
-  filterCitiesFromResults = (cities) => {
-    cities = cities.filter( city => city );
-    const uniqBy = (arr, fn) => [...new Map(arr.map((x) => [typeof fn === 'function' ? fn(x) : x[fn], x])).values()]
-    cities = uniqBy(cities, el => el.value);
-
-    this.setState({ cities });
-  }
-
-  getSelected = value => {
-    const { isMulti } = this.props;
-    const { cities } = this.state;
+  const getSelected = value => {
+    const { isMulti } = props;
     if (!value) {
       return null
     }
@@ -55,52 +46,66 @@ export default class CitySelect extends Component {
     return cities.find(city => city.label === value)
   }
 
-  render() {
-    const { label, name, id, value, disabled, required, errorMessage, helpText, classes, selectClasses, handleInputChange, noResultsText, placeholder, isClearable, isMulti, ...rest } = this.props;
-    const { cities } = this.state;
-    const selected = this.getSelected(value)
+  const { 
+    name, id, value, disabled, required, errorMessage,
+    classes, selectClasses, handleInputChange, noResultsText,
+    placeholder, isClearable, isMulti, ...rest 
+  } = props;
 
-    return(
-      <InputWrapper
-        label={label}
-        name={name}
-        id={id}
-        required={required}
-        disabled={disabled}
-        errorMessage={errorMessage}
-        helpText={helpText}
-        classes={classes}
-      >
-        <Select
-          name={ name }
-          className={ `city-select ${selectClasses}` }
-          value={ selected }
-          options={ cities }
-          onChange={ this.onChange }
-          onInputChange={ handleInputChange }
-          noResultsText={ noResultsText }
-          placeholder={ placeholder }
-          isClearable={ isClearable }
-          isMulti={ isMulti }
-          isDisabled={ disabled }
-          classNamePrefix={'city-select'}
-          theme={theme => ({
-            ...theme,
-            colors: {
-              ...theme.colors,
+  const selected = getSelected(value);
+
+  return(
+    <Select
+      name={ name }
+      className={ `city-select ${selectClasses}` }
+      value={ selected }
+      options={ cities }
+      onChange={ onChange }
+      onInputChange={ handleInputChange }
+      noResultsText={ noResultsText }
+      placeholder={ placeholder }
+      isClearable={ isClearable }
+      isMulti={ isMulti }
+      isDisabled={ disabled }
+      classNamePrefix={'city-select'}
+      theme={theme => ({
+        ...theme,
+          colors: {
+            ...theme.colors,
               primary: '#05c6b4',
               primary75: '#D3D8E6',
               primary50: '#e0f7f5',
               primary25: '#F3F4F8'
-            },
-          })}
-          {...rest}
-        />
-      </InputWrapper>
-    )
-  }
+          },
+      })}
+      {...rest}
+    />
+  )
 }
 
+
+
+const CitySelect = props => {
+  const { 
+    label, name, id, disabled, required, errorMessage, helpText, classes 
+  } = props;
+
+  return(
+    <InputWrapper
+      label={label}
+      name={name}
+      id={id}
+      required={required}
+      disabled={disabled}
+      errorMessage={errorMessage}
+      helpText={helpText}
+      classes={classes}
+    >
+      <CitySelectInput {...props} />
+    </InputWrapper>
+  )
+
+}
 
 CitySelect.propTypes = {
   handleChange: PropTypes.func.isRequired,
@@ -127,3 +132,4 @@ CitySelect.defaultProps = {
   value: null,
 }
 
+export default CitySelect

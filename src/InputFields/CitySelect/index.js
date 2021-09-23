@@ -1,3 +1,7 @@
-import CitySelect from './CitySelect.js';
+import CitySelect, {CitySelectInput} from './CitySelect.js';
 
-export default CitySelect
+export {
+  CitySelect as default,
+  CitySelectInput,
+}
+
