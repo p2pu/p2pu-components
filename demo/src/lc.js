@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { render } from 'react-dom';
 
-import Search from "../../src/Search/Search";
 import SearchProvider from "../../src/Search/SearchProvider";
-import BrowseLearningCircles from "../../src/LearningCircles/Browse";
+import LearningCircleSearch from "../../src/LearningCircles/LearningCircleSearch";
 import LearningCircleSignup from "../../src/LearningCircleSignup/LearningCircleSignup";
 
 import "../../src/stylesheets/search.scss"
@@ -35,14 +34,14 @@ const App = () => {
       <div className={selectedLearningCircle?'d-none':''}>
         <SearchProvider 
           searchSubject={'learningCircles'}
-          locale="en"
-          onSelectResult={handleLearningCircleSelection}
-          Browse={BrowseLearningCircles}
-          contact="sharon@p2pu.org"
           origin="https://learningcircles.p2pu.org"
-          defaultImageUrl="/lc-default.jpg"
+          locale="en"
         >
-          <Search/>
+          <LearningCircleSearch
+            onSelectResult={handleLearningCircleSelection}
+            contact="sharon@p2pu.org"
+            defaultImageUrl="/lc-default.jpg"
+          />
         </SearchProvider>
       </div>
     </div>

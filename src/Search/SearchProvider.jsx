@@ -6,7 +6,7 @@ import { SEARCH_PROPS, API_ENDPOINTS, OPEN_TAB_TEXT, CLOSED_TAB_TEXT } from '../
 import ApiHelper from '../utils/apiHelper'
 
 
-export default class Search extends Component {
+export default class SearchProvider extends Component {
   constructor(props) {
     super(props)
     this.initialState = this.setInitialState()
@@ -160,11 +160,6 @@ export default class Search extends Component {
   }
 
   render() {
-    const filterCollection = SEARCH_PROPS[this.props.searchSubject].filters;
-    const sortCollection = SEARCH_PROPS[this.props.searchSubject].sort;
-    const placeholder = SEARCH_PROPS[this.props.searchSubject].placeholder;
-    const resultsSubtitle = SEARCH_PROPS[this.props.searchSubject].resultsSubtitle;
-    const { Browse } = this.props;
     const showNoResultsComponent = this.state.totalResults === 0 && this.state.initialQuery && !Boolean(window.location.search);
 
     return(
@@ -172,10 +167,7 @@ export default class Search extends Component {
         { 
           React.Children.map(this.props.children, child =>
             React.cloneElement(child, {
-              placeholder,
               updateQueryParams: this.updateQueryParams,
-              filterCollection,
-              sortCollection,
               searchSubject: this.props.searchSubject,
               order: this.props.order,
               results: this.state.searchResults,
@@ -188,47 +180,4 @@ export default class Search extends Component {
       </>
     )
   }
-}
-
-const DefaultNoResults = props => {
-  const renderLinks = () => {
-    const links = []
-    if (props.updateResultsTab) {
-      const otherTab = props.tabIndex === 0 ? 1 : 0
-      const otherTabName = otherTab === 0 ? OPEN_TAB_TEXT : CLOSED_TAB_TEXT
-      links.push(
-        <button key="reset-btn" className='btn p2pu-btn btn-sm dark d-inline-flex align-items-center py-2 px-3' onClick={() => props.updateResultsTab(otherTab)}>
-          <span className="material-icons mr-1">
-            arrow_forward
-          </span>
-          {t`View ${otherTabName} learning circles`}
-        </button>
-      )
-    }
-
-    if (props.contact) {
-      links.push(
-        <a key="contact-btn" href={`mailto:${props.contact}`} className='btn p2pu-btn btn-sm dark d-inline-flex align-items-center py-2 px-3'>
-          <span className="material-icons mr-1">
-            alternate_email
-          </span>
-          {t`Contact this team`}
-        </a>
-      )
-    }
-
-    return links
-  }
-
-  return (
-    <div className="my-4">
-      <p>{t`There are no learning circles available right now.`}</p>
-      { renderLinks() }
-    </div>
-  )
-}
-
-
-Search.defaultProps = {
-  NoResultsComponent: (props) => <DefaultNoResults {...props} />
 }

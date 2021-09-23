@@ -2,6 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 
 import Search from "../../src/Search/Search";
+import SearchProvider from "../../src/Search/SearchProvider";
 import BrowseCourses from "../../src/Courses/Browse";
 import BrowseLearningCircles from "../../src/LearningCircles/Browse";
 
@@ -18,13 +19,15 @@ class App extends React.Component {
 
     return(
     <div style={{ padding: "20px"}}>
-      <Search
+      <SearchProvider
         searchSubject={'courses'}
         Browse={BrowseCourses}
         onSelectResult={handleSelectResult}
         initialState={{ languages: ['en'] }}
         origin={'https://learningcircles.p2pu.org'}
-      />
+      >
+        <Search />
+      </SearchProvider>
     </div>
     );
   }
