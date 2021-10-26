@@ -104,7 +104,7 @@ const CourseCard = (props) => {
           <div className="row justify-content-center justify-content-md-end">
             {
               moreInfo &&
-                <a target="_blank" href={props.course.course_page_url} className="btn p2pu-btn btn-sm secondary gray col-sm-auto m-2">{t`More details`}</a>
+                <a href={props.course.course_page_url} className="btn p2pu-btn btn-sm secondary gray col-sm-auto m-2">{t`More details`}</a>
             }
             {
               courseLink &&
