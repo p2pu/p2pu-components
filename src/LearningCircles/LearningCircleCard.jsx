@@ -7,19 +7,23 @@ import { date, day, time } from '../utils/i18n';
 const cardFormatting = {
   'upcoming': {
     color: 'p2pu-blue',
-    label: 'Starting soon'
+    label: 'Starting soon',
+    class: 'starting-soon',
   },
   'in_progress': {
     color: 'p2pu-green',
-    label: 'In progress'
+    label: 'In progress',
+    class: 'in-progress',
   },
   'closed': {
     color: 'p2pu-yellow',
-    label: 'Sign up closed'
+    label: 'Sign up closed',
+    class: 'signup-closed',
   },
   'completed': {
     color: 'p2pu-gray',
-    label: 'Completed'
+    label: 'Completed',
+    class: 'closed',
   }
 }
 
@@ -62,59 +66,50 @@ const LearningCircleCard = (props) => {
       window.location.href = learningCircle.url;
     }
   }
+  let imageUrl = props.defaultImageUrl;
+  if (learningCircle.image_url){
+    imageUrl = learningCircle.image_url;
+  }
 
   return (
-    <Card colorClass={colorClass} classes={`${props.classes}`} role='button' tabIndex={0} onClick={onClick}>
-      <div className="status-tag minicaps bold">{t(cardLabel)}</div>
-      <CardTitle>{ name }</CardTitle>
-      <CardBody>
-        <p className="start-date bold m-0">
-          {dateLabel}
-        </p>
-      </CardBody>
-      <CardBody>
-        {
-          learningCircle.image_url &&
-          <div className="image-container hidden-on-mobile mb-2">
-            <div className="square" />
-            <div className="circle" />
-            <div className="image">
-              <img src={ `${learningCircle.image_url}` } alt={ name } />
-            </div>
-          </div>
-        }
-
-        <p className="schedule">
-          <i className="material-icons">schedule</i>
-          { schedule }
-        </p>
-        <p className="duration">
-          <i className="material-icons">today</i>
-          <span className="capitalize">{ frequency }</span>
-        </p>
-        <p className="city-country">
-          <i className="material-icons">place</i>
-          { learningCircle.city }
-        </p>
-        <p className="facilitator">
-          <i className="material-icons">face</i>
-          {t`Facilitated by ${learningCircle.facilitator}`}
-        </p>
-        <p className="location">
-          <i className="material-icons">store</i>
-          {t`Meeting at ${learningCircle.venue}`}
-        </p>
-
-        <div className='actions'>
-          <div className="primary-cta">
-            <button className="btn p2pu-btn transparent">
-              {isSignupOpen ? t`Sign up` : t`View details`}
-            </button>
-          </div>
+    <div class="result-item grid-item col-md-6 col-lg-4" onClick={onClick}>
+      <div class={`card learning-circle ${cardFormatting[status].class}`}>
+        <div class="status-tag"><span>{t(cardLabel)}</span></div>
+        <div class="card-image">
+          <img src={imageUrl} alt={name} class="card-img-top" />
         </div>
-
-      </CardBody>
-    </Card>
+        <div class="card-header">
+          <span class="eyebrow">{dateLabel}</span>
+          <h3 class="card-title">{name}</h3>
+        </div>
+        <div class="card-body">
+          <span class="schedule">
+            <i class="material-icons">schedule</i>
+            { schedule }
+          </span>
+          <span class="duration">
+            <i class="material-icons">today</i>{ frequency }
+          </span>
+          <span class="city-country">
+            <i class="material-icons">place</i>
+            {learningCircle.city}
+          </span>
+          <span class="facilitator">
+            <i class="material-icons">face</i>
+            {t`Facilitated by ${learningCircle.facilitator}`}
+          </span>
+          <span class="location">
+            <i class="material-icons">store</i>
+            {t`Meeting at ${learningCircle.venue}`}
+          </span>
+        </div>
+        <div class="card-footer">
+          <button class="btn p2pu-btn btn-sm gray mx-auto d-block">
+            {isSignupOpen ? t`Sign up` : t`View details`}
+          </button>
+        </div>
+      </div>
+    </div>
   );
 }
 
