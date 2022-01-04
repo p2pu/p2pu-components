@@ -8,6 +8,7 @@ import SearchProvider from './Search/SearchProvider';
 import CourseCard from './Courses/CourseCard';
 import BrowseCourses from './Courses/Browse';
 import BrowseLearningCircles from './LearningCircles/Browse';
+import LearningCircleSearch from './LearningCircles/LearningCircleSearch';
 import LearningCircleSignup from './LearningCircleSignup/LearningCircleSignup';
 
 import CheckboxWithLabel from "./InputFields/CheckboxWithLabel";
@@ -34,6 +35,7 @@ export {
   BrowseLearningCircles,
   Search,
   SearchProvider,
+  LearningCircleSearch,
   LearningCircleSignup,
   CitySelect,
   CheckboxWithLabel,

@@ -37,7 +37,7 @@ msgstr ""
 msgid "At ${ venueLink }"
 msgstr ""
 
-#: src/Courses/Browse.jsx:26
+#: src/Courses/Browse.jsx:25
 msgid "Use this course"
 msgstr ""
 
@@ -68,12 +68,10 @@ msgid "Used in ${ usage_number } learning circle"
 msgstr ""
 
 #: src/Courses/CourseCard.jsx:82
-#: src/Courses/CourseCard.jsx:157
 msgid "Provider"
 msgstr ""
 
 #: src/Courses/CourseCard.jsx:87
-#: src/Courses/CourseCard.jsx:162
 msgid "Platform"
 msgstr ""
 
@@ -82,38 +80,11 @@ msgid "Website"
 msgstr ""
 
 #: src/Courses/CourseCard.jsx:98
-#: src/Courses/CourseCard.jsx:167
 msgid "Access"
 msgstr ""
 
 #: src/Courses/CourseCard.jsx:107
-#: src/Courses/CourseCard.jsx:177
 msgid "More details"
-msgstr ""
-
-#: src/Courses/CourseCard.jsx:148
-#: src/Filters/FilterButton.jsx:8
-msgid "Topics"
-msgstr ""
-
-#: src/Courses/CourseCard.jsx:181
-msgid "Course website"
-msgstr ""
-
-#: src/Search/Search.jsx:50
-#: src/Search/SearchProvider.jsx:204
-#, javascript-format
-msgid "View ${ otherTabName } learning circles"
-msgstr ""
-
-#: src/Search/Search.jsx:61
-#: src/Search/SearchProvider.jsx:215
-msgid "Contact this team"
-msgstr ""
-
-#: src/Search/Search.jsx:71
-#: src/Search/SearchProvider.jsx:225
-msgid "There are no learning circles available right now."
 msgstr ""
 
 #: src/utils/constants.js:4
@@ -232,6 +203,19 @@ msgstr ""
 msgid "View details"
 msgstr ""
 
+#: src/Search/DefaultNoResults.jsx:17
+#, javascript-format
+msgid "View ${ otherTabName } learning circles"
+msgstr ""
+
+#: src/Search/DefaultNoResults.jsx:28
+msgid "Contact this team"
+msgstr ""
+
+#: src/Search/DefaultNoResults.jsx:38
+msgid "There are no learning circles available right now."
+msgstr ""
+
 #: src/Filters/LocationFilterForm.jsx:96
 #: src/Search/SearchTags.jsx:111
 #, javascript-format
@@ -252,6 +236,10 @@ msgstr ""
 #: src/Search/SearchTags.jsx:227
 #, javascript-format
 msgid "To see more results, either remove some filters or ${ resetButton }"
+msgstr ""
+
+#: src/Search/SearchBar.jsx:17
+msgid "Search"
 msgstr ""
 
 #: src/LearningCircleSignup/SignupForm.jsx:99
@@ -306,16 +294,12 @@ msgstr ""
 msgid "Submitting..."
 msgstr ""
 
-#: src/Search/SearchBar.jsx:18
-msgid "Search"
-msgstr ""
-
 #: src/Filters/FilterButton.jsx:10
 #: src/Filters/SortSection.jsx:30
 msgid "Sort by"
 msgstr ""
 
-#: src/Filters/FiltersSection.jsx:21
+#: src/Filters/FiltersSection.jsx:32
 msgid "Filter"
 msgstr ""
 
@@ -331,6 +315,10 @@ msgstr ""
 
 #: src/Filters/FilterButton.jsx:7
 msgid "Language"
+msgstr ""
+
+#: src/Filters/FilterButton.jsx:8
+msgid "Topics"
 msgstr ""
 
 #: src/Filters/FilterButton.jsx:9
@@ -377,19 +365,19 @@ msgstr ""
 msgid "km"
 msgstr ""
 
-#: src/Filters/LocationFilterForm.jsx:130
+#: src/Filters/LocationFilterForm.jsx:131
 msgid "or"
 msgstr ""
 
-#: src/Filters/LocationFilterForm.jsx:133
+#: src/Filters/LocationFilterForm.jsx:134
 msgid "Select a location"
 msgstr ""
 
-#: src/Filters/LocationFilterForm.jsx:138
+#: src/Filters/LocationFilterForm.jsx:139
 msgid "Start typing a city name"
 msgstr ""
 
-#: src/Filters/LocationFilterForm.jsx:139
+#: src/Filters/LocationFilterForm.jsx:140
 msgid "No results for this city"
 msgstr ""
 
