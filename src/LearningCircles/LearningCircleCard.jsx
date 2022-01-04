@@ -79,7 +79,7 @@ const LearningCircleCard = (props) => {
           <img src={imageUrl} alt={name} class="card-img-top" />
         </div>
         <div class="card-header">
-          <span class="eyebrow">Started June 9, 2021</span>
+          <span class="eyebrow">{dateLabel}</span>
           <h3 class="card-title">{name}</h3>
         </div>
         <div class="card-body">
