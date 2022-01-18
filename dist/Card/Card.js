@@ -1,5 +1,6 @@
 import _extends from "@babel/runtime/helpers/extends";
 import _objectWithoutProperties from "@babel/runtime/helpers/objectWithoutProperties";
+var _excluded = ["component", "colorClass", "classes", "id", "children"];
 import React from 'react';
 
 var Card = function Card(_ref) {
@@ -8,7 +9,7 @@ var Card = function Card(_ref) {
       classes = _ref.classes,
       id = _ref.id,
       children = _ref.children,
-      rest = _objectWithoutProperties(_ref, ["component", "colorClass", "classes", "id", "children"]);
+      rest = _objectWithoutProperties(_ref, _excluded);
 
   var Component = component || 'div';
   return /*#__PURE__*/React.createElement("div", {

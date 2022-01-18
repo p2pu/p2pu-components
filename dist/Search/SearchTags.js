@@ -1,44 +1,6 @@
 import _taggedTemplateLiteral from "@babel/runtime/helpers/taggedTemplateLiteral";
 
-function _templateObject4() {
-  var data = _taggedTemplateLiteral(["To see more results, either remove some filters or ", ""]);
-
-  _templateObject4 = function _templateObject4() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject3() {
-  var data = _taggedTemplateLiteral(["reset the search form"]);
-
-  _templateObject3 = function _templateObject3() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject2() {
-  var data = _taggedTemplateLiteral(["Showing ", " of ", " result"]);
-
-  _templateObject2 = function _templateObject2() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject() {
-  var data = _taggedTemplateLiteral(["Within ", " ", ""]);
-
-  _templateObject = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
+var _templateObject, _templateObject2, _templateObject3, _templateObject4;
 
 import React from 'react';
 import { t, jt, ngettext, msgid } from 'ttag';
@@ -227,7 +189,7 @@ var SearchTags = function SearchTags(props) {
       var unit = props.useMiles ? 'miles' : 'km';
       var value = props.useMiles ? props.distance * 0.62 : props.distance;
       value = Math.round(value / 10) * 10;
-      var text = t(_templateObject(), value, unit);
+      var text = t(_templateObject || (_templateObject = _taggedTemplateLiteral(["Within ", " ", ""])), value, unit);
 
       var onDelete = function onDelete(value) {
         props.updateQueryParams({
@@ -347,7 +309,7 @@ var SearchTags = function SearchTags(props) {
     var tagsToDisplay = ['q', 'topics', 'location', 'meetingDays', 'language', 'teamName', 'order', 'oer'];
     var resultsCount = /*#__PURE__*/React.createElement("span", {
       key: "resultsSummary-0"
-    }, ngettext(msgid(_templateObject2(), props.searchResults.length, props.totalResults), "Showing ".concat(props.searchResults.length, " of ").concat(props.totalResults, " results"), props.totalResults));
+    }, ngettext(msgid(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["Showing ", " of ", " result"])), props.searchResults.length, props.totalResults), "Showing ".concat(props.searchResults.length, " of ").concat(props.totalResults, " results"), props.totalResults));
 
     if (props.searchSubject === 'courses') {
       searchSummaryItems.push(resultsCount);
@@ -362,7 +324,7 @@ var SearchTags = function SearchTags(props) {
           if (tag === 'q' || tag === 'topics') {// TODO searchSummaryItems.push(withSpan)
           }
         } else {// TODO searchSummaryItems.push(<span key={`resultsSummary-${searchSummaryItems.length}`}>and</span>)
-          }
+        }
 
         searchSummaryItems.push(tagsArray);
       }
@@ -382,14 +344,14 @@ var SearchTags = function SearchTags(props) {
     key: "reset-search",
     onClick: reloadWindow,
     className: "p2pu-btn light with-outline"
-  }, t(_templateObject3()));
+  }, t(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["reset the search form"]))));
   return /*#__PURE__*/React.createElement("div", {
     className: "results-summary"
   }, /*#__PURE__*/React.createElement("div", {
     className: "search-tags wrapper"
   }, generateSearchSummary()), noResults && /*#__PURE__*/React.createElement("div", {
     className: "clear-search"
-  }, jt(_templateObject4(), resetButton)));
+  }, jt(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["To see more results, either remove some filters or ", ""])), resetButton)));
 };
 
 export default SearchTags;

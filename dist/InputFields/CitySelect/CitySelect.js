@@ -1,171 +1,142 @@
 import _extends from "@babel/runtime/helpers/extends";
 import _objectWithoutProperties from "@babel/runtime/helpers/objectWithoutProperties";
 import _typeof from "@babel/runtime/helpers/typeof";
-import _toConsumableArray from "@babel/runtime/helpers/toConsumableArray";
-import _classCallCheck from "@babel/runtime/helpers/classCallCheck";
-import _createClass from "@babel/runtime/helpers/createClass";
-import _assertThisInitialized from "@babel/runtime/helpers/assertThisInitialized";
-import _inherits from "@babel/runtime/helpers/inherits";
-import _possibleConstructorReturn from "@babel/runtime/helpers/possibleConstructorReturn";
-import _getPrototypeOf from "@babel/runtime/helpers/getPrototypeOf";
 import _defineProperty from "@babel/runtime/helpers/defineProperty";
+import _toConsumableArray from "@babel/runtime/helpers/toConsumableArray";
+import _slicedToArray from "@babel/runtime/helpers/slicedToArray";
+var _excluded = ["name", "id", "value", "disabled", "required", "errorMessage", "classes", "selectClasses", "handleInputChange", "noResultsText", "placeholder", "isClearable", "isMulti"];
 
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
-
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
-
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Select from 'react-select';
 import jsonp from 'jsonp';
 import InputWrapper from '../InputWrapper';
+export var CitySelectInput = function CitySelectInput(props) {
+  var _useState = useState([]),
+      _useState2 = _slicedToArray(_useState, 2),
+      cities = _useState2[0],
+      setCities = _useState2[1];
 
-var CitySelect = /*#__PURE__*/function (_Component) {
-  _inherits(CitySelect, _Component);
+  useEffect(function () {
+    var url = 'https://learningcircles.p2pu.org/api/learningcircles/cities';
+    jsonp(url, null, function (err, res) {
+      if (err) {
+        console.log(err);
+      } else {
+        if (res.items) {
+          var cities_ = res.items.filter(function (city) {
+            return city;
+          });
 
-  var _super = _createSuper(CitySelect);
+          var uniqBy = function uniqBy(arr, fn) {
+            return _toConsumableArray(new Map(arr.map(function (x) {
+              return [typeof fn === 'function' ? fn(x) : x[fn], x];
+            })).values());
+          };
 
-  function CitySelect(props) {
-    var _this;
-
-    _classCallCheck(this, CitySelect);
-
-    _this = _super.call(this, props);
-
-    _defineProperty(_assertThisInitialized(_this), "onChange", function (selected) {
-      var query = selected ? selected.label : selected;
-
-      _this.props.handleChange(_defineProperty({}, _this.props.name, query));
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "populateCities", function () {
-      var url = 'https://learningcircles.p2pu.org/api/learningcircles/cities';
-      jsonp(url, null, function (err, res) {
-        if (err) {
-          console.log(err);
+          cities_ = uniqBy(cities_, function (el) {
+            return el.value;
+          });
+          setCities(cities_);
         } else {
-          _this.filterCitiesFromResults(res.items);
+          console.log(res);
         }
-      });
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "filterCitiesFromResults", function (cities) {
-      cities = cities.filter(function (city) {
-        return city;
-      });
-
-      var uniqBy = function uniqBy(arr, fn) {
-        return _toConsumableArray(new Map(arr.map(function (x) {
-          return [typeof fn === 'function' ? fn(x) : x[fn], x];
-        })).values());
-      };
-
-      cities = uniqBy(cities, function (el) {
-        return el.value;
-      });
-
-      _this.setState({
-        cities: cities
-      });
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "getSelected", function (value) {
-      var isMulti = _this.props.isMulti;
-      var cities = _this.state.cities;
-
-      if (!value) {
-        return null;
       }
-
-      if (isMulti && _typeof(value === 'object')) {
-        return value.map(function (v) {
-          return cities.find(function (city) {
-            return city.label === v;
-          });
-        });
-      }
-
-      return cities.find(function (city) {
-        return city.label === value;
-      });
     });
+  }, []);
 
-    _this.state = {
-      cities: []
-    };
+  var onChange = function onChange(selected) {
+    var query = selected ? selected.label : selected;
+    props.handleChange(_defineProperty({}, props.name, query));
+  };
 
-    _this.populateCities();
+  var getSelected = function getSelected(value) {
+    var isMulti = props.isMulti;
 
-    return _this;
-  }
-
-  _createClass(CitySelect, [{
-    key: "render",
-    value: function render() {
-      var _this$props = this.props,
-          label = _this$props.label,
-          name = _this$props.name,
-          id = _this$props.id,
-          value = _this$props.value,
-          disabled = _this$props.disabled,
-          required = _this$props.required,
-          errorMessage = _this$props.errorMessage,
-          helpText = _this$props.helpText,
-          classes = _this$props.classes,
-          selectClasses = _this$props.selectClasses,
-          handleInputChange = _this$props.handleInputChange,
-          noResultsText = _this$props.noResultsText,
-          placeholder = _this$props.placeholder,
-          isClearable = _this$props.isClearable,
-          isMulti = _this$props.isMulti,
-          rest = _objectWithoutProperties(_this$props, ["label", "name", "id", "value", "disabled", "required", "errorMessage", "helpText", "classes", "selectClasses", "handleInputChange", "noResultsText", "placeholder", "isClearable", "isMulti"]);
-
-      var cities = this.state.cities;
-      var selected = this.getSelected(value);
-      return /*#__PURE__*/React.createElement(InputWrapper, {
-        label: label,
-        name: name,
-        id: id,
-        required: required,
-        disabled: disabled,
-        errorMessage: errorMessage,
-        helpText: helpText,
-        classes: classes
-      }, /*#__PURE__*/React.createElement(Select, _extends({
-        name: name,
-        className: "city-select ".concat(selectClasses),
-        value: selected,
-        options: cities,
-        onChange: this.onChange,
-        onInputChange: handleInputChange,
-        noResultsText: noResultsText,
-        placeholder: placeholder,
-        isClearable: isClearable,
-        isMulti: isMulti,
-        isDisabled: disabled,
-        classNamePrefix: 'city-select',
-        theme: function theme(_theme) {
-          return _objectSpread(_objectSpread({}, _theme), {}, {
-            colors: _objectSpread(_objectSpread({}, _theme.colors), {}, {
-              primary: '#05c6b4',
-              primary75: '#D3D8E6',
-              primary50: '#e0f7f5',
-              primary25: '#F3F4F8'
-            })
-          });
-        }
-      }, rest)));
+    if (!value) {
+      return null;
     }
-  }]);
 
-  return CitySelect;
-}(Component);
+    if (isMulti && _typeof(value === 'object')) {
+      return value.map(function (v) {
+        return cities.find(function (city) {
+          return city.label === v;
+        });
+      });
+    }
 
-export { CitySelect as default };
+    return cities.find(function (city) {
+      return city.label === value;
+    });
+  };
+
+  var name = props.name,
+      id = props.id,
+      value = props.value,
+      disabled = props.disabled,
+      required = props.required,
+      errorMessage = props.errorMessage,
+      classes = props.classes,
+      selectClasses = props.selectClasses,
+      handleInputChange = props.handleInputChange,
+      noResultsText = props.noResultsText,
+      placeholder = props.placeholder,
+      isClearable = props.isClearable,
+      isMulti = props.isMulti,
+      rest = _objectWithoutProperties(props, _excluded);
+
+  var selected = getSelected(value);
+  return /*#__PURE__*/React.createElement(Select, _extends({
+    name: name,
+    className: "city-select ".concat(selectClasses),
+    value: selected,
+    options: cities,
+    onChange: onChange,
+    onInputChange: handleInputChange,
+    noResultsText: noResultsText,
+    placeholder: placeholder,
+    isClearable: isClearable,
+    isMulti: isMulti,
+    isDisabled: disabled,
+    classNamePrefix: 'city-select',
+    theme: function theme(_theme) {
+      return _objectSpread(_objectSpread({}, _theme), {}, {
+        colors: _objectSpread(_objectSpread({}, _theme.colors), {}, {
+          primary: '#05c6b4',
+          primary75: '#D3D8E6',
+          primary50: '#e0f7f5',
+          primary25: '#F3F4F8'
+        })
+      });
+    }
+  }, rest));
+};
+
+var CitySelect = function CitySelect(props) {
+  var label = props.label,
+      name = props.name,
+      id = props.id,
+      disabled = props.disabled,
+      required = props.required,
+      errorMessage = props.errorMessage,
+      helpText = props.helpText,
+      classes = props.classes;
+  return /*#__PURE__*/React.createElement(InputWrapper, {
+    label: label,
+    name: name,
+    id: id,
+    required: required,
+    disabled: disabled,
+    errorMessage: errorMessage,
+    helpText: helpText,
+    classes: classes
+  }, /*#__PURE__*/React.createElement(CitySelectInput, props));
+};
+
 CitySelect.propTypes = {
   handleChange: PropTypes.func.isRequired,
   name: PropTypes.string.isRequired,
@@ -191,3 +162,4 @@ CitySelect.defaultProps = {
   isMulti: false,
   value: null
 };
+export default CitySelect;

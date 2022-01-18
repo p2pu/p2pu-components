@@ -1,5 +1,7 @@
 import React from 'react'
 
+import {t} from 'ttag';
+
 import SwitchWithLabels from '../InputFields/SwitchWithLabels'
 import { COURSES_SORT_OPTIONS } from '../utils/constants'
 
@@ -13,30 +15,26 @@ const OrderCoursesForm = (props) => {
   }
 
   return(
-    <div>
-      {
-        COURSES_SORT_OPTIONS.map((option) => {
-          const sortBy = props.order ? props.order : "title";
-          const checked = sortBy == option.value;
-
-          return(
-            <div key={`order-${option.value}`} className="radio-with-label label-right col-12">
-              <label>
-                <input
-                  type="radio"
-                  name="language"
-                  value={option.value}
-                  checked={checked}
-                  onChange={handleChange}
-                  style={{ marginRight: "1rem" }}
-                />
-                { option.label }
-              </label>
-            </div>
-          )
-        })
-      }
-    </div>
+    <form className="filter">
+      <label htmlFor="order-input" className="form-label">{t`Order By`}</label>
+      <div className="input-group">
+        <select 
+          className="form-select form-control"
+          aria-label="Default select example"
+          placeholder="Order by popularity, rating, etc."
+          onChange={handleChange}
+          value={props.order}
+        >
+          { 
+            COURSES_SORT_OPTIONS.map( option => 
+              <option 
+                value={option.value}
+              >{option.label}</option> 
+            )          
+          }
+        </select>
+      </div>
+    </form>
   )
 }
 

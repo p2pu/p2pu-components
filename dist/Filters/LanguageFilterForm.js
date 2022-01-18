@@ -1,4 +1,4 @@
-import _taggedTemplateLiteral from "@babel/runtime/helpers/taggedTemplateLiteral";
+import _toConsumableArray from "@babel/runtime/helpers/toConsumableArray";
 import _classCallCheck from "@babel/runtime/helpers/classCallCheck";
 import _createClass from "@babel/runtime/helpers/createClass";
 import _assertThisInitialized from "@babel/runtime/helpers/assertThisInitialized";
@@ -7,34 +7,15 @@ import _possibleConstructorReturn from "@babel/runtime/helpers/possibleConstruct
 import _getPrototypeOf from "@babel/runtime/helpers/getPrototypeOf";
 import _defineProperty from "@babel/runtime/helpers/defineProperty";
 
-function _templateObject2() {
-  var data = _taggedTemplateLiteral(["Select as many languages as you want"]);
-
-  _templateObject2 = function _templateObject2() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject() {
-  var data = _taggedTemplateLiteral(["What languages are you interested in?"]);
-
-  _templateObject = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
 
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
 
 import React, { Component } from 'react';
 import { t } from 'ttag';
 import ApiHelper from '../utils/apiHelper';
 import SelectWithLabel from '../InputFields/SelectWithLabel';
+import Select from 'react-select';
 
 var LanguageFilterForm = /*#__PURE__*/function (_Component) {
   _inherits(LanguageFilterForm, _Component);
@@ -68,7 +49,19 @@ var LanguageFilterForm = /*#__PURE__*/function (_Component) {
     });
 
     _defineProperty(_assertThisInitialized(_this), "handleSelect", function (selected) {
-      _this.props.updateQueryParams(selected);
+      if (selected) {
+        _this.props.updateQueryParams({
+          languages: [].concat(_toConsumableArray(_this.props.languages), [selected.value])
+        });
+      }
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "removeLanguage", function (lang) {
+      _this.props.updateQueryParams({
+        languages: _this.props.languages.filter(function (l) {
+          return l != lang;
+        })
+      });
     });
 
     _defineProperty(_assertThisInitialized(_this), "mapArrayToSelectOptions", function (array) {
@@ -94,19 +87,51 @@ var LanguageFilterForm = /*#__PURE__*/function (_Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this2 = this;
+
       console.log('this.props.languages', this.props.languages);
-      return /*#__PURE__*/React.createElement("div", {
-        className: "col-sm-12"
-      }, /*#__PURE__*/React.createElement(SelectWithLabel, {
+      var options = this.state.options.filter(function (option) {
+        return _this2.props.languages.indexOf(option.value) == -1;
+      });
+
+      var langName = function langName(lang) {
+        var langs = _this2.state.options.filter(function (o) {
+          return o.value === lang;
+        });
+
+        console.log(langs);
+
+        if (langs.length) {
+          return langs[0].label;
+        }
+
+        return lang;
+      };
+
+      return /*#__PURE__*/React.createElement("form", {
+        "class": "search"
+      }, /*#__PURE__*/React.createElement("label", {
+        "for": "search-input",
+        "class": "form-label"
+      }, "Languages"), /*#__PURE__*/React.createElement(Select, {
         name: 'languages',
-        label: t(_templateObject()),
         classes: "no-flex",
-        options: this.state.options,
-        isMulti: true,
+        options: options,
+        isMulti: false,
         value: this.props.languages,
-        handleChange: this.handleSelect,
-        helpText: t(_templateObject2())
-      }));
+        onChange: this.handleSelect
+      }), /*#__PURE__*/React.createElement("div", {
+        "class": "badges selected pt-4"
+      }, this.props.languages.map(function (lang) {
+        return /*#__PURE__*/React.createElement("span", {
+          "class": "badge topic-selected topic"
+        }, /*#__PURE__*/React.createElement("span", {
+          "class": "material-icons dismiss",
+          onClick: function onClick() {
+            return _this2.removeLanguage(lang);
+          }
+        }, "close"), langName(lang));
+      })));
     }
   }]);
 

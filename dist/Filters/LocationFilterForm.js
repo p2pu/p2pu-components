@@ -7,133 +7,15 @@ import _possibleConstructorReturn from "@babel/runtime/helpers/possibleConstruct
 import _getPrototypeOf from "@babel/runtime/helpers/getPrototypeOf";
 import _defineProperty from "@babel/runtime/helpers/defineProperty";
 
-function _templateObject12() {
-  var data = _taggedTemplateLiteral(["No results for this city"]);
+var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8, _templateObject9, _templateObject10, _templateObject11, _templateObject12;
 
-  _templateObject12 = function _templateObject12() {
-    return data;
-  };
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 
-  return data;
-}
-
-function _templateObject11() {
-  var data = _taggedTemplateLiteral(["Start typing a city name"]);
-
-  _templateObject11 = function _templateObject11() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject10() {
-  var data = _taggedTemplateLiteral(["Select a location"]);
-
-  _templateObject10 = function _templateObject10() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject9() {
-  var data = _taggedTemplateLiteral(["or"]);
-
-  _templateObject9 = function _templateObject9() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject8() {
-  var data = _taggedTemplateLiteral(["Within ", " ", ""]);
-
-  _templateObject8 = function _templateObject8() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject7() {
-  var data = _taggedTemplateLiteral(["km"]);
-
-  _templateObject7 = function _templateObject7() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject6() {
-  var data = _taggedTemplateLiteral(["miles"]);
-
-  _templateObject6 = function _templateObject6() {
-    return data;
-  };
-
-  return data;
-}
-
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _templateObject5() {
-  var data = _taggedTemplateLiteral(["Using your current location"]);
-
-  _templateObject5 = function _templateObject5() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject4() {
-  var data = _taggedTemplateLiteral(["Detecting your location..."]);
-
-  _templateObject4 = function _templateObject4() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject3() {
-  var data = _taggedTemplateLiteral(["Use my current location"]);
-
-  _templateObject3 = function _templateObject3() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject2() {
-  var data = _taggedTemplateLiteral(["Geolocation is not supported by this browser."]);
-
-  _templateObject2 = function _templateObject2() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject() {
-  var data = _taggedTemplateLiteral(["Unable to detect location."]);
-
-  _templateObject = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
 
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
 
 import React, { Component } from 'react';
 import axios from 'axios';
@@ -190,7 +72,7 @@ var LocationFilterForm = /*#__PURE__*/function (_Component) {
 
       var error = function error() {
         _this.setState({
-          error: t(_templateObject())
+          error: t(_templateObject || (_templateObject = _taggedTemplateLiteral(["Unable to detect location."])))
         });
       };
 
@@ -203,7 +85,7 @@ var LocationFilterForm = /*#__PURE__*/function (_Component) {
         navigator.geolocation.getCurrentPosition(success, error, options);
       } else {
         _this.setState({
-          error: t(_templateObject2())
+          error: t(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["Geolocation is not supported by this browser."])))
         });
       }
     });
@@ -221,14 +103,14 @@ var LocationFilterForm = /*#__PURE__*/function (_Component) {
     });
 
     _defineProperty(_assertThisInitialized(_this), "generateLocationLabel", function () {
-      var label = t(_templateObject3());
+      var label = t(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["Use my current location"])));
 
       if (_this.state.error) {
         label = _this.state.error;
       } else if (_this.state.gettingLocation) {
-        label = t(_templateObject4());
+        label = t(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["Detecting your location..."])));
       } else if (!_this.state.gettingLocation && _this.props.latitude && _this.props.longitude) {
-        label = t(_templateObject5());
+        label = t(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["Using your current location"])));
       }
 
       return label;
@@ -263,11 +145,11 @@ var LocationFilterForm = /*#__PURE__*/function (_Component) {
     });
 
     _defineProperty(_assertThisInitialized(_this), "generateDistanceSliderLabel", function () {
-      var unit = _this.props.useMiles ? t(_templateObject6()) : t(_templateObject7());
+      var unit = _this.props.useMiles ? t(_templateObject6 || (_templateObject6 = _taggedTemplateLiteral(["miles"]))) : t(_templateObject7 || (_templateObject7 = _taggedTemplateLiteral(["km"])));
 
       var value = _this.generateDistanceValue();
 
-      return t(_templateObject8(), value, unit);
+      return t(_templateObject8 || (_templateObject8 = _taggedTemplateLiteral(["Within ", " ", ""])), value, unit);
     });
 
     _defineProperty(_assertThisInitialized(_this), "generateDistanceValue", function () {
@@ -297,7 +179,10 @@ var LocationFilterForm = /*#__PURE__*/function (_Component) {
     value: function render() {
       var distanceSliderLabel = this.generateDistanceSliderLabel();
       var distanceValue = this.generateDistanceValue();
-      return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(CheckboxWithLabel, {
+      return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("label", {
+        "for": "search-input",
+        "class": "form-label"
+      }, "Location"), /*#__PURE__*/React.createElement(CheckboxWithLabel, {
         classes: "col-sm-12",
         name: "geolocation",
         label: this.generateLocationLabel(),
@@ -319,14 +204,14 @@ var LocationFilterForm = /*#__PURE__*/function (_Component) {
         className: "divider-line"
       }), /*#__PURE__*/React.createElement("div", {
         className: "divider-text"
-      }, t(_templateObject9()))), /*#__PURE__*/React.createElement(CitySelect, {
-        label: t(_templateObject10()),
-        classes: "city-select col-sm-12",
+      }, t(_templateObject9 || (_templateObject9 = _taggedTemplateLiteral(["or"]))))), /*#__PURE__*/React.createElement(CitySelect, {
+        label: t(_templateObject10 || (_templateObject10 = _taggedTemplateLiteral(["Select a location"]))),
+        classes: "city-select col-sm-12 search-input",
         name: "city",
         value: this.props.city,
         handleChange: this.handleCitySelect,
-        placeholder: t(_templateObject11()),
-        noResultsText: t(_templateObject12()),
+        placeholder: t(_templateObject11 || (_templateObject11 = _taggedTemplateLiteral(["Start typing a city name"]))),
+        noResultsText: t(_templateObject12 || (_templateObject12 = _taggedTemplateLiteral(["No results for this city"]))),
         isMulti: false
       }));
     }

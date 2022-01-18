@@ -5,29 +5,15 @@ import _inherits from "@babel/runtime/helpers/inherits";
 import _possibleConstructorReturn from "@babel/runtime/helpers/possibleConstructorReturn";
 import _getPrototypeOf from "@babel/runtime/helpers/getPrototypeOf";
 
-function _templateObject() {
-  var data = _taggedTemplateLiteral(["Use this course"]);
-
-  _templateObject = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
+var _templateObject;
 
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
 
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
 
 import React from 'react';
-import Masonry from 'react-masonry-css';
 import CourseCard from './CourseCard';
 import { t } from 'ttag';
-var defaultBreakpoints = {
-  "default": 3,
-  992: 2,
-  768: 1
-};
 
 var BrowseCourses = /*#__PURE__*/function (_React$Component) {
   _inherits(BrowseCourses, _React$Component);
@@ -49,11 +35,10 @@ var BrowseCourses = /*#__PURE__*/function (_React$Component) {
           results = _this$props.results,
           updateQueryParams = _this$props.updateQueryParams,
           onSelectResult = _this$props.onSelectResult,
-          columnBreakpoints = _this$props.columnBreakpoints;
-      return /*#__PURE__*/React.createElement(Masonry, {
-        breakpointCols: columnBreakpoints || defaultBreakpoints,
-        className: "masonry-grid search-results row grid",
-        columnClassName: "masonry-grid_column"
+          columnBreakpoints = _this$props.columnBreakpoints,
+          isLoading = _this$props.isLoading;
+      return /*#__PURE__*/React.createElement("div", {
+        className: "search-results row grid"
       }, results.map(function (course, index) {
         return /*#__PURE__*/React.createElement(CourseCard, {
           key: "course-card-".concat(index),
@@ -63,8 +48,8 @@ var BrowseCourses = /*#__PURE__*/function (_React$Component) {
           courseLink: _this.props.courseLink,
           moreInfo: _this.props.moreInfo,
           onSelectResult: onSelectResult,
-          buttonText: t(_templateObject()),
-          classes: "col-12 mb-4"
+          buttonText: t(_templateObject || (_templateObject = _taggedTemplateLiteral(["Use this course"]))),
+          classes: "col-md-4 mb-4"
         });
       }));
     }

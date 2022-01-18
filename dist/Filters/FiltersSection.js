@@ -1,24 +1,16 @@
-import _extends from "@babel/runtime/helpers/extends";
 import _taggedTemplateLiteral from "@babel/runtime/helpers/taggedTemplateLiteral";
+import _extends from "@babel/runtime/helpers/extends";
 import _classCallCheck from "@babel/runtime/helpers/classCallCheck";
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inherits from "@babel/runtime/helpers/inherits";
 import _possibleConstructorReturn from "@babel/runtime/helpers/possibleConstructorReturn";
 import _getPrototypeOf from "@babel/runtime/helpers/getPrototypeOf";
 
-function _templateObject() {
-  var data = _taggedTemplateLiteral(["Filter"]);
-
-  _templateObject = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
+var _templateObject;
 
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
 
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
 
 import React, { Component } from 'react';
 import { t } from 'ttag';
@@ -59,11 +51,20 @@ var FilterSection = /*#__PURE__*/function (_Component) {
     value: function render() {
       var _this2 = this;
 
+      if (this.props.filterCollection.length == 1) {
+        return /*#__PURE__*/React.createElement("div", {
+          className: "filter-section"
+        }, /*#__PURE__*/React.createElement(FilterForm, _extends({
+          activeFilter: this.props.filterCollection[0],
+          updateActiveFilter: function updateActiveFilter() {}
+        }, this.props)));
+      }
+
       return /*#__PURE__*/React.createElement("div", {
         className: "filter-section"
       }, /*#__PURE__*/React.createElement("div", {
         className: "label"
-      }, t(_templateObject())), /*#__PURE__*/React.createElement("div", {
+      }, t(_templateObject || (_templateObject = _taggedTemplateLiteral(["Filter"])))), /*#__PURE__*/React.createElement("div", {
         className: "filters-bar"
       }, this.props.filterCollection.map(function (filter, index) {
         var isActive = _this2.state.activeFilter === filter;

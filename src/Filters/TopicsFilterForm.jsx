@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import ApiHelper from '../utils/apiHelper'
 import { t } from 'ttag'
-import SelectWithLabel from '../InputFields/SelectWithLabel'
+import Select from 'react-select'
 
 export default class TopicsFilterForm extends Component {
   constructor(props) {
@@ -26,8 +26,15 @@ export default class TopicsFilterForm extends Component {
     api.fetchResource({ params, callback })
   }
 
-  handleSelect = (selected) => {
-    this.props.updateQueryParams(selected)
+  onChange = (selected) => {
+    let {topics = []} = this.props;
+    if (selected) {
+      this.props.updateQueryParams({topics: [...topics, selected.value]});
+    }
+  }
+
+  removeTopic = (topic) => {
+    this.props.updateQueryParams({topics: this.props.topics.filter(t => t != topic)});
   }
 
   mapArrayToSelectOptions = (array) => {
@@ -35,19 +42,30 @@ export default class TopicsFilterForm extends Component {
   }
 
   render() {
+    let {topics = []} = this.props;
+    let options = this.state.options.filter( option => topics.indexOf(option.value) == -1);
     return(
-      <div className="col-sm-12">
-        <SelectWithLabel
-          name={'topics'}
-          label={t`What topics are you interested in?`}
-          classes='no-flex'
-          options={this.state.options}
-          isMulti={true}
-          value={this.props.topics}
-          handleChange={this.handleSelect}
-          helpText={t`Select as many topics as you want`}
-        />
-      </div>
+      <>
+        <form class="search">
+          <label for="search-input" class="form-label">Topics</label>
+          <Select
+            name={'topics'}
+            options={options}
+            isMulti={false}
+            value={topics}
+            onChange={this.onChange}
+          />
+          <div class="badges selected pt-4">
+            { 
+              this.props.topics && topics.map(topic => 
+                <span class="badge topic-selected topic">
+                  <span class="material-icons dismiss" onClick={e => this.removeTopic(topic)}>close</span>{topic}</span>
+              )
+            }
+          </div>
+        </form>
+
+      </>
     )
   }
 }

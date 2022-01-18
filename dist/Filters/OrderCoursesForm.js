@@ -1,4 +1,9 @@
+import _taggedTemplateLiteral from "@babel/runtime/helpers/taggedTemplateLiteral";
+
+var _templateObject;
+
 import React from 'react';
+import { t } from 'ttag';
 import SwitchWithLabels from '../InputFields/SwitchWithLabels';
 import { COURSES_SORT_OPTIONS } from '../utils/constants';
 
@@ -11,23 +16,24 @@ var OrderCoursesForm = function OrderCoursesForm(props) {
     props.closeFilter();
   };
 
-  return /*#__PURE__*/React.createElement("div", null, COURSES_SORT_OPTIONS.map(function (option) {
-    var sortBy = props.order ? props.order : "title";
-    var checked = sortBy == option.value;
-    return /*#__PURE__*/React.createElement("div", {
-      key: "order-".concat(option.value),
-      className: "radio-with-label label-right col-12"
-    }, /*#__PURE__*/React.createElement("label", null, /*#__PURE__*/React.createElement("input", {
-      type: "radio",
-      name: "language",
-      value: option.value,
-      checked: checked,
-      onChange: handleChange,
-      style: {
-        marginRight: "1rem"
-      }
-    }), option.label));
-  }));
+  return /*#__PURE__*/React.createElement("form", {
+    className: "filter"
+  }, /*#__PURE__*/React.createElement("label", {
+    htmlFor: "order-input",
+    className: "form-label"
+  }, t(_templateObject || (_templateObject = _taggedTemplateLiteral(["Order By"])))), /*#__PURE__*/React.createElement("div", {
+    className: "input-group"
+  }, /*#__PURE__*/React.createElement("select", {
+    className: "form-select form-control",
+    "aria-label": "Default select example",
+    placeholder: "Order by popularity, rating, etc.",
+    onChange: handleChange,
+    value: props.order
+  }, COURSES_SORT_OPTIONS.map(function (option) {
+    return /*#__PURE__*/React.createElement("option", {
+      value: option.value
+    }, option.label);
+  }))));
 };
 
 export default OrderCoursesForm;

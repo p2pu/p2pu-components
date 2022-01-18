@@ -8,19 +8,11 @@ import _possibleConstructorReturn from "@babel/runtime/helpers/possibleConstruct
 import _getPrototypeOf from "@babel/runtime/helpers/getPrototypeOf";
 import _defineProperty from "@babel/runtime/helpers/defineProperty";
 
-function _templateObject() {
-  var data = _taggedTemplateLiteral(["Sort by"]);
-
-  _templateObject = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
+var _templateObject;
 
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
 
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
 
 import React, { Component } from 'react';
 import FilterButton from './FilterButton';
@@ -77,7 +69,7 @@ var FilterSection = /*#__PURE__*/function (_Component) {
         className: "filter-section"
       }, /*#__PURE__*/React.createElement("div", {
         className: "label"
-      }, t(_templateObject())), /*#__PURE__*/React.createElement("div", {
+      }, t(_templateObject || (_templateObject = _taggedTemplateLiteral(["Sort by"])))), /*#__PURE__*/React.createElement("div", {
         className: "filters-bar"
       }, this.props.sortCollection.map(function (filter, index) {
         var isActive = _this2.state.activeFilter === filter;

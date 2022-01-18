@@ -1,5 +1,7 @@
 import _extends from "@babel/runtime/helpers/extends";
 import _objectWithoutProperties from "@babel/runtime/helpers/objectWithoutProperties";
+import _typeof from "@babel/runtime/helpers/typeof";
+import _toConsumableArray from "@babel/runtime/helpers/toConsumableArray";
 import _classCallCheck from "@babel/runtime/helpers/classCallCheck";
 import _createClass from "@babel/runtime/helpers/createClass";
 import _assertThisInitialized from "@babel/runtime/helpers/assertThisInitialized";
@@ -7,7 +9,7 @@ import _inherits from "@babel/runtime/helpers/inherits";
 import _possibleConstructorReturn from "@babel/runtime/helpers/possibleConstructorReturn";
 import _getPrototypeOf from "@babel/runtime/helpers/getPrototypeOf";
 import _defineProperty from "@babel/runtime/helpers/defineProperty";
-var _excluded = ["label", "name", "id", "value", "required", "disabled", "errorMessage", "helpText", "classes", "selectClasses", "isClearable", "isMulti"];
+var _excluded = ["label", "name", "id", "value", "disabled", "required", "errorMessage", "helpText", "classes", "selectClasses", "handleInputChange", "noResultsText", "placeholder", "isClearable", "isMulti"];
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 
@@ -19,60 +21,94 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import axios from 'axios';
 import Select from 'react-select';
-import timezones from './timezone-names.js';
+import jsonp from 'jsonp';
 import InputWrapper from '../InputWrapper';
-var GEONAMES_ENDPOINT = 'https://secure.geonames.org/timezoneJSON';
 
-var TimeZoneSelect = /*#__PURE__*/function (_Component) {
-  _inherits(TimeZoneSelect, _Component);
+var CitySelect = /*#__PURE__*/function (_Component) {
+  _inherits(CitySelect, _Component);
 
-  var _super = _createSuper(TimeZoneSelect);
+  var _super = _createSuper(CitySelect);
 
-  function TimeZoneSelect(props) {
+  function CitySelect(props) {
     var _this;
 
-    _classCallCheck(this, TimeZoneSelect);
+    _classCallCheck(this, CitySelect);
 
     _this = _super.call(this, props);
 
     _defineProperty(_assertThisInitialized(_this), "onChange", function (selected) {
-      var timezone = !!selected ? selected.value : null;
+      var query = selected ? selected.label : selected;
 
-      _this.props.handleChange(_defineProperty({}, _this.props.name, timezone));
+      _this.props.handleChange(_defineProperty({}, _this.props.name, query));
     });
 
-    _defineProperty(_assertThisInitialized(_this), "detectTimeZone", function () {
-      if (!_this.props.value) {
-        if (!!_this.props.latitude && !!_this.props.longitude) {
-          // use selected city to detect timezone
-          var url = "".concat(GEONAMES_ENDPOINT, "?lat=").concat(_this.props.latitude, "&lng=").concat(_this.props.longitude, "&username=p2pu");
-          axios.get(url).then(function (res) {
-            var timezone = res.data.timezoneId;
-
-            _this.props.handleChange(_defineProperty({}, _this.props.name, timezone));
-          })["catch"](function (err) {
-            return console.log(err);
-          });
+    _defineProperty(_assertThisInitialized(_this), "populateCities", function () {
+      var url = 'https://learningcircles.p2pu.org/api/learningcircles/cities';
+      jsonp(url, null, function (err, res) {
+        if (err) {
+          console.log(err);
         } else {
-          // detect timezone from browser
-          var timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-
-          _this.props.handleChange(_defineProperty({}, _this.props.name, timezone));
+          if (res.items) {
+            _this.filterCitiesFromResults(res.items);
+          } else {
+            console.log(res);
+          }
         }
-      }
+      });
     });
+
+    _defineProperty(_assertThisInitialized(_this), "filterCitiesFromResults", function (cities) {
+      cities = cities.filter(function (city) {
+        return city;
+      });
+
+      var uniqBy = function uniqBy(arr, fn) {
+        return _toConsumableArray(new Map(arr.map(function (x) {
+          return [typeof fn === 'function' ? fn(x) : x[fn], x];
+        })).values());
+      };
+
+      cities = uniqBy(cities, function (el) {
+        return el.value;
+      });
+
+      _this.setState({
+        cities: cities
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "getSelected", function (value) {
+      var isMulti = _this.props.isMulti;
+      var cities = _this.state.cities;
+
+      if (!value) {
+        return null;
+      }
+
+      if (isMulti && _typeof(value === 'object')) {
+        return value.map(function (v) {
+          return cities.find(function (city) {
+            return city.label === v;
+          });
+        });
+      }
+
+      return cities.find(function (city) {
+        return city.label === value;
+      });
+    });
+
+    _this.state = {
+      cities: []
+    };
+
+    _this.populateCities();
 
     return _this;
   }
 
-  _createClass(TimeZoneSelect, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      this.detectTimeZone();
-    }
-  }, {
+  _createClass(CitySelect, [{
     key: "render",
     value: function render() {
       var _this$props = this.props,
@@ -80,25 +116,21 @@ var TimeZoneSelect = /*#__PURE__*/function (_Component) {
           name = _this$props.name,
           id = _this$props.id,
           value = _this$props.value,
-          required = _this$props.required,
           disabled = _this$props.disabled,
+          required = _this$props.required,
           errorMessage = _this$props.errorMessage,
           helpText = _this$props.helpText,
           classes = _this$props.classes,
           selectClasses = _this$props.selectClasses,
+          handleInputChange = _this$props.handleInputChange,
+          noResultsText = _this$props.noResultsText,
+          placeholder = _this$props.placeholder,
           isClearable = _this$props.isClearable,
           isMulti = _this$props.isMulti,
           rest = _objectWithoutProperties(_this$props, _excluded);
 
-      var timezoneOptions = timezones.map(function (tz) {
-        return {
-          value: tz,
-          label: tz
-        };
-      });
-      var selected = timezoneOptions.find(function (opt) {
-        return opt.value === value;
-      }) || null;
+      var cities = this.state.cities;
+      var selected = this.getSelected(value);
       return /*#__PURE__*/React.createElement(InputWrapper, {
         label: label,
         name: name,
@@ -110,15 +142,17 @@ var TimeZoneSelect = /*#__PURE__*/function (_Component) {
         classes: classes
       }, /*#__PURE__*/React.createElement(Select, _extends({
         name: name,
-        id: name,
-        className: "form-group input-with-label ".concat(selectClasses),
+        className: "city-select ".concat(selectClasses),
         value: selected,
+        options: cities,
         onChange: this.onChange,
-        options: timezoneOptions,
+        onInputChange: handleInputChange,
+        noResultsText: noResultsText,
+        placeholder: placeholder,
         isClearable: isClearable,
         isMulti: isMulti,
         isDisabled: disabled,
-        classNamePrefix: 'timezone-select',
+        classNamePrefix: 'city-select',
         theme: function theme(_theme) {
           return _objectSpread(_objectSpread({}, _theme), {}, {
             colors: _objectSpread(_objectSpread({}, _theme.colors), {}, {
@@ -133,28 +167,32 @@ var TimeZoneSelect = /*#__PURE__*/function (_Component) {
     }
   }]);
 
-  return TimeZoneSelect;
+  return CitySelect;
 }(Component);
 
-export { TimeZoneSelect as default };
-TimeZoneSelect.propTypes = {
+export { CitySelect as default };
+CitySelect.propTypes = {
   handleChange: PropTypes.func.isRequired,
   name: PropTypes.string.isRequired,
+  value: PropTypes.string,
+  handleInputChange: PropTypes.func,
   classes: PropTypes.string,
-  selectClasses: PropTypes.string,
-  timezone: PropTypes.string,
-  latitude: PropTypes.string,
-  longitude: PropTypes.string,
+  noResultsText: PropTypes.string,
+  placeholder: PropTypes.string,
+  helpText: PropTypes.string,
   errorMessage: PropTypes.string,
   isClearable: PropTypes.bool,
   isMulti: PropTypes.bool
 };
-TimeZoneSelect.defaultProps = {
+CitySelect.defaultProps = {
+  noResultsText: "No results for this city",
+  placeholder: "Start typing a city name...",
   classes: "",
-  selectClasses: "",
+  name: "select-city",
   handleChange: function handleChange(selected) {
     return console.log("Implement a function to save selection", selected);
   },
   isClearable: true,
-  isMulti: false
+  isMulti: false,
+  value: null
 };

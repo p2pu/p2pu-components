@@ -1,14 +1,6 @@
 import _taggedTemplateLiteral from "@babel/runtime/helpers/taggedTemplateLiteral";
 
-function _templateObject() {
-  var data = _taggedTemplateLiteral(["Search"]);
-
-  _templateObject = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
+var _templateObject;
 
 import React from 'react';
 import { t } from 'ttag';
@@ -19,9 +11,10 @@ var SearchBar = function SearchBar(_ref) {
       q = _ref.q;
 
   var onChange = function onChange(e) {
-    var value = e.currentTarget.value.trim();
+    var value = e.currentTarget.value;
+    var query = value.replace(/^\s+/g, '');
     updateQueryParams({
-      q: value
+      q: query
     });
   };
 
@@ -30,24 +23,28 @@ var SearchBar = function SearchBar(_ref) {
   };
 
   return /*#__PURE__*/React.createElement("form", {
-    className: "search-bar",
+    className: "search",
     onSubmit: onSubmit
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "label"
-  }, t(_templateObject())), /*#__PURE__*/React.createElement("div", {
-    className: "input"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "wrapper"
-  }, /*#__PURE__*/React.createElement("i", {
-    className: "material-icons"
-  }, "search"), /*#__PURE__*/React.createElement("input", {
+  }, /*#__PURE__*/React.createElement("label", {
+    htmlFor: "search-input",
+    className: "form-label"
+  }, t(_templateObject || (_templateObject = _taggedTemplateLiteral(["Search"])))), /*#__PURE__*/React.createElement("div", {
+    className: "input-group"
+  }, /*#__PURE__*/React.createElement("input", {
     id: "search-input",
     type: "search",
-    className: "search-input",
+    className: "form-control search-input",
     placeholder: placeholder,
     onChange: onChange,
-    value: q || ''
-  }))));
+    value: q || '',
+    "aria-label": "search terms",
+    "aria-describedby": "search-icon"
+  }), /*#__PURE__*/React.createElement("span", {
+    className: "input-group-text",
+    id: "search-icon"
+  }, /*#__PURE__*/React.createElement("i", {
+    className: "material-icons"
+  }, "search"))));
 };
 
 export default SearchBar;
