@@ -4,6 +4,8 @@ import SearchBar from '../Search/SearchBar'
 import OrderCoursesForm from '../Filters/OrderCoursesForm'
 import TopicsFilterForm from '../Filters/TopicsFilterForm'
 import LanguageFilterForm from '../Filters/LanguageFilterForm'
+import OerFilterForm from '../Filters/OerFilterForm'
+import FacilitatorGuideFilterForm from '../Filters/FacilitatorGuideFilterForm'
 
 const SearchAndFilter = (props) => {
   return (
@@ -28,6 +30,9 @@ const SearchAndFilter = (props) => {
               updateQueryParams={props.updateQueryParams}
               q={props.q}
             />
+          </div>
+
+          <div class="col-12">
             <OrderCoursesForm {...props} />
           </div>
 
@@ -40,25 +45,11 @@ const SearchAndFilter = (props) => {
           </div>
 
           <div class="col-12">
+            <FacilitatorGuideFilterForm {...props} />
+          </div>
 
-            <form class="search">
-              <label for="search-input" class="form-label">Facilitator guides</label>
-              <div class="input-group">
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="online"/>
-                  <label class="form-check-label" for="online">Courses with facilitator guides</label>
-                </div>
-              </div>
-            </form>
-            <form class="search">
-              <label for="search-input" class="form-label">OER mode</label>
-              <div class="input-group">
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="online"/>
-                  <label class="form-check-label" for="online">Only show open educational resources (OER)</label>
-                </div>
-              </div>
-            </form>
+          <div class="col-12">
+            <OerFilterForm {...props} />
           </div>
         </div>
       </div>

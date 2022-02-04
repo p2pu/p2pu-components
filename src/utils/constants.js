@@ -50,7 +50,7 @@ export const API_ENDPOINTS = {
   },
   courses: {
     baseUrl: `/api/courses/?`,
-    searchParams: ['q', 'topics', 'order', 'limit', 'offset', 'languages', 'oer'],
+    searchParams: ['q', 'topics', 'order', 'limit', 'offset', 'languages', 'oer', 'facilitator_guide'],
     arrayItems: ['topics', 'languages'],
     privateParams: ['limit', 'offset'],
   },
