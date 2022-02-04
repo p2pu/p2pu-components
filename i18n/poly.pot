@@ -167,28 +167,6 @@ msgstr ""
 msgid "There are no learning circles available right now."
 msgstr ""
 
-#: src/Filters/LocationFilterForm.jsx:96
-#: src/Search/SearchTags.jsx:111
-#, javascript-format
-msgid "Within ${ value } ${ unit }"
-msgstr ""
-
-#: src/Search/SearchTags.jsx:180
-#, javascript-format
-msgid "Showing ${ props.searchResults.length } of ${ props.totalResults } result"
-msgid_plural "Showing ${ props.searchResults.length } of ${ props.totalResults } results"
-msgstr[0] ""
-msgstr[1] ""
-
-#: src/Search/SearchTags.jsx:218
-msgid "reset the search form"
-msgstr ""
-
-#: src/Search/SearchTags.jsx:227
-#, javascript-format
-msgid "To see more results, either remove some filters or ${ resetButton }"
-msgstr ""
-
 #: src/LearningCircles/LearningCircleCard.jsx:38
 #, javascript-format
 msgid ""
@@ -197,13 +175,13 @@ msgid ""
 msgstr ""
 
 #: src/LearningCircles/LearningCircleCard.jsx:38
+#, javascript-format
 msgid ""
 "${ formattedStartTime } to ${ formattedEndTime } (${ "
 "learningCircle.time_zone })"
 msgstr ""
 
 #: src/LearningCircles/LearningCircleCard.jsx:39
-#, javascript-format
 msgid "${ learningCircle.weeks } weeks starting ${ formattedStartDate }"
 msgstr ""
 
@@ -236,6 +214,29 @@ msgstr ""
 
 #: src/LearningCircles/LearningCircleCard.jsx:108
 msgid "View details"
+msgstr ""
+
+#: src/Filters/LocationFilterForm.jsx:96
+#: src/LearningCircles/LocationFilter.jsx:97
+#: src/Search/SearchTags.jsx:111
+#, javascript-format
+msgid "Within ${ value } ${ unit }"
+msgstr ""
+
+#: src/Search/SearchTags.jsx:180
+#, javascript-format
+msgid "Showing ${ props.searchResults.length } of ${ props.totalResults } result"
+msgid_plural "Showing ${ props.searchResults.length } of ${ props.totalResults } results"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/Search/SearchTags.jsx:218
+msgid "reset the search form"
+msgstr ""
+
+#: src/Search/SearchTags.jsx:227
+#, javascript-format
+msgid "To see more results, either remove some filters or ${ resetButton }"
 msgstr ""
 
 #: src/Search/SearchBar.jsx:17
@@ -303,8 +304,73 @@ msgstr ""
 msgid "Filter"
 msgstr ""
 
+#: src/Filters/FacilitatorGuideFilterForm.jsx:8
+#: src/Filters/OerFilterForm.jsx:8
+msgid "Only open educational resources (OER)"
+msgstr ""
+
+#: src/Filters/FacilitatorGuideFilterForm.jsx:9
+#: src/Filters/OerFilterForm.jsx:9
+msgid "All courses"
+msgstr ""
+
 #: src/Filters/OrderCoursesForm.jsx:19
 msgid "Order By"
+msgstr ""
+
+#: src/Filters/LocationFilterForm.jsx:40
+#: src/LearningCircles/LocationFilter.jsx:40
+msgid "Unable to detect location."
+msgstr ""
+
+#: src/Filters/LocationFilterForm.jsx:51
+#: src/LearningCircles/LocationFilter.jsx:51
+msgid "Geolocation is not supported by this browser."
+msgstr ""
+
+#: src/Filters/LocationFilterForm.jsx:67
+#: src/LearningCircles/LocationFilter.jsx:67
+msgid "Use my current location"
+msgstr ""
+
+#: src/Filters/LocationFilterForm.jsx:72
+#: src/LearningCircles/LocationFilter.jsx:72
+msgid "Detecting your location..."
+msgstr ""
+
+#: src/Filters/LocationFilterForm.jsx:74
+#: src/LearningCircles/LocationFilter.jsx:74
+msgid "Using your current location"
+msgstr ""
+
+#: src/Filters/LocationFilterForm.jsx:94
+#: src/LearningCircles/LocationFilter.jsx:95
+msgid "miles"
+msgstr ""
+
+#: src/Filters/LocationFilterForm.jsx:94
+#: src/LearningCircles/LocationFilter.jsx:95
+msgid "km"
+msgstr ""
+
+#: src/Filters/LocationFilterForm.jsx:131
+#: src/LearningCircles/LocationFilter.jsx:186
+msgid "or"
+msgstr ""
+
+#: src/Filters/LocationFilterForm.jsx:134
+#: src/LearningCircles/LocationFilter.jsx:189
+msgid "Select a location"
+msgstr ""
+
+#: src/Filters/LocationFilterForm.jsx:139
+#: src/LearningCircles/LocationFilter.jsx:194
+msgid "Start typing a city name"
+msgstr ""
+
+#: src/Filters/LocationFilterForm.jsx:140
+#: src/LearningCircles/LocationFilter.jsx:195
+msgid "No results for this city"
 msgstr ""
 
 #: src/LearningCircleSignup/SignupSuccess.jsx:8
@@ -331,56 +397,4 @@ msgstr ""
 
 #: src/Filters/FilterButton.jsx:11
 msgid "OER mode"
-msgstr ""
-
-#: src/Filters/LocationFilterForm.jsx:40
-msgid "Unable to detect location."
-msgstr ""
-
-#: src/Filters/LocationFilterForm.jsx:51
-msgid "Geolocation is not supported by this browser."
-msgstr ""
-
-#: src/Filters/LocationFilterForm.jsx:67
-msgid "Use my current location"
-msgstr ""
-
-#: src/Filters/LocationFilterForm.jsx:72
-msgid "Detecting your location..."
-msgstr ""
-
-#: src/Filters/LocationFilterForm.jsx:74
-msgid "Using your current location"
-msgstr ""
-
-#: src/Filters/LocationFilterForm.jsx:94
-msgid "miles"
-msgstr ""
-
-#: src/Filters/LocationFilterForm.jsx:94
-msgid "km"
-msgstr ""
-
-#: src/Filters/LocationFilterForm.jsx:131
-msgid "or"
-msgstr ""
-
-#: src/Filters/LocationFilterForm.jsx:134
-msgid "Select a location"
-msgstr ""
-
-#: src/Filters/LocationFilterForm.jsx:139
-msgid "Start typing a city name"
-msgstr ""
-
-#: src/Filters/LocationFilterForm.jsx:140
-msgid "No results for this city"
-msgstr ""
-
-#: src/Filters/OerFilterForm.jsx:8
-msgid "Only open educational resources (OER)"
-msgstr ""
-
-#: src/Filters/OerFilterForm.jsx:9
-msgid "All courses"
 msgstr ""
