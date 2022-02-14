@@ -4,16 +4,15 @@ var _templateObject;
 
 import React from 'react';
 import { t } from 'ttag';
-import SwitchWithLabels from '../InputFields/SwitchWithLabels';
 import { COURSES_SORT_OPTIONS } from '../utils/constants';
+import Select from '../InputFields/Select';
 
 var OrderCoursesForm = function OrderCoursesForm(props) {
-  var handleChange = function handleChange(event) {
-    var order = event.target.value;
+  var handleChange = function handleChange(_ref) {
+    var order = _ref.order;
     props.updateQueryParams({
       order: order
     });
-    props.closeFilter();
   };
 
   return /*#__PURE__*/React.createElement("form", {
@@ -21,9 +20,15 @@ var OrderCoursesForm = function OrderCoursesForm(props) {
   }, /*#__PURE__*/React.createElement("label", {
     htmlFor: "order-input",
     className: "form-label"
-  }, t(_templateObject || (_templateObject = _taggedTemplateLiteral(["Order By"])))), /*#__PURE__*/React.createElement("div", {
-    className: "input-group"
-  }, /*#__PURE__*/React.createElement("select", {
+  }, t(_templateObject || (_templateObject = _taggedTemplateLiteral(["Order By"])))), /*#__PURE__*/React.createElement(Select, {
+    name: "order",
+    "aria-label": "Default select example",
+    placeholder: "Order by popularity, rating, etc.",
+    options: COURSES_SORT_OPTIONS,
+    value: props.order || COURSES_SORT_OPTIONS[0].value,
+    handleChange: handleChange
+  }));
+  return /*#__PURE__*/React.createElement("select", {
     className: "form-select form-control",
     "aria-label": "Default select example",
     placeholder: "Order by popularity, rating, etc.",
@@ -33,7 +38,7 @@ var OrderCoursesForm = function OrderCoursesForm(props) {
     return /*#__PURE__*/React.createElement("option", {
       value: option.value
     }, option.label);
-  }))));
+  }));
 };
 
 export default OrderCoursesForm;

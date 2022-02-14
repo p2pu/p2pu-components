@@ -6,7 +6,7 @@ import React from 'react';
 import { t } from 'ttag';
 import SwitchWithLabels from '../InputFields/SwitchWithLabels';
 
-var OerFilterForm = function OerFilterForm(props) {
+var FacilitatorGuideFilterForm = function FacilitatorGuideFilterForm(props) {
   var formValues = {
     "true": t(_templateObject || (_templateObject = _taggedTemplateLiteral(["Only open educational resources (OER)"]))),
     "false": t(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["All courses"])))
@@ -14,30 +14,30 @@ var OerFilterForm = function OerFilterForm(props) {
 
   var handleChange = function handleChange(event) {
     props.updateQueryParams({
-      oer: event.currentTarget.checked
+      facilitator_guide: event.currentTarget.checked
     });
   };
 
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("form", {
-    "class": "search"
+    className: "search"
   }, /*#__PURE__*/React.createElement("label", {
     "for": "search-input",
-    "class": "form-label"
-  }, "OER mode"), /*#__PURE__*/React.createElement("div", {
+    className: "form-label"
+  }, "Facilitator guides"), /*#__PURE__*/React.createElement("div", {
     className: "input-group"
   }, /*#__PURE__*/React.createElement("div", {
     className: "form-check"
   }, /*#__PURE__*/React.createElement("input", {
     className: "form-check-input",
-    name: "oer",
     type: "checkbox",
-    id: "online",
-    checked: Boolean(props.oer),
+    id: "facilitator_guide",
+    name: "facilitator_guide",
+    checked: Boolean(props.facilitator_guide),
     onChange: handleChange
   }), /*#__PURE__*/React.createElement("label", {
     className: "form-check-label",
-    "for": "oer"
-  }, "Only show open educational resources (OER)")))));
+    "for": "facilitator_guide"
+  }, "Courses with facilitator guides")))));
 };
 
-export default OerFilterForm;
+export default FacilitatorGuideFilterForm;

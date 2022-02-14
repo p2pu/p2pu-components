@@ -4,7 +4,6 @@ var _templateObject, _templateObject2, _templateObject3, _templateObject4, _temp
 
 import React, { Fragment } from 'react';
 import { t, jt, ngettext, msgid } from 'ttag';
-import { Card, CardTitle, CardBody } from '../Card';
 import { COLOR_CLASSES } from '../utils/constants';
 
 var CourseCard = function CourseCard(props) {

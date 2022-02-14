@@ -2,22 +2,32 @@ import React from 'react'
 
 import {t} from 'ttag';
 
-import SwitchWithLabels from '../InputFields/SwitchWithLabels'
 import { COURSES_SORT_OPTIONS } from '../utils/constants'
+import Select from '../InputFields/Select';
 
 
 const OrderCoursesForm = (props) => {
 
-  const handleChange = event => {
-    const order = event.target.value;
+  const handleChange = ({ order }) => {
     props.updateQueryParams({ order })
-    props.closeFilter()
   }
 
   return(
     <form className="filter">
       <label htmlFor="order-input" className="form-label">{t`Order By`}</label>
-      <div className="input-group">
+      <Select
+        name="order"
+        aria-label="Default select example"
+        placeholder="Order by popularity, rating, etc."
+        options={COURSES_SORT_OPTIONS}
+        value={props.order || COURSES_SORT_OPTIONS[0].value}
+        handleChange={handleChange}
+      >
+      </Select>
+    </form>
+  )
+
+  return (
         <select 
           className="form-select form-control"
           aria-label="Default select example"
@@ -33,9 +43,8 @@ const OrderCoursesForm = (props) => {
             )          
           }
         </select>
-      </div>
-    </form>
   )
+
 }
 
 export default OrderCoursesForm;

@@ -27,11 +27,11 @@ export default class SearchCourses extends Component {
           {...extraProps}
           {...this.props}
         />
+        </div>
+        <div className="col-12 col-lg-8 col-xl-9 ps-lg-3 ps-xl-4">
         <SearchTags
           {...this.props}
         />
-        </div>
-        <div className="col-12 col-lg-8 col-xl-9 ps-lg-3 ps-xl-4">
         <Browse
           {...this.props}
         />

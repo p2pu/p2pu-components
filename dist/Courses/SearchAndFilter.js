@@ -3,6 +3,8 @@ import SearchBar from '../Search/SearchBar';
 import OrderCoursesForm from '../Filters/OrderCoursesForm';
 import TopicsFilterForm from '../Filters/TopicsFilterForm';
 import LanguageFilterForm from '../Filters/LanguageFilterForm';
+import OerFilterForm from '../Filters/OerFilterForm';
+import FacilitatorGuideFilterForm from '../Filters/FacilitatorGuideFilterForm';
 
 var SearchAndFilter = function SearchAndFilter(props) {
   return /*#__PURE__*/React.createElement("nav", {
@@ -38,47 +40,17 @@ var SearchAndFilter = function SearchAndFilter(props) {
     placeholder: props.placeholder,
     updateQueryParams: props.updateQueryParams,
     q: props.q
-  }), /*#__PURE__*/React.createElement(OrderCoursesForm, props)), /*#__PURE__*/React.createElement("div", {
+  })), /*#__PURE__*/React.createElement("div", {
+    "class": "col-12"
+  }, /*#__PURE__*/React.createElement(OrderCoursesForm, props)), /*#__PURE__*/React.createElement("div", {
     "class": "col-12"
   }, /*#__PURE__*/React.createElement(TopicsFilterForm, props)), /*#__PURE__*/React.createElement("div", {
     "class": "col-12"
   }, /*#__PURE__*/React.createElement(LanguageFilterForm, props)), /*#__PURE__*/React.createElement("div", {
     "class": "col-12"
-  }, /*#__PURE__*/React.createElement("form", {
-    "class": "search"
-  }, /*#__PURE__*/React.createElement("label", {
-    "for": "search-input",
-    "class": "form-label"
-  }, "Facilitator guides"), /*#__PURE__*/React.createElement("div", {
-    "class": "input-group"
-  }, /*#__PURE__*/React.createElement("div", {
-    "class": "form-check"
-  }, /*#__PURE__*/React.createElement("input", {
-    "class": "form-check-input",
-    type: "checkbox",
-    value: "",
-    id: "online"
-  }), /*#__PURE__*/React.createElement("label", {
-    "class": "form-check-label",
-    "for": "online"
-  }, "Courses with facilitator guides")))), /*#__PURE__*/React.createElement("form", {
-    "class": "search"
-  }, /*#__PURE__*/React.createElement("label", {
-    "for": "search-input",
-    "class": "form-label"
-  }, "OER mode"), /*#__PURE__*/React.createElement("div", {
-    "class": "input-group"
-  }, /*#__PURE__*/React.createElement("div", {
-    "class": "form-check"
-  }, /*#__PURE__*/React.createElement("input", {
-    "class": "form-check-input",
-    type: "checkbox",
-    value: "",
-    id: "online"
-  }), /*#__PURE__*/React.createElement("label", {
-    "class": "form-check-label",
-    "for": "online"
-  }, "Only show open educational resources (OER)"))))))));
+  }, /*#__PURE__*/React.createElement(FacilitatorGuideFilterForm, props)), /*#__PURE__*/React.createElement("div", {
+    "class": "col-12"
+  }, /*#__PURE__*/React.createElement(OerFilterForm, props)))));
 };
 
 export default SearchAndFilter;

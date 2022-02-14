@@ -41,9 +41,9 @@ var SearchCourses = /*#__PURE__*/function (_Component) {
         className: "filter-sidebar sidebar sticky-top col-0 col-lg-4 col-xl-3"
       }, /*#__PURE__*/React.createElement(SearchAndFilter, _extends({
         placeholder: SEARCH_PROPS[this.props.searchSubject].placeholder
-      }, extraProps, this.props)), /*#__PURE__*/React.createElement(SearchTags, this.props)), /*#__PURE__*/React.createElement("div", {
+      }, extraProps, this.props))), /*#__PURE__*/React.createElement("div", {
         className: "col-12 col-lg-8 col-xl-9 ps-lg-3 ps-xl-4"
-      }, /*#__PURE__*/React.createElement(Browse, this.props), this.props.isLoading && /*#__PURE__*/React.createElement("div", {
+      }, /*#__PURE__*/React.createElement(SearchTags, this.props), /*#__PURE__*/React.createElement(Browse, this.props), this.props.isLoading && /*#__PURE__*/React.createElement("div", {
         className: "loader"
       })));
     }

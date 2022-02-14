@@ -7,6 +7,10 @@ import _possibleConstructorReturn from "@babel/runtime/helpers/possibleConstruct
 import _getPrototypeOf from "@babel/runtime/helpers/getPrototypeOf";
 import _defineProperty from "@babel/runtime/helpers/defineProperty";
 
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
 
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
@@ -98,6 +102,13 @@ var TopicsFilterForm = /*#__PURE__*/function (_Component) {
       var options = this.state.options.filter(function (option) {
         return topics.indexOf(option.value) == -1;
       });
+      var customStyles = {
+        indicatorSeparator: function indicatorSeparator(provided, state) {
+          return _objectSpread(_objectSpread({}, provided), {}, {
+            display: 'none'
+          });
+        }
+      };
       return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("form", {
         "class": "search"
       }, /*#__PURE__*/React.createElement("label", {
@@ -107,8 +118,9 @@ var TopicsFilterForm = /*#__PURE__*/function (_Component) {
         name: 'topics',
         options: options,
         isMulti: false,
-        value: topics,
-        onChange: this.onChange
+        value: null,
+        onChange: this.onChange,
+        styles: customStyles
       }), /*#__PURE__*/React.createElement("div", {
         "class": "badges selected pt-4"
       }, this.props.topics && topics.map(function (topic) {

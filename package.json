@@ -67,7 +67,7 @@
     "jsonp": "^0.2.1",
     "mini-css-extract-plugin": "^0.5.0",
     "node-sass": "^4.14.1",
-    "p2pu-theme": "p2pu/p2pu-theme#master",
+    "p2pu-theme": "p2pu/p2pu-theme#2022-theme-updates",
     "prop-types": "^15.6.2",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",

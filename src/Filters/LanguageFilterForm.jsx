@@ -54,6 +54,13 @@ export default class LanguageFilterForm extends Component {
       return lang;
     };
 
+    const customStyles = {
+      indicatorSeparator: (provided, state) => ({
+        ...provided,
+        display: 'none',
+      }),
+    }
+
     return(
       <form class="search">
         <label for="search-input" class="form-label">Languages</label>
@@ -62,8 +69,9 @@ export default class LanguageFilterForm extends Component {
           classes='no-flex'
           options={options}
           isMulti={false}
-          value={this.props.languages}
+          value={null}
           onChange={this.handleSelect}
+          styles={customStyles}
         />
         <div class="badges selected pt-4">
           { 

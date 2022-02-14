@@ -44,6 +44,13 @@ export default class TopicsFilterForm extends Component {
   render() {
     let {topics = []} = this.props;
     let options = this.state.options.filter( option => topics.indexOf(option.value) == -1);
+    const customStyles = {
+      indicatorSeparator: (provided, state) => ({
+        ...provided,
+        display: 'none',
+      }),
+    }
+
     return(
       <>
         <form class="search">
@@ -52,8 +59,9 @@ export default class TopicsFilterForm extends Component {
             name={'topics'}
             options={options}
             isMulti={false}
-            value={topics}
+            value={null}
             onChange={this.onChange}
+            styles={customStyles}
           />
           <div class="badges selected pt-4">
             { 

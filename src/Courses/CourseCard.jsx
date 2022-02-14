@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react'
 import { t, jt, ngettext, msgid } from 'ttag';
 
-import { Card, CardTitle, CardBody } from '../Card';
 import { COLOR_CLASSES } from '../utils/constants';
 
 const CourseCard = (props) => {
