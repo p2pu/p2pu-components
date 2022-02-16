@@ -4,7 +4,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
 import { OPEN_TAB_TEXT, CLOSED_TAB_TEXT } from '../utils/constants'
 
-import LearningCircleCard from './LearningCircleCard.jsx'
+import LearningCircleCard from './LearningCircleCard'
 import 'react-tabs/style/react-tabs.css';
 
 const BrowseLearningCircles = (props) => {
