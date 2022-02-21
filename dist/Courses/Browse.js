@@ -59,3 +59,4 @@ var BrowseCourses = /*#__PURE__*/function (_React$Component) {
 }(React.Component);
 
 export default BrowseCourses;
+//# sourceMappingURL=Browse.js.map

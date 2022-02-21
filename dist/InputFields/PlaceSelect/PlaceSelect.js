@@ -228,3 +228,4 @@ PlaceSelect.defaultProps = {
   isClearable: true,
   isMulti: false
 };
+//# sourceMappingURL=PlaceSelect.js.map

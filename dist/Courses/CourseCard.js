@@ -144,3 +144,4 @@ var CourseCard = function CourseCard(props) {
 };
 
 export default CourseCard;
+//# sourceMappingURL=CourseCard.js.map

@@ -226,3 +226,4 @@ ImageUploader.defaultProps = {
   buttonText: 'Choose file',
   imageUploadUrl: "https://learningcircles.p2pu.org/api/upload_image/"
 };
+//# sourceMappingURL=ImageUploader.js.map

@@ -58,3 +58,4 @@ SearchCourses.defaultProps = {
     return /*#__PURE__*/React.createElement(DefaultNoResults, props);
   }
 };
+//# sourceMappingURL=SearchCourses.js.map

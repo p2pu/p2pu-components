@@ -48,3 +48,4 @@ var SearchBar = function SearchBar(_ref) {
 };
 
 export default SearchBar;
+//# sourceMappingURL=SearchBar.js.map

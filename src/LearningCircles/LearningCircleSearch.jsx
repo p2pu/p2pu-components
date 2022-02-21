@@ -8,10 +8,11 @@ import DefaultNoResults from "../Search/DefaultNoResults";
 
 
 const LearningCircleSearch = (props) => {
+
   return (
     <>
-      <div class="search-fields row g-0">
-        <div class="bg-white shadow col-12 col-lg me-lg-2">
+      <div className="search-fields row g-0">
+        <div className="bg-white shadow col-12 col-lg me-lg-2">
           <SearchBar {...props} />
         </div>
         <div className="bg-white shadow col-12 col-lg-7">

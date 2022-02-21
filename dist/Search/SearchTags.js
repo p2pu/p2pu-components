@@ -355,3 +355,4 @@ var SearchTags = function SearchTags(props) {
 };
 
 export default SearchTags;
+//# sourceMappingURL=SearchTags.js.map

@@ -258,3 +258,4 @@ var SearchProvider = /*#__PURE__*/function (_Component) {
 }(Component);
 
 export { SearchProvider as default };
+//# sourceMappingURL=SearchProvider.js.map

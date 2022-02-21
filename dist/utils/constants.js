@@ -81,3 +81,4 @@ export var API_ENDPOINTS = {
 export var COLOR_CLASSES = ["p2pu-green", "p2pu-blue", "p2pu-yellow", "p2pu-orange"];
 export var OPEN_TAB_TEXT = t(_templateObject14 || (_templateObject14 = _taggedTemplateLiteral(["Open"])));
 export var CLOSED_TAB_TEXT = t(_templateObject15 || (_templateObject15 = _taggedTemplateLiteral(["Closed and completed"])));
+//# sourceMappingURL=constants.js.map

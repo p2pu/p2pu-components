@@ -95,3 +95,4 @@ SwitchWithLabels.defaultProps = {
 
 };
 export default SwitchWithLabels;
+//# sourceMappingURL=SwitchWithLabels.js.map

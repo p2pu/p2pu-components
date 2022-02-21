@@ -65,3 +65,4 @@ CheckboxWithLabel.defaultProps = {
   value: false
 };
 export default CheckboxWithLabel;
+//# sourceMappingURL=CheckboxWithLabel.js.map

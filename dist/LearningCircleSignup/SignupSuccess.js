@@ -20,3 +20,4 @@ var SignupSuccess = function SignupSuccess() {
 };
 
 export default SignupSuccess;
+//# sourceMappingURL=SignupSuccess.js.map

@@ -52,3 +52,4 @@ Search.defaultProps = {
     return /*#__PURE__*/React.createElement(DefaultNoResults, props);
   }
 };
+//# sourceMappingURL=Search.js.map

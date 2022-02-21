@@ -96,3 +96,4 @@ export function isoCodeToLangName(code) {
 
   return code;
 }
+//# sourceMappingURL=i18n.js.map
