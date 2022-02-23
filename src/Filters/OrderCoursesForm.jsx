@@ -26,25 +26,6 @@ const OrderCoursesForm = (props) => {
       </Select>
     </form>
   )
-
-  return (
-        <select 
-          className="form-select form-control"
-          aria-label="Default select example"
-          placeholder="Order by popularity, rating, etc."
-          onChange={handleChange}
-          value={props.order}
-        >
-          { 
-            COURSES_SORT_OPTIONS.map( option => 
-              <option 
-                value={option.value}
-              >{option.label}</option> 
-            )          
-          }
-        </select>
-  )
-
 }
 
 export default OrderCoursesForm;

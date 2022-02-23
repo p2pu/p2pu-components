@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
 import { t } from 'ttag';
 import ApiHelper from '../utils/apiHelper'
-
-import SelectWithLabel from '../InputFields/SelectWithLabel'
-import Select from 'react-select'
+import Select from '../InputFields/Select';
 
 export default class LanguageFilterForm extends Component {
   constructor(props) {
@@ -27,9 +25,9 @@ export default class LanguageFilterForm extends Component {
     api.fetchResource({ params, callback })
   }
 
-  handleSelect = (selected) => {
-    if (selected) {
-      this.props.updateQueryParams({languages: [...this.props.languages, selected.value]});
+  handleSelect = ({languages}) => {
+    if (languages) {
+      this.props.updateQueryParams({languages: [...this.props.languages, languages]});
     }
   }
 
@@ -54,13 +52,6 @@ export default class LanguageFilterForm extends Component {
       return lang;
     };
 
-    const customStyles = {
-      indicatorSeparator: (provided, state) => ({
-        ...provided,
-        display: 'none',
-      }),
-    }
-
     return(
       <form class="search">
         <label for="search-input" class="form-label">Languages</label>
@@ -70,8 +61,8 @@ export default class LanguageFilterForm extends Component {
           options={options}
           isMulti={false}
           value={null}
-          onChange={this.handleSelect}
-          styles={customStyles}
+          handleChange={this.handleSelect}
+          placeholder={t`Select one or more`}
         />
         <div class="badges selected pt-4">
           { 

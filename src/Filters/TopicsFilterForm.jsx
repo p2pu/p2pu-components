@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import ApiHelper from '../utils/apiHelper'
 import { t } from 'ttag'
-import Select from 'react-select'
+import Select from '../InputFields/Select';
 
 export default class TopicsFilterForm extends Component {
   constructor(props) {
@@ -26,10 +26,10 @@ export default class TopicsFilterForm extends Component {
     api.fetchResource({ params, callback })
   }
 
-  onChange = (selected) => {
+  onChange = ({topic}) => {
     let {topics = []} = this.props;
-    if (selected) {
-      this.props.updateQueryParams({topics: [...topics, selected.value]});
+    if (topic) {
+      this.props.updateQueryParams({topics: [...topics, topic]});
     }
   }
 
@@ -44,35 +44,28 @@ export default class TopicsFilterForm extends Component {
   render() {
     let {topics = []} = this.props;
     let options = this.state.options.filter( option => topics.indexOf(option.value) == -1);
-    const customStyles = {
-      indicatorSeparator: (provided, state) => ({
-        ...provided,
-        display: 'none',
-      }),
-    }
 
     return(
       <>
         <form class="search">
           <label for="search-input" class="form-label">Topics</label>
           <Select
-            name={'topics'}
+            name={'topic'}
             options={options}
             isMulti={false}
             value={null}
-            onChange={this.onChange}
-            styles={customStyles}
+            handleChange={this.onChange}
+            placeholder={t`Select one or more topic`}
           />
           <div class="badges selected pt-4">
             { 
               this.props.topics && topics.map(topic => 
                 <span class="badge topic-selected topic">
-                  <span class="material-icons dismiss" onClick={e => this.removeTopic(topic)}>close</span>{topic}</span>
+                  <span class="material-icons dismiss" role="button" onClick={e => this.removeTopic(topic)}>close</span>{topic}</span>
               )
             }
           </div>
         </form>
-
       </>
     )
   }
