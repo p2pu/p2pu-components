@@ -24,11 +24,6 @@ const KANSAS_CITY_OPTION = {
   }
 };
 
-const CustomOption = ({ innerProps, isDisabled }) =>
-  !isDisabled ? (
-    <div {...innerProps}>{/* your component internals */}</div>
-  ) : null;
-
 export default class PlaceSelect extends Component {
   constructor(props) {
     super(props);
