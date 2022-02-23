@@ -28,17 +28,6 @@ var OrderCoursesForm = function OrderCoursesForm(props) {
     value: props.order || COURSES_SORT_OPTIONS[0].value,
     handleChange: handleChange
   }));
-  return /*#__PURE__*/React.createElement("select", {
-    className: "form-select form-control",
-    "aria-label": "Default select example",
-    placeholder: "Order by popularity, rating, etc.",
-    onChange: handleChange,
-    value: props.order
-  }, COURSES_SORT_OPTIONS.map(function (option) {
-    return /*#__PURE__*/React.createElement("option", {
-      value: option.value
-    }, option.label);
-  }));
 };
 
 export default OrderCoursesForm;

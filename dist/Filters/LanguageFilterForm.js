@@ -1,3 +1,4 @@
+import _taggedTemplateLiteral from "@babel/runtime/helpers/taggedTemplateLiteral";
 import _toConsumableArray from "@babel/runtime/helpers/toConsumableArray";
 import _classCallCheck from "@babel/runtime/helpers/classCallCheck";
 import _createClass from "@babel/runtime/helpers/createClass";
@@ -7,9 +8,7 @@ import _possibleConstructorReturn from "@babel/runtime/helpers/possibleConstruct
 import _getPrototypeOf from "@babel/runtime/helpers/getPrototypeOf";
 import _defineProperty from "@babel/runtime/helpers/defineProperty";
 
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+var _templateObject;
 
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
 
@@ -18,8 +17,7 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 import React, { Component } from 'react';
 import { t } from 'ttag';
 import ApiHelper from '../utils/apiHelper';
-import SelectWithLabel from '../InputFields/SelectWithLabel';
-import Select from 'react-select';
+import Select from '../InputFields/Select';
 
 var LanguageFilterForm = /*#__PURE__*/function (_Component) {
   _inherits(LanguageFilterForm, _Component);
@@ -52,10 +50,12 @@ var LanguageFilterForm = /*#__PURE__*/function (_Component) {
       });
     });
 
-    _defineProperty(_assertThisInitialized(_this), "handleSelect", function (selected) {
-      if (selected) {
+    _defineProperty(_assertThisInitialized(_this), "handleSelect", function (_ref) {
+      var languages = _ref.languages;
+
+      if (languages) {
         _this.props.updateQueryParams({
-          languages: [].concat(_toConsumableArray(_this.props.languages), [selected.value])
+          languages: [].concat(_toConsumableArray(_this.props.languages), [languages])
         });
       }
     });
@@ -112,13 +112,6 @@ var LanguageFilterForm = /*#__PURE__*/function (_Component) {
         return lang;
       };
 
-      var customStyles = {
-        indicatorSeparator: function indicatorSeparator(provided, state) {
-          return _objectSpread(_objectSpread({}, provided), {}, {
-            display: 'none'
-          });
-        }
-      };
       return /*#__PURE__*/React.createElement("form", {
         "class": "search"
       }, /*#__PURE__*/React.createElement("label", {
@@ -130,8 +123,8 @@ var LanguageFilterForm = /*#__PURE__*/function (_Component) {
         options: options,
         isMulti: false,
         value: null,
-        onChange: this.handleSelect,
-        styles: customStyles
+        handleChange: this.handleSelect,
+        placeholder: t(_templateObject || (_templateObject = _taggedTemplateLiteral(["Select one or more"])))
       }), /*#__PURE__*/React.createElement("div", {
         "class": "badges selected pt-4"
       }, this.props.languages.map(function (lang) {

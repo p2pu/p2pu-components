@@ -1,3 +1,4 @@
+import _taggedTemplateLiteral from "@babel/runtime/helpers/taggedTemplateLiteral";
 import _toConsumableArray from "@babel/runtime/helpers/toConsumableArray";
 import _classCallCheck from "@babel/runtime/helpers/classCallCheck";
 import _createClass from "@babel/runtime/helpers/createClass";
@@ -7,9 +8,7 @@ import _possibleConstructorReturn from "@babel/runtime/helpers/possibleConstruct
 import _getPrototypeOf from "@babel/runtime/helpers/getPrototypeOf";
 import _defineProperty from "@babel/runtime/helpers/defineProperty";
 
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+var _templateObject;
 
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
 
@@ -18,7 +17,7 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 import React, { Component } from 'react';
 import ApiHelper from '../utils/apiHelper';
 import { t } from 'ttag';
-import Select from 'react-select';
+import Select from '../InputFields/Select';
 
 var TopicsFilterForm = /*#__PURE__*/function (_Component) {
   _inherits(TopicsFilterForm, _Component);
@@ -53,13 +52,14 @@ var TopicsFilterForm = /*#__PURE__*/function (_Component) {
       });
     });
 
-    _defineProperty(_assertThisInitialized(_this), "onChange", function (selected) {
+    _defineProperty(_assertThisInitialized(_this), "onChange", function (_ref) {
+      var topic = _ref.topic;
       var _this$props$topics = _this.props.topics,
           topics = _this$props$topics === void 0 ? [] : _this$props$topics;
 
-      if (selected) {
+      if (topic) {
         _this.props.updateQueryParams({
-          topics: [].concat(_toConsumableArray(topics), [selected.value])
+          topics: [].concat(_toConsumableArray(topics), [topic])
         });
       }
     });
@@ -102,25 +102,18 @@ var TopicsFilterForm = /*#__PURE__*/function (_Component) {
       var options = this.state.options.filter(function (option) {
         return topics.indexOf(option.value) == -1;
       });
-      var customStyles = {
-        indicatorSeparator: function indicatorSeparator(provided, state) {
-          return _objectSpread(_objectSpread({}, provided), {}, {
-            display: 'none'
-          });
-        }
-      };
       return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("form", {
         "class": "search"
       }, /*#__PURE__*/React.createElement("label", {
         "for": "search-input",
         "class": "form-label"
       }, "Topics"), /*#__PURE__*/React.createElement(Select, {
-        name: 'topics',
+        name: 'topic',
         options: options,
         isMulti: false,
         value: null,
-        onChange: this.onChange,
-        styles: customStyles
+        handleChange: this.onChange,
+        placeholder: t(_templateObject || (_templateObject = _taggedTemplateLiteral(["Select one or more topic"])))
       }), /*#__PURE__*/React.createElement("div", {
         "class": "badges selected pt-4"
       }, this.props.topics && topics.map(function (topic) {
@@ -128,6 +121,7 @@ var TopicsFilterForm = /*#__PURE__*/function (_Component) {
           "class": "badge topic-selected topic"
         }, /*#__PURE__*/React.createElement("span", {
           "class": "material-icons dismiss",
+          role: "button",
           onClick: function onClick(e) {
             return _this2.removeTopic(topic);
           }

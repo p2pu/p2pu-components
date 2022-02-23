@@ -20,7 +20,8 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
-import Select from 'react-select';
+import Select from 'react-select'; //TODO
+
 import timezones from './timezone-names.js';
 import InputWrapper from '../InputWrapper';
 var GEONAMES_ENDPOINT = 'https://secure.geonames.org/timezoneJSON';

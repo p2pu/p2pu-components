@@ -41,12 +41,6 @@ var KANSAS_CITY_OPTION = {
   }
 };
 
-var CustomOption = function CustomOption(_ref) {
-  var innerProps = _ref.innerProps,
-      isDisabled = _ref.isDisabled;
-  return !isDisabled ? /*#__PURE__*/React.createElement("div", innerProps) : null;
-};
-
 var PlaceSelect = /*#__PURE__*/function (_Component) {
   _inherits(PlaceSelect, _Component);
 

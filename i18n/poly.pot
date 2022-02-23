@@ -37,10 +37,6 @@ msgstr ""
 msgid "At ${ venueLink }"
 msgstr ""
 
-#: src/Courses/Browse.jsx:25
-msgid "Use this course"
-msgstr ""
-
 #: src/Courses/CourseCard.jsx:12
 msgid "Always available"
 msgstr ""
@@ -85,6 +81,10 @@ msgstr ""
 
 #: src/Courses/CourseCard.jsx:106
 msgid "More details"
+msgstr ""
+
+#: src/Courses/Browse.jsx:25
+msgid "Use this course"
 msgstr ""
 
 #: src/utils/constants.js:4
@@ -190,10 +190,6 @@ msgstr ""
 msgid "To see more results, either remove some filters or ${ resetButton }"
 msgstr ""
 
-#: src/Search/SearchBar.jsx:17
-msgid "Search"
-msgstr ""
-
 #: src/LearningCircles/LearningCircleCard.jsx:38
 #, javascript-format
 msgid ""
@@ -241,6 +237,10 @@ msgstr ""
 
 #: src/LearningCircles/LearningCircleCard.jsx:108
 msgid "View details"
+msgstr ""
+
+#: src/Search/SearchBar.jsx:17
+msgid "Search"
 msgstr ""
 
 #: src/LearningCircleSignup/SignupForm.jsx:99
@@ -314,6 +314,14 @@ msgstr ""
 msgid "All courses"
 msgstr ""
 
+#: src/Filters/LanguageFilterForm.jsx:65
+msgid "Select one or more"
+msgstr ""
+
+#: src/Filters/TopicsFilterForm.jsx:58
+msgid "Select one or more topic"
+msgstr ""
+
 #: src/Filters/OrderCoursesForm.jsx:17
 msgid "Order By"
 msgstr ""
@@ -353,26 +361,6 @@ msgstr ""
 msgid "km"
 msgstr ""
 
-#: src/Filters/LocationFilterForm.jsx:131
-#: src/LearningCircles/LocationFilter.jsx:186
-msgid "or"
-msgstr ""
-
-#: src/Filters/LocationFilterForm.jsx:134
-#: src/LearningCircles/LocationFilter.jsx:189
-msgid "Select a location"
-msgstr ""
-
-#: src/Filters/LocationFilterForm.jsx:139
-#: src/LearningCircles/LocationFilter.jsx:194
-msgid "Start typing a city name"
-msgstr ""
-
-#: src/Filters/LocationFilterForm.jsx:140
-#: src/LearningCircles/LocationFilter.jsx:195
-msgid "No results for this city"
-msgstr ""
-
 #: src/LearningCircleSignup/SignupSuccess.jsx:8
 msgid ""
 "Thank you for signing up. We've sent you an email introducing you to your "
@@ -397,4 +385,20 @@ msgstr ""
 
 #: src/Filters/FilterButton.jsx:11
 msgid "OER mode"
+msgstr ""
+
+#: src/Filters/LocationFilterForm.jsx:131
+msgid "or"
+msgstr ""
+
+#: src/Filters/LocationFilterForm.jsx:134
+msgid "Select a location"
+msgstr ""
+
+#: src/Filters/LocationFilterForm.jsx:139
+msgid "Start typing a city name"
+msgstr ""
+
+#: src/Filters/LocationFilterForm.jsx:140
+msgid "No results for this city"
 msgstr ""

@@ -90,6 +90,13 @@ export var CitySelectInput = function CitySelectInput(props) {
       rest = _objectWithoutProperties(props, _excluded);
 
   var selected = getSelected(value);
+  var customStyles = {
+    indicatorSeparator: function indicatorSeparator(provided, state) {
+      return _objectSpread(_objectSpread({}, provided), {}, {
+        display: 'none'
+      });
+    }
+  };
   return /*#__PURE__*/React.createElement(Select, _extends({
     name: name,
     className: "city-select ".concat(selectClasses),
@@ -103,16 +110,7 @@ export var CitySelectInput = function CitySelectInput(props) {
     isMulti: isMulti,
     isDisabled: disabled,
     classNamePrefix: 'city-select',
-    theme: function theme(_theme) {
-      return _objectSpread(_objectSpread({}, _theme), {}, {
-        colors: _objectSpread(_objectSpread({}, _theme.colors), {}, {
-          primary: '#05c6b4',
-          primary75: '#D3D8E6',
-          primary50: '#e0f7f5',
-          primary25: '#F3F4F8'
-        })
-      });
-    }
+    styles: customStyles
   }, rest));
 };
 

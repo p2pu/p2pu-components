@@ -7,7 +7,7 @@ import _possibleConstructorReturn from "@babel/runtime/helpers/possibleConstruct
 import _getPrototypeOf from "@babel/runtime/helpers/getPrototypeOf";
 import _defineProperty from "@babel/runtime/helpers/defineProperty";
 
-var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8, _templateObject9, _templateObject10, _templateObject11, _templateObject12;
+var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8;
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 
@@ -23,6 +23,7 @@ import { t } from 'ttag';
 import CheckboxWithLabel from '../InputFields/CheckboxWithLabel';
 import RangeSliderWithLabel from '../InputFields/RangeSliderWithLabel';
 import { CitySelectInput } from '../InputFields/CitySelect';
+import Select from '../InputFields/Select';
 
 var LocationFilter = /*#__PURE__*/function (_Component) {
   _inherits(LocationFilter, _Component);
@@ -36,8 +37,8 @@ var LocationFilter = /*#__PURE__*/function (_Component) {
 
     _this = _super.call(this, props);
 
-    _defineProperty(_assertThisInitialized(_this), "getLocation", function (checkboxValue) {
-      var useGeolocation = checkboxValue['geolocation'];
+    _defineProperty(_assertThisInitialized(_this), "getLocation", function (e) {
+      var useGeolocation = e.target.checked;
 
       _this.setState({
         gettingLocation: useGeolocation,
@@ -66,8 +67,6 @@ var LocationFilter = /*#__PURE__*/function (_Component) {
         _this.setState({
           gettingLocation: false
         });
-
-        _this.props.closeFilter();
       };
 
       var error = function error() {
@@ -117,6 +116,7 @@ var LocationFilter = /*#__PURE__*/function (_Component) {
     });
 
     _defineProperty(_assertThisInitialized(_this), "handleCitySelect", function (city) {
+      // want to get lat and lon for city
       _this.props.updateQueryParams(_objectSpread(_objectSpread({}, city), {}, {
         latitude: null,
         longitude: null,
@@ -126,12 +126,11 @@ var LocationFilter = /*#__PURE__*/function (_Component) {
       _this.setState({
         useLocation: false
       });
-
-      _this.props.closeFilter();
     });
 
-    _defineProperty(_assertThisInitialized(_this), "handleRangeChange", function (e) {
-      var distance = e.target.value;
+    _defineProperty(_assertThisInitialized(_this), "handleRangeChange", function (_ref) {
+      var range = _ref.range;
+      var distance = range;
 
       if (_this.props.useMiles) {
         return _this.props.updateQueryParams({
@@ -180,47 +179,49 @@ var LocationFilter = /*#__PURE__*/function (_Component) {
       var distanceSliderLabel = this.generateDistanceSliderLabel();
       var distanceValue = this.generateDistanceValue();
       return /*#__PURE__*/React.createElement("form", {
-        "class": "filter"
+        className: "filter"
       }, /*#__PURE__*/React.createElement("label", {
         "for": "search-input",
-        "class": "form-label"
+        className: "form-label"
       }, "Location"), /*#__PURE__*/React.createElement("div", {
-        "class": "input-group-md"
-      }, /*#__PURE__*/React.createElement("span", null, "Within"), /*#__PURE__*/React.createElement("select", {
-        "class": "form-select",
-        value: distanceValue,
-        onChange: this.handleRangeChange
-      }, /*#__PURE__*/React.createElement("option", {
-        value: "1"
-      }, "1"), /*#__PURE__*/React.createElement("option", {
-        value: "5"
-      }, "5"), /*#__PURE__*/React.createElement("option", {
-        value: "10"
-      }, "10"), /*#__PURE__*/React.createElement("option", {
-        value: "25"
-      }, "25"), /*#__PURE__*/React.createElement("option", {
-        value: "50"
-      }, "50"), /*#__PURE__*/React.createElement("option", {
-        value: "100"
-      }, "100")), /*#__PURE__*/React.createElement("span", null, "miles of"), /*#__PURE__*/React.createElement("div", {
-        className: "form-control search-input my-2 my-md-0"
+        className: "search-input my-2 my-md-0"
       }, /*#__PURE__*/React.createElement(CitySelectInput, {
         name: "city",
         value: this.props.city,
+        isClearable: true,
         handleChange: this.handleCitySelect
-      })), /*#__PURE__*/React.createElement("span", {
-        "class": "current-location"
-      }, /*#__PURE__*/React.createElement("span", {
-        "class": "material-icons"
-      }, "place "), /*#__PURE__*/React.createElement("span", {
-        "class": "text-muted"
-      }, " use current location"), /*#__PURE__*/React.createElement(CheckboxWithLabel, {
+      })), /*#__PURE__*/React.createElement("div", {
+        className: "d-flex flex-column align-items-center p-3"
+      }, /*#__PURE__*/React.createElement("div", {
+        className: "divider-line"
+      }), /*#__PURE__*/React.createElement("div", {
+        className: "divider-text"
+      }, "or")), /*#__PURE__*/React.createElement("div", {
+        className: "input-group-md"
+      }, false && /*#__PURE__*/React.createElement(CheckboxWithLabel, {
         classes: "col-sm-12",
         name: "geolocation",
-        label: this.generateLocationLabel(),
+        label: "",
         value: this.state.useLocation || false,
         handleChange: this.getLocation
-      })), false && /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement("div", {
+      }), /*#__PURE__*/React.createElement("input", {
+        type: "checkbox",
+        value: this.state.useLocation || false,
+        onChange: this.getLocation
+      }), /*#__PURE__*/React.createElement("span", null, "Within"), /*#__PURE__*/React.createElement(Select, {
+        className: "flex-grow-1",
+        name: "range",
+        options: ["1", "5", "10", "25", "50", "100"].map(function (d) {
+          return {
+            label: d,
+            value: d
+          };
+        }),
+        value: this.props.distanceValue,
+        handleChange: this.handleRangeChange
+      }), /*#__PURE__*/React.createElement("span", null, "miles of my current location"), /*#__PURE__*/React.createElement("span", {
+        className: "material-icons"
+      }, "place "), false && /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement("div", {
         "class": "form-check"
       }, /*#__PURE__*/React.createElement("input", {
         "class": "form-check-input",
@@ -241,41 +242,45 @@ var LocationFilter = /*#__PURE__*/function (_Component) {
         "class": "form-check-label",
         "for": "in-person"
       }, "in person")))));
-      return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("label", {
-        "for": "search-input",
-        "class": "form-label"
-      }, "Location"), /*#__PURE__*/React.createElement(CheckboxWithLabel, {
-        classes: "col-sm-12",
-        name: "geolocation",
-        label: this.generateLocationLabel(),
-        value: this.state.useLocation || false,
-        handleChange: this.getLocation
-      }), /*#__PURE__*/React.createElement(RangeSliderWithLabel, {
-        classes: "col-sm-12",
-        label: distanceSliderLabel,
-        name: "distance",
-        value: distanceValue,
-        handleChange: this.handleRangeChange,
-        min: 10,
-        max: 150,
-        step: 10,
-        disabled: !this.state.useLocation
-      }), /*#__PURE__*/React.createElement("div", {
-        className: "divider col-sm-12"
-      }, /*#__PURE__*/React.createElement("div", {
-        className: "divider-line"
-      }), /*#__PURE__*/React.createElement("div", {
-        className: "divider-text"
-      }, t(_templateObject9 || (_templateObject9 = _taggedTemplateLiteral(["or"]))))), /*#__PURE__*/React.createElement(CitySelect, {
-        label: t(_templateObject10 || (_templateObject10 = _taggedTemplateLiteral(["Select a location"]))),
-        classes: "city-select col-sm-12 search-input",
-        name: "city",
-        value: this.props.city,
-        handleChange: this.handleCitySelect,
-        placeholder: t(_templateObject11 || (_templateObject11 = _taggedTemplateLiteral(["Start typing a city name"]))),
-        noResultsText: t(_templateObject12 || (_templateObject12 = _taggedTemplateLiteral(["No results for this city"]))),
-        isMulti: false
-      }));
+      /*
+      return(
+        <div>
+          <label for="search-input" class="form-label">Location</label>
+          <CheckboxWithLabel
+            classes='col-sm-12'
+            name='geolocation'
+            label={this.generateLocationLabel()}
+            value={this.state.useLocation || false}
+            handleChange={this.getLocation}
+          />
+          <RangeSliderWithLabel
+            classes='col-sm-12'
+            label={distanceSliderLabel}
+            name='distance'
+            value={distanceValue}
+            handleChange={this.handleRangeChange}
+            min={10}
+            max={150}
+            step={10}
+            disabled={!this.state.useLocation}
+          />
+          <div className='divider col-sm-12'>
+            <div className='divider-line'></div>
+            <div className='divider-text'>{t`or`}</div>
+          </div>
+          <CitySelect
+            label={t`Select a location`}
+            classes='city-select col-sm-12 search-input'
+            name='city'
+            value={this.props.city}
+            handleChange={this.handleCitySelect}
+            placeholder={t`Start typing a city name`}
+            noResultsText={t`No results for this city`}
+            isMulti={false}
+          />
+        </div>
+      );
+      */
     }
   }]);
 
