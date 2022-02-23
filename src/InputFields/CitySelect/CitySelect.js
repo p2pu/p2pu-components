@@ -54,6 +54,13 @@ export const CitySelectInput = props => {
 
   const selected = getSelected(value);
 
+  const customStyles = {
+    indicatorSeparator: (provided, state) => ({
+      ...provided,
+      display: 'none',
+    }),
+  }
+
   return(
     <Select
       name={ name }
@@ -68,16 +75,7 @@ export const CitySelectInput = props => {
       isMulti={ isMulti }
       isDisabled={ disabled }
       classNamePrefix={'city-select'}
-      theme={theme => ({
-        ...theme,
-          colors: {
-            ...theme.colors,
-              primary: '#05c6b4',
-              primary75: '#D3D8E6',
-              primary50: '#e0f7f5',
-              primary25: '#F3F4F8'
-          },
-      })}
+      styles={customStyles}
       {...rest}
     />
   )

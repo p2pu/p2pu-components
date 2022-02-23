@@ -4,6 +4,7 @@ import {t} from 'ttag';
 import CheckboxWithLabel from '../InputFields/CheckboxWithLabel'
 import RangeSliderWithLabel from '../InputFields/RangeSliderWithLabel'
 import {CitySelectInput} from '../InputFields/CitySelect'
+import Select from '../InputFields/Select';
 
 export default class LocationFilter extends Component {
   constructor(props) {
@@ -19,8 +20,8 @@ export default class LocationFilter extends Component {
     }
   }
 
-  getLocation = (checkboxValue) => {
-    const useGeolocation = checkboxValue['geolocation'];
+  getLocation = (e) => {
+    const useGeolocation = e.target.checked;
 
     this.setState({ gettingLocation: useGeolocation, useLocation: useGeolocation });
 
@@ -33,7 +34,6 @@ export default class LocationFilter extends Component {
       this.props.updateQueryParams({ latitude: position.coords.latitude, longitude: position.coords.longitude, city: null })
       this.detectDistanceUnit(position.coords.latitude, position.coords.longitude);
       this.setState({ gettingLocation: false });
-      this.props.closeFilter();
     }
 
     const error = () => {
@@ -78,23 +78,23 @@ export default class LocationFilter extends Component {
   }
 
   handleCitySelect = (city) => {
+    // want to get lat and lon for city
     this.props.updateQueryParams({ ...city, latitude: null, longitude: null, distance: 50 });
     this.setState({ useLocation: false });
-    this.props.closeFilter();
   }
 
-  handleRangeChange = (e) => {
-    let distance = e.target.value;
+  handleRangeChange = ({range}) => {
+    let distance = range;
     if (this.props.useMiles) {
       return this.props.updateQueryParams({ distance: distance * 1.6 })
     }
-    this.props.updateQueryParams({ distance })
+    this.props.updateQueryParams({ distance });
   }
 
   generateDistanceSliderLabel = () => {
     const unit = this.props.useMiles ? t`miles` : t`km`;
     const value = this.generateDistanceValue();
-    return t`Within ${value} ${unit}`
+    return t`Within ${value} ${unit}`;
   }
 
   generateDistanceValue = () => {
@@ -107,41 +107,46 @@ export default class LocationFilter extends Component {
     const distanceValue = this.generateDistanceValue();
 
     return (
-      <form class="filter">
-        <label for="search-input" class="form-label">Location</label>
-        <div class="input-group-md">
-          <span>Within</span>
-          <select 
-            class="form-select" 
-            value={distanceValue}
-            onChange={this.handleRangeChange}
-          >
-            <option value="1">1</option>
-            <option value="5">5</option>
-            <option value="10">10</option>
-            <option value="25">25</option>
-            <option value="50">50</option>
-            <option value="100">100</option>
-          </select>
-          <span>miles of</span>
-          <div className="form-control search-input my-2 my-md-0">
-            <CitySelectInput
-              name='city'
-              value={this.props.city}
-              handleChange={this.handleCitySelect}
-            />
-          </div>
-          <span class="current-location">
-            <span class="material-icons">place </span>
-            <span class="text-muted"> use current location</span>
-            <CheckboxWithLabel
+      <form className="filter">
+        <label for="search-input" className="form-label">Location</label>
+        <div className="search-input my-2 my-md-0">
+          <CitySelectInput
+            name='city'
+            value={this.props.city}
+            isClearable={true}
+            handleChange={this.handleCitySelect}
+          />
+        </div>
+
+        <div className="d-flex flex-column align-items-center p-3">
+          <div className="divider-line"></div>
+          <div className="divider-text">or</div>
+        </div>
+
+        <div className="input-group-md">
+          { false && <CheckboxWithLabel
               classes='col-sm-12'
               name='geolocation'
-              label={this.generateLocationLabel()}
+              label=''
               value={this.state.useLocation || false}
               handleChange={this.getLocation}
             />
-          </span>
+          }
+          <input 
+            type="checkbox" 
+            value={this.state.useLocation || false}
+            onChange={this.getLocation}
+          />
+          <span>Within</span>
+          <Select
+            className="flex-grow-1" 
+            name="range"
+            options={["1", "5", "10", "25", "50", "100"].map(d => ({label: d, value: d}))}
+            value={this.props.distanceValue}
+            handleChange={this.handleRangeChange}
+          />
+          <span>miles of my current location</span>
+          <span className="material-icons">place </span>
           { false &&
           <span>
             <div class="form-check">
@@ -160,6 +165,7 @@ export default class LocationFilter extends Component {
 
     )
 
+    /*
     return(
       <div>
         <label for="search-input" class="form-label">Location</label>
@@ -196,6 +202,7 @@ export default class LocationFilter extends Component {
           isMulti={false}
         />
       </div>
-    )
+    );
+    */
   }
 }
