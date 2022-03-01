@@ -59,7 +59,13 @@ export default class LocationFilter extends Component {
     axios.get(url)
       .then(res => {
         const useMiles = countriesUsingMiles.indexOf(res.countryCode) >= 0;
-        this.props.updateQueryParams({ useMiles })
+        // update distance so that options in dropdown remains 5, 10, 25, ...
+        // regardless of kilometer of miles
+        let distance = this.props.distance;
+        if (useMiles != this.props.useMiles){
+          distance = useMiles?distance*1.6:distance*0.625;
+        }
+        this.props.updateQueryParams({ useMiles, distance })
       })
   }
 
@@ -79,7 +85,7 @@ export default class LocationFilter extends Component {
 
   handleCitySelect = (city) => {
     // want to get lat and lon for city
-    this.props.updateQueryParams({ ...city, latitude: null, longitude: null, distance: 50 });
+    this.props.updateQueryParams({ ...city, latitude: null, longitude: null });
     this.setState({ useLocation: false });
   }
 
@@ -98,8 +104,8 @@ export default class LocationFilter extends Component {
   }
 
   generateDistanceValue = () => {
-    const value = this.props.useMiles ? this.props.distance * 0.62 : this.props.distance;
-    return Math.round(value / 10) * 10;
+    const value = this.props.useMiles ? this.props.distance * 0.625 : this.props.distance;
+    return Math.round(value / 5) * 5;
   }
 
   render() {
@@ -108,13 +114,14 @@ export default class LocationFilter extends Component {
 
     return (
       <form className="filter">
-        <label for="search-input" className="form-label">Location</label>
+        <label htmlFor="search-input" className="form-label">Location</label>
         <div className="search-input my-2 my-md-0">
           <CitySelectInput
             name='city'
             value={this.props.city}
             isClearable={true}
             handleChange={this.handleCitySelect}
+            placeholder={t`Start typing a city name`}
           />
         </div>
 
@@ -134,18 +141,19 @@ export default class LocationFilter extends Component {
           }
           <input 
             type="checkbox" 
-            value={this.state.useLocation || false}
+            checked={this.state.useLocation || false}
             onChange={this.getLocation}
           />
           <span>Within</span>
           <Select
             className="flex-grow-1" 
             name="range"
-            options={["1", "5", "10", "25", "50", "100"].map(d => ({label: d, value: d}))}
-            value={this.props.distanceValue}
+            options={[5, 10, 25, 50, 100].map(d => ({label: `${d}`, value: d}))}
+            value={distanceValue}
             handleChange={this.handleRangeChange}
           />
-          <span>miles of my current location</span>
+          { this.props.useMiles && <span>miles of my current location</span> }
+          { !this.props.useMiles && <span>kilometers of my current location</span> }
           <span className="material-icons">place </span>
           { false &&
           <span>

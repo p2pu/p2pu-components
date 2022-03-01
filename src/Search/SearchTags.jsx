@@ -107,7 +107,7 @@ const SearchTags = (props) => {
     if (props.latitude && props.longitude) {
       const unit = props.useMiles ? 'miles' : 'km';
       let value = props.useMiles ? props.distance * 0.62 : props.distance;
-      value = Math.round(value / 10) * 10;
+      value = Math.round(value / 5) * 5;
       const text = t`Within ${ value } ${ unit }`;
       const onDelete = (value) => {
         props.updateQueryParams({ latitude: null, longitude: null, distance: 50 })

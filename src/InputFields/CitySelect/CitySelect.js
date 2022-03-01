@@ -10,7 +10,7 @@ export const CitySelectInput = props => {
   const [cities, setCities] = useState([])
 
   useEffect(() => {
-    const url = 'https://learningcircles.p2pu.org/api/learningcircles/cities'
+    const url = 'https://learningcircles.p2pu.org/api/learningcircles/cities/'
     jsonp(url, null, (err, res) => {
       if (err) {
         console.log(err)

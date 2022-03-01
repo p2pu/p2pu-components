@@ -25,7 +25,7 @@ export default class SearchProvider extends Component {
     let defaults = {
       searchResults: [],
       totalResults: 0,
-      distance: 50,
+      distance: 16, // this is in km, use miles below indicates UI display
       useMiles: true,
       limit: 21,
       offset: 0,
