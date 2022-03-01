@@ -24,7 +24,8 @@ export var SEARCH_SUBJECTS = {
 export var SEARCH_PROPS = {
   learningCircles: {
     filters: ['location'],
-    placeholder: t(_templateObject12 || (_templateObject12 = _taggedTemplateLiteral(["Keyword, organization, facilitator, etc..."])))
+    placeholder: t(_templateObject12 || (_templateObject12 = _taggedTemplateLiteral(["Keyword, organization, facilitator, etc..."]))) //remove?
+
   },
   courses: {
     filters: ['topics', 'language', 'oer'],

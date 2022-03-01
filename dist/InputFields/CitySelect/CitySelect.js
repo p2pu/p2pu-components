@@ -22,7 +22,7 @@ export var CitySelectInput = function CitySelectInput(props) {
       setCities = _useState2[1];
 
   useEffect(function () {
-    var url = 'https://learningcircles.p2pu.org/api/learningcircles/cities';
+    var url = 'https://learningcircles.p2pu.org/api/learningcircles/cities/';
     jsonp(url, null, function (err, res) {
       if (err) {
         console.log(err);

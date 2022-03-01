@@ -188,7 +188,7 @@ var SearchTags = function SearchTags(props) {
     if (props.latitude && props.longitude) {
       var unit = props.useMiles ? 'miles' : 'km';
       var value = props.useMiles ? props.distance * 0.62 : props.distance;
-      value = Math.round(value / 10) * 10;
+      value = Math.round(value / 5) * 5;
       var text = t(_templateObject || (_templateObject = _taggedTemplateLiteral(["Within ", " ", ""])), value, unit);
 
       var onDelete = function onDelete(value) {

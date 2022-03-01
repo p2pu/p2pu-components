@@ -7,7 +7,7 @@ import _possibleConstructorReturn from "@babel/runtime/helpers/possibleConstruct
 import _getPrototypeOf from "@babel/runtime/helpers/getPrototypeOf";
 import _defineProperty from "@babel/runtime/helpers/defineProperty";
 
-var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8;
+var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8, _templateObject9;
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 
@@ -93,10 +93,18 @@ var LocationFilter = /*#__PURE__*/function (_Component) {
       var countriesUsingMiles = ['US', 'GB', 'LR', 'MM'];
       var url = "http://api.geonames.org/countryCodeJSON?lat=".concat(lat, "&lng=").concat(lon, "&username=p2pu");
       axios.get(url).then(function (res) {
-        var useMiles = countriesUsingMiles.indexOf(res.countryCode) >= 0;
+        var useMiles = countriesUsingMiles.indexOf(res.countryCode) >= 0; // update distance so that options in dropdown remains 5, 10, 25, ...
+        // regardless of kilometer of miles
+
+        var distance = _this.props.distance;
+
+        if (useMiles != _this.props.useMiles) {
+          distance = useMiles ? distance * 1.6 : distance * 0.625;
+        }
 
         _this.props.updateQueryParams({
-          useMiles: useMiles
+          useMiles: useMiles,
+          distance: distance
         });
       });
     });
@@ -119,8 +127,7 @@ var LocationFilter = /*#__PURE__*/function (_Component) {
       // want to get lat and lon for city
       _this.props.updateQueryParams(_objectSpread(_objectSpread({}, city), {}, {
         latitude: null,
-        longitude: null,
-        distance: 50
+        longitude: null
       }));
 
       _this.setState({
@@ -152,8 +159,8 @@ var LocationFilter = /*#__PURE__*/function (_Component) {
     });
 
     _defineProperty(_assertThisInitialized(_this), "generateDistanceValue", function () {
-      var value = _this.props.useMiles ? _this.props.distance * 0.62 : _this.props.distance;
-      return Math.round(value / 10) * 10;
+      var value = _this.props.useMiles ? _this.props.distance * 0.625 : _this.props.distance;
+      return Math.round(value / 5) * 5;
     });
 
     _this.state = {
@@ -181,7 +188,7 @@ var LocationFilter = /*#__PURE__*/function (_Component) {
       return /*#__PURE__*/React.createElement("form", {
         className: "filter"
       }, /*#__PURE__*/React.createElement("label", {
-        "for": "search-input",
+        htmlFor: "search-input",
         className: "form-label"
       }, "Location"), /*#__PURE__*/React.createElement("div", {
         className: "search-input my-2 my-md-0"
@@ -189,7 +196,8 @@ var LocationFilter = /*#__PURE__*/function (_Component) {
         name: "city",
         value: this.props.city,
         isClearable: true,
-        handleChange: this.handleCitySelect
+        handleChange: this.handleCitySelect,
+        placeholder: t(_templateObject9 || (_templateObject9 = _taggedTemplateLiteral(["Start typing a city name"])))
       })), /*#__PURE__*/React.createElement("div", {
         className: "d-flex flex-column align-items-center p-3"
       }, /*#__PURE__*/React.createElement("div", {
@@ -206,20 +214,20 @@ var LocationFilter = /*#__PURE__*/function (_Component) {
         handleChange: this.getLocation
       }), /*#__PURE__*/React.createElement("input", {
         type: "checkbox",
-        value: this.state.useLocation || false,
+        checked: this.state.useLocation || false,
         onChange: this.getLocation
       }), /*#__PURE__*/React.createElement("span", null, "Within"), /*#__PURE__*/React.createElement(Select, {
         className: "flex-grow-1",
         name: "range",
-        options: ["1", "5", "10", "25", "50", "100"].map(function (d) {
+        options: [5, 10, 25, 50, 100].map(function (d) {
           return {
-            label: d,
+            label: "".concat(d),
             value: d
           };
         }),
-        value: this.props.distanceValue,
+        value: distanceValue,
         handleChange: this.handleRangeChange
-      }), /*#__PURE__*/React.createElement("span", null, "miles of my current location"), /*#__PURE__*/React.createElement("span", {
+      }), this.props.useMiles && /*#__PURE__*/React.createElement("span", null, "miles of my current location"), !this.props.useMiles && /*#__PURE__*/React.createElement("span", null, "kilometers of my current location"), /*#__PURE__*/React.createElement("span", {
         className: "material-icons"
       }, "place "), false && /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement("div", {
         "class": "form-check"
