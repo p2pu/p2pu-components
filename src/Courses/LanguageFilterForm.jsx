@@ -36,7 +36,9 @@ export default class LanguageFilterForm extends Component {
   }
 
   mapArrayToSelectOptions = (array) => {
-    return array.map((item) => ({ value: item.code, label: item.name_local }))
+    let res =  array.map((item) => ({ value: item.code, label: item.name_local }));
+    res.sort( (e1, e2) => e1.label.localeCompare(e2.label) );
+    return res;
   }
 
   render() {
@@ -53,8 +55,8 @@ export default class LanguageFilterForm extends Component {
     };
 
     return(
-      <form class="search">
-        <label for="search-input" class="form-label">Languages</label>
+      <form className="search">
+        <label htmlFor="search-input" className="form-label">Languages</label>
         <Select
           name={'languages'}
           classes='no-flex'
@@ -64,10 +66,10 @@ export default class LanguageFilterForm extends Component {
           handleChange={this.handleSelect}
           placeholder={t`Select one or more`}
         />
-        <div class="badges selected pt-4">
+        <div className="badges selected pt-4">
           { 
             this.props.languages.map(lang =>
-              <span class="badge topic-selected topic"><span class="material-icons dismiss" role="button" onClick={()=> this.removeLanguage(lang)}>close</span>{langName(lang)}</span>
+              <span className="badge topic-selected topic"><span className="material-icons dismiss" role="button" onClick={()=> this.removeLanguage(lang)}>close</span>{langName(lang)}</span>
             )
           }
         </div>
