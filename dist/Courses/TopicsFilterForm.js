@@ -113,7 +113,7 @@ var TopicsFilterForm = /*#__PURE__*/function (_Component) {
         isMulti: false,
         value: null,
         handleChange: this.onChange,
-        placeholder: t(_templateObject || (_templateObject = _taggedTemplateLiteral(["Select one or more topic"])))
+        placeholder: t(_templateObject || (_templateObject = _taggedTemplateLiteral(["Select one or more"])))
       }), /*#__PURE__*/React.createElement("div", {
         "class": "badges selected pt-4"
       }, this.props.topics && topics.map(function (topic) {
