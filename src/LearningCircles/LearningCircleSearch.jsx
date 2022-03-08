@@ -3,7 +3,7 @@ import {t} from 'ttag';
 
 import SearchBar from "../Search/SearchBar";
 import SearchTags from "../Search/SearchTags";
-import LearningCircleFilters from "./Filters";
+import LocationFilter from './LocationFilter';
 import BrowseLearningCircles from "./Browse";
 import DefaultNoResults from "../Search/DefaultNoResults";
 
@@ -20,7 +20,7 @@ const LearningCircleSearch = (props) => {
           />
         </div>
         <div className="bg-white shadow col-12 col-lg-7">
-          <LearningCircleFilters {...props} />
+          <LocationFilter {...props} />
         </div>
       </div>
       <SearchTags {...props} />

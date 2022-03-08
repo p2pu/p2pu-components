@@ -7,7 +7,7 @@ import React, { useState } from 'react';
 import { t } from 'ttag';
 import SearchBar from "../Search/SearchBar";
 import SearchTags from "../Search/SearchTags";
-import LearningCircleFilters from "./Filters";
+import LocationFilter from './LocationFilter';
 import BrowseLearningCircles from "./Browse";
 import DefaultNoResults from "../Search/DefaultNoResults";
 
@@ -20,7 +20,7 @@ var LearningCircleSearch = function LearningCircleSearch(props) {
     placeholder: t(_templateObject || (_templateObject = _taggedTemplateLiteral(["Keyword, organization, facilitator, etc..."])))
   }, props))), /*#__PURE__*/React.createElement("div", {
     className: "bg-white shadow col-12 col-lg-7"
-  }, /*#__PURE__*/React.createElement(LearningCircleFilters, props))), /*#__PURE__*/React.createElement(SearchTags, props), /*#__PURE__*/React.createElement(BrowseLearningCircles, _extends({}, props, {
+  }, /*#__PURE__*/React.createElement(LocationFilter, props))), /*#__PURE__*/React.createElement(SearchTags, props), /*#__PURE__*/React.createElement(BrowseLearningCircles, _extends({}, props, {
     NoResultsComponent: DefaultNoResults
   })));
 };
