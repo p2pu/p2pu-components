@@ -1,12 +1,11 @@
 import _extends from "@babel/runtime/helpers/extends";
 import React from 'react';
 import OutsideClickHandler from 'react-outside-click-handler';
-import TopicsFilterForm from './TopicsFilterForm';
-import OrderCoursesForm from './OrderCoursesForm';
+import TopicsFilterForm from '../Courses/TopicsFilterForm';
+import OrderCoursesForm from '../Courses/OrderCoursesForm';
+import LanguageFilterForm from '../Courses/LanguageFilterForm';
+import OerFilterForm from '../Courses/OerFilterForm';
 import LocationFilterForm from './LocationFilterForm';
-import MeetingDaysFilterForm from './MeetingDaysFilterForm';
-import LanguageFilterForm from './LanguageFilterForm';
-import OerFilterForm from './OerFilterForm';
 
 var FilterForm = function FilterForm(props) {
   var closeFilter = function closeFilter() {
@@ -34,9 +33,6 @@ var FilterForm = function FilterForm(props) {
         return /*#__PURE__*/React.createElement(LocationFilterForm, _extends({}, props, {
           closeFilter: closeFilter
         }));
-
-      case 'meetingDays':
-        return /*#__PURE__*/React.createElement(MeetingDaysFilterForm, props);
 
       case 'oer':
         return /*#__PURE__*/React.createElement(OerFilterForm, _extends({}, props, {

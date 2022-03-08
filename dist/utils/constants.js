@@ -29,6 +29,7 @@ export var SEARCH_PROPS = {
   },
   courses: {
     filters: ['topics', 'language', 'oer'],
+    //facilitator_guide?
     sort: ['orderCourses'],
     placeholder: t(_templateObject13 || (_templateObject13 = _taggedTemplateLiteral(["Title, subject, etc..."])))
   }

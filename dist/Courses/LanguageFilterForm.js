@@ -69,12 +69,16 @@ var LanguageFilterForm = /*#__PURE__*/function (_Component) {
     });
 
     _defineProperty(_assertThisInitialized(_this), "mapArrayToSelectOptions", function (array) {
-      return array.map(function (item) {
+      var res = array.map(function (item) {
         return {
           value: item.code,
           label: item.name_local
         };
       });
+      res.sort(function (e1, e2) {
+        return e1.label.localeCompare(e2.label);
+      });
+      return res;
     });
 
     _this.state = {
@@ -113,10 +117,10 @@ var LanguageFilterForm = /*#__PURE__*/function (_Component) {
       };
 
       return /*#__PURE__*/React.createElement("form", {
-        "class": "search"
+        className: "search"
       }, /*#__PURE__*/React.createElement("label", {
-        "for": "search-input",
-        "class": "form-label"
+        htmlFor: "search-input",
+        className: "form-label"
       }, "Languages"), /*#__PURE__*/React.createElement(Select, {
         name: 'languages',
         classes: "no-flex",
@@ -126,12 +130,12 @@ var LanguageFilterForm = /*#__PURE__*/function (_Component) {
         handleChange: this.handleSelect,
         placeholder: t(_templateObject || (_templateObject = _taggedTemplateLiteral(["Select one or more"])))
       }), /*#__PURE__*/React.createElement("div", {
-        "class": "badges selected pt-4"
+        className: "badges selected pt-4"
       }, this.props.languages.map(function (lang) {
         return /*#__PURE__*/React.createElement("span", {
-          "class": "badge topic-selected topic"
+          className: "badge topic-selected topic"
         }, /*#__PURE__*/React.createElement("span", {
-          "class": "material-icons dismiss",
+          className: "material-icons dismiss",
           role: "button",
           onClick: function onClick() {
             return _this2.removeLanguage(lang);

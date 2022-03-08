@@ -244,9 +244,6 @@ var SearchTags = function SearchTags(props) {
       case 'location':
         return generateLocationTag();
 
-      case 'meetingDays':
-        return generateMeetingDaysTags();
-
       case 'teamName':
         return generateTeamNameTag();
 

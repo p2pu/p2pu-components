@@ -14,7 +14,7 @@ import { t } from 'ttag';
 import SearchAndFilter from './SearchAndFilter';
 import SearchTags from './SearchTags';
 import DefaultNoResults from './DefaultNoResults';
-import { SEARCH_PROPS, OPEN_TAB_TEXT, CLOSED_TAB_TEXT } from '../utils/constants';
+import { SEARCH_PROPS } from '../utils/constants';
 
 var Search = /*#__PURE__*/function (_Component) {
   _inherits(Search, _Component);

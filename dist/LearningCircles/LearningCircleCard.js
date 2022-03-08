@@ -75,51 +75,51 @@ var LearningCircleCard = function LearningCircleCard(props) {
   }
 
   return /*#__PURE__*/React.createElement("div", {
-    "class": "result-item grid-item col-md-6 col-lg-4"
+    className: "result-item grid-item col-md-6 col-lg-4"
   }, /*#__PURE__*/React.createElement("div", {
-    "class": "card learning-circle ".concat(cardFormatting[status]["class"]),
+    className: "card learning-circle ".concat(cardFormatting[status]["class"]),
     onClick: onClick,
     role: "link"
   }, /*#__PURE__*/React.createElement("div", {
-    "class": "status-tag"
+    className: "status-tag"
   }, /*#__PURE__*/React.createElement("span", null, t(cardLabel))), /*#__PURE__*/React.createElement("div", {
-    "class": "card-image"
+    className: "card-image"
   }, /*#__PURE__*/React.createElement("img", {
     src: imageUrl,
     alt: name,
-    "class": "card-img-top"
+    className: "card-img-top"
   })), /*#__PURE__*/React.createElement("div", {
-    "class": "card-header"
+    className: "card-header"
   }, /*#__PURE__*/React.createElement("span", {
-    "class": "eyebrow"
+    className: "eyebrow"
   }, dateLabel), /*#__PURE__*/React.createElement("h3", {
-    "class": "card-title"
+    className: "card-title"
   }, name)), /*#__PURE__*/React.createElement("div", {
-    "class": "card-body"
+    className: "card-body"
   }, /*#__PURE__*/React.createElement("span", {
-    "class": "schedule"
+    className: "schedule"
   }, /*#__PURE__*/React.createElement("i", {
-    "class": "material-icons"
+    className: "material-icons"
   }, "schedule"), schedule), /*#__PURE__*/React.createElement("span", {
-    "class": "duration"
+    className: "duration"
   }, /*#__PURE__*/React.createElement("i", {
-    "class": "material-icons"
+    className: "material-icons"
   }, "today"), frequency), /*#__PURE__*/React.createElement("span", {
-    "class": "city-country"
+    className: "city-country"
   }, /*#__PURE__*/React.createElement("i", {
-    "class": "material-icons"
+    className: "material-icons"
   }, "place"), learningCircle.city), /*#__PURE__*/React.createElement("span", {
-    "class": "facilitator"
+    className: "facilitator"
   }, /*#__PURE__*/React.createElement("i", {
-    "class": "material-icons"
+    className: "material-icons"
   }, "face"), t(_templateObject8 || (_templateObject8 = _taggedTemplateLiteral(["Facilitated by ", ""])), learningCircle.facilitator)), /*#__PURE__*/React.createElement("span", {
-    "class": "location"
+    className: "location"
   }, /*#__PURE__*/React.createElement("i", {
-    "class": "material-icons"
+    className: "material-icons"
   }, "store"), t(_templateObject9 || (_templateObject9 = _taggedTemplateLiteral(["Meeting at ", ""])), learningCircle.venue))), /*#__PURE__*/React.createElement("div", {
-    "class": "card-footer"
+    className: "card-footer"
   }, /*#__PURE__*/React.createElement("button", {
-    "class": "btn p2pu-btn btn-sm gray mx-auto d-block"
+    className: "btn p2pu-btn btn-sm gray mx-auto d-block"
   }, isSignupOpen ? t(_templateObject10 || (_templateObject10 = _taggedTemplateLiteral(["Sign up"]))) : t(_templateObject11 || (_templateObject11 = _taggedTemplateLiteral(["View details"])))))));
 };
 
