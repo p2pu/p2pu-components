@@ -233,43 +233,6 @@ var SearchTags = function SearchTags(props) {
     }
   };
 
-  var generateMeetingDaysTags = function generateMeetingDaysTags() {
-    if (props.weekdays && props.weekdays.length > 0) {
-      var onDelete = function onDelete(day) {
-        var dayIndex = MEETING_DAYS.indexOf(day);
-        var newWeekdayArray = props.weekdays.filter(function (val) {
-          return val != dayIndex;
-        });
-        var weekdays = newWeekdayArray.length > 0 ? newWeekdayArray : null;
-        props.updateQueryParams({
-          weekdays: weekdays
-        });
-      };
-
-      var weekdayTagsArray = [/*#__PURE__*/React.createElement("span", {
-        key: "weekdayTagIntro"
-      }, "meeting on")];
-      weekdayTagsArray = []; // TODO
-
-      props.weekdays.map(function (dayIndex, index) {
-        var weekdayName = MEETING_DAYS[dayIndex];
-
-        if (props.weekdays.length > 1 && index === props.weekdays.length - 1) {
-          weekdayTagsArray.push( /*#__PURE__*/React.createElement("span", {
-            key: "weekdayTag-".concat(index + 2)
-          }, "or"));
-        }
-
-        weekdayTagsArray.push( /*#__PURE__*/React.createElement(SearchTag, {
-          value: weekdayName,
-          key: "weekdatTag-".concat(index),
-          onDelete: onDelete
-        }));
-      });
-      return weekdayTagsArray;
-    }
-  };
-
   var generateTagsPhrase = function generateTagsPhrase(tag) {
     switch (tag) {
       case 'q':
