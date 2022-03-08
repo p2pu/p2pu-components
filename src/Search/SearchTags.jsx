@@ -131,8 +131,6 @@ const SearchTags = (props) => {
       return generateTopicsTags();
       case 'location':
       return generateLocationTag();
-      case 'meetingDays':
-      return generateMeetingDaysTags();
       case 'teamName':
       return generateTeamNameTag();
       case 'language':
