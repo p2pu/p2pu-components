@@ -3,6 +3,7 @@ import { t } from 'ttag';
 
 import SearchAndFilter from '../Courses/SearchAndFilter'
 import SearchTags from '../Search/SearchTags'
+import SearchSummary from './SearchSummary'
 import DefaultNoResults from '../Search/DefaultNoResults'
 import { SEARCH_PROPS, OPEN_TAB_TEXT, CLOSED_TAB_TEXT } from '../utils/constants'
 
@@ -29,7 +30,7 @@ export default class SearchCourses extends Component {
         />
         </div>
         <div className="col-12 col-lg-8 col-xl-9 ps-lg-3 ps-xl-4">
-        <SearchTags
+        <SearchSummary
           {...this.props}
         />
         <Browse
