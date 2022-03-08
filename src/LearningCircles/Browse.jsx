@@ -13,8 +13,8 @@ const BrowseLearningCircles = (props) => {
   return (
     <Tabs selectedIndex={resultsTab} onSelect={updateResultsTab}>
       <TabList>
-        <Tab><span className="minicaps bold text-xs">{`${OPEN_TAB_TEXT} (${signupOpenCount})`}</span></Tab>
-        <Tab><span className="minicaps bold text-xs">{`${CLOSED_TAB_TEXT} (${signupClosedCount})`}</span></Tab>
+        <Tab><span className="minicaps bold text-xs">{`${OPEN_TAB_TEXT} (${signupOpenCount.toLocaleString()})`}</span></Tab>
+        <Tab><span className="minicaps bold text-xs">{`${CLOSED_TAB_TEXT} (${signupClosedCount.toLocaleString()})`}</span></Tab>
       </TabList>
       <TabPanel>
         { !isLoading && results.length === 0 ?

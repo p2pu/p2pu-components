@@ -24,9 +24,9 @@ var BrowseLearningCircles = function BrowseLearningCircles(props) {
     onSelect: updateResultsTab
   }, /*#__PURE__*/React.createElement(TabList, null, /*#__PURE__*/React.createElement(Tab, null, /*#__PURE__*/React.createElement("span", {
     className: "minicaps bold text-xs"
-  }, "".concat(OPEN_TAB_TEXT, " (").concat(signupOpenCount, ")"))), /*#__PURE__*/React.createElement(Tab, null, /*#__PURE__*/React.createElement("span", {
+  }, "".concat(OPEN_TAB_TEXT, " (").concat(signupOpenCount.toLocaleString(), ")"))), /*#__PURE__*/React.createElement(Tab, null, /*#__PURE__*/React.createElement("span", {
     className: "minicaps bold text-xs"
-  }, "".concat(CLOSED_TAB_TEXT, " (").concat(signupClosedCount, ")")))), /*#__PURE__*/React.createElement(TabPanel, null, !isLoading && results.length === 0 ? /*#__PURE__*/React.createElement(NoResultsComponent, {
+  }, "".concat(CLOSED_TAB_TEXT, " (").concat(signupClosedCount.toLocaleString(), ")")))), /*#__PURE__*/React.createElement(TabPanel, null, !isLoading && results.length === 0 ? /*#__PURE__*/React.createElement(NoResultsComponent, {
     updateResultsTab: updateResultsTab,
     tabIndex: resultsTab,
     contact: contact

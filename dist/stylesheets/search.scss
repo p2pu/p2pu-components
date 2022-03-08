@@ -8,9 +8,10 @@ span.course-title {
   color: $p2pu-blue;
 }
 
-[role="button"] {
+[role="button"], [role="link"] {
   cursor: pointer;
 }
+
 
 .capitalize::first-letter {
   text-transform: capitalize;

@@ -75,10 +75,11 @@ var LearningCircleCard = function LearningCircleCard(props) {
   }
 
   return /*#__PURE__*/React.createElement("div", {
-    "class": "result-item grid-item col-md-6 col-lg-4",
-    onClick: onClick
+    "class": "result-item grid-item col-md-6 col-lg-4"
   }, /*#__PURE__*/React.createElement("div", {
-    "class": "card learning-circle ".concat(cardFormatting[status]["class"])
+    "class": "card learning-circle ".concat(cardFormatting[status]["class"]),
+    onClick: onClick,
+    role: "link"
   }, /*#__PURE__*/React.createElement("div", {
     "class": "status-tag"
   }, /*#__PURE__*/React.createElement("span", null, t(cardLabel))), /*#__PURE__*/React.createElement("div", {

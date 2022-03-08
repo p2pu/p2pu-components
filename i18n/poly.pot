@@ -37,6 +37,15 @@ msgstr ""
 msgid "At ${ venueLink }"
 msgstr ""
 
+#: src/LearningCircles/LearningCircleSearch.jsx:18
+#: src/utils/constants.js:28
+msgid "Keyword, organization, facilitator, etc..."
+msgstr ""
+
+#: src/Courses/Browse.jsx:25
+msgid "Use this course"
+msgstr ""
+
 #: src/Courses/CourseCard.jsx:12
 msgid "Always available"
 msgstr ""
@@ -81,10 +90,6 @@ msgstr ""
 
 #: src/Courses/CourseCard.jsx:106
 msgid "More details"
-msgstr ""
-
-#: src/Courses/Browse.jsx:25
-msgid "Use this course"
 msgstr ""
 
 #: src/utils/constants.js:4
@@ -138,10 +143,6 @@ msgstr ""
 msgid "Recently added"
 msgstr ""
 
-#: src/utils/constants.js:28
-msgid "Keyword, organization, facilitator, etc..."
-msgstr ""
-
 #: src/utils/constants.js:33
 msgid "Title, subject, etc..."
 msgstr ""
@@ -168,7 +169,7 @@ msgid "There are no learning circles available right now."
 msgstr ""
 
 #: src/Filters/LocationFilterForm.jsx:96
-#: src/LearningCircles/LocationFilter.jsx:97
+#: src/LearningCircles/LocationFilter.jsx:103
 #: src/Search/SearchTags.jsx:111
 #, javascript-format
 msgid "Within ${ value } ${ unit }"
@@ -337,28 +338,33 @@ msgid "Geolocation is not supported by this browser."
 msgstr ""
 
 #: src/Filters/LocationFilterForm.jsx:67
-#: src/LearningCircles/LocationFilter.jsx:67
+#: src/LearningCircles/LocationFilter.jsx:73
 msgid "Use my current location"
 msgstr ""
 
 #: src/Filters/LocationFilterForm.jsx:72
-#: src/LearningCircles/LocationFilter.jsx:72
+#: src/LearningCircles/LocationFilter.jsx:78
 msgid "Detecting your location..."
 msgstr ""
 
 #: src/Filters/LocationFilterForm.jsx:74
-#: src/LearningCircles/LocationFilter.jsx:74
+#: src/LearningCircles/LocationFilter.jsx:80
 msgid "Using your current location"
 msgstr ""
 
 #: src/Filters/LocationFilterForm.jsx:94
-#: src/LearningCircles/LocationFilter.jsx:95
+#: src/LearningCircles/LocationFilter.jsx:101
 msgid "miles"
 msgstr ""
 
 #: src/Filters/LocationFilterForm.jsx:94
-#: src/LearningCircles/LocationFilter.jsx:95
+#: src/LearningCircles/LocationFilter.jsx:101
 msgid "km"
+msgstr ""
+
+#: src/Filters/LocationFilterForm.jsx:139
+#: src/LearningCircles/LocationFilter.jsx:124
+msgid "Start typing a city name"
 msgstr ""
 
 #: src/LearningCircleSignup/SignupSuccess.jsx:8
@@ -393,10 +399,6 @@ msgstr ""
 
 #: src/Filters/LocationFilterForm.jsx:134
 msgid "Select a location"
-msgstr ""
-
-#: src/Filters/LocationFilterForm.jsx:139
-msgid "Start typing a city name"
 msgstr ""
 
 #: src/Filters/LocationFilterForm.jsx:140
