@@ -67,7 +67,7 @@ export default class LanguageFilterForm extends Component {
         <div class="badges selected pt-4">
           { 
             this.props.languages.map(lang =>
-              <span class="badge topic-selected topic"><span class="material-icons dismiss" onClick={()=> this.removeLanguage(lang)}>close</span>{langName(lang)}</span>
+              <span class="badge topic-selected topic"><span class="material-icons dismiss" role="button" onClick={()=> this.removeLanguage(lang)}>close</span>{langName(lang)}</span>
             )
           }
         </div>

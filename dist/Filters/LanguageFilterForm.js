@@ -132,6 +132,7 @@ var LanguageFilterForm = /*#__PURE__*/function (_Component) {
           "class": "badge topic-selected topic"
         }, /*#__PURE__*/React.createElement("span", {
           "class": "material-icons dismiss",
+          role: "button",
           onClick: function onClick() {
             return _this2.removeLanguage(lang);
           }
