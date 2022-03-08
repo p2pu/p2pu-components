@@ -40,7 +40,8 @@ var LocationFilter = /*#__PURE__*/function (_Component) {
 
       _this.setState({
         gettingLocation: useGeolocation,
-        useLocation: useGeolocation
+        useLocation: useGeolocation,
+        error: null
       });
 
       if (useGeolocation === false) {
@@ -69,7 +70,15 @@ var LocationFilter = /*#__PURE__*/function (_Component) {
 
       var error = function error() {
         _this.setState({
-          error: t(_templateObject || (_templateObject = _taggedTemplateLiteral(["Unable to detect location."])))
+          error: t(_templateObject || (_templateObject = _taggedTemplateLiteral(["Unable to detect location."]))),
+          gettingLocation: false,
+          useLocation: false
+        });
+
+        _this.props.updateQueryParams({
+          latitude: null,
+          longitude: null,
+          useLocation: useGeolocation
         });
       };
 
@@ -82,7 +91,15 @@ var LocationFilter = /*#__PURE__*/function (_Component) {
         navigator.geolocation.getCurrentPosition(success, error, options);
       } else {
         _this.setState({
-          error: t(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["Geolocation is not supported by this browser."])))
+          error: t(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["Geolocation is not supported by this browser."]))),
+          gettingLocation: false,
+          useLocation: false
+        });
+
+        _this.props.updateQueryParams({
+          latitude: null,
+          longitude: null,
+          useLocation: useGeolocation
         });
       }
     });
@@ -129,7 +146,8 @@ var LocationFilter = /*#__PURE__*/function (_Component) {
       }));
 
       _this.setState({
-        useLocation: false
+        useLocation: false,
+        error: null
       });
     });
 
@@ -181,7 +199,6 @@ var LocationFilter = /*#__PURE__*/function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      var distanceSliderLabel = this.generateDistanceSliderLabel();
       var distanceValue = this.generateDistanceValue();
       return /*#__PURE__*/React.createElement("form", {
         className: "filter"
@@ -203,11 +220,12 @@ var LocationFilter = /*#__PURE__*/function (_Component) {
       }), /*#__PURE__*/React.createElement("div", {
         className: "divider-text"
       }, "or")), /*#__PURE__*/React.createElement("div", {
-        className: "input-group-md"
+        className: "input-group-md has-validation"
       }, /*#__PURE__*/React.createElement("input", {
         type: "checkbox",
         checked: this.state.useLocation || false,
-        onChange: this.getLocation
+        onChange: this.getLocation,
+        className: this.state.error ? 'is-invalid' : ''
       }), /*#__PURE__*/React.createElement("span", null, "Within"), /*#__PURE__*/React.createElement(Select, {
         className: "flex-grow-1",
         name: "range",
@@ -221,7 +239,9 @@ var LocationFilter = /*#__PURE__*/function (_Component) {
         handleChange: this.handleRangeChange
       }), this.props.useMiles && /*#__PURE__*/React.createElement("span", null, "miles of my current location"), !this.props.useMiles && /*#__PURE__*/React.createElement("span", null, "kilometers of my current location"), /*#__PURE__*/React.createElement("span", {
         className: "material-icons"
-      }, "place "), false && /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement("div", {
+      }, "place "), this.state.error && /*#__PURE__*/React.createElement("div", {
+        className: "invalid-feedback"
+      }, this.state.error)), false && /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement("div", {
         "class": "form-check"
       }, /*#__PURE__*/React.createElement("input", {
         "class": "form-check-input",
@@ -241,7 +261,7 @@ var LocationFilter = /*#__PURE__*/function (_Component) {
       }), /*#__PURE__*/React.createElement("label", {
         "class": "form-check-label",
         "for": "in-person"
-      }, "in person")))));
+      }, "in person"))));
     }
   }]);
 

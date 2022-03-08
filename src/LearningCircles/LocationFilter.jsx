@@ -7,7 +7,9 @@ import Select from '../InputFields/Select';
 export default class LocationFilter extends Component {
   constructor(props) {
     super(props)
-    this.state = { useLocation: (Boolean(props.latitude) && Boolean(props.longitude)) }
+    this.state = { 
+      useLocation: (Boolean(props.latitude) && Boolean(props.longitude)),
+    }
   }
 
   componentDidUpdate(prevProps) {
@@ -21,7 +23,7 @@ export default class LocationFilter extends Component {
   getLocation = (e) => {
     const useGeolocation = e.target.checked;
 
-    this.setState({ gettingLocation: useGeolocation, useLocation: useGeolocation });
+    this.setState({ gettingLocation: useGeolocation, useLocation: useGeolocation, error: null });
 
     if (useGeolocation === false) {
       this.props.updateQueryParams({ latitude: null, longitude: null, useLocation: useGeolocation });
@@ -35,7 +37,8 @@ export default class LocationFilter extends Component {
     }
 
     const error = () => {
-      this.setState({ error: t`Unable to detect location.` })
+      this.setState({ error: t`Unable to detect location.`, gettingLocation: false, useLocation: false})
+      this.props.updateQueryParams({ latitude: null, longitude: null, useLocation: useGeolocation });
     }
 
     const options = {
@@ -46,7 +49,8 @@ export default class LocationFilter extends Component {
     if ('geolocation' in navigator) {
       navigator.geolocation.getCurrentPosition(success, error, options)
     } else {
-      this.setState({ error: t`Geolocation is not supported by this browser.`})
+      this.setState({ error: t`Geolocation is not supported by this browser.`, gettingLocation: false, useLocation: false})
+      this.props.updateQueryParams({ latitude: null, longitude: null, useLocation: useGeolocation });
     }
   }
 
@@ -84,7 +88,7 @@ export default class LocationFilter extends Component {
   handleCitySelect = (city) => {
     // want to get lat and lon for city
     this.props.updateQueryParams({ ...city, latitude: null, longitude: null });
-    this.setState({ useLocation: false });
+    this.setState({ useLocation: false, error: null });
   }
 
   handleRangeChange = ({range}) => {
@@ -107,7 +111,6 @@ export default class LocationFilter extends Component {
   }
 
   render() {
-    const distanceSliderLabel = this.generateDistanceSliderLabel();
     const distanceValue = this.generateDistanceValue();
 
     return (
@@ -128,11 +131,12 @@ export default class LocationFilter extends Component {
           <div className="divider-text">or</div>
         </div>
 
-        <div className="input-group-md">
+        <div className="input-group-md has-validation">
           <input 
             type="checkbox" 
             checked={this.state.useLocation || false}
             onChange={this.getLocation}
+            className={this.state.error?'is-invalid':''}
           />
           <span>Within</span>
           <Select
@@ -145,7 +149,11 @@ export default class LocationFilter extends Component {
           { this.props.useMiles && <span>miles of my current location</span> }
           { !this.props.useMiles && <span>kilometers of my current location</span> }
           <span className="material-icons">place </span>
-          { false &&
+          { this.state.error &&
+            <div className="invalid-feedback">{ this.state.error }</div>
+          }
+        </div>
+        { false &&
           <span>
             <div class="form-check">
               <input class="form-check-input" type="checkbox" value="" id="online" />
@@ -155,10 +163,9 @@ export default class LocationFilter extends Component {
               <input class="form-check-input" type="checkbox" value="" id="in-person" />
               <label class="form-check-label" for="in-person">in person</label>
             </div>
-     
+         
           </span>
-          }
-        </div>
+        }
       </form>
     );
   }
