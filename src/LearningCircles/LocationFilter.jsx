@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import {t} from 'ttag';
-import CheckboxWithLabel from '../InputFields/CheckboxWithLabel'
-import RangeSliderWithLabel from '../InputFields/RangeSliderWithLabel'
 import {CitySelectInput} from '../InputFields/CitySelect'
 import Select from '../InputFields/Select';
 
@@ -131,14 +129,6 @@ export default class LocationFilter extends Component {
         </div>
 
         <div className="input-group-md">
-          { false && <CheckboxWithLabel
-              classes='col-sm-12'
-              name='geolocation'
-              label=''
-              value={this.state.useLocation || false}
-              handleChange={this.getLocation}
-            />
-          }
           <input 
             type="checkbox" 
             checked={this.state.useLocation || false}
@@ -170,47 +160,6 @@ export default class LocationFilter extends Component {
           }
         </div>
       </form>
-
-    )
-
-    /*
-    return(
-      <div>
-        <label for="search-input" class="form-label">Location</label>
-        <CheckboxWithLabel
-          classes='col-sm-12'
-          name='geolocation'
-          label={this.generateLocationLabel()}
-          value={this.state.useLocation || false}
-          handleChange={this.getLocation}
-        />
-        <RangeSliderWithLabel
-          classes='col-sm-12'
-          label={distanceSliderLabel}
-          name='distance'
-          value={distanceValue}
-          handleChange={this.handleRangeChange}
-          min={10}
-          max={150}
-          step={10}
-          disabled={!this.state.useLocation}
-        />
-        <div className='divider col-sm-12'>
-          <div className='divider-line'></div>
-          <div className='divider-text'>{t`or`}</div>
-        </div>
-        <CitySelect
-          label={t`Select a location`}
-          classes='city-select col-sm-12 search-input'
-          name='city'
-          value={this.props.city}
-          handleChange={this.handleCitySelect}
-          placeholder={t`Start typing a city name`}
-          noResultsText={t`No results for this city`}
-          isMulti={false}
-        />
-      </div>
     );
-    */
   }
 }
