@@ -72,8 +72,8 @@ const LearningCircleCard = (props) => {
   }
 
   return (
-    <div class="result-item grid-item col-md-6 col-lg-4" onClick={onClick}>
-      <div class={`card learning-circle ${cardFormatting[status].class}`}>
+    <div class="result-item grid-item col-md-6 col-lg-4" >
+      <div class={`card learning-circle ${cardFormatting[status].class}`} onClick={onClick} role="link">
         <div class="status-tag"><span>{t(cardLabel)}</span></div>
         <div class="card-image">
           <img src={imageUrl} alt={name} class="card-img-top" />
