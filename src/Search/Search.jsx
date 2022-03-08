@@ -4,7 +4,7 @@ import { t } from 'ttag';
 import SearchAndFilter from './SearchAndFilter'
 import SearchTags from './SearchTags'
 import DefaultNoResults from './DefaultNoResults'
-import { SEARCH_PROPS, OPEN_TAB_TEXT, CLOSED_TAB_TEXT } from '../utils/constants'
+import { SEARCH_PROPS } from '../utils/constants'
 
 
 export default class Search extends Component {
