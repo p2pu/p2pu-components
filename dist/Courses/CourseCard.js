@@ -24,7 +24,7 @@ var CourseCard = function CourseCard(props) {
 
   var topicsList = props.course.topics.slice(0, 5).map(function (topic) {
     return /*#__PURE__*/React.createElement("a", {
-      className: "tag",
+      className: "topic",
       onClick: handleFilterClick(topic),
       href: ""
     }, topic);
@@ -96,11 +96,9 @@ var CourseCard = function CourseCard(props) {
   }, "Topics"), /*#__PURE__*/React.createElement("td", {
     className: "topics-list"
   }, topicsList.map(function (topic, index) {
-    return /*#__PURE__*/React.createElement(React.Fragment, null, !!index && ', ', /*#__PURE__*/React.createElement("a", {
-      key: "topic-".concat(index),
-      className: "topic",
-      href: ""
-    }, topic));
+    return /*#__PURE__*/React.createElement(React.Fragment, {
+      key: "".concat(index, "-topic")
+    }, !!index && ', ', topic);
   }))), /*#__PURE__*/React.createElement("tr", {
     className: "provider"
   }, /*#__PURE__*/React.createElement("th", {
@@ -110,13 +108,13 @@ var CourseCard = function CourseCard(props) {
   }, /*#__PURE__*/React.createElement("th", {
     scope: "row"
   }, t(_templateObject8 || (_templateObject8 = _taggedTemplateLiteral(["Platform"])))), /*#__PURE__*/React.createElement("td", {
-    colspan: "2"
+    colSpan: "2"
   }, props.course.platform)), /*#__PURE__*/React.createElement("tr", {
     className: "website"
   }, /*#__PURE__*/React.createElement("th", {
     scope: "row"
   }, t(_templateObject9 || (_templateObject9 = _taggedTemplateLiteral(["Website"])))), /*#__PURE__*/React.createElement("td", {
-    colspan: "2"
+    colSpan: "2"
   }, /*#__PURE__*/React.createElement("a", {
     href: props.course.link,
     rel: "nofollow",
@@ -126,7 +124,7 @@ var CourseCard = function CourseCard(props) {
   }, /*#__PURE__*/React.createElement("th", {
     scope: "row"
   }, t(_templateObject10 || (_templateObject10 = _taggedTemplateLiteral(["Access"])))), /*#__PURE__*/React.createElement("td", {
-    colspan: "2"
+    colSpan: "2"
   }, availability))))), /*#__PURE__*/React.createElement("div", {
     className: "row justify-content-center justify-content-md-end"
   }, moreInfo && /*#__PURE__*/React.createElement("a", {

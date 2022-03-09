@@ -133,6 +133,7 @@ var LanguageFilterForm = /*#__PURE__*/function (_Component) {
         className: "badges selected pt-4"
       }, this.props.languages.map(function (lang) {
         return /*#__PURE__*/React.createElement("span", {
+          key: "".concat(lang, "-badge"),
           className: "badge topic-selected topic"
         }, /*#__PURE__*/React.createElement("span", {
           className: "material-icons dismiss",

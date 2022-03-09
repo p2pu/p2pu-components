@@ -15,8 +15,8 @@ const OerFilterForm = (props) => {
 
   return (
     <>
-      <form class="search">
-        <label for="search-input" class="form-label">OER mode</label>
+      <form className="search">
+        <label htmlFor="search-input" className="form-label">OER mode</label>
         <div className="input-group">
           <div className="form-check">
             <input 
@@ -27,7 +27,7 @@ const OerFilterForm = (props) => {
               checked={Boolean(props.oer)}
               onChange={handleChange}
             />
-            <label className="form-check-label" for="oer">Only show open educational resources (OER)</label>
+            <label className="form-check-label" htmlFor="oer">Only show open educational resources (OER)</label>
           </div>
         </div>
       </form>

@@ -47,8 +47,8 @@ export default class TopicsFilterForm extends Component {
 
     return(
       <>
-        <form class="search">
-          <label for="search-input" class="form-label">Topics</label>
+        <form className="search">
+          <label htmlFor="search-input" className="form-label">Topics</label>
           <Select
             name={'topic'}
             options={options}
@@ -57,11 +57,11 @@ export default class TopicsFilterForm extends Component {
             handleChange={this.onChange}
             placeholder={t`Select topic(s)`}
           />
-          <div class="badges selected pt-4">
+          <div className="badges selected pt-4">
             { 
               this.props.topics && topics.map(topic => 
-                <span class="badge topic-selected topic">
-                  <span class="material-icons dismiss" role="button" onClick={e => this.removeTopic(topic)}>close</span>{topic}</span>
+                <span key={`${topic}-badge`} className="badge topic-selected topic">
+                  <span className="material-icons dismiss" role="button" onClick={e => this.removeTopic(topic)}>close</span>{topic}</span>
               )
             }
           </div>

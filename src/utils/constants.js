@@ -25,10 +25,10 @@ export const SEARCH_SUBJECTS = {
 export const SEARCH_PROPS = {
   learningCircles: {
     filters: ['location'],
-    placeholder: t`Keyword, organization, facilitator, etc...`,
+    placeholder: t`Keyword, organization, facilitator, etc...`, //remove?
   },
   courses: {
-    filters: ['topics', 'language', 'oer'],
+    filters: ['topics', 'language', 'oer'], //facilitator_guide?
     sort: ['orderCourses'],
     placeholder: t`Title, subject, etc...`,
   }

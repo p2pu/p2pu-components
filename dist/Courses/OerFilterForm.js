@@ -19,10 +19,10 @@ var OerFilterForm = function OerFilterForm(props) {
   };
 
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("form", {
-    "class": "search"
+    className: "search"
   }, /*#__PURE__*/React.createElement("label", {
-    "for": "search-input",
-    "class": "form-label"
+    htmlFor: "search-input",
+    className: "form-label"
   }, "OER mode"), /*#__PURE__*/React.createElement("div", {
     className: "input-group"
   }, /*#__PURE__*/React.createElement("div", {
@@ -36,7 +36,7 @@ var OerFilterForm = function OerFilterForm(props) {
     onChange: handleChange
   }), /*#__PURE__*/React.createElement("label", {
     className: "form-check-label",
-    "for": "oer"
+    htmlFor: "oer"
   }, "Only show open educational resources (OER)")))));
 };
 

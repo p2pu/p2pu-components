@@ -15,7 +15,7 @@ var FacilitatorGuideFilterForm = function FacilitatorGuideFilterForm(props) {
   return /*#__PURE__*/React.createElement("form", {
     className: "search"
   }, /*#__PURE__*/React.createElement("label", {
-    "for": "search-input",
+    htmlFor: "search-input",
     className: "form-label"
   }, t(_templateObject || (_templateObject = _taggedTemplateLiteral(["Facilitator guides"])))), /*#__PURE__*/React.createElement("div", {
     className: "input-group"
@@ -30,7 +30,7 @@ var FacilitatorGuideFilterForm = function FacilitatorGuideFilterForm(props) {
     onChange: handleChange
   }), /*#__PURE__*/React.createElement("label", {
     className: "form-check-label",
-    "for": "facilitator_guide"
+    htmlFor: "facilitator_guide"
   }, t(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["Only show courses with facilitator guides"])))))));
 };
 

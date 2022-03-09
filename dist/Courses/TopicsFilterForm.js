@@ -103,10 +103,10 @@ var TopicsFilterForm = /*#__PURE__*/function (_Component) {
         return topics.indexOf(option.value) == -1;
       });
       return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("form", {
-        "class": "search"
+        className: "search"
       }, /*#__PURE__*/React.createElement("label", {
-        "for": "search-input",
-        "class": "form-label"
+        htmlFor: "search-input",
+        className: "form-label"
       }, "Topics"), /*#__PURE__*/React.createElement(Select, {
         name: 'topic',
         options: options,
@@ -115,12 +115,13 @@ var TopicsFilterForm = /*#__PURE__*/function (_Component) {
         handleChange: this.onChange,
         placeholder: t(_templateObject || (_templateObject = _taggedTemplateLiteral(["Select topic(s)"])))
       }), /*#__PURE__*/React.createElement("div", {
-        "class": "badges selected pt-4"
+        className: "badges selected pt-4"
       }, this.props.topics && topics.map(function (topic) {
         return /*#__PURE__*/React.createElement("span", {
-          "class": "badge topic-selected topic"
+          key: "".concat(topic, "-badge"),
+          className: "badge topic-selected topic"
         }, /*#__PURE__*/React.createElement("span", {
-          "class": "material-icons dismiss",
+          className: "material-icons dismiss",
           role: "button",
           onClick: function onClick(e) {
             return _this2.removeTopic(topic);

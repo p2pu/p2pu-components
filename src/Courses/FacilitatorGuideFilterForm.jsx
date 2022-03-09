@@ -8,7 +8,7 @@ const FacilitatorGuideFilterForm = (props) => {
 
   return (
     <form className="search">
-      <label for="search-input" className="form-label">{t`Facilitator guides`}</label>
+      <label htmlFor="search-input" className="form-label">{t`Facilitator guides`}</label>
       <div className="input-group">
         <div className="form-check">
           <input 
@@ -19,7 +19,7 @@ const FacilitatorGuideFilterForm = (props) => {
             checked={Boolean(props.facilitator_guide)}
             onChange={handleChange}
           />
-          <label className="form-check-label" for="facilitator_guide">{t`Only show courses with facilitator guides`}</label>
+          <label className="form-check-label" htmlFor="facilitator_guide">{t`Only show courses with facilitator guides`}</label>
         </div>
       </div>
     </form>

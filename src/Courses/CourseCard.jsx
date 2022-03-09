@@ -17,7 +17,7 @@ const CourseCard = (props) => {
     }
   };
   const topicsList = props.course.topics.slice(0, 5).map( topic => {
-    return <a className='tag' onClick={handleFilterClick(topic)} href={""}>{topic}</a>
+    return <a className='topic' onClick={handleFilterClick(topic)} href={""}>{topic}</a>
   });
   const colorClass = COLOR_CLASSES[(props.course.id % COLOR_CLASSES.length)];
 
@@ -64,17 +64,15 @@ const CourseCard = (props) => {
         <footer className="card-footer col-12 col-md-6 col-lg-12 col-xl-5">
           <div className="table-responsive">
             <table className="table">
-    
               <tbody>
                 <tr className="topics">
                   <th scope="row">Topics</th>
                   <td className="topics-list">
-                    { topicsList.map((topic, index) => <>
-                          {!!index && ', '}
-                          <a key={`topic-${index}`} className="topic" href="">{topic}</a>
-                        </>
-                      )
-                    }
+                    { topicsList.map((topic, index) => 
+                        <React.Fragment key={`${index}-topic`} >
+                          {!!index && ', '}{topic}
+                        </React.Fragment>
+                    )}
                   </td>
                 </tr>
                 <tr className="provider">
@@ -84,22 +82,22 @@ const CourseCard = (props) => {
                 { props.course.platform &&
                   <tr className="platform">
                     <th scope="row">{t`Platform`}</th>
-                    <td colspan="2">{props.course.platform}</td>
+                    <td colSpan="2">{props.course.platform}</td>
                   </tr>
                 }
                 <tr className="website">
                  <th scope="row">{t`Website`}</th>
-                  <td colspan="2">
+                  <td colSpan="2">
                     <a href={props.course.link} rel="nofollow" target="_blank">{props.course.link}</a>
                   </td>
                 </tr>
                 <tr className="platform">
                   <th scope="row">{t`Access`}</th>
-                  <td colspan="2">{availability }</td>
+                  <td colSpan="2">{availability }</td>
                 </tr>
               </tbody>
             </table>
-          </div>	
+          </div>
           <div className="row justify-content-center justify-content-md-end">
             {
               moreInfo &&
