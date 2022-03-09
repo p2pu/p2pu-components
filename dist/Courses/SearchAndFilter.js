@@ -17,7 +17,7 @@ var SearchAndFilter = function SearchAndFilter(props) {
     "aria-controls": "course-filters"
   }, /*#__PURE__*/React.createElement("span", {
     className: "material-icons"
-  }, "filter_list")), /*#__PURE__*/React.createElement("div", {
+  }, "filter_list"), " Search and filter"), /*#__PURE__*/React.createElement("div", {
     className: "offcanvas offcanvas-start filters wrap pe-lg-3 pe-xl-4",
     tabindex: "-1",
     id: "course-filters",
@@ -27,7 +27,7 @@ var SearchAndFilter = function SearchAndFilter(props) {
   }, /*#__PURE__*/React.createElement("h3", {
     className: "offcanvas-title",
     id: "filters-label"
-  }, "Filter Courses"), /*#__PURE__*/React.createElement("button", {
+  }, "Filter Resources"), /*#__PURE__*/React.createElement("button", {
     type: "button",
     className: "btn-close text-reset",
     "data-bs-dismiss": "offcanvas",
