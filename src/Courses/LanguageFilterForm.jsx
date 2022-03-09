@@ -64,7 +64,7 @@ export default class LanguageFilterForm extends Component {
           isMulti={false}
           value={null}
           handleChange={this.handleSelect}
-          placeholder={t`Select one or more`}
+          placeholder={t`Select language(s)`}
         />
         <div className="badges selected pt-4">
           { 

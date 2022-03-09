@@ -55,7 +55,7 @@ export default class TopicsFilterForm extends Component {
             isMulti={false}
             value={null}
             handleChange={this.onChange}
-            placeholder={t`Select one or more`}
+            placeholder={t`Select topic(s)`}
           />
           <div class="badges selected pt-4">
             { 

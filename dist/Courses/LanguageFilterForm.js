@@ -128,7 +128,7 @@ var LanguageFilterForm = /*#__PURE__*/function (_Component) {
         isMulti: false,
         value: null,
         handleChange: this.handleSelect,
-        placeholder: t(_templateObject || (_templateObject = _taggedTemplateLiteral(["Select one or more"])))
+        placeholder: t(_templateObject || (_templateObject = _taggedTemplateLiteral(["Select language(s)"])))
       }), /*#__PURE__*/React.createElement("div", {
         className: "badges selected pt-4"
       }, this.props.languages.map(function (lang) {
