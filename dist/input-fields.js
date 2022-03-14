@@ -1,5 +1,4 @@
 import CheckboxWithLabel from "./InputFields/CheckboxWithLabel";
-import CitySelect from "./InputFields/CitySelect";
 import DatePickerWithLabel from "./InputFields/DatePickerWithLabel";
 import ImageUploader from "./InputFields/ImageUploader";
 import InputWithLabel from "./InputFields/InputWithLabel";
@@ -12,5 +11,5 @@ import SwitchWithLabels from "./InputFields/SwitchWithLabels";
 import TextareaWithLabel from "./InputFields/TextareaWithLabel";
 import TimePickerWithLabel from "./InputFields/TimePickerWithLabel";
 import TimeZoneSelect from "./InputFields/TimeZoneSelect";
-export { CitySelect, CheckboxWithLabel, DatePickerWithLabel, ImageUploader, InputWithLabel, URLInputWithLabel, LanguageSelect, PlaceSelect, RangeSliderWithLabel, SelectWithLabel, SwitchWithLabels, TextareaWithLabel, TimePickerWithLabel, TimeZoneSelect };
+export { CheckboxWithLabel, DatePickerWithLabel, ImageUploader, InputWithLabel, URLInputWithLabel, LanguageSelect, PlaceSelect, RangeSliderWithLabel, SelectWithLabel, SwitchWithLabels, TextareaWithLabel, TimePickerWithLabel, TimeZoneSelect };
 //# sourceMappingURL=input-fields.js.map

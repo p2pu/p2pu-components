@@ -14,8 +14,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Select from 'react-select';
 import jsonp from 'jsonp';
-import InputWrapper from '../InputWrapper';
-export var CitySelectInput = function CitySelectInput(props) {
+export var CitySelect = function CitySelect(props) {
   var _useState = useState([]),
       _useState2 = _slicedToArray(_useState, 2),
       cities = _useState2[0],
@@ -113,28 +112,6 @@ export var CitySelectInput = function CitySelectInput(props) {
     styles: customStyles
   }, rest));
 };
-
-var CitySelect = function CitySelect(props) {
-  var label = props.label,
-      name = props.name,
-      id = props.id,
-      disabled = props.disabled,
-      required = props.required,
-      errorMessage = props.errorMessage,
-      helpText = props.helpText,
-      classes = props.classes;
-  return /*#__PURE__*/React.createElement(InputWrapper, {
-    label: label,
-    name: name,
-    id: id,
-    required: required,
-    disabled: disabled,
-    errorMessage: errorMessage,
-    helpText: helpText,
-    classes: classes
-  }, /*#__PURE__*/React.createElement(CitySelectInput, props));
-};
-
 CitySelect.propTypes = {
   handleChange: PropTypes.func.isRequired,
   name: PropTypes.string.isRequired,

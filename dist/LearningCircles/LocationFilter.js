@@ -20,7 +20,7 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 import React, { Component } from 'react';
 import axios from 'axios';
 import { t } from 'ttag';
-import { CitySelectInput } from '../InputFields/CitySelect';
+import { CitySelect } from './CitySelect';
 import Select from '../InputFields/Select';
 
 var LocationFilter = /*#__PURE__*/function (_Component) {
@@ -207,7 +207,7 @@ var LocationFilter = /*#__PURE__*/function (_Component) {
         className: "form-label"
       }, "Location"), /*#__PURE__*/React.createElement("div", {
         className: "search-input my-2 my-md-0"
-      }, /*#__PURE__*/React.createElement(CitySelectInput, {
+      }, /*#__PURE__*/React.createElement(CitySelect, {
         name: "city",
         value: this.props.city,
         isClearable: true,
