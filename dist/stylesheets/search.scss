@@ -1,3 +1,4 @@
+@import "loader";
 @import "variables";
 @import "mixins";
 
@@ -5,6 +6,15 @@
 span.course-title {
   font-weight: bolder;
   color: $p2pu-blue;
+}
+
+[role="button"], [role="link"] {
+  cursor: pointer;
+}
+
+
+.capitalize::first-letter {
+  text-transform: capitalize;
 }
 
 .page {
@@ -208,8 +218,8 @@ span.course-title {
 
       &:hover {
         text-decoration: none;
-        box-shadow: -2px 2px 8px 2px rgba(0, 0, 0, 0.1);
-        transform: translate(2px, -6px);
+        box-shadow: -2px 2px 6px 1px rgba(0, 0, 0, 0.1);
+        transform: translate(1px, -4px);
         opacity: 1;
 
         .title {
@@ -219,7 +229,7 @@ span.course-title {
         .actions {
           .primary-cta {
             .p2pu-btn {
-              box-shadow: -2px 2px 8px 2px rgba(0, 0, 0, 0.1);
+              box-shadow: -2px 2px 5px 1px rgba(0, 0, 0, 0.1);
             }
           }
         }
@@ -419,10 +429,6 @@ span.course-title {
           border-color: $p2pu-orange;
         }
 
-        .start-date {
-          color: $p2pu-orange;
-        }
-
         .image-container {
           .circle {
             background-color: $p2pu-light-orange;
@@ -450,10 +456,6 @@ span.course-title {
 
         .status-tag {
           border-color: $p2pu-yellow;
-        }
-
-        .start-date {
-          color: $p2pu-yellow;
         }
 
         .image-container {
@@ -485,10 +487,6 @@ span.course-title {
           border-color: $p2pu-blue;
         }
 
-        .start-date {
-          color: $p2pu-blue;
-        }
-
         .image-container {
           .circle {
             background-color: $p2pu-light-blue;
@@ -518,10 +516,6 @@ span.course-title {
           border-color: $p2pu-green;
         }
 
-        .start-date {
-          color: $p2pu-green;
-        }
-
         .image-container {
           .circle {
             background-color: $p2pu-light-green;
@@ -543,16 +537,12 @@ span.course-title {
       }
     }
 
-    &.closed {
+    &.p2pu-gray {
       .card {
         border-top: 6px solid $gray-darker;
 
         .status-tag {
           border-color: $gray-darker;
-        }
-
-        .start-date {
-          color: $gray-darker;
         }
 
         .image-container {

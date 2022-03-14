@@ -107,7 +107,7 @@ const SearchTags = (props) => {
     if (props.latitude && props.longitude) {
       const unit = props.useMiles ? 'miles' : 'km';
       let value = props.useMiles ? props.distance * 0.62 : props.distance;
-      value = Math.round(value / 10) * 10;
+      value = Math.round(value / 5) * 5;
       const text = t`Within ${ value } ${ unit }`;
       const onDelete = (value) => {
         props.updateQueryParams({ latitude: null, longitude: null, distance: 50 })
@@ -123,32 +123,6 @@ const SearchTags = (props) => {
     }
   }
 
-  const generateMeetingDaysTags = () => {
-    if (props.weekdays && props.weekdays.length > 0) {
-      const onDelete = (day) => {
-        const dayIndex = MEETING_DAYS.indexOf(day);
-        const newWeekdayArray = props.weekdays.filter(val => val != dayIndex);
-        const weekdays = newWeekdayArray.length > 0 ? newWeekdayArray : null;
-        props.updateQueryParams({ weekdays })
-      }
-
-      let weekdayTagsArray = [<span key='weekdayTagIntro'>meeting on</span>]
-      weekdayTagsArray = []; // TODO
-
-      props.weekdays.map((dayIndex, index) => {
-        const weekdayName = MEETING_DAYS[dayIndex];
-
-        if (props.weekdays.length > 1 && index === props.weekdays.length - 1) {
-          weekdayTagsArray.push(<span key={`weekdayTag-${index + 2}`}>or</span>)
-        }
-
-        weekdayTagsArray.push(<SearchTag value={weekdayName} key={`weekdatTag-${index}`} onDelete={onDelete} />)
-      })
-
-      return weekdayTagsArray;
-    }
-  }
-
   const generateTagsPhrase = (tag) => {
     switch (tag) {
       case 'q':
@@ -157,8 +131,6 @@ const SearchTags = (props) => {
       return generateTopicsTags();
       case 'location':
       return generateLocationTag();
-      case 'meetingDays':
-      return generateMeetingDaysTags();
       case 'teamName':
       return generateTeamNameTag();
       case 'language':

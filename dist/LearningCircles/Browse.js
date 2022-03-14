@@ -1,68 +1,62 @@
 import React from 'react';
-import Masonry from 'react-masonry-css';
 import { t } from "ttag";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import LearningCircleCard from './LearningCircleCard.jsx';
+import { OPEN_TAB_TEXT, CLOSED_TAB_TEXT } from '../utils/constants';
+import LearningCircleCard from './LearningCircleCard';
 import 'react-tabs/style/react-tabs.css';
-var defaultBreakpoints = {
-  "default": 3,
-  992: 2,
-  768: 1
-};
 
-var BrowseLearningCircles = function BrowseLearningCircles(_ref) {
-  var results = _ref.results,
-      onSelectResult = _ref.onSelectResult,
-      locale = _ref.locale,
-      columnBreakpoints = _ref.columnBreakpoints,
-      resultsCount = _ref.resultsCount,
-      signupOpenCount = _ref.signupOpenCount,
-      signupClosedCount = _ref.signupClosedCount,
-      resultsTab = _ref.resultsTab,
-      updateResultsTab = _ref.updateResultsTab,
-      NoResultsComponent = _ref.NoResultsComponent,
-      showNoResultsComponent = _ref.showNoResultsComponent,
-      contact = _ref.contact;
+var BrowseLearningCircles = function BrowseLearningCircles(props) {
+  var results = props.results,
+      onSelectResult = props.onSelectResult,
+      locale = props.locale,
+      columnBreakpoints = props.columnBreakpoints,
+      resultsCount = props.resultsCount,
+      signupOpenCount = props.signupOpenCount,
+      signupClosedCount = props.signupClosedCount,
+      resultsTab = props.resultsTab,
+      updateResultsTab = props.updateResultsTab,
+      NoResultsComponent = props.NoResultsComponent,
+      showNoResultsComponent = props.showNoResultsComponent,
+      contact = props.contact,
+      isLoading = props.isLoading;
   return /*#__PURE__*/React.createElement(Tabs, {
     selectedIndex: resultsTab,
     onSelect: updateResultsTab
   }, /*#__PURE__*/React.createElement(TabList, null, /*#__PURE__*/React.createElement(Tab, null, /*#__PURE__*/React.createElement("span", {
     className: "minicaps bold text-xs"
-  }, "Signup open (".concat(signupOpenCount, ")"))), /*#__PURE__*/React.createElement(Tab, null, /*#__PURE__*/React.createElement("span", {
+  }, "".concat(OPEN_TAB_TEXT, " (").concat(signupOpenCount.toLocaleString(), ")"))), /*#__PURE__*/React.createElement(Tab, null, /*#__PURE__*/React.createElement("span", {
     className: "minicaps bold text-xs"
-  }, "Signup closed (".concat(signupClosedCount, ")")))), /*#__PURE__*/React.createElement(TabPanel, null, results.length === 0 ? /*#__PURE__*/React.createElement(NoResultsComponent, {
+  }, "".concat(CLOSED_TAB_TEXT, " (").concat(signupClosedCount.toLocaleString(), ")")))), /*#__PURE__*/React.createElement(TabPanel, null, !isLoading && results.length === 0 ? /*#__PURE__*/React.createElement(NoResultsComponent, {
     updateResultsTab: updateResultsTab,
     tabIndex: resultsTab,
     contact: contact
-  }) : /*#__PURE__*/React.createElement(Masonry, {
-    breakpointCols: columnBreakpoints || defaultBreakpoints,
-    className: "masonry-grid search-results row grid",
-    columnClassName: "masonry-grid_column"
+  }) : /*#__PURE__*/React.createElement("div", {
+    className: "search-results row grid"
   }, results.map(function (circle, index) {
     return /*#__PURE__*/React.createElement(LearningCircleCard, {
       key: "learning-circle-".concat(index),
       learningCircle: circle,
       locale: locale,
-      classes: "col-12 mb-5 mt-4",
+      classes: "col-md-4 col-md-4 my-3",
       onSelectResult: onSelectResult,
-      isSignupOpen: true
+      isSignupOpen: true,
+      defaultImageUrl: props.defaultImageUrl
     });
-  }))), /*#__PURE__*/React.createElement(TabPanel, null, results.length === 0 ? /*#__PURE__*/React.createElement(NoResultsComponent, {
+  }))), /*#__PURE__*/React.createElement(TabPanel, null, !isLoading && results.length === 0 ? /*#__PURE__*/React.createElement(NoResultsComponent, {
     updateResultsTab: updateResultsTab,
     tabIndex: resultsTab,
     contact: contact
-  }) : /*#__PURE__*/React.createElement(Masonry, {
-    breakpointCols: columnBreakpoints || defaultBreakpoints,
-    className: "masonry-grid search-results row grid",
-    columnClassName: "masonry-grid_column"
+  }) : /*#__PURE__*/React.createElement("div", {
+    className: "search-results row grid"
   }, results.map(function (circle, index) {
     return /*#__PURE__*/React.createElement(LearningCircleCard, {
       key: "learning-circle-".concat(index),
       learningCircle: circle,
       locale: locale,
-      classes: "col-12 mb-5 mt-4",
+      classes: "col-md-4 my-4",
       onSelectResult: onSelectResult,
-      isSignupOpen: false
+      isSignupOpen: false,
+      defaultImageUrl: props.defaultImageUrl
     });
   }))));
 };
@@ -74,3 +68,4 @@ BrowseLearningCircles.defaultProps = {
   resultsCount: 0
 };
 export default BrowseLearningCircles;
+//# sourceMappingURL=Browse.js.map

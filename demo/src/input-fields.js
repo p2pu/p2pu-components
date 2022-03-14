@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { render } from 'react-dom';
 
-import CitySelect from "../../src/InputFields/CitySelect";
 import PlaceSelect from "../../src/InputFields/PlaceSelect";
 import TimeZoneSelect from "../../src/InputFields/TimeZoneSelect";
 import LanguageSelect from "../../src/InputFields/LanguageSelect";
@@ -136,13 +135,6 @@ const App = () => {
       />
 
       <h2 className="my-4">Selects</h2>
-      <CitySelect
-        label={'Select a city'}
-        classes="form-group"
-        name='city-demo'
-        value={content['city-demo']}
-        handleChange={handleChange}
-      />
       <PlaceSelect
         label={'Select a place'}
         classes="form-group"

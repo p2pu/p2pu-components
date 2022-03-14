@@ -1,115 +1,33 @@
 import _taggedTemplateLiteral from "@babel/runtime/helpers/taggedTemplateLiteral";
 
-function _templateObject10() {
-  var data = _taggedTemplateLiteral(["View details"]);
-
-  _templateObject10 = function _templateObject10() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject9() {
-  var data = _taggedTemplateLiteral(["Sign up"]);
-
-  _templateObject9 = function _templateObject9() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject8() {
-  var data = _taggedTemplateLiteral(["Meeting at ", ""]);
-
-  _templateObject8 = function _templateObject8() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject7() {
-  var data = _taggedTemplateLiteral(["Facilitated by ", ""]);
-
-  _templateObject7 = function _templateObject7() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject6() {
-  var data = _taggedTemplateLiteral(["Starting ", ""]);
-
-  _templateObject6 = function _templateObject6() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject5() {
-  var data = _taggedTemplateLiteral(["Started ", ""]);
-
-  _templateObject5 = function _templateObject5() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject4() {
-  var data = _taggedTemplateLiteral(["Ended ", ""]);
-
-  _templateObject4 = function _templateObject4() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject3() {
-  var data = _taggedTemplateLiteral(["Registration open!"]);
-
-  _templateObject3 = function _templateObject3() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject2() {
-  var data = _taggedTemplateLiteral(["", " weeks starting ", ""]);
-
-  _templateObject2 = function _templateObject2() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject() {
-  var data = _taggedTemplateLiteral(["", " from ", " to ", " (", ")"]);
-
-  _templateObject = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
+var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8, _templateObject9, _templateObject10, _templateObject11;
 
 import React from 'react';
 import { t } from "ttag";
 import { Card, CardTitle, CardBody } from '../Card';
 import { COLOR_CLASSES } from '../utils/constants';
 import { date, day, time } from '../utils/i18n';
-var coloursByStatus = {
-  startingSoon: 'p2pu-blue',
-  inProgressOpen: 'p2pu-green',
-  inProgressClosed: 'p2pu-yellow',
-  completed: 'p2pu-orange'
+var cardFormatting = {
+  'upcoming': {
+    color: 'p2pu-blue',
+    label: 'Starting soon',
+    "class": 'starting-soon'
+  },
+  'in_progress': {
+    color: 'p2pu-green',
+    label: 'In progress',
+    "class": 'in-progress'
+  },
+  'closed': {
+    color: 'p2pu-yellow',
+    label: 'Sign up closed',
+    "class": 'signup-closed'
+  },
+  'completed': {
+    color: 'p2pu-gray',
+    label: 'Completed',
+    "class": 'closed'
+  }
 };
 
 var LearningCircleCard = function LearningCircleCard(props) {
@@ -121,83 +39,89 @@ var LearningCircleCard = function LearningCircleCard(props) {
   var formattedEndDate = date(learningCircle.last_meeting_date, locale);
   var formattedEndTime = time(learningCircle.end_time);
   var weekDay = day(learningCircle.day);
-  var schedule = t(_templateObject(), weekDay, formattedStartTime, formattedEndTime, learningCircle.time_zone);
-  var duration = t(_templateObject2(), learningCircle.weeks, formattedStartDate);
+  var schedule = learningCircle.meets_weekly ? t(_templateObject || (_templateObject = _taggedTemplateLiteral(["", " from ", " to ", " (", ")"])), weekDay, formattedStartTime, formattedEndTime, learningCircle.time_zone) : t(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["", " to ", " (", ")"])), formattedStartTime, formattedEndTime, learningCircle.time_zone);
+  var frequency = learningCircle.meets_weekly ? t(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["", " weeks starting ", ""])), learningCircle.weeks, formattedStartDate) : t(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["", " meetings starting ", ""])), learningCircle.weeks, formattedStartDate);
   var name = learningCircle.name ? learningCircle.name : learningCircle.course.title;
   var isSignupOpen = props.isSignupOpen;
-  var isCompleted = new Date(learningCircle.last_meeting_date) < new Date();
-  var isInProgress = !isCompleted && new Date(learningCircle.start_date) < new Date();
-  var status;
+  var today = new Date();
+  var startDate = new Date(learningCircle.start_date);
+  var endDate = new Date(learningCircle.last_meeting_date);
+  var isUpcoming = startDate > today;
+  var isCompleted = endDate < today;
+  var isInProgress = startDate < today && endDate > today;
+  var status = learningCircle.status || 'completed';
+  var colorClass = cardFormatting[status].color;
+  var cardLabel = cardFormatting[status].label;
+  var dateLabel = t(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["Ended ", ""])), formattedEndDate);
 
-  if (isSignupOpen && new Date(learningCircle.start_date) > new Date()) {
-    status = 'startingSoon';
-  } else if (isSignupOpen && isInProgress) {
-    status = 'inProgressOpen';
-  } else if (isInProgress) {
-    status = 'inProgressClosed';
-  } else {
-    status = 'completed';
+  if (status === 'in_progress' || status === 'closed') {
+    dateLabel = t(_templateObject6 || (_templateObject6 = _taggedTemplateLiteral(["Started ", ""])), formattedStartDate);
+  } else if (status === 'upcoming') {
+    dateLabel = t(_templateObject7 || (_templateObject7 = _taggedTemplateLiteral(["Starting ", ""])), formattedStartDate);
   }
-
-  var colorClass = coloursByStatus[status];
 
   var onClick = function onClick() {
     if (onSelectResult) {
       onSelectResult(learningCircle);
     } else {
-      var url = "".concat(learningCircle.url, "?prev=").concat(encodeURIComponent(window.location.href));
-      window.location.href = url;
+      window.location.href = learningCircle.url;
     }
   };
 
-  return /*#__PURE__*/React.createElement(Card, {
-    colorClass: colorClass,
-    classes: "".concat(props.classes),
-    role: "button",
-    tabIndex: 0,
-    onClick: onClick
-  }, isSignupOpen && /*#__PURE__*/React.createElement("div", {
-    className: "status-tag minicaps bold"
-  }, t(_templateObject3())), /*#__PURE__*/React.createElement(CardTitle, null, name), /*#__PURE__*/React.createElement(CardBody, null, /*#__PURE__*/React.createElement("p", {
-    className: "start-date bold m-0"
-  }, isCompleted ? t(_templateObject4(), formattedEndDate) : isInProgress ? t(_templateObject5(), formattedStartDate) : t(_templateObject6(), formattedStartDate))), /*#__PURE__*/React.createElement(CardBody, null, learningCircle.image_url && /*#__PURE__*/React.createElement("div", {
-    className: "image-container hidden-on-mobile mb-2"
+  var imageUrl = props.defaultImageUrl;
+
+  if (learningCircle.image_url) {
+    imageUrl = learningCircle.image_url;
+  }
+
+  return /*#__PURE__*/React.createElement("div", {
+    className: "result-item grid-item col-md-6 col-lg-4"
   }, /*#__PURE__*/React.createElement("div", {
-    className: "square"
-  }), /*#__PURE__*/React.createElement("div", {
-    className: "circle"
-  }), /*#__PURE__*/React.createElement("div", {
-    className: "image"
+    className: "card learning-circle ".concat(cardFormatting[status]["class"]),
+    onClick: onClick,
+    role: "link"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "status-tag"
+  }, /*#__PURE__*/React.createElement("span", null, t(cardLabel))), /*#__PURE__*/React.createElement("div", {
+    className: "card-image"
   }, /*#__PURE__*/React.createElement("img", {
-    src: "".concat(learningCircle.image_url),
-    alt: name
-  }))), /*#__PURE__*/React.createElement("p", {
+    src: imageUrl,
+    alt: name,
+    className: "card-img-top"
+  })), /*#__PURE__*/React.createElement("div", {
+    className: "card-header"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "eyebrow"
+  }, dateLabel), /*#__PURE__*/React.createElement("h3", {
+    className: "card-title"
+  }, name)), /*#__PURE__*/React.createElement("div", {
+    className: "card-body"
+  }, /*#__PURE__*/React.createElement("span", {
     className: "schedule"
   }, /*#__PURE__*/React.createElement("i", {
     className: "material-icons"
-  }, "schedule"), schedule), /*#__PURE__*/React.createElement("p", {
+  }, "schedule"), schedule), /*#__PURE__*/React.createElement("span", {
     className: "duration"
   }, /*#__PURE__*/React.createElement("i", {
     className: "material-icons"
-  }, "today"), duration), /*#__PURE__*/React.createElement("p", {
+  }, "today"), frequency), /*#__PURE__*/React.createElement("span", {
     className: "city-country"
   }, /*#__PURE__*/React.createElement("i", {
     className: "material-icons"
-  }, "place"), learningCircle.city), /*#__PURE__*/React.createElement("p", {
+  }, "place"), learningCircle.city), /*#__PURE__*/React.createElement("span", {
     className: "facilitator"
   }, /*#__PURE__*/React.createElement("i", {
     className: "material-icons"
-  }, "face"), t(_templateObject7(), learningCircle.facilitator)), /*#__PURE__*/React.createElement("p", {
+  }, "face"), t(_templateObject8 || (_templateObject8 = _taggedTemplateLiteral(["Facilitated by ", ""])), learningCircle.facilitator)), /*#__PURE__*/React.createElement("span", {
     className: "location"
   }, /*#__PURE__*/React.createElement("i", {
     className: "material-icons"
-  }, "store"), t(_templateObject8(), learningCircle.venue)), /*#__PURE__*/React.createElement("div", {
-    className: "actions"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "primary-cta"
+  }, "store"), t(_templateObject9 || (_templateObject9 = _taggedTemplateLiteral(["Meeting at ", ""])), learningCircle.venue))), /*#__PURE__*/React.createElement("div", {
+    className: "card-footer"
   }, /*#__PURE__*/React.createElement("button", {
-    className: "btn p2pu-btn transparent"
-  }, isSignupOpen ? t(_templateObject9()) : t(_templateObject10()))))));
+    className: "btn p2pu-btn btn-sm gray mx-auto d-block"
+  }, isSignupOpen ? t(_templateObject10 || (_templateObject10 = _taggedTemplateLiteral(["Sign up"]))) : t(_templateObject11 || (_templateObject11 = _taggedTemplateLiteral(["View details"])))))));
 };
 
 export default LearningCircleCard;
+//# sourceMappingURL=LearningCircleCard.js.map

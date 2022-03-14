@@ -2,129 +2,11 @@ import _taggedTemplateLiteral from "@babel/runtime/helpers/taggedTemplateLiteral
 import _defineProperty from "@babel/runtime/helpers/defineProperty";
 import _slicedToArray from "@babel/runtime/helpers/slicedToArray";
 
-function _templateObject12() {
-  var data = _taggedTemplateLiteral(["Submitting..."]);
+var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8, _templateObject9, _templateObject10, _templateObject11, _templateObject12;
 
-  _templateObject12 = function _templateObject12() {
-    return data;
-  };
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 
-  return data;
-}
-
-function _templateObject11() {
-  var data = _taggedTemplateLiteral(["Back to search"]);
-
-  _templateObject11 = function _templateObject11() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject10() {
-  var data = _taggedTemplateLiteral(["Sign up"]);
-
-  _templateObject10 = function _templateObject10() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject9() {
-  var data = _taggedTemplateLiteral(["I would like to receive emails about other future learning opportunities from P2PU."]);
-
-  _templateObject9 = function _templateObject9() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject8() {
-  var data = _taggedTemplateLiteral(["A successful study group requires the support of all of its members. How will you help your peers achieve their goals?"]);
-
-  _templateObject8 = function _templateObject8() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject7() {
-  var data = _taggedTemplateLiteral(["Why do you want to learn this topic?"]);
-
-  _templateObject7 = function _templateObject7() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject6() {
-  var data = _taggedTemplateLiteral(["Your number won't be shared with other participants."]);
-
-  _templateObject6 = function _templateObject6() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject5() {
-  var data = _taggedTemplateLiteral(["If you'd like to receive weekly text messages reminding you of upcoming learning circle meetings, put your phone number here."]);
-
-  _templateObject5 = function _templateObject5() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject4() {
-  var data = _taggedTemplateLiteral(["Email address"]);
-
-  _templateObject4 = function _templateObject4() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject3() {
-  var data = _taggedTemplateLiteral(["Name"]);
-
-  _templateObject3 = function _templateObject3() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject2() {
-  var data = _taggedTemplateLiteral(["I consent that P2PU may process my personal data provided here for the purpose of participating in this learning circle."]);
-
-  _templateObject2 = function _templateObject2() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject() {
-  var data = _taggedTemplateLiteral(["More information."]);
-
-  _templateObject = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 
 import React, { useState } from 'react';
 import { t, jt } from 'ttag';
@@ -241,15 +123,15 @@ var SignupForm = function SignupForm(props) {
   var gdprLink = /*#__PURE__*/React.createElement("a", {
     href: gdprUrl,
     key: "gdprLink"
-  }, t(_templateObject()));
-  var consentLabel = t(_templateObject2());
+  }, t(_templateObject || (_templateObject = _taggedTemplateLiteral(["More information."]))));
+  var consentLabel = t(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["I consent that P2PU may process my personal data provided here for the purpose of participating in this learning circle."])));
   return /*#__PURE__*/React.createElement("form", {
     className: "signup-modal",
     onSubmit: handleSubmit
   }, state.signupSuccess && /*#__PURE__*/React.createElement(SignupSuccess, {
     learningCircle: props.learningCircle
   }), !state.signupSuccess && /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(InputWithLabel, {
-    label: t(_templateObject3()),
+    label: t(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["Name"]))),
     value: name,
     handleChange: onDataChange,
     name: 'name',
@@ -257,7 +139,7 @@ var SignupForm = function SignupForm(props) {
     errorMessage: getError('name'),
     required: true
   }), /*#__PURE__*/React.createElement(InputWithLabel, {
-    label: t(_templateObject4()),
+    label: t(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["Email address"]))),
     value: email,
     handleChange: onDataChange,
     type: "email",
@@ -266,15 +148,15 @@ var SignupForm = function SignupForm(props) {
     errorMessage: getError('email'),
     required: true
   }), /*#__PURE__*/React.createElement(MobileInput, {
-    label: t(_templateObject5()),
+    label: t(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["If you'd like to receive weekly text messages reminding you of upcoming learning circle meetings, put your phone number here."]))),
     value: mobile,
     handleChange: onDataChange,
     name: 'mobile',
     id: 'id_mobile',
     errorMessage: getError('mobile'),
     required: false
-  }), /*#__PURE__*/React.createElement("p", null, t(_templateObject6())), /*#__PURE__*/React.createElement(InputWithLabel, {
-    label: t(_templateObject7()),
+  }), /*#__PURE__*/React.createElement("p", null, t(_templateObject6 || (_templateObject6 = _taggedTemplateLiteral(["Your number won't be shared with other participants."])))), /*#__PURE__*/React.createElement(InputWithLabel, {
+    label: t(_templateObject7 || (_templateObject7 = _taggedTemplateLiteral(["Why do you want to learn this topic?"]))),
     name: "goals",
     value: goals,
     handleChange: onDataChange,
@@ -282,7 +164,7 @@ var SignupForm = function SignupForm(props) {
     errorMessage: state.errors && state.errors.signup_questions && state.errors.signup_questions[0].goals,
     required: true
   }), /*#__PURE__*/React.createElement(InputWithLabel, {
-    label: t(_templateObject8()),
+    label: t(_templateObject8 || (_templateObject8 = _taggedTemplateLiteral(["A successful study group requires the support of all of its members. How will you help your peers achieve their goals?"]))),
     value: support,
     handleChange: onDataChange,
     name: 'support',
@@ -307,7 +189,7 @@ var SignupForm = function SignupForm(props) {
     required: true
   }), /*#__PURE__*/React.createElement(CheckboxWithLabel, {
     classes: "d-flex",
-    label: t(_templateObject9()),
+    label: t(_templateObject9 || (_templateObject9 = _taggedTemplateLiteral(["I would like to receive emails about other future learning opportunities from P2PU."]))),
     value: communications_opt_in,
     handleChange: onDataChange,
     name: 'communications_opt_in',
@@ -317,10 +199,10 @@ var SignupForm = function SignupForm(props) {
   }), /*#__PURE__*/React.createElement("button", {
     className: "btn p2pu-btn blue",
     type: "submit"
-  }, t(_templateObject10()))), /*#__PURE__*/React.createElement("button", {
+  }, t(_templateObject10 || (_templateObject10 = _taggedTemplateLiteral(["Sign up"]))))), /*#__PURE__*/React.createElement("button", {
     className: "p2pu-btn blue secondary",
     onClick: props.onCancel
-  }, t(_templateObject11())), state.submitting && /*#__PURE__*/React.createElement("div", {
+  }, t(_templateObject11 || (_templateObject11 = _taggedTemplateLiteral(["Back to search"])))), state.submitting && /*#__PURE__*/React.createElement("div", {
     className: "signup-form-submitting",
     style: _defineProperty({
       position: 'absolute',
@@ -335,7 +217,8 @@ var SignupForm = function SignupForm(props) {
     role: "status"
   }, /*#__PURE__*/React.createElement("span", {
     className: "sr-only"
-  }, t(_templateObject12())))));
+  }, t(_templateObject12 || (_templateObject12 = _taggedTemplateLiteral(["Submitting..."])))))));
 };
 
 export default SignupForm;
+//# sourceMappingURL=SignupForm.js.map

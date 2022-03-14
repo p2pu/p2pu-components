@@ -1,85 +1,17 @@
 import _slicedToArray from "@babel/runtime/helpers/slicedToArray";
 import _taggedTemplateLiteral from "@babel/runtime/helpers/taggedTemplateLiteral";
 
-function _templateObject7() {
-  var data = _taggedTemplateLiteral(["Sunday"]);
-
-  _templateObject7 = function _templateObject7() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject6() {
-  var data = _taggedTemplateLiteral(["Saturday"]);
-
-  _templateObject6 = function _templateObject6() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject5() {
-  var data = _taggedTemplateLiteral(["Friday"]);
-
-  _templateObject5 = function _templateObject5() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject4() {
-  var data = _taggedTemplateLiteral(["Thursday"]);
-
-  _templateObject4 = function _templateObject4() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject3() {
-  var data = _taggedTemplateLiteral(["Wednesday"]);
-
-  _templateObject3 = function _templateObject3() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject2() {
-  var data = _taggedTemplateLiteral(["Tuesday"]);
-
-  _templateObject2 = function _templateObject2() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject() {
-  var data = _taggedTemplateLiteral(["Monday"]);
-
-  _templateObject = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
+var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7;
 
 import { t } from 'ttag';
 var WEEK_DAYS = {
-  Monday: t(_templateObject()),
-  Tuesday: t(_templateObject2()),
-  Wednesday: t(_templateObject3()),
-  Thursday: t(_templateObject4()),
-  Friday: t(_templateObject5()),
-  Saturday: t(_templateObject6()),
-  Sunday: t(_templateObject7())
+  Monday: t(_templateObject || (_templateObject = _taggedTemplateLiteral(["Monday"]))),
+  Tuesday: t(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["Tuesday"]))),
+  Wednesday: t(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["Wednesday"]))),
+  Thursday: t(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["Thursday"]))),
+  Friday: t(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["Friday"]))),
+  Saturday: t(_templateObject6 || (_templateObject6 = _taggedTemplateLiteral(["Saturday"]))),
+  Sunday: t(_templateObject7 || (_templateObject7 = _taggedTemplateLiteral(["Sunday"])))
 };
 export function day(day_) {
   if (WEEK_DAYS.hasOwnProperty(day_)) {
@@ -164,3 +96,4 @@ export function isoCodeToLangName(code) {
 
   return code;
 }
+//# sourceMappingURL=i18n.js.map

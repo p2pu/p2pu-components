@@ -1,10 +1,11 @@
 import _defineProperty from "@babel/runtime/helpers/defineProperty";
 import _objectWithoutProperties from "@babel/runtime/helpers/objectWithoutProperties";
 import _slicedToArray from "@babel/runtime/helpers/slicedToArray";
+var _excluded = ["label", "name", "id", "value", "handleChange", "required", "disabled", "classes", "type", "errorMessage", "helpText", "placeholder", "autoFormat", "defaultCountry", "flagsImagePath", "onlyCountries", "preferredCountries"];
 
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 
 import React, { useRef, useState } from 'react';
 import PropTypes from 'prop-types';
@@ -36,7 +37,7 @@ var MobileInput = function MobileInput(props) {
       flagsImagePath = props.flagsImagePath,
       onlyCountries = props.onlyCountries,
       preferredCountries = props.preferredCountries,
-      rest = _objectWithoutProperties(props, ["label", "name", "id", "value", "handleChange", "required", "disabled", "classes", "type", "errorMessage", "helpText", "placeholder", "autoFormat", "defaultCountry", "flagsImagePath", "onlyCountries", "preferredCountries"]);
+      rest = _objectWithoutProperties(props, _excluded);
 
   var inputEl = useRef();
 
@@ -107,3 +108,4 @@ MobileInput.propTypes = {
   placeholder: PropTypes.string
 };
 export default MobileInput;
+//# sourceMappingURL=MobileInput.js.map

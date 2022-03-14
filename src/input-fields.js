@@ -1,5 +1,4 @@
 import CheckboxWithLabel from "./InputFields/CheckboxWithLabel";
-import CitySelect from "./InputFields/CitySelect";
 import DatePickerWithLabel from "./InputFields/DatePickerWithLabel";
 import ImageUploader from "./InputFields/ImageUploader";
 import InputWithLabel from "./InputFields/InputWithLabel";
@@ -15,7 +14,6 @@ import TimeZoneSelect from "./InputFields/TimeZoneSelect";
 
 
 export {
-  CitySelect,
   CheckboxWithLabel,
   DatePickerWithLabel,
   ImageUploader,

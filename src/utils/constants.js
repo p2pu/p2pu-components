@@ -24,11 +24,11 @@ export const SEARCH_SUBJECTS = {
 
 export const SEARCH_PROPS = {
   learningCircles: {
-    filters: ['location', 'topics', 'meetingDays'],
-    placeholder: t`Keyword, organization, facilitator, etc...`,
+    filters: ['location'],
+    placeholder: t`Keyword, organization, facilitator, etc...`, //remove?
   },
   courses: {
-    filters: ['topics', 'language', 'oer'],
+    filters: ['topics', 'language', 'oer'], //facilitator_guide?
     sort: ['orderCourses'],
     placeholder: t`Title, subject, etc...`,
   }
@@ -44,13 +44,13 @@ export const API_ENDPOINTS = {
   learningCircles: {
     postUrl: `/api/learning-circle/`,
     baseUrl: `/api/learningcircles/?`,
-    searchParams: ['q', 'topics', 'weekdays', 'latitude', 'longitude', 'distance', 'active', 'limit', 'offset', 'city', 'signup', 'team_id', 'order'],
+    searchParams: ['q', 'topics', 'weekdays', 'latitude', 'longitude', 'distance', 'active', 'limit', 'offset', 'city', 'signup', 'team_id', 'order', 'cu_credit'],
     arrayItems: ['topics', 'weekdays'],
     privateParams: ['limit', 'offset', 'active', 'distance', 'latitude', 'longitude'],
   },
   courses: {
     baseUrl: `/api/courses/?`,
-    searchParams: ['q', 'topics', 'order', 'limit', 'offset', 'languages', 'oer'],
+    searchParams: ['q', 'topics', 'order', 'limit', 'offset', 'languages', 'oer', 'facilitator_guide'],
     arrayItems: ['topics', 'languages'],
     privateParams: ['limit', 'offset'],
   },

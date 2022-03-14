@@ -85,8 +85,9 @@ module.exports = ({locale}={}) => {
       extensions: [".js", ".jsx", ".scss", ".css", ".svg"]
     },
     devServer: {
-      port: 3001
-    }
+      port: 3001,
+      contentBase: path.join(__dirname, 'demo/src/public'),
+    },
   };
 
   if (locale != null){

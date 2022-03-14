@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../src/InputFields/SwitchWithLabels/index.js"],"names":["SwitchWithLabels"],"mappings":"AAAA,OAAOA,gBAAP,MAA6B,uBAA7B;AACA,eAAeA,gBAAf","sourcesContent":["import SwitchWithLabels from './SwitchWithLabels.js';\nexport default SwitchWithLabels"],"file":"index.js"}

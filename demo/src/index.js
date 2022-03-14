@@ -1,9 +1,10 @@
 import React from 'react';
 import { render } from 'react-dom';
 
-import Search from "../../src/Search/Search";
+import SearchProvider from "../../src/Search/SearchProvider";
 import BrowseCourses from "../../src/Courses/Browse";
-import BrowseLearningCircles from "../../src/LearningCircles/Browse";
+import SearchCourses from '../../src/Courses/SearchCourses'
+
 
 import "../../src/stylesheets/search.scss"
 import "p2pu-theme/src/scss/base.scss"
@@ -17,15 +18,15 @@ class App extends React.Component {
     }
 
     return(
-    <div style={{ padding: "20px"}}>
-      <Search
+      <SearchProvider
         searchSubject={'courses'}
-        Browse={BrowseCourses}
         onSelectResult={handleSelectResult}
+        Browse={BrowseCourses}
         initialState={{ languages: ['en'] }}
         origin={'https://learningcircles.p2pu.org'}
-      />
-    </div>
+      >
+        <SearchCourses />
+      </SearchProvider>
     );
   }
 }

@@ -1,6 +1,7 @@
 import _extends from "@babel/runtime/helpers/extends";
 import _defineProperty from "@babel/runtime/helpers/defineProperty";
 import _objectWithoutProperties from "@babel/runtime/helpers/objectWithoutProperties";
+var _excluded = ["name", "id", "label", "value", "handleChange", "required", "disabled", "errorMessage", "helpText", "classes", "placeholder"];
 import React from 'react';
 import PropTypes from 'prop-types';
 import InputWrapper from '../InputWrapper';
@@ -17,7 +18,7 @@ var TextareaWithLabel = function TextareaWithLabel(props) {
       helpText = props.helpText,
       classes = props.classes,
       placeholder = props.placeholder,
-      rest = _objectWithoutProperties(props, ["name", "id", "label", "value", "handleChange", "required", "disabled", "errorMessage", "helpText", "classes", "placeholder"]);
+      rest = _objectWithoutProperties(props, _excluded);
 
   var onChange = function onChange(e) {
     props.handleChange(_defineProperty({}, props.name, e.currentTarget.value));
@@ -64,3 +65,4 @@ TextareaWithLabel.propTypes = {
   classes: PropTypes.string
 };
 export default TextareaWithLabel;
+//# sourceMappingURL=TextareaWithLabel.js.map

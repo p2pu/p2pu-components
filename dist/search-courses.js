@@ -4,3 +4,4 @@ import BrowseCourses from './Courses/Browse';
 import './stylesheets/search.scss';
 import 'custom-event-polyfill';
 export { CourseCard, BrowseCourses, Search };
+//# sourceMappingURL=search-courses.js.map

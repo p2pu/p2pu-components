@@ -7,14 +7,15 @@ import _inherits from "@babel/runtime/helpers/inherits";
 import _possibleConstructorReturn from "@babel/runtime/helpers/possibleConstructorReturn";
 import _getPrototypeOf from "@babel/runtime/helpers/getPrototypeOf";
 import _defineProperty from "@babel/runtime/helpers/defineProperty";
+var _excluded = ["label", "name", "id", "value", "required", "disabled", "errorMessage", "helpText", "classes", "selectClasses", "handleInputChange", "noResultsText", "placeholder", "isClearable", "isMulti"];
 
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
 
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
@@ -38,12 +39,6 @@ var KANSAS_CITY_OPTION = {
       lng: -94.578333
     }
   }
-};
-
-var CustomOption = function CustomOption(_ref) {
-  var innerProps = _ref.innerProps,
-      isDisabled = _ref.isDisabled;
-  return !isDisabled ? /*#__PURE__*/React.createElement("div", innerProps) : null;
 };
 
 var PlaceSelect = /*#__PURE__*/function (_Component) {
@@ -159,7 +154,7 @@ var PlaceSelect = /*#__PURE__*/function (_Component) {
           placeholder = _this$props2.placeholder,
           isClearable = _this$props2.isClearable,
           isMulti = _this$props2.isMulti,
-          rest = _objectWithoutProperties(_this$props2, ["label", "name", "id", "value", "required", "disabled", "errorMessage", "helpText", "classes", "selectClasses", "handleInputChange", "noResultsText", "placeholder", "isClearable", "isMulti"]);
+          rest = _objectWithoutProperties(_this$props2, _excluded);
 
       var selected = this.state.selected;
       return /*#__PURE__*/React.createElement(InputWrapper, {
@@ -227,3 +222,4 @@ PlaceSelect.defaultProps = {
   isClearable: true,
   isMulti: false
 };
+//# sourceMappingURL=PlaceSelect.js.map

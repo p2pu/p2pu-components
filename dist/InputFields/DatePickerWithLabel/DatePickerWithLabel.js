@@ -2,6 +2,7 @@ import _extends from "@babel/runtime/helpers/extends";
 import _defineProperty from "@babel/runtime/helpers/defineProperty";
 import _objectWithoutProperties from "@babel/runtime/helpers/objectWithoutProperties";
 import _slicedToArray from "@babel/runtime/helpers/slicedToArray";
+var _excluded = ["label", "name", "id", "value", "handleChange", "handleBlur", "required", "disabled", "classes", "type", "errorMessage", "helpText", "placeholder", "labelPosition", "minDate", "maxDate"];
 import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import InputWrapper from '../InputWrapper';
@@ -25,6 +26,7 @@ var DatePickerWithLabel = function DatePickerWithLabel(props) {
       id = props.id,
       value = props.value,
       handleChange = props.handleChange,
+      handleBlur = props.handleBlur,
       required = props.required,
       disabled = props.disabled,
       classes = props.classes,
@@ -35,7 +37,7 @@ var DatePickerWithLabel = function DatePickerWithLabel(props) {
       labelPosition = props.labelPosition,
       minDate = props.minDate,
       maxDate = props.maxDate,
-      rest = _objectWithoutProperties(props, ["label", "name", "id", "value", "handleChange", "required", "disabled", "classes", "type", "errorMessage", "helpText", "placeholder", "labelPosition", "minDate", "maxDate"]);
+      rest = _objectWithoutProperties(props, _excluded);
 
   var inputEl = useRef();
 
@@ -47,6 +49,10 @@ var DatePickerWithLabel = function DatePickerWithLabel(props) {
   var checkValidity = function checkValidity() {
     var validationMessage = inputEl.current.validationMessage;
     setBrowserError(validationMessage);
+
+    if (handleBlur) {
+      handleBlur(inputEl.current.value);
+    }
   };
 
   var combinedErrorMessage = [browserError, errorMessage].filter(Boolean).join("; ");
@@ -102,3 +108,4 @@ DatePickerWithLabel.defaultProps = {
   maxDate: new Date(2999, 12, 31)
 };
 export default DatePickerWithLabel;
+//# sourceMappingURL=DatePickerWithLabel.js.map

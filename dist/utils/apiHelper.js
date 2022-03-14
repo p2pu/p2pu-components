@@ -23,7 +23,8 @@ var ApiHelper = /*#__PURE__*/function () {
       var encodedParams = this.validParams.map(function (key) {
         var value = params[key];
 
-        if (!!value) {
+        if (!!value && !(Array.isArray(value) && value.length == 0)) {
+          // don't encode falsy values or empty arrays
           return "".concat(key, "=").concat(encodeURIComponent(value));
         }
       });
@@ -98,3 +99,4 @@ var ApiHelper = /*#__PURE__*/function () {
 }();
 
 export { ApiHelper as default };
+//# sourceMappingURL=apiHelper.js.map

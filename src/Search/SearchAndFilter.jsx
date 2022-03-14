@@ -7,13 +7,15 @@ const SearchAndFilter = (props) => {
   const noResults = props.searchResults.length === 0;
 
   return(
-    <div className='search-container'>
-      <SearchBar
-        placeholder={props.placeholder}
-        updateQueryParams={props.updateQueryParams}
-        q={props.q}
-      />
-      <div className="filters-container">
+    <div className="search-fields row g-0">
+      <div className="bg-white shadow col-12 col-lg me-lg-2">
+        <SearchBar
+          placeholder={props.placeholder}
+          updateQueryParams={props.updateQueryParams}
+          q={props.q}
+        />
+      </div>
+      <div className="bg-white shadow col-12 col-lg-7">
         <FiltersSection
           {...props}
         />

@@ -1,58 +1,51 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { render } from 'react-dom';
 
-import Search from "../../src/Search/Search";
-import BrowseLearningCircles from "../../src/LearningCircles/Browse";
+import SearchProvider from "../../src/Search/SearchProvider";
+import LearningCircleSearch from "../../src/LearningCircles/LearningCircleSearch";
 import LearningCircleSignup from "../../src/LearningCircleSignup/LearningCircleSignup";
 
 import "../../src/stylesheets/search.scss"
 import "p2pu-theme/src/scss/base.scss"
 
 
-class App extends React.Component {
+const App = () => {
+  const [selectedLearningCircle, setSelectedLearningCircle] = useState();
 
-  constructor(props){
-    super(props);
-    this.handleLearningCircleSelection = this.handleLearningCircleSelection.bind(this);
-    this.handleSignupDialogClose = this.handleSignupDialogClose.bind(this);
-    this.state = {
-      selectedLearningCircle: null,
-    };
-  }
-
-  handleLearningCircleSelection(learningCircle) {
+  const handleLearningCircleSelection = (learningCircle) => {
     console.log(`Clicked on ${learningCircle.url}`);
-    this.setState({...this.state, selectedLearningCircle: learningCircle});
+    setSelectedLearningCircle(learningCircle);
   }
 
-  handleSignupDialogClose(learningCircle){
-    this.setState({...this.state, selectedLearningCircle: null});
+  const handleSignupDialogClose = (learningCircle) => {
+    setSelectedLearningCircle(null);
   }
 
-  render() {
-    return (
-      <div style={{ padding: "20px"}}>
-        {
-          this.state.selectedLearningCircle &&
-            <LearningCircleSignup
-              onCancel={this.handleSignupDialogClose}
-              learningCircle={this.state.selectedLearningCircle}
-              signUpUrl='https://learningcircles.p2pu.org/api/signup/'
-            />
-        }
-        <div className={this.state.selectedLearningCircle?'d-none':''}>
-          <Search
-            searchSubject={'learningCircles'}
-            locale="en"
-            onSelectResult={this.handleLearningCircleSelection}
-            Browse={BrowseLearningCircles}
-            contact="sharon@p2pu.org"
-            origin="https://learningcircles.p2pu.org"
+  return (
+    <div style={{ padding: "20px"}}>
+      {
+        selectedLearningCircle &&
+          <LearningCircleSignup
+            onCancel={handleSignupDialogClose}
+            learningCircle={selectedLearningCircle}
+            signUpUrl='https://learningcircles.p2pu.org/api/signup/'
           />
-        </div>
+      }
+      <div className={selectedLearningCircle?'d-none':''}>
+        <SearchProvider 
+          searchSubject={'learningCircles'}
+          origin="https://learningcircles.p2pu.org"
+          locale="en"
+        >
+          <LearningCircleSearch
+            onSelectResult={handleLearningCircleSelection}
+            contact="sharon@p2pu.org"
+            defaultImageUrl="/lc-default.jpg"
+          />
+        </SearchProvider>
       </div>
-    );
-  }
+    </div>
+  );
 };
 
 render(<App />, document.getElementById("root"));

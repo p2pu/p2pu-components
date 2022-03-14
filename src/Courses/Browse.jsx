@@ -1,5 +1,4 @@
 import React from 'react'
-import Masonry from 'react-masonry-component'
 import CourseCard from './CourseCard'
 import { t } from 'ttag';
 
@@ -12,7 +11,7 @@ class BrowseCourses extends React.Component {
     const { results, updateQueryParams, onSelectResult, columnBreakpoints, isLoading } = this.props;
 
     return (
-      <Masonry className={"search-results row grid"}>
+      <div className="search-results row grid">
         {
           results.map((course, index) => (
             <CourseCard
@@ -28,7 +27,7 @@ class BrowseCourses extends React.Component {
             />
           ))
         }
-      </Masonry>
+      </div>
     );
   }
 }

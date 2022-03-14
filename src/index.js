@@ -4,13 +4,15 @@ import 'custom-event-polyfill'
 import './stylesheets/search.scss'
 
 import Search from './Search/Search';
+import SearchProvider from './Search/SearchProvider';
 import CourseCard from './Courses/CourseCard';
 import BrowseCourses from './Courses/Browse';
+import SearchCourses from './Courses/SearchCourses';
 import BrowseLearningCircles from './LearningCircles/Browse';
+import LearningCircleSearch from './LearningCircles/LearningCircleSearch';
 import LearningCircleSignup from './LearningCircleSignup/LearningCircleSignup';
 
 import CheckboxWithLabel from "./InputFields/CheckboxWithLabel";
-import CitySelect from "./InputFields/CitySelect";
 import DatePickerWithLabel from "./InputFields/DatePickerWithLabel";
 import ImageUploader from "./InputFields/ImageUploader";
 import InputWithLabel from "./InputFields/InputWithLabel";
@@ -32,8 +34,10 @@ export {
   BrowseCourses,
   BrowseLearningCircles,
   Search,
+  SearchProvider,
+  SearchCourses,
+  LearningCircleSearch,
   LearningCircleSignup,
-  CitySelect,
   CheckboxWithLabel,
   DatePickerWithLabel,
   ImageUploader,

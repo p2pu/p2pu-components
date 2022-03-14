@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../src/InputFields/InputWithLabel/index.js"],"names":["InputWithLabel"],"mappings":"AAAA,OAAOA,cAAP,MAA2B,qBAA3B;AACA,eAAeA,cAAf","sourcesContent":["import InputWithLabel from './InputWithLabel.js';\nexport default InputWithLabel"],"file":"index.js"}

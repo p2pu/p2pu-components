@@ -14,7 +14,7 @@ export default class ApiHelper {
     const baseUrl = this.baseUrl;
     const encodedParams = this.validParams.map((key) => {
       const value = params[key];
-      if (!!value) {
+      if (!!value && !(Array.isArray(value) && value.length == 0)) { // don't encode falsy values or empty arrays
         return `${key}=${encodeURIComponent(value)}`
       }
     })

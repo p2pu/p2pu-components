@@ -1,6 +1,7 @@
 import _extends from "@babel/runtime/helpers/extends";
 import _defineProperty from "@babel/runtime/helpers/defineProperty";
 import _objectWithoutProperties from "@babel/runtime/helpers/objectWithoutProperties";
+var _excluded = ["falseLabel", "trueLabel", "label", "name", "id", "required", "disabled", "errorMessage", "helpText", "classes", "offColor", "onColor", "value", "handleChange"];
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import InputWrapper from '../InputWrapper';
@@ -21,7 +22,7 @@ var SwitchWithLabels = function SwitchWithLabels(props) {
       onColor = props.onColor,
       value = props.value,
       handleChange = props.handleChange,
-      rest = _objectWithoutProperties(props, ["falseLabel", "trueLabel", "label", "name", "id", "required", "disabled", "errorMessage", "helpText", "classes", "offColor", "onColor", "value", "handleChange"]);
+      rest = _objectWithoutProperties(props, _excluded);
 
   var bgColor = value ? onColor : offColor;
 
@@ -94,3 +95,4 @@ SwitchWithLabels.defaultProps = {
 
 };
 export default SwitchWithLabels;
+//# sourceMappingURL=SwitchWithLabels.js.map

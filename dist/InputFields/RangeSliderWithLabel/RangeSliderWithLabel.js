@@ -1,6 +1,7 @@
 import _extends from "@babel/runtime/helpers/extends";
 import _defineProperty from "@babel/runtime/helpers/defineProperty";
 import _objectWithoutProperties from "@babel/runtime/helpers/objectWithoutProperties";
+var _excluded = ["label", "name", "id", "handleChange", "required", "disabled", "errorMessage", "helpText", "classes", "value", "min", "max", "step"];
 import React from 'react';
 import PropTypes from 'prop-types';
 import Slider from 'react-rangeslider';
@@ -24,7 +25,7 @@ var RangeSliderWithLabel = function RangeSliderWithLabel(props) {
       min = props.min,
       max = props.max,
       step = props.step,
-      rest = _objectWithoutProperties(props, ["label", "name", "id", "handleChange", "required", "disabled", "errorMessage", "helpText", "classes", "value", "min", "max", "step"]);
+      rest = _objectWithoutProperties(props, _excluded);
 
   var onChange = function onChange(value) {
     if (props.disabled) return null;
@@ -79,3 +80,4 @@ RangeSliderWithLabel.defaultProps = {
   required: false
 };
 export default RangeSliderWithLabel;
+//# sourceMappingURL=RangeSliderWithLabel.js.map

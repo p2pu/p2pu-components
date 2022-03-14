@@ -1,148 +1,20 @@
 import _taggedTemplateLiteral from "@babel/runtime/helpers/taggedTemplateLiteral";
 
-function _templateObject13() {
-  var data = _taggedTemplateLiteral(["Title, subject, etc..."]);
-
-  _templateObject13 = function _templateObject13() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject12() {
-  var data = _taggedTemplateLiteral(["Keyword, organization, facilitator, etc..."]);
-
-  _templateObject12 = function _templateObject12() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject11() {
-  var data = _taggedTemplateLiteral(["Recently added"]);
-
-  _templateObject11 = function _templateObject11() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject10() {
-  var data = _taggedTemplateLiteral(["Community rating"]);
-
-  _templateObject10 = function _templateObject10() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject9() {
-  var data = _taggedTemplateLiteral(["Popularity"]);
-
-  _templateObject9 = function _templateObject9() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject8() {
-  var data = _taggedTemplateLiteral(["Course title"]);
-
-  _templateObject8 = function _templateObject8() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject7() {
-  var data = _taggedTemplateLiteral(["Sunday"]);
-
-  _templateObject7 = function _templateObject7() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject6() {
-  var data = _taggedTemplateLiteral(["Saturday"]);
-
-  _templateObject6 = function _templateObject6() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject5() {
-  var data = _taggedTemplateLiteral(["Friday"]);
-
-  _templateObject5 = function _templateObject5() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject4() {
-  var data = _taggedTemplateLiteral(["Thursday"]);
-
-  _templateObject4 = function _templateObject4() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject3() {
-  var data = _taggedTemplateLiteral(["Wednesday"]);
-
-  _templateObject3 = function _templateObject3() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject2() {
-  var data = _taggedTemplateLiteral(["Tuesday"]);
-
-  _templateObject2 = function _templateObject2() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject() {
-  var data = _taggedTemplateLiteral(["Monday"]);
-
-  _templateObject = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
+var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8, _templateObject9, _templateObject10, _templateObject11, _templateObject12, _templateObject13, _templateObject14, _templateObject15;
 
 import { t } from 'ttag';
-export var MEETING_DAYS = [t(_templateObject()), t(_templateObject2()), t(_templateObject3()), t(_templateObject4()), t(_templateObject5()), t(_templateObject6()), t(_templateObject7())];
+export var MEETING_DAYS = [t(_templateObject || (_templateObject = _taggedTemplateLiteral(["Monday"]))), t(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["Tuesday"]))), t(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["Wednesday"]))), t(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["Thursday"]))), t(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["Friday"]))), t(_templateObject6 || (_templateObject6 = _taggedTemplateLiteral(["Saturday"]))), t(_templateObject7 || (_templateObject7 = _taggedTemplateLiteral(["Sunday"])))];
 export var COURSES_SORT_OPTIONS = [{
-  label: t(_templateObject8()),
+  label: t(_templateObject8 || (_templateObject8 = _taggedTemplateLiteral(["Course title"]))),
   value: 'title'
 }, {
-  label: t(_templateObject9()),
+  label: t(_templateObject9 || (_templateObject9 = _taggedTemplateLiteral(["Popularity"]))),
   value: 'usage'
 }, {
-  label: t(_templateObject10()),
+  label: t(_templateObject10 || (_templateObject10 = _taggedTemplateLiteral(["Community rating"]))),
   value: 'overall_rating'
 }, {
-  label: t(_templateObject11()),
+  label: t(_templateObject11 || (_templateObject11 = _taggedTemplateLiteral(["Recently added"]))),
   value: 'created_at'
 }];
 export var SEARCH_SUBJECTS = {
@@ -151,13 +23,15 @@ export var SEARCH_SUBJECTS = {
 };
 export var SEARCH_PROPS = {
   learningCircles: {
-    filters: ['location', 'topics', 'meetingDays'],
-    placeholder: t(_templateObject12())
+    filters: ['location'],
+    placeholder: t(_templateObject12 || (_templateObject12 = _taggedTemplateLiteral(["Keyword, organization, facilitator, etc..."]))) //remove?
+
   },
   courses: {
     filters: ['topics', 'language', 'oer'],
+    //facilitator_guide?
     sort: ['orderCourses'],
-    placeholder: t(_templateObject13())
+    placeholder: t(_templateObject13 || (_templateObject13 = _taggedTemplateLiteral(["Title, subject, etc..."])))
   }
 };
 export var DEFAULT_ORIGIN = 'https://learningcircles.p2pu.org'; // export const DEFAULT_ORIGIN = 'http://localhost:8000'
@@ -169,13 +43,13 @@ export var API_ENDPOINTS = {
   learningCircles: {
     postUrl: "/api/learning-circle/",
     baseUrl: "/api/learningcircles/?",
-    searchParams: ['q', 'topics', 'weekdays', 'latitude', 'longitude', 'distance', 'active', 'limit', 'offset', 'city', 'signup', 'team_id', 'order'],
+    searchParams: ['q', 'topics', 'weekdays', 'latitude', 'longitude', 'distance', 'active', 'limit', 'offset', 'city', 'signup', 'team_id', 'order', 'cu_credit'],
     arrayItems: ['topics', 'weekdays'],
     privateParams: ['limit', 'offset', 'active', 'distance', 'latitude', 'longitude']
   },
   courses: {
     baseUrl: "/api/courses/?",
-    searchParams: ['q', 'topics', 'order', 'limit', 'offset', 'languages', 'oer'],
+    searchParams: ['q', 'topics', 'order', 'limit', 'offset', 'languages', 'oer', 'facilitator_guide'],
     arrayItems: ['topics', 'languages'],
     privateParams: ['limit', 'offset']
   },
@@ -207,3 +81,6 @@ export var API_ENDPOINTS = {
   }
 };
 export var COLOR_CLASSES = ["p2pu-green", "p2pu-blue", "p2pu-yellow", "p2pu-orange"];
+export var OPEN_TAB_TEXT = t(_templateObject14 || (_templateObject14 = _taggedTemplateLiteral(["Open"])));
+export var CLOSED_TAB_TEXT = t(_templateObject15 || (_templateObject15 = _taggedTemplateLiteral(["Closed and completed"])));
+//# sourceMappingURL=constants.js.map

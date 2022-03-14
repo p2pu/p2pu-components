@@ -2,6 +2,7 @@ import _extends from "@babel/runtime/helpers/extends";
 import _defineProperty from "@babel/runtime/helpers/defineProperty";
 import _objectWithoutProperties from "@babel/runtime/helpers/objectWithoutProperties";
 import _slicedToArray from "@babel/runtime/helpers/slicedToArray";
+var _excluded = ["label", "name", "id", "value", "handleChange", "required", "disabled", "classes", "type", "errorMessage", "helpText", "placeholder"];
 import React, { useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import InputWrapper from '../InputWrapper';
@@ -24,7 +25,7 @@ var InputWithLabel = function InputWithLabel(props) {
       errorMessage = props.errorMessage,
       helpText = props.helpText,
       placeholder = props.placeholder,
-      rest = _objectWithoutProperties(props, ["label", "name", "id", "value", "handleChange", "required", "disabled", "classes", "type", "errorMessage", "helpText", "placeholder"]);
+      rest = _objectWithoutProperties(props, _excluded);
 
   var inputEl = useRef();
 
@@ -85,3 +86,4 @@ InputWithLabel.propTypes = {
   placeholder: PropTypes.string
 };
 export default InputWithLabel;
+//# sourceMappingURL=InputWithLabel.js.map

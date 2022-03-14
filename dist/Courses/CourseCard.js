@@ -1,128 +1,9 @@
 import _taggedTemplateLiteral from "@babel/runtime/helpers/taggedTemplateLiteral";
 
-function _templateObject12() {
-  var data = _taggedTemplateLiteral(["Course website"]);
-
-  _templateObject12 = function _templateObject12() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject11() {
-  var data = _taggedTemplateLiteral(["More details"]);
-
-  _templateObject11 = function _templateObject11() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject10() {
-  var data = _taggedTemplateLiteral(["Access"]);
-
-  _templateObject10 = function _templateObject10() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject9() {
-  var data = _taggedTemplateLiteral(["Platform"]);
-
-  _templateObject9 = function _templateObject9() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject8() {
-  var data = _taggedTemplateLiteral(["Provider"]);
-
-  _templateObject8 = function _templateObject8() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject7() {
-  var data = _taggedTemplateLiteral(["Topics"]);
-
-  _templateObject7 = function _templateObject7() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject6() {
-  var data = _taggedTemplateLiteral(["Used in ", " learning circle"]);
-
-  _templateObject6 = function _templateObject6() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject5() {
-  var data = _taggedTemplateLiteral(["Used in ", " learning circles"]);
-
-  _templateObject5 = function _templateObject5() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject4() {
-  var data = _taggedTemplateLiteral(["", " rating"]);
-
-  _templateObject4 = function _templateObject4() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject3() {
-  var data = _taggedTemplateLiteral(["", " ratings"]);
-
-  _templateObject3 = function _templateObject3() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject2() {
-  var data = _taggedTemplateLiteral(["Check availability"]);
-
-  _templateObject2 = function _templateObject2() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject() {
-  var data = _taggedTemplateLiteral(["Always available"]);
-
-  _templateObject = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
+var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8, _templateObject9, _templateObject10, _templateObject11;
 
 import React, { Fragment } from 'react';
 import { t, jt, ngettext, msgid } from 'ttag';
-import { Card, CardTitle, CardBody } from '../Card';
 import { COLOR_CLASSES } from '../utils/constants';
 
 var CourseCard = function CourseCard(props) {
@@ -130,7 +11,7 @@ var CourseCard = function CourseCard(props) {
       courseLink = _props$courseLink === void 0 ? false : _props$courseLink,
       _props$moreInfo = props.moreInfo,
       moreInfo = _props$moreInfo === void 0 ? true : _props$moreInfo;
-  var availability = props.course.on_demand ? t(_templateObject()) : t(_templateObject2());
+  var availability = props.course.on_demand ? t(_templateObject || (_templateObject = _taggedTemplateLiteral(["Always available"]))) : t(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["Check availability"])));
 
   var handleFilterClick = function handleFilterClick(topic) {
     return function (event) {
@@ -143,32 +24,40 @@ var CourseCard = function CourseCard(props) {
 
   var topicsList = props.course.topics.slice(0, 5).map(function (topic) {
     return /*#__PURE__*/React.createElement("a", {
-      className: "tag",
+      className: "topic",
       onClick: handleFilterClick(topic),
       href: ""
     }, topic);
   });
   var colorClass = COLOR_CLASSES[props.course.id % COLOR_CLASSES.length];
   var rating_number = props.course.total_ratings;
-  var rating = jt(_templateObject3(), rating_number);
+  var rating = jt(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["", " ratings"])), rating_number);
 
   if (props.course.total_ratings == 1) {
-    rating = jt(_templateObject4(), rating_number);
+    rating = jt(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["", " rating"])), rating_number);
   }
 
   var usage_number = props.course.learning_circles;
-  var usage = jt(_templateObject5(), usage_number);
+  var usage = jt(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["Used in ", " learning circles"])), usage_number);
 
   if (props.course.learning_circles == 1) {
-    usage = jt(_templateObject6(), usage_number);
+    usage = jt(_templateObject6 || (_templateObject6 = _taggedTemplateLiteral(["Used in ", " learning circle"])), usage_number);
   }
 
-  return /*#__PURE__*/React.createElement(Card, {
-    classes: "".concat(props.classes),
-    colorClass: colorClass,
-    id: props.id
-  }, /*#__PURE__*/React.createElement(CardTitle, null, props.course.title), /*#__PURE__*/React.createElement(CardBody, null, /*#__PURE__*/React.createElement("div", {
-    className: "stars mb-2 ".concat(props.course.total_ratings == 0 && 'disabled')
+  return /*#__PURE__*/React.createElement("div", {
+    className: "card col-12 course horizontal in-progress"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "row g-0"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "col-12 col-md-6 col-lg-12 col-xl-7"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "card-header"
+  }, /*#__PURE__*/React.createElement("h3", {
+    className: "card-title"
+  }, props.course.title), /*#__PURE__*/React.createElement("div", {
+    className: "lowbrow row"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "stars mb-2 pe-md-0 d-flex col-12 col-md-auto"
   }, [1, 2, 3, 4, 5].map(function (num) {
     var rating = Math.round(props.course.overall_rating * 2) / 2;
 
@@ -189,45 +78,68 @@ var CourseCard = function CourseCard(props) {
       }, "star_border");
     }
   })), /*#__PURE__*/React.createElement("div", {
-    className: "minicaps"
-  }, rating, " | ", usage)), /*#__PURE__*/React.createElement(CardBody, null, /*#__PURE__*/React.createElement("p", {
-    className: "caption"
-  }, props.course.caption), /*#__PURE__*/React.createElement("div", {
-    className: "my-3"
+    className: "col-12 col-md-auto mb-2"
+  }, rating, " | ", usage))), /*#__PURE__*/React.createElement("div", {
+    className: "card-body"
+  }, /*#__PURE__*/React.createElement("p", {
+    className: "card-text"
+  }, props.course.caption))), /*#__PURE__*/React.createElement("footer", {
+    className: "card-footer col-12 col-md-6 col-lg-12 col-xl-5"
   }, /*#__PURE__*/React.createElement("div", {
-    className: "grid-wrapper"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "label"
-  }, t(_templateObject7())), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("span", {
+    className: "table-responsive"
+  }, /*#__PURE__*/React.createElement("table", {
+    className: "table"
+  }, /*#__PURE__*/React.createElement("tbody", null, /*#__PURE__*/React.createElement("tr", {
+    className: "topics"
+  }, /*#__PURE__*/React.createElement("th", {
+    scope: "row"
+  }, "Topics"), /*#__PURE__*/React.createElement("td", {
     className: "topics-list"
   }, topicsList.map(function (topic, index) {
-    return /*#__PURE__*/React.createElement("span", {
-      key: "topic-".concat(index)
+    return /*#__PURE__*/React.createElement(React.Fragment, {
+      key: "".concat(index, "-topic")
     }, !!index && ', ', topic);
-  }))), /*#__PURE__*/React.createElement("div", {
-    className: "label"
-  }, t(_templateObject8())), /*#__PURE__*/React.createElement("div", null, props.course.provider), props.course.platform && /*#__PURE__*/React.createElement(Fragment, null, /*#__PURE__*/React.createElement("div", {
-    className: "label"
-  }, t(_templateObject9())), /*#__PURE__*/React.createElement("div", null, props.course.platform)), /*#__PURE__*/React.createElement("div", {
-    className: "label"
-  }, t(_templateObject10())), /*#__PURE__*/React.createElement("div", null, availability))), /*#__PURE__*/React.createElement("div", {
-    className: "actions"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "alt-cta"
+  }))), /*#__PURE__*/React.createElement("tr", {
+    className: "provider"
+  }, /*#__PURE__*/React.createElement("th", {
+    scope: "row"
+  }, t(_templateObject7 || (_templateObject7 = _taggedTemplateLiteral(["Provider"])))), /*#__PURE__*/React.createElement("td", null, props.course.provider)), props.course.platform && /*#__PURE__*/React.createElement("tr", {
+    className: "platform"
+  }, /*#__PURE__*/React.createElement("th", {
+    scope: "row"
+  }, t(_templateObject8 || (_templateObject8 = _taggedTemplateLiteral(["Platform"])))), /*#__PURE__*/React.createElement("td", {
+    colSpan: "2"
+  }, props.course.platform)), /*#__PURE__*/React.createElement("tr", {
+    className: "website"
+  }, /*#__PURE__*/React.createElement("th", {
+    scope: "row"
+  }, t(_templateObject9 || (_templateObject9 = _taggedTemplateLiteral(["Website"])))), /*#__PURE__*/React.createElement("td", {
+    colSpan: "2"
+  }, /*#__PURE__*/React.createElement("a", {
+    href: props.course.link,
+    rel: "nofollow",
+    target: "_blank"
+  }, props.course.link))), /*#__PURE__*/React.createElement("tr", {
+    className: "platform"
+  }, /*#__PURE__*/React.createElement("th", {
+    scope: "row"
+  }, t(_templateObject10 || (_templateObject10 = _taggedTemplateLiteral(["Access"])))), /*#__PURE__*/React.createElement("td", {
+    colSpan: "2"
+  }, availability))))), /*#__PURE__*/React.createElement("div", {
+    className: "row justify-content-center justify-content-md-end"
   }, moreInfo && /*#__PURE__*/React.createElement("a", {
     href: props.course.course_page_url,
-    target: "_blank",
-    className: "p2pu-btn dark secondary"
-  }, t(_templateObject11())), courseLink && /*#__PURE__*/React.createElement("a", {
+    className: "btn p2pu-btn btn-sm secondary gray col-sm-auto m-2"
+  }, t(_templateObject11 || (_templateObject11 = _taggedTemplateLiteral(["More details"])))), courseLink && /*#__PURE__*/React.createElement("a", {
     href: props.course.link,
-    target: "_blank",
-    className: "p2pu-btn dark secondary"
-  }, t(_templateObject12())), props.onSelectResult && /*#__PURE__*/React.createElement("button", {
+    className: "btn p2pu-btn btn-sm gray col-sm-auto m-2"
+  }, "Use this course"), props.onSelectResult && /*#__PURE__*/React.createElement("a", {
+    className: "btn p2pu-btn btn-sm gray col-sm-auto m-2",
     onClick: function onClick() {
       return props.onSelectResult(props.course);
-    },
-    className: "p2pu-btn dark"
+    }
   }, props.buttonText)))));
 };
 
 export default CourseCard;
+//# sourceMappingURL=CourseCard.js.map

@@ -2,10 +2,11 @@ import _extends from "@babel/runtime/helpers/extends";
 import _typeof from "@babel/runtime/helpers/typeof";
 import _defineProperty from "@babel/runtime/helpers/defineProperty";
 import _objectWithoutProperties from "@babel/runtime/helpers/objectWithoutProperties";
+var _excluded = ["name", "id", "label", "required", "disabled", "value", "errorMessage", "helpText", "classes", "selectClasses", "options", "onInputChange", "handleChange", "noResultsText", "placeholder", "isMulti", "isClearable"];
 
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -30,7 +31,7 @@ var SelectWithLabel = function SelectWithLabel(props) {
       placeholder = props.placeholder,
       isMulti = props.isMulti,
       isClearable = props.isClearable,
-      rest = _objectWithoutProperties(props, ["name", "id", "label", "required", "disabled", "value", "errorMessage", "helpText", "classes", "selectClasses", "options", "onInputChange", "handleChange", "noResultsText", "placeholder", "isMulti", "isClearable"]);
+      rest = _objectWithoutProperties(props, _excluded);
 
   var onChange = function onChange(selected) {
     if (!selected) {
@@ -130,3 +131,4 @@ SelectWithLabel.defaultProps = {
   isMulti: false
 };
 export default SelectWithLabel;
+//# sourceMappingURL=SelectWithLabel.js.map
