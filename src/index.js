@@ -13,7 +13,6 @@ import LearningCircleSearch from './LearningCircles/LearningCircleSearch';
 import LearningCircleSignup from './LearningCircleSignup/LearningCircleSignup';
 
 import CheckboxWithLabel from "./InputFields/CheckboxWithLabel";
-import CitySelect from "./InputFields/CitySelect";
 import DatePickerWithLabel from "./InputFields/DatePickerWithLabel";
 import ImageUploader from "./InputFields/ImageUploader";
 import InputWithLabel from "./InputFields/InputWithLabel";
@@ -39,7 +38,6 @@ export {
   SearchCourses,
   LearningCircleSearch,
   LearningCircleSignup,
-  CitySelect,
   CheckboxWithLabel,
   DatePickerWithLabel,
   ImageUploader,

@@ -3,10 +3,8 @@ import PropTypes from 'prop-types'
 import Select from 'react-select'
 import jsonp from 'jsonp'
 
-import InputWrapper from '../InputWrapper'
 
-
-export const CitySelectInput = props => {
+export const CitySelect = props => {
   const [cities, setCities] = useState([])
 
   useEffect(() => {
@@ -81,30 +79,6 @@ export const CitySelectInput = props => {
   )
 }
 
-
-
-const CitySelect = props => {
-  const { 
-    label, name, id, disabled, required, errorMessage, helpText, classes 
-  } = props;
-
-  return(
-    <InputWrapper
-      label={label}
-      name={name}
-      id={id}
-      required={required}
-      disabled={disabled}
-      errorMessage={errorMessage}
-      helpText={helpText}
-      classes={classes}
-    >
-      <CitySelectInput {...props} />
-    </InputWrapper>
-  )
-
-}
-
 CitySelect.propTypes = {
   handleChange: PropTypes.func.isRequired,
   name: PropTypes.string.isRequired,
@@ -130,4 +104,4 @@ CitySelect.defaultProps = {
   value: null,
 }
 
-export default CitySelect
+export default CitySelect;

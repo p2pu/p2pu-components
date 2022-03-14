@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import {t} from 'ttag';
-import {CitySelectInput} from '../InputFields/CitySelect'
+import {CitySelect} from './CitySelect'
 import Select from '../InputFields/Select';
 
 export default class LocationFilter extends Component {
@@ -117,7 +117,7 @@ export default class LocationFilter extends Component {
       <form className="filter">
         <label htmlFor="search-input" className="form-label">Location</label>
         <div className="search-input my-2 my-md-0">
-          <CitySelectInput
+          <CitySelect
             name='city'
             value={this.props.city}
             isClearable={true}
