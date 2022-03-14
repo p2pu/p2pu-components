@@ -4,10 +4,6 @@ import SwitchWithLabels from '../InputFields/SwitchWithLabels'
 
 
 const OerFilterForm = (props) => {
-  const formValues = {
-    true: t`Only open educational resources (OER)`,
-    false: t`All courses`
-  }
 
   const handleChange = (event) => {
     props.updateQueryParams({oer: event.currentTarget.checked});
