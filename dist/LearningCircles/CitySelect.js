@@ -21,7 +21,7 @@ export var CitySelect = function CitySelect(props) {
       setCities = _useState2[1];
 
   useEffect(function () {
-    var url = 'https://learningcircles.p2pu.org/api/learningcircles/cities/';
+    var url = "".concat(props.origin, "/api/learningcircles/cities/");
     jsonp(url, null, function (err, res) {
       if (err) {
         console.log(err);

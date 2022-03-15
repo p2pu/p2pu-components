@@ -212,7 +212,8 @@ var LocationFilter = /*#__PURE__*/function (_Component) {
         value: this.props.city,
         isClearable: true,
         handleChange: this.handleCitySelect,
-        placeholder: t(_templateObject9 || (_templateObject9 = _taggedTemplateLiteral(["Start typing a city name"])))
+        placeholder: t(_templateObject9 || (_templateObject9 = _taggedTemplateLiteral(["Start typing a city name"]))),
+        origin: this.props.origin
       })), /*#__PURE__*/React.createElement("div", {
         className: "d-flex flex-column align-items-center p-3"
       }, /*#__PURE__*/React.createElement("div", {

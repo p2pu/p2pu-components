@@ -123,6 +123,7 @@ export default class LocationFilter extends Component {
             isClearable={true}
             handleChange={this.handleCitySelect}
             placeholder={t`Start typing a city name`}
+            origin={this.props.origin}
           />
         </div>
 

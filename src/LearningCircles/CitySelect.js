@@ -8,7 +8,7 @@ export const CitySelect = props => {
   const [cities, setCities] = useState([])
 
   useEffect(() => {
-    const url = 'https://learningcircles.p2pu.org/api/learningcircles/cities/'
+    const url = `${props.origin}/api/learningcircles/cities/`;
     jsonp(url, null, (err, res) => {
       if (err) {
         console.log(err)
