@@ -12,6 +12,10 @@ span.course-title {
   cursor: pointer;
 }
 
+a.learning-circle-card-link {
+  text-decoration: none;
+  width: 100%;
+}
 
 .capitalize::first-letter {
   text-transform: capitalize;
@@ -615,7 +619,6 @@ span.course-title {
 }
 
 .results-summary {
-  padding-left: $padding-xs;
   padding-right: $padding-xs;
   padding-bottom: $padding-xs;
 
@@ -661,16 +664,6 @@ span.course-title {
 
 .no-flex {
   display: block !important;
-}
-
-.masonry-grid {
-  display: -webkit-box; /* Not needed if autoprefixing */
-  display: -ms-flexbox; /* Not needed if autoprefixing */
-  display: flex;
-  width: auto;
-}
-.masonry-grid_column {
-  background-clip: padding-box;
 }
 
 .react-tabs__tab-list {

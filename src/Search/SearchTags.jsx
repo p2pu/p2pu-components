@@ -194,7 +194,7 @@ const SearchTags = (props) => {
       <div className='search-tags wrapper'>
         {generateSearchSummary()}
       </div>
-      { noResults &&
+      { noResults && !props.isLoading &&
         <div className='clear-search'>
           {jt`To see more results, either remove some filters or ${resetButton}`}
         </div>

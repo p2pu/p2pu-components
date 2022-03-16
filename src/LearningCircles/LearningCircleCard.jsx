@@ -59,7 +59,8 @@ const LearningCircleCard = (props) => {
     dateLabel = t`Starting ${formattedStartDate}`
   }
 
-  const onClick = () => {
+  const onClick = (e) => {
+    e.preventDefault();
     if (onSelectResult) {
       onSelectResult(learningCircle)
     } else {
@@ -73,42 +74,44 @@ const LearningCircleCard = (props) => {
 
   return (
     <div className="result-item grid-item col-md-6 col-lg-4" >
-      <div className={`card learning-circle ${cardFormatting[status].class}`} onClick={onClick} role="link">
-        <div className="status-tag"><span>{t(cardLabel)}</span></div>
-        <div className="card-image">
-          <img src={imageUrl} alt={name} className="card-img-top" />
+      <a className="learning-circle-card-link" href={learningCircle.url} onClick={onClick} >
+        <div className={`card learning-circle ${cardFormatting[status].class}`}>
+          <div className="status-tag"><span>{t(cardLabel)}</span></div>
+          <div className="card-image">
+            <img src={imageUrl} alt={name} className="card-img-top" />
+          </div>
+          <div className="card-header">
+            <span className="eyebrow">{dateLabel}</span>
+            <h3 className="card-title">{name}</h3>
+          </div>
+          <div className="card-body">
+            <span className="schedule">
+              <i className="material-icons">schedule</i>
+              { schedule }
+            </span>
+            <span className="duration">
+              <i className="material-icons">today</i>{ frequency }
+            </span>
+            <span className="city-country">
+              <i className="material-icons">place</i>
+              {learningCircle.city}
+            </span>
+            <span className="facilitator">
+              <i className="material-icons">face</i>
+              {t`Facilitated by ${learningCircle.facilitator}`}
+            </span>
+            <span className="location">
+              <i className="material-icons">store</i>
+              {t`Meeting at ${learningCircle.venue}`}
+            </span>
+          </div>
+          <div className="card-footer">
+            <button className="btn p2pu-btn btn-sm gray mx-auto d-block">
+              {isSignupOpen ? t`Sign up` : t`View details`}
+            </button>
+          </div>
         </div>
-        <div className="card-header">
-          <span className="eyebrow">{dateLabel}</span>
-          <h3 className="card-title">{name}</h3>
-        </div>
-        <div className="card-body">
-          <span className="schedule">
-            <i className="material-icons">schedule</i>
-            { schedule }
-          </span>
-          <span className="duration">
-            <i className="material-icons">today</i>{ frequency }
-          </span>
-          <span className="city-country">
-            <i className="material-icons">place</i>
-            {learningCircle.city}
-          </span>
-          <span className="facilitator">
-            <i className="material-icons">face</i>
-            {t`Facilitated by ${learningCircle.facilitator}`}
-          </span>
-          <span className="location">
-            <i className="material-icons">store</i>
-            {t`Meeting at ${learningCircle.venue}`}
-          </span>
-        </div>
-        <div className="card-footer">
-          <button className="btn p2pu-btn btn-sm gray mx-auto d-block">
-            {isSignupOpen ? t`Sign up` : t`View details`}
-          </button>
-        </div>
-      </div>
+      </a>
     </div>
   );
 }

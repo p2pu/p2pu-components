@@ -193,7 +193,6 @@ import "core-js/modules/web.url-search-params.js";
 import "regenerator-runtime/runtime";
 import 'custom-event-polyfill';
 import './stylesheets/search.scss';
-import Search from './Search/Search';
 import SearchProvider from './Search/SearchProvider';
 import CourseCard from './Courses/CourseCard';
 import BrowseCourses from './Courses/Browse';
@@ -216,5 +215,5 @@ import TimePickerWithLabel from "./InputFields/TimePickerWithLabel";
 import TimeZoneSelect from "./InputFields/TimeZoneSelect";
 import MobileInput from "./InputFields/MobileInput";
 import RichTextWithLabel from "./InputFields/RichTextWithLabel";
-export { CourseCard, BrowseCourses, BrowseLearningCircles, Search, SearchProvider, SearchCourses, LearningCircleSearch, LearningCircleSignup, CheckboxWithLabel, DatePickerWithLabel, ImageUploader, InputWithLabel, URLInputWithLabel, LanguageSelect, PlaceSelect, RangeSliderWithLabel, SelectWithLabel, SwitchWithLabels, TextareaWithLabel, TimePickerWithLabel, TimeZoneSelect, MobileInput, RichTextWithLabel };
+export { CourseCard, BrowseCourses, BrowseLearningCircles, SearchProvider, SearchCourses, LearningCircleSearch, LearningCircleSignup, CheckboxWithLabel, DatePickerWithLabel, ImageUploader, InputWithLabel, URLInputWithLabel, LanguageSelect, PlaceSelect, RangeSliderWithLabel, SelectWithLabel, SwitchWithLabels, TextareaWithLabel, TimePickerWithLabel, TimeZoneSelect, MobileInput, RichTextWithLabel };
 //# sourceMappingURL=index.js.map

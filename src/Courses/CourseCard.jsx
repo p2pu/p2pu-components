@@ -109,7 +109,7 @@ const CourseCard = (props) => {
             }
             { 
               props.onSelectResult &&
-                <a className="btn p2pu-btn btn-sm gray col-sm-auto m-2"  onClick={() => props.onSelectResult(props.course)}>{props.buttonText}</a>
+                <a className="btn p2pu-btn btn-sm gray col-sm-auto m-2" onClick={() => props.onSelectResult(props.course)}>{props.buttonText}</a>
             }
           </div>
         </footer>

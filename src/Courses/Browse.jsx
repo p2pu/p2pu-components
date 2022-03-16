@@ -10,6 +10,10 @@ class BrowseCourses extends React.Component {
   render() {
     const { results, updateQueryParams, onSelectResult, columnBreakpoints, isLoading } = this.props;
 
+    if (isLoading){
+      return <></>;
+    }
+
     return (
       <div className="search-results row grid">
         {

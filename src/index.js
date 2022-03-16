@@ -3,7 +3,6 @@ import "regenerator-runtime/runtime";
 import 'custom-event-polyfill'
 import './stylesheets/search.scss'
 
-import Search from './Search/Search';
 import SearchProvider from './Search/SearchProvider';
 import CourseCard from './Courses/CourseCard';
 import BrowseCourses from './Courses/Browse';
@@ -33,7 +32,6 @@ export {
   CourseCard,
   BrowseCourses,
   BrowseLearningCircles,
-  Search,
   SearchProvider,
   SearchCourses,
   LearningCircleSearch,

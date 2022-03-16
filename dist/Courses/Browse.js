@@ -37,6 +37,11 @@ var BrowseCourses = /*#__PURE__*/function (_React$Component) {
           onSelectResult = _this$props.onSelectResult,
           columnBreakpoints = _this$props.columnBreakpoints,
           isLoading = _this$props.isLoading;
+
+      if (isLoading) {
+        return /*#__PURE__*/React.createElement(React.Fragment, null);
+      }
+
       return /*#__PURE__*/React.createElement("div", {
         className: "search-results row grid"
       }, results.map(function (course, index) {

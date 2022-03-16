@@ -9,7 +9,7 @@ msgid "Sign up for ${ course.title }"
 msgstr ""
 
 #: src/LearningCircleSignup/LearningCircleSignup.jsx:34
-#: src/LearningCircles/LearningCircleCard.jsx:99
+#: src/LearningCircles/LearningCircleCard.jsx:101
 msgid "Facilitated by ${ learningCircle.facilitator }"
 msgstr ""
 
@@ -42,7 +42,7 @@ msgstr ""
 msgid "Keyword, organization, facilitator, etc..."
 msgstr ""
 
-#: src/Courses/Browse.jsx:25
+#: src/Courses/Browse.jsx:29
 msgid "Use this course"
 msgstr ""
 
@@ -72,23 +72,23 @@ msgstr ""
 msgid "Used in ${ usage_number } learning circle"
 msgstr ""
 
-#: src/Courses/CourseCard.jsx:81
+#: src/Courses/CourseCard.jsx:79
 msgid "Provider"
 msgstr ""
 
-#: src/Courses/CourseCard.jsx:86
+#: src/Courses/CourseCard.jsx:84
 msgid "Platform"
 msgstr ""
 
-#: src/Courses/CourseCard.jsx:91
+#: src/Courses/CourseCard.jsx:89
 msgid "Website"
 msgstr ""
 
-#: src/Courses/CourseCard.jsx:97
+#: src/Courses/CourseCard.jsx:95
 msgid "Access"
 msgstr ""
 
-#: src/Courses/CourseCard.jsx:106
+#: src/Courses/CourseCard.jsx:104
 msgid "More details"
 msgstr ""
 
@@ -168,27 +168,28 @@ msgstr ""
 msgid "There are no learning circles available right now."
 msgstr ""
 
-#: src/Filters/LocationFilterForm.jsx:96
-#: src/LearningCircles/LocationFilter.jsx:103
-#: src/Search/SearchTags.jsx:111
-#, javascript-format
-msgid "Within ${ value } ${ unit }"
+#: src/Courses/SearchSummary.jsx:14
+#: src/Search/SearchTags.jsx:190
+msgid "reset the search form"
 msgstr ""
 
-#: src/Search/SearchTags.jsx:180
+#: src/Courses/SearchSummary.jsx:22
+#: src/Search/SearchTags.jsx:152
 #, javascript-format
 msgid "Showing ${ props.searchResults.length } of ${ props.totalResults } result"
 msgid_plural "Showing ${ props.searchResults.length } of ${ props.totalResults } results"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/Search/SearchTags.jsx:218
-msgid "reset the search form"
-msgstr ""
-
-#: src/Search/SearchTags.jsx:227
+#: src/Courses/SearchSummary.jsx:32
+#: src/Search/SearchTags.jsx:199
 #, javascript-format
 msgid "To see more results, either remove some filters or ${ resetButton }"
+msgstr ""
+
+#: src/LearningCircles/LocationFilter.jsx:105
+#: src/Search/SearchTags.jsx:111
+msgid "Within ${ value } ${ unit }"
 msgstr ""
 
 #: src/LearningCircles/LearningCircleCard.jsx:38
@@ -227,17 +228,49 @@ msgstr ""
 msgid "Starting ${ formattedStartDate }"
 msgstr ""
 
-#: src/LearningCircles/LearningCircleCard.jsx:103
+#: src/LearningCircles/LearningCircleCard.jsx:105
 msgid "Meeting at ${ learningCircle.venue }"
 msgstr ""
 
 #: src/LearningCircleSignup/SignupForm.jsx:183
-#: src/LearningCircles/LearningCircleCard.jsx:108
+#: src/LearningCircles/LearningCircleCard.jsx:110
 msgid "Sign up"
 msgstr ""
 
-#: src/LearningCircles/LearningCircleCard.jsx:108
+#: src/LearningCircles/LearningCircleCard.jsx:110
 msgid "View details"
+msgstr ""
+
+#: src/LearningCircles/LocationFilter.jsx:40
+msgid "Unable to detect location."
+msgstr ""
+
+#: src/LearningCircles/LocationFilter.jsx:52
+msgid "Geolocation is not supported by this browser."
+msgstr ""
+
+#: src/LearningCircles/LocationFilter.jsx:75
+msgid "Use my current location"
+msgstr ""
+
+#: src/LearningCircles/LocationFilter.jsx:80
+msgid "Detecting your location..."
+msgstr ""
+
+#: src/LearningCircles/LocationFilter.jsx:82
+msgid "Using your current location"
+msgstr ""
+
+#: src/LearningCircles/LocationFilter.jsx:103
+msgid "miles"
+msgstr ""
+
+#: src/LearningCircles/LocationFilter.jsx:103
+msgid "km"
+msgstr ""
+
+#: src/LearningCircles/LocationFilter.jsx:125
+msgid "Start typing a city name"
 msgstr ""
 
 #: src/Search/SearchBar.jsx:17
@@ -296,111 +329,28 @@ msgstr ""
 msgid "Submitting..."
 msgstr ""
 
-#: src/Filters/FilterButton.jsx:10
-#: src/Filters/SortSection.jsx:30
-msgid "Sort by"
+#: src/Courses/FacilitatorGuideFilterForm.jsx:11
+msgid "Facilitator guides"
 msgstr ""
 
-#: src/Filters/FiltersSection.jsx:32
-msgid "Filter"
+#: src/Courses/FacilitatorGuideFilterForm.jsx:22
+msgid "Only show courses with facilitator guides"
 msgstr ""
 
-#: src/Filters/FacilitatorGuideFilterForm.jsx:8
-#: src/Filters/OerFilterForm.jsx:8
-msgid "Only open educational resources (OER)"
+#: src/Courses/LanguageFilterForm.jsx:67
+msgid "Select language(s)"
 msgstr ""
 
-#: src/Filters/FacilitatorGuideFilterForm.jsx:9
-#: src/Filters/OerFilterForm.jsx:9
-msgid "All courses"
+#: src/Courses/TopicsFilterForm.jsx:58
+msgid "Select topic(s)"
 msgstr ""
 
-#: src/Filters/LanguageFilterForm.jsx:65
-msgid "Select one or more"
-msgstr ""
-
-#: src/Filters/TopicsFilterForm.jsx:58
-msgid "Select one or more topic"
-msgstr ""
-
-#: src/Filters/OrderCoursesForm.jsx:17
+#: src/Courses/OrderCoursesForm.jsx:17
 msgid "Order By"
-msgstr ""
-
-#: src/Filters/LocationFilterForm.jsx:40
-#: src/LearningCircles/LocationFilter.jsx:40
-msgid "Unable to detect location."
-msgstr ""
-
-#: src/Filters/LocationFilterForm.jsx:51
-#: src/LearningCircles/LocationFilter.jsx:51
-msgid "Geolocation is not supported by this browser."
-msgstr ""
-
-#: src/Filters/LocationFilterForm.jsx:67
-#: src/LearningCircles/LocationFilter.jsx:73
-msgid "Use my current location"
-msgstr ""
-
-#: src/Filters/LocationFilterForm.jsx:72
-#: src/LearningCircles/LocationFilter.jsx:78
-msgid "Detecting your location..."
-msgstr ""
-
-#: src/Filters/LocationFilterForm.jsx:74
-#: src/LearningCircles/LocationFilter.jsx:80
-msgid "Using your current location"
-msgstr ""
-
-#: src/Filters/LocationFilterForm.jsx:94
-#: src/LearningCircles/LocationFilter.jsx:101
-msgid "miles"
-msgstr ""
-
-#: src/Filters/LocationFilterForm.jsx:94
-#: src/LearningCircles/LocationFilter.jsx:101
-msgid "km"
-msgstr ""
-
-#: src/Filters/LocationFilterForm.jsx:139
-#: src/LearningCircles/LocationFilter.jsx:124
-msgid "Start typing a city name"
 msgstr ""
 
 #: src/LearningCircleSignup/SignupSuccess.jsx:8
 msgid ""
 "Thank you for signing up. We've sent you an email introducing you to your "
 "facilitator and we'll send you a reminder two days before each meeting."
-msgstr ""
-
-#: src/Filters/FilterButton.jsx:6
-msgid "Location"
-msgstr ""
-
-#: src/Filters/FilterButton.jsx:7
-msgid "Language"
-msgstr ""
-
-#: src/Filters/FilterButton.jsx:8
-msgid "Topics"
-msgstr ""
-
-#: src/Filters/FilterButton.jsx:9
-msgid "Meeting Day(s)"
-msgstr ""
-
-#: src/Filters/FilterButton.jsx:11
-msgid "OER mode"
-msgstr ""
-
-#: src/Filters/LocationFilterForm.jsx:131
-msgid "or"
-msgstr ""
-
-#: src/Filters/LocationFilterForm.jsx:134
-msgid "Select a location"
-msgstr ""
-
-#: src/Filters/LocationFilterForm.jsx:140
-msgid "No results for this city"
 msgstr ""

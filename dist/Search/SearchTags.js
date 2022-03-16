@@ -309,7 +309,7 @@ var SearchTags = function SearchTags(props) {
     className: "results-summary"
   }, /*#__PURE__*/React.createElement("div", {
     className: "search-tags wrapper"
-  }, generateSearchSummary()), noResults && /*#__PURE__*/React.createElement("div", {
+  }, generateSearchSummary()), noResults && !props.isLoading && /*#__PURE__*/React.createElement("div", {
     className: "clear-search"
   }, jt(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["To see more results, either remove some filters or ", ""])), resetButton)));
 };

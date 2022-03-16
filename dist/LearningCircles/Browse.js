@@ -19,7 +19,7 @@ var BrowseLearningCircles = function BrowseLearningCircles(props) {
       showNoResultsComponent = props.showNoResultsComponent,
       contact = props.contact,
       isLoading = props.isLoading;
-  return /*#__PURE__*/React.createElement(Tabs, {
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Tabs, {
     selectedIndex: resultsTab,
     onSelect: updateResultsTab
   }, /*#__PURE__*/React.createElement(TabList, null, /*#__PURE__*/React.createElement(Tab, null, /*#__PURE__*/React.createElement("span", {
@@ -58,7 +58,9 @@ var BrowseLearningCircles = function BrowseLearningCircles(props) {
       isSignupOpen: false,
       defaultImageUrl: props.defaultImageUrl
     });
-  }))));
+  })))), isLoading && /*#__PURE__*/React.createElement("div", {
+    className: "loader"
+  }));
 };
 
 BrowseLearningCircles.defaultProps = {
