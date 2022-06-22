@@ -184,6 +184,7 @@ var SearchProvider = /*#__PURE__*/function (_Component) {
     value: function _sendQuery() {
       var opts = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
       var params = this.state;
+      console.log('SENT PARAMS: ', params);
 
       var options = _objectSpread({
         params: params,
@@ -197,6 +198,7 @@ var SearchProvider = /*#__PURE__*/function (_Component) {
     value: function _updateQueryParams(params) {
       var _this3 = this;
 
+      console.log('NEW PARAMS: ', params);
       this.setState(_objectSpread(_objectSpread({}, params), {}, {
         isLoading: true
       }), function () {

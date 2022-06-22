@@ -22,6 +22,11 @@ import axios from 'axios';
 import { t } from 'ttag';
 import { CitySelect } from './CitySelect';
 import Select from '../InputFields/Select';
+var OnlineFilters = {
+  EVERYTHING: null,
+  ONLINE: true,
+  IN_PERSON: false
+};
 
 var LocationFilter = /*#__PURE__*/function (_Component) {
   _inherits(LocationFilter, _Component);
@@ -166,6 +171,12 @@ var LocationFilter = /*#__PURE__*/function (_Component) {
       });
     });
 
+    _defineProperty(_assertThisInitialized(_this), "handleOnlineFilter", function (filter) {
+      _this.props.updateQueryParams({
+        online: filter
+      });
+    });
+
     _defineProperty(_assertThisInitialized(_this), "generateDistanceSliderLabel", function () {
       var unit = _this.props.useMiles ? t(_templateObject6 || (_templateObject6 = _taggedTemplateLiteral(["miles"]))) : t(_templateObject7 || (_templateObject7 = _taggedTemplateLiteral(["km"])));
 
@@ -199,6 +210,8 @@ var LocationFilter = /*#__PURE__*/function (_Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this2 = this;
+
       var distanceValue = this.generateDistanceValue();
       return /*#__PURE__*/React.createElement("form", {
         className: "filter"
@@ -242,27 +255,51 @@ var LocationFilter = /*#__PURE__*/function (_Component) {
         className: "material-icons"
       }, "place "), this.state.error && /*#__PURE__*/React.createElement("div", {
         className: "invalid-feedback"
-      }, this.state.error)), false && /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement("div", {
-        "class": "form-check"
+      }, this.state.error)), /*#__PURE__*/React.createElement("div", {
+        className: "my-3"
+      }, /*#__PURE__*/React.createElement("label", {
+        htmlFor: "search-input",
+        className: "form-label"
+      }, "In-Person or Online"), /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement("div", {
+        className: "form-check"
       }, /*#__PURE__*/React.createElement("input", {
-        "class": "form-check-input",
-        type: "checkbox",
-        value: "",
-        id: "online"
+        className: "form-check-input",
+        type: "radio",
+        name: "everything",
+        id: "everything",
+        onChange: function onChange() {
+          return _this2.handleOnlineFilter(OnlineFilters.EVERYTHING);
+        }
       }), /*#__PURE__*/React.createElement("label", {
-        "class": "form-check-label",
-        "for": "online"
-      }, "online")), /*#__PURE__*/React.createElement("div", {
-        "class": "form-check"
+        className: "form-check-label",
+        htmlFor: "everything"
+      }, "Everything")), /*#__PURE__*/React.createElement("div", {
+        className: "form-check"
       }, /*#__PURE__*/React.createElement("input", {
-        "class": "form-check-input",
-        type: "checkbox",
-        value: "",
-        id: "in-person"
+        className: "form-check-input",
+        type: "radio",
+        name: "online",
+        id: "online",
+        onChange: function onChange() {
+          return _this2.handleOnlineFilter(OnlineFilters.ONLINE);
+        }
       }), /*#__PURE__*/React.createElement("label", {
-        "class": "form-check-label",
-        "for": "in-person"
-      }, "in person"))));
+        className: "form-check-label",
+        htmlFor: "online"
+      }, "Online")), /*#__PURE__*/React.createElement("div", {
+        className: "form-check"
+      }, /*#__PURE__*/React.createElement("input", {
+        className: "form-check-input",
+        type: "radio",
+        name: "in-person",
+        id: "in-person",
+        onChange: function onChange() {
+          return _this2.handleOnlineFilter(OnlineFilters.IN_PERSON);
+        }
+      }), /*#__PURE__*/React.createElement("label", {
+        className: "form-check-label",
+        htmlFor: "in-person"
+      }, "In person")))));
     }
   }]);
 

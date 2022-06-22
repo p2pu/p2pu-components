@@ -4,6 +4,12 @@ import {t} from 'ttag';
 import {CitySelect} from './CitySelect'
 import Select from '../InputFields/Select';
 
+const OnlineFilters = {
+	EVERYTHING: null,
+	ONLINE: true,
+	IN_PERSON: false,
+}
+
 export default class LocationFilter extends Component {
   constructor(props) {
     super(props)
@@ -99,6 +105,10 @@ export default class LocationFilter extends Component {
     this.props.updateQueryParams({ distance });
   }
 
+  handleOnlineFilter = (filter) => {
+    this.props.updateQueryParams({ online: filter })
+  }
+
   generateDistanceSliderLabel = () => {
     const unit = this.props.useMiles ? t`miles` : t`km`;
     const value = this.generateDistanceValue();
@@ -154,19 +164,29 @@ export default class LocationFilter extends Component {
             <div className="invalid-feedback">{ this.state.error }</div>
           }
         </div>
-        { false &&
+        <div className="my-3">
+          <label htmlFor="search-input" className="form-label">In-Person or Online</label>
           <span>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="online" />
-              <label class="form-check-label" for="online">online</label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="in-person" />
-              <label class="form-check-label" for="in-person">in person</label>
-            </div>
-         
+          <div className="form-check">
+            <input className="form-check-input" type="radio" name="everything" id="everything" onChange={() => this.handleOnlineFilter(OnlineFilters.EVERYTHING)}/>
+            <label className="form-check-label" htmlFor="everything">
+              Everything
+            </label>
+          </div>
+          <div className="form-check">
+            <input className="form-check-input" type="radio" name="online" id="online" onChange={() => this.handleOnlineFilter(OnlineFilters.ONLINE)} />
+            <label className="form-check-label" htmlFor="online">
+              Online
+            </label>
+          </div>
+          <div className="form-check">
+            <input className="form-check-input" type="radio" name="in-person" id="in-person"  onChange={() => this.handleOnlineFilter(OnlineFilters.IN_PERSON)}/>
+            <label className="form-check-label" htmlFor="in-person">
+              In person
+            </label>
+          </div>
           </span>
-        }
+        </div>
       </form>
     );
   }

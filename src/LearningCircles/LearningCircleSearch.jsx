@@ -15,11 +15,11 @@ const LearningCircleSearch = (props) => {
       <div className="search-fields row g-0">
         <div className="bg-white shadow col-12 col-lg me-lg-2">
           <SearchBar 
-            placeholder={t`####Keyword, organization, facilitator, etc...`}
+            placeholder={t`Keyword, organization, facilitator, etc...`}
             {...props} 
           />
         </div>
-        <div className="bg-green shadow col-12 col-lg-7">
+        <div className="bg-white shadow col-12 col-lg-7">
           <LocationFilter {...props} />
         </div>
       </div>
