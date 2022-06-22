@@ -24,8 +24,8 @@ import { CitySelect } from './CitySelect';
 import Select from '../InputFields/Select';
 var OnlineFilters = {
   EVERYTHING: null,
-  ONLINE: true,
-  IN_PERSON: false
+  ONLINE: 'true',
+  IN_PERSON: 'false'
 };
 
 var LocationFilter = /*#__PURE__*/function (_Component) {
@@ -267,6 +267,7 @@ var LocationFilter = /*#__PURE__*/function (_Component) {
         type: "radio",
         name: "online-filter",
         id: "everything",
+        checked: this.props.online === OnlineFilters.EVERYTHING || this.props.online === undefined,
         onChange: function onChange() {
           return _this2.handleOnlineFilter(OnlineFilters.EVERYTHING);
         }
@@ -280,6 +281,7 @@ var LocationFilter = /*#__PURE__*/function (_Component) {
         type: "radio",
         name: "online-filter",
         id: "online",
+        checked: this.props.online === OnlineFilters.ONLINE,
         onChange: function onChange() {
           return _this2.handleOnlineFilter(OnlineFilters.ONLINE);
         }
@@ -293,6 +295,7 @@ var LocationFilter = /*#__PURE__*/function (_Component) {
         type: "radio",
         name: "online-filter",
         id: "in-person",
+        checked: this.props.online === OnlineFilters.IN_PERSON,
         onChange: function onChange() {
           return _this2.handleOnlineFilter(OnlineFilters.IN_PERSON);
         }

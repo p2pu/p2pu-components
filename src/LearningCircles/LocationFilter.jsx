@@ -6,8 +6,8 @@ import Select from '../InputFields/Select';
 
 const OnlineFilters = {
 	EVERYTHING: null,
-	ONLINE: true,
-	IN_PERSON: false,
+	ONLINE: 'true',
+	IN_PERSON: 'false',
 }
 
 export default class LocationFilter extends Component {
@@ -28,6 +28,7 @@ export default class LocationFilter extends Component {
 
   getLocation = (e) => {
     const useGeolocation = e.target.checked;
+    
 
     this.setState({ gettingLocation: useGeolocation, useLocation: useGeolocation, error: null });
 
@@ -168,19 +169,43 @@ export default class LocationFilter extends Component {
           <label htmlFor="search-input" className="form-label">In-Person or Online</label>
           <span>
           <div className="form-check">
-            <input className="form-check-input" type="radio" name="online-filter" id="everything" onChange={() => this.handleOnlineFilter(OnlineFilters.EVERYTHING)}/>
+            <input 
+              className="form-check-input" 
+              type="radio" 
+              name="online-filter" 
+              id="everything" 
+              checked={
+                this.props.online === OnlineFilters.EVERYTHING || 
+                this.props.online === undefined
+              } 
+              onChange={() => this.handleOnlineFilter(OnlineFilters.EVERYTHING)}
+            />
             <label className="form-check-label" htmlFor="everything">
               Everything
             </label>
           </div>
           <div className="form-check">
-            <input className="form-check-input" type="radio" name="online-filter" id="online" onChange={() => this.handleOnlineFilter(OnlineFilters.ONLINE)} />
+            <input 
+              className="form-check-input" 
+              type="radio" 
+              name="online-filter" 
+              id="online"
+              checked={this.props.online === OnlineFilters.ONLINE} 
+              onChange={() => this.handleOnlineFilter(OnlineFilters.ONLINE)} 
+            />
             <label className="form-check-label" htmlFor="online">
               Online
             </label>
           </div>
           <div className="form-check">
-            <input className="form-check-input" type="radio" name="online-filter" id="in-person"  onChange={() => this.handleOnlineFilter(OnlineFilters.IN_PERSON)}/>
+            <input 
+              className="form-check-input" 
+              type="radio" 
+              name="online-filter" 
+              id="in-person"
+              checked={this.props.online === OnlineFilters.IN_PERSON}
+              onChange={() => this.handleOnlineFilter(OnlineFilters.IN_PERSON)}
+            />
             <label className="form-check-label" htmlFor="in-person">
               In person
             </label>
