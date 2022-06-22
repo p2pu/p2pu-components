@@ -265,7 +265,7 @@ var LocationFilter = /*#__PURE__*/function (_Component) {
       }, /*#__PURE__*/React.createElement("input", {
         className: "form-check-input",
         type: "radio",
-        name: "everything",
+        name: "online-filter",
         id: "everything",
         onChange: function onChange() {
           return _this2.handleOnlineFilter(OnlineFilters.EVERYTHING);
@@ -278,7 +278,7 @@ var LocationFilter = /*#__PURE__*/function (_Component) {
       }, /*#__PURE__*/React.createElement("input", {
         className: "form-check-input",
         type: "radio",
-        name: "online",
+        name: "online-filter",
         id: "online",
         onChange: function onChange() {
           return _this2.handleOnlineFilter(OnlineFilters.ONLINE);
@@ -291,7 +291,7 @@ var LocationFilter = /*#__PURE__*/function (_Component) {
       }, /*#__PURE__*/React.createElement("input", {
         className: "form-check-input",
         type: "radio",
-        name: "in-person",
+        name: "online-filter",
         id: "in-person",
         onChange: function onChange() {
           return _this2.handleOnlineFilter(OnlineFilters.IN_PERSON);

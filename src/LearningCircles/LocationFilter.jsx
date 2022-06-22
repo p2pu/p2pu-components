@@ -168,19 +168,19 @@ export default class LocationFilter extends Component {
           <label htmlFor="search-input" className="form-label">In-Person or Online</label>
           <span>
           <div className="form-check">
-            <input className="form-check-input" type="radio" name="everything" id="everything" onChange={() => this.handleOnlineFilter(OnlineFilters.EVERYTHING)}/>
+            <input className="form-check-input" type="radio" name="online-filter" id="everything" onChange={() => this.handleOnlineFilter(OnlineFilters.EVERYTHING)}/>
             <label className="form-check-label" htmlFor="everything">
               Everything
             </label>
           </div>
           <div className="form-check">
-            <input className="form-check-input" type="radio" name="online" id="online" onChange={() => this.handleOnlineFilter(OnlineFilters.ONLINE)} />
+            <input className="form-check-input" type="radio" name="online-filter" id="online" onChange={() => this.handleOnlineFilter(OnlineFilters.ONLINE)} />
             <label className="form-check-label" htmlFor="online">
               Online
             </label>
           </div>
           <div className="form-check">
-            <input className="form-check-input" type="radio" name="in-person" id="in-person"  onChange={() => this.handleOnlineFilter(OnlineFilters.IN_PERSON)}/>
+            <input className="form-check-input" type="radio" name="online-filter" id="in-person"  onChange={() => this.handleOnlineFilter(OnlineFilters.IN_PERSON)}/>
             <label className="form-check-label" htmlFor="in-person">
               In person
             </label>
