@@ -155,6 +155,19 @@ msgstr ""
 msgid "Closed and completed"
 msgstr ""
 
+#: src/Search/DefaultNoResults.jsx:17
+#, javascript-format
+msgid "View ${ otherTabName } learning circles"
+msgstr ""
+
+#: src/Search/DefaultNoResults.jsx:28
+msgid "Contact this team"
+msgstr ""
+
+#: src/Search/DefaultNoResults.jsx:38
+msgid "There are no learning circles available right now."
+msgstr ""
+
 #: src/Courses/SearchSummary.jsx:14
 #: src/Search/SearchTags.jsx:205
 msgid "reset the search form"
@@ -174,21 +187,8 @@ msgstr[1] ""
 msgid "To see more results, either remove some filters or ${ resetButton }"
 msgstr ""
 
-#: src/Search/DefaultNoResults.jsx:17
-msgid "View ${ otherTabName } learning circles"
-msgstr ""
-
-#: src/Search/DefaultNoResults.jsx:28
-msgid "Contact this team"
-msgstr ""
-
-#: src/Search/DefaultNoResults.jsx:38
-msgid "There are no learning circles available right now."
-msgstr ""
-
 #: src/LearningCircles/LocationFilter.jsx:116
 #: src/Search/SearchTags.jsx:124
-#, javascript-format
 msgid "Within ${ value } ${ unit }"
 msgstr ""
 
