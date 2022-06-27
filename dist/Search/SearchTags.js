@@ -157,7 +157,7 @@ var SearchTags = function SearchTags(props) {
         });
       };
 
-      if (props.online) {
+      if (props.online === 'true') {
         return [/*#__PURE__*/React.createElement(SearchTag, {
           key: "queryTag-0",
           value: "Meeting online",
@@ -166,7 +166,7 @@ var SearchTags = function SearchTags(props) {
       } else {
         return [/*#__PURE__*/React.createElement(SearchTag, {
           key: "queryTag-0",
-          value: "Meeting in-person",
+          value: "Meeting in person",
           onDelete: onDelete
         })];
       }

@@ -6,8 +6,8 @@ import Select from '../InputFields/Select';
 
 const OnlineFilters = {
 	EVERYTHING: null,
-	ONLINE: true,
-	IN_PERSON: false,
+	ONLINE: "true",
+	IN_PERSON: "false",
 }
 
 export default class LocationFilter extends Component {

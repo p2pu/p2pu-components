@@ -83,7 +83,7 @@ const SearchTags = (props) => {
     if (props.online !== null) {
       const onDelete = (value) => { props.updateQueryParams({ online: null }) };
 
-      if (props.online){
+      if (props.online === 'true'){
         return [<SearchTag key='queryTag-0' value={"Meeting online"} onDelete={onDelete} />];
       } else {
         return [<SearchTag key='queryTag-0' value={"Meeting in person"} onDelete={onDelete} />];

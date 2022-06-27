@@ -24,8 +24,8 @@ import { CitySelect } from './CitySelect';
 import Select from '../InputFields/Select';
 var OnlineFilters = {
   EVERYTHING: null,
-  ONLINE: true,
-  IN_PERSON: false
+  ONLINE: "true",
+  IN_PERSON: "false"
 };
 
 var LocationFilter = /*#__PURE__*/function (_Component) {
@@ -260,7 +260,7 @@ var LocationFilter = /*#__PURE__*/function (_Component) {
       }, /*#__PURE__*/React.createElement("label", {
         htmlFor: "search-input",
         className: "form-label"
-      }, "In-Person or Online"), /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement("div", {
+      }, "In Person or Online"), /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement("div", {
         className: "form-check"
       }, /*#__PURE__*/React.createElement("input", {
         className: "form-check-input",
