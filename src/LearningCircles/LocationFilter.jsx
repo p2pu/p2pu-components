@@ -6,8 +6,8 @@ import Select from '../InputFields/Select';
 
 const OnlineFilters = {
 	EVERYTHING: null,
-	ONLINE: 'true',
-	IN_PERSON: 'false',
+	ONLINE: true,
+	IN_PERSON: false,
 }
 
 export default class LocationFilter extends Component {
@@ -166,7 +166,7 @@ export default class LocationFilter extends Component {
           }
         </div>
         <div className="my-3">
-          <label htmlFor="search-input" className="form-label">In-Person or Online</label>
+          <label htmlFor="search-input" className="form-label">In Person or Online</label>
           <span>
           <div className="form-check">
             <input 

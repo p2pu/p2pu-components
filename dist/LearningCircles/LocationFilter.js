@@ -24,8 +24,8 @@ import { CitySelect } from './CitySelect';
 import Select from '../InputFields/Select';
 var OnlineFilters = {
   EVERYTHING: null,
-  ONLINE: 'true',
-  IN_PERSON: 'false'
+  ONLINE: true,
+  IN_PERSON: false
 };
 
 var LocationFilter = /*#__PURE__*/function (_Component) {

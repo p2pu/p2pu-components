@@ -149,6 +149,30 @@ var SearchTags = function SearchTags(props) {
     }
   };
 
+  var generateOnlineTag = function generateOnlineTag() {
+    if (props.online !== null) {
+      var onDelete = function onDelete(value) {
+        props.updateQueryParams({
+          online: null
+        });
+      };
+
+      if (props.online) {
+        return [/*#__PURE__*/React.createElement(SearchTag, {
+          key: "queryTag-0",
+          value: "Meeting online",
+          onDelete: onDelete
+        })];
+      } else {
+        return [/*#__PURE__*/React.createElement(SearchTag, {
+          key: "queryTag-0",
+          value: "Meeting in-person",
+          onDelete: onDelete
+        })];
+      }
+    }
+  };
+
   var generateTopicsTags = function generateTopicsTags() {
     if (props.topics && props.topics.length > 0) {
       var onDelete = function onDelete(value) {
@@ -255,6 +279,9 @@ var SearchTags = function SearchTags(props) {
 
       case 'oer':
         return generateOerTag();
+
+      case 'online':
+        return generateOnlineTag();
     }
   };
 
@@ -266,7 +293,7 @@ var SearchTags = function SearchTags(props) {
     var withSpan = /*#__PURE__*/React.createElement("span", {
       key: "resultsSummary-2"
     }, "with");
-    var tagsToDisplay = ['q', 'topics', 'location', 'meetingDays', 'language', 'teamName', 'order', 'oer'];
+    var tagsToDisplay = ['q', 'topics', 'location', 'meetingDays', 'language', 'teamName', 'order', 'oer', 'online'];
     var resultsCount = /*#__PURE__*/React.createElement("span", {
       key: "resultsSummary-0"
     }, ngettext(msgid(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["Showing ", " of ", " result"])), props.searchResults.length, props.totalResults), "Showing ".concat(props.searchResults.length, " of ").concat(props.totalResults, " results"), props.totalResults));
