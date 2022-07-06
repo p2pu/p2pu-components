@@ -60,6 +60,7 @@ var SearchProvider = /*#__PURE__*/function (_Component) {
       if (_this.props.searchSubject === 'learningCircles') {
         defaults.signup = 'open';
         defaults.resultsTab = parsedParams.signup && parsedParams.signup == 'closed' ? 1 : 0;
+        defaults.online = null;
       }
 
       return _objectSpread(_objectSpread(_objectSpread({}, defaults), _this.props.initialState), parsedParams);

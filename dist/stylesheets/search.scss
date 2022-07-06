@@ -666,6 +666,24 @@ a.learning-circle-card-link {
   display: block !important;
 }
 
+.react-tabs__tab-list {
+  border-bottom: 1px solid $gray-light;
+
+  .react-tabs__tab {
+    padding: 0 $padding-xs;
+    margin-right: $padding-xs;
+    border: none;
+  }
+
+  .react-tabs__tab--selected {
+    border: none;
+    border-radius: 0;
+    border-bottom: 5px solid $p2pu-blue;
+    color: inherit;
+  }
+}
+
+
 @media (max-width: $screen-xs-max) {
 
   .filter-section {

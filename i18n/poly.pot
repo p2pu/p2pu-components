@@ -169,12 +169,12 @@ msgid "There are no learning circles available right now."
 msgstr ""
 
 #: src/Courses/SearchSummary.jsx:14
-#: src/Search/SearchTags.jsx:190
+#: src/Search/SearchTags.jsx:205
 msgid "reset the search form"
 msgstr ""
 
 #: src/Courses/SearchSummary.jsx:22
-#: src/Search/SearchTags.jsx:152
+#: src/Search/SearchTags.jsx:167
 #, javascript-format
 msgid "Showing ${ props.searchResults.length } of ${ props.totalResults } result"
 msgid_plural "Showing ${ props.searchResults.length } of ${ props.totalResults } results"
@@ -182,13 +182,13 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: src/Courses/SearchSummary.jsx:32
-#: src/Search/SearchTags.jsx:199
+#: src/Search/SearchTags.jsx:214
 #, javascript-format
 msgid "To see more results, either remove some filters or ${ resetButton }"
 msgstr ""
 
-#: src/LearningCircles/LocationFilter.jsx:105
-#: src/Search/SearchTags.jsx:111
+#: src/LearningCircles/LocationFilter.jsx:116
+#: src/Search/SearchTags.jsx:124
 msgid "Within ${ value } ${ unit }"
 msgstr ""
 
@@ -241,35 +241,35 @@ msgstr ""
 msgid "View details"
 msgstr ""
 
-#: src/LearningCircles/LocationFilter.jsx:40
+#: src/LearningCircles/LocationFilter.jsx:47
 msgid "Unable to detect location."
 msgstr ""
 
-#: src/LearningCircles/LocationFilter.jsx:52
+#: src/LearningCircles/LocationFilter.jsx:59
 msgid "Geolocation is not supported by this browser."
 msgstr ""
 
-#: src/LearningCircles/LocationFilter.jsx:75
+#: src/LearningCircles/LocationFilter.jsx:82
 msgid "Use my current location"
 msgstr ""
 
-#: src/LearningCircles/LocationFilter.jsx:80
+#: src/LearningCircles/LocationFilter.jsx:87
 msgid "Detecting your location..."
 msgstr ""
 
-#: src/LearningCircles/LocationFilter.jsx:82
+#: src/LearningCircles/LocationFilter.jsx:89
 msgid "Using your current location"
 msgstr ""
 
-#: src/LearningCircles/LocationFilter.jsx:103
+#: src/LearningCircles/LocationFilter.jsx:114
 msgid "miles"
 msgstr ""
 
-#: src/LearningCircles/LocationFilter.jsx:103
+#: src/LearningCircles/LocationFilter.jsx:114
 msgid "km"
 msgstr ""
 
-#: src/LearningCircles/LocationFilter.jsx:125
+#: src/LearningCircles/LocationFilter.jsx:136
 msgid "Start typing a city name"
 msgstr ""
 

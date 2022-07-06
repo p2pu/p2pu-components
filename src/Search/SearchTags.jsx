@@ -79,6 +79,19 @@ const SearchTags = (props) => {
     }
   }
 
+  const generateOnlineTag = () => {
+    if (props.online !== null) {
+      const onDelete = (value) => { props.updateQueryParams({ online: null }) };
+
+      if (props.online === 'true'){
+        return [<SearchTag key='queryTag-0' value={"Meeting online"} onDelete={onDelete} />];
+      } else {
+        return [<SearchTag key='queryTag-0' value={"Meeting in person"} onDelete={onDelete} />];
+      }
+    }
+  }
+
+
   const generateTopicsTags = () => {
     if (props.topics && props.topics.length > 0) {
       const onDelete = (value) => {
@@ -139,6 +152,8 @@ const SearchTags = (props) => {
       return generateOrderTag();
       case 'oer':
       return generateOerTag();
+      case 'online':
+      return generateOnlineTag();
     }
   }
 
@@ -146,7 +161,7 @@ const SearchTags = (props) => {
     let searchSummaryItems = []
     const forSearchSubject = <span key='resultsSummary-1'>for {SEARCH_SUBJECTS[props.searchSubject]}</span>;
     const withSpan = <span key='resultsSummary-2'>with</span>;
-    const tagsToDisplay = ['q', 'topics', 'location', 'meetingDays', 'language', 'teamName', 'order', 'oer'];
+    const tagsToDisplay = ['q', 'topics', 'location', 'meetingDays', 'language', 'teamName', 'order', 'oer', 'online'];
     const resultsCount =
       <span key='resultsSummary-0'>{
         ngettext(
