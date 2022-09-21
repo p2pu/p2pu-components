@@ -15,7 +15,7 @@ export default class TopicsFilterForm extends Component {
 
   fetchTopics = () => {
     const resourceType = `${this.props.searchSubject}Topics`;
-    const api = new ApiHelper(resourceType);
+    const api = new ApiHelper(resourceType, this.props.origin);
     const params = {};
     const callback = (response) => {
       const topics = Object.keys(response.topics).sort()
