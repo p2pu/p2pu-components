@@ -54,10 +54,6 @@ export const API_ENDPOINTS = {
     arrayItems: ['topics', 'languages'],
     privateParams: ['limit', 'offset'],
   },
-  learningCirclesTopics: {
-    baseUrl: `/api/learningcircles/topics/?`,
-    searchParams: []
-  },
   coursesTopics: {
     baseUrl: `/api/courses/topics/?`,
     searchParams: []
