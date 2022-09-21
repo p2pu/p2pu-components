@@ -12,7 +12,6 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 import React, { Component } from 'react';
 import { t } from 'ttag';
 import SearchAndFilter from '../Courses/SearchAndFilter';
-import SearchTags from '../Search/SearchTags';
 import SearchSummary from './SearchSummary';
 import DefaultNoResults from '../Search/DefaultNoResults';
 import BrowseCourses from './Browse';

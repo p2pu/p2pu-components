@@ -192,6 +192,42 @@ msgstr ""
 msgid "Within ${ value } ${ unit }"
 msgstr ""
 
+#: src/LearningCircles/LocationFilter.jsx:47
+msgid "Unable to detect location."
+msgstr ""
+
+#: src/LearningCircles/LocationFilter.jsx:59
+msgid "Geolocation is not supported by this browser."
+msgstr ""
+
+#: src/LearningCircles/LocationFilter.jsx:82
+msgid "Use my current location"
+msgstr ""
+
+#: src/LearningCircles/LocationFilter.jsx:87
+msgid "Detecting your location..."
+msgstr ""
+
+#: src/LearningCircles/LocationFilter.jsx:89
+msgid "Using your current location"
+msgstr ""
+
+#: src/LearningCircles/LocationFilter.jsx:114
+msgid "miles"
+msgstr ""
+
+#: src/LearningCircles/LocationFilter.jsx:114
+msgid "km"
+msgstr ""
+
+#: src/LearningCircles/LocationFilter.jsx:136
+msgid "Start typing a city name"
+msgstr ""
+
+#: src/Search/SearchBar.jsx:17
+msgid "Search"
+msgstr ""
+
 #: src/LearningCircles/LearningCircleCard.jsx:38
 #, javascript-format
 msgid ""
@@ -239,42 +275,6 @@ msgstr ""
 
 #: src/LearningCircles/LearningCircleCard.jsx:110
 msgid "View details"
-msgstr ""
-
-#: src/LearningCircles/LocationFilter.jsx:47
-msgid "Unable to detect location."
-msgstr ""
-
-#: src/LearningCircles/LocationFilter.jsx:59
-msgid "Geolocation is not supported by this browser."
-msgstr ""
-
-#: src/LearningCircles/LocationFilter.jsx:82
-msgid "Use my current location"
-msgstr ""
-
-#: src/LearningCircles/LocationFilter.jsx:87
-msgid "Detecting your location..."
-msgstr ""
-
-#: src/LearningCircles/LocationFilter.jsx:89
-msgid "Using your current location"
-msgstr ""
-
-#: src/LearningCircles/LocationFilter.jsx:114
-msgid "miles"
-msgstr ""
-
-#: src/LearningCircles/LocationFilter.jsx:114
-msgid "km"
-msgstr ""
-
-#: src/LearningCircles/LocationFilter.jsx:136
-msgid "Start typing a city name"
-msgstr ""
-
-#: src/Search/SearchBar.jsx:17
-msgid "Search"
 msgstr ""
 
 #: src/LearningCircleSignup/SignupForm.jsx:99

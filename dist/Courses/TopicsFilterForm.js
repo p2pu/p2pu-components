@@ -33,7 +33,7 @@ var TopicsFilterForm = /*#__PURE__*/function (_Component) {
 
     _defineProperty(_assertThisInitialized(_this), "fetchTopics", function () {
       var resourceType = "".concat(_this.props.searchSubject, "Topics");
-      var api = new ApiHelper(resourceType);
+      var api = new ApiHelper(resourceType, _this.props.origin);
       var params = {};
 
       var callback = function callback(response) {
