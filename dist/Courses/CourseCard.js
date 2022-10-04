@@ -90,26 +90,14 @@ var CourseCard = function CourseCard(props) {
   }, /*#__PURE__*/React.createElement("table", {
     className: "table"
   }, /*#__PURE__*/React.createElement("tbody", null, /*#__PURE__*/React.createElement("tr", {
-    className: "topics"
+    className: "border-top-0"
   }, /*#__PURE__*/React.createElement("th", {
     scope: "row"
-  }, "Topics"), /*#__PURE__*/React.createElement("td", {
-    className: "topics-list"
-  }, topicsList.map(function (topic, index) {
-    return /*#__PURE__*/React.createElement(React.Fragment, {
-      key: "".concat(index, "-topic")
-    }, !!index && ', ', topic);
-  }))), /*#__PURE__*/React.createElement("tr", {
-    className: "provider"
-  }, /*#__PURE__*/React.createElement("th", {
+  }, t(_templateObject7 || (_templateObject7 = _taggedTemplateLiteral(["Creator"])))), /*#__PURE__*/React.createElement("td", null, props.course.creator)), /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("th", {
     scope: "row"
-  }, t(_templateObject7 || (_templateObject7 = _taggedTemplateLiteral(["Provider"])))), /*#__PURE__*/React.createElement("td", null, props.course.provider)), props.course.platform && /*#__PURE__*/React.createElement("tr", {
-    className: "platform"
-  }, /*#__PURE__*/React.createElement("th", {
-    scope: "row"
-  }, t(_templateObject8 || (_templateObject8 = _taggedTemplateLiteral(["Platform"])))), /*#__PURE__*/React.createElement("td", {
+  }, t(_templateObject8 || (_templateObject8 = _taggedTemplateLiteral(["Format"])))), /*#__PURE__*/React.createElement("td", {
     colSpan: "2"
-  }, props.course.platform)), /*#__PURE__*/React.createElement("tr", {
+  }, props.course.format)), /*#__PURE__*/React.createElement("tr", {
     className: "website"
   }, /*#__PURE__*/React.createElement("th", {
     scope: "row"
@@ -119,13 +107,21 @@ var CourseCard = function CourseCard(props) {
     href: props.course.link,
     rel: "nofollow",
     target: "_blank"
-  }, props.course.link))), /*#__PURE__*/React.createElement("tr", {
-    className: "platform"
+  }, props.course.link))), !!props.course.topics.length && /*#__PURE__*/React.createElement("tr", {
+    className: "topics"
   }, /*#__PURE__*/React.createElement("th", {
     scope: "row"
-  }, t(_templateObject10 || (_templateObject10 = _taggedTemplateLiteral(["Access"])))), /*#__PURE__*/React.createElement("td", {
+  }, "Topics"), /*#__PURE__*/React.createElement("td", {
+    className: "topics-list"
+  }, topicsList.map(function (topic, index) {
+    return /*#__PURE__*/React.createElement(React.Fragment, {
+      key: "".concat(index, "-topic")
+    }, !!index && ', ', topic);
+  }))), /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("th", {
+    scope: "row"
+  }, t(_templateObject10 || (_templateObject10 = _taggedTemplateLiteral(["Language"])))), /*#__PURE__*/React.createElement("td", {
     colSpan: "2"
-  }, availability))))), /*#__PURE__*/React.createElement("div", {
+  }, props.course.language_display))))), /*#__PURE__*/React.createElement("div", {
     className: "row justify-content-center justify-content-md-end"
   }, moreInfo && /*#__PURE__*/React.createElement("a", {
     href: props.course.course_page_url,

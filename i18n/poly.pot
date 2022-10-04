@@ -72,20 +72,20 @@ msgstr ""
 msgid "Used in ${ usage_number } learning circle"
 msgstr ""
 
-#: src/Courses/CourseCard.jsx:79
-msgid "Provider"
+#: src/Courses/CourseCard.jsx:69
+msgid "Creator"
 msgstr ""
 
-#: src/Courses/CourseCard.jsx:84
-msgid "Platform"
+#: src/Courses/CourseCard.jsx:73
+msgid "Format"
 msgstr ""
 
-#: src/Courses/CourseCard.jsx:89
+#: src/Courses/CourseCard.jsx:77
 msgid "Website"
 msgstr ""
 
 #: src/Courses/CourseCard.jsx:95
-msgid "Access"
+msgid "Language"
 msgstr ""
 
 #: src/Courses/CourseCard.jsx:104
@@ -147,134 +147,12 @@ msgstr ""
 msgid "Title, subject, etc..."
 msgstr ""
 
-#: src/utils/constants.js:92
+#: src/utils/constants.js:88
 msgid "Open"
 msgstr ""
 
-#: src/utils/constants.js:93
+#: src/utils/constants.js:89
 msgid "Closed and completed"
-msgstr ""
-
-#: src/Search/DefaultNoResults.jsx:17
-#, javascript-format
-msgid "View ${ otherTabName } learning circles"
-msgstr ""
-
-#: src/Search/DefaultNoResults.jsx:28
-msgid "Contact this team"
-msgstr ""
-
-#: src/Search/DefaultNoResults.jsx:38
-msgid "There are no learning circles available right now."
-msgstr ""
-
-#: src/Courses/SearchSummary.jsx:14
-#: src/Search/SearchTags.jsx:205
-msgid "reset the search form"
-msgstr ""
-
-#: src/Courses/SearchSummary.jsx:22
-#: src/Search/SearchTags.jsx:167
-#, javascript-format
-msgid "Showing ${ props.searchResults.length } of ${ props.totalResults } result"
-msgid_plural "Showing ${ props.searchResults.length } of ${ props.totalResults } results"
-msgstr[0] ""
-msgstr[1] ""
-
-#: src/Courses/SearchSummary.jsx:32
-#: src/Search/SearchTags.jsx:214
-#, javascript-format
-msgid "To see more results, either remove some filters or ${ resetButton }"
-msgstr ""
-
-#: src/LearningCircles/LocationFilter.jsx:116
-#: src/Search/SearchTags.jsx:124
-msgid "Within ${ value } ${ unit }"
-msgstr ""
-
-#: src/LearningCircles/LocationFilter.jsx:47
-msgid "Unable to detect location."
-msgstr ""
-
-#: src/LearningCircles/LocationFilter.jsx:59
-msgid "Geolocation is not supported by this browser."
-msgstr ""
-
-#: src/LearningCircles/LocationFilter.jsx:82
-msgid "Use my current location"
-msgstr ""
-
-#: src/LearningCircles/LocationFilter.jsx:87
-msgid "Detecting your location..."
-msgstr ""
-
-#: src/LearningCircles/LocationFilter.jsx:89
-msgid "Using your current location"
-msgstr ""
-
-#: src/LearningCircles/LocationFilter.jsx:114
-msgid "miles"
-msgstr ""
-
-#: src/LearningCircles/LocationFilter.jsx:114
-msgid "km"
-msgstr ""
-
-#: src/LearningCircles/LocationFilter.jsx:136
-msgid "Start typing a city name"
-msgstr ""
-
-#: src/Search/SearchBar.jsx:17
-msgid "Search"
-msgstr ""
-
-#: src/LearningCircles/LearningCircleCard.jsx:38
-#, javascript-format
-msgid ""
-"${ weekDay } from ${ formattedStartTime } to ${ formattedEndTime } (${ "
-"learningCircle.time_zone })"
-msgstr ""
-
-#: src/LearningCircles/LearningCircleCard.jsx:38
-#, javascript-format
-msgid ""
-"${ formattedStartTime } to ${ formattedEndTime } (${ "
-"learningCircle.time_zone })"
-msgstr ""
-
-#: src/LearningCircles/LearningCircleCard.jsx:39
-msgid "${ learningCircle.weeks } weeks starting ${ formattedStartDate }"
-msgstr ""
-
-#: src/LearningCircles/LearningCircleCard.jsx:39
-#, javascript-format
-msgid "${ learningCircle.weeks } meetings starting ${ formattedStartDate }"
-msgstr ""
-
-#: src/LearningCircles/LearningCircleCard.jsx:55
-msgid "Ended ${ formattedEndDate }"
-msgstr ""
-
-#: src/LearningCircles/LearningCircleCard.jsx:57
-#, javascript-format
-msgid "Started ${ formattedStartDate }"
-msgstr ""
-
-#: src/LearningCircles/LearningCircleCard.jsx:59
-msgid "Starting ${ formattedStartDate }"
-msgstr ""
-
-#: src/LearningCircles/LearningCircleCard.jsx:105
-msgid "Meeting at ${ learningCircle.venue }"
-msgstr ""
-
-#: src/LearningCircleSignup/SignupForm.jsx:183
-#: src/LearningCircles/LearningCircleCard.jsx:110
-msgid "Sign up"
-msgstr ""
-
-#: src/LearningCircles/LearningCircleCard.jsx:110
-msgid "View details"
 msgstr ""
 
 #: src/LearningCircleSignup/SignupForm.jsx:99
@@ -321,12 +199,140 @@ msgid ""
 "from P2PU."
 msgstr ""
 
+#: src/LearningCircleSignup/SignupForm.jsx:183
+#: src/LearningCircles/LearningCircleCard.jsx:110
+msgid "Sign up"
+msgstr ""
+
 #: src/LearningCircleSignup/SignupForm.jsx:186
 msgid "Back to search"
 msgstr ""
 
 #: src/LearningCircleSignup/SignupForm.jsx:190
 msgid "Submitting..."
+msgstr ""
+
+#: src/Courses/SearchSummary.jsx:14
+#: src/Search/SearchTags.jsx:205
+msgid "reset the search form"
+msgstr ""
+
+#: src/Courses/SearchSummary.jsx:22
+#: src/Search/SearchTags.jsx:167
+#, javascript-format
+msgid "Showing ${ props.searchResults.length } of ${ props.totalResults } result"
+msgid_plural "Showing ${ props.searchResults.length } of ${ props.totalResults } results"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/Courses/SearchSummary.jsx:32
+#: src/Search/SearchTags.jsx:214
+#, javascript-format
+msgid "To see more results, either remove some filters or ${ resetButton }"
+msgstr ""
+
+#: src/Search/DefaultNoResults.jsx:17
+msgid "View ${ otherTabName } learning circles"
+msgstr ""
+
+#: src/Search/DefaultNoResults.jsx:28
+msgid "Contact this team"
+msgstr ""
+
+#: src/Search/DefaultNoResults.jsx:38
+msgid "There are no learning circles available right now."
+msgstr ""
+
+#: src/LearningCircles/LearningCircleCard.jsx:38
+#, javascript-format
+msgid ""
+"${ weekDay } from ${ formattedStartTime } to ${ formattedEndTime } (${ "
+"learningCircle.time_zone })"
+msgstr ""
+
+#: src/LearningCircles/LearningCircleCard.jsx:38
+#, javascript-format
+msgid ""
+"${ formattedStartTime } to ${ formattedEndTime } (${ "
+"learningCircle.time_zone })"
+msgstr ""
+
+#: src/LearningCircles/LearningCircleCard.jsx:39
+msgid "${ learningCircle.weeks } weeks starting ${ formattedStartDate }"
+msgstr ""
+
+#: src/LearningCircles/LearningCircleCard.jsx:39
+#, javascript-format
+msgid "${ learningCircle.weeks } meetings starting ${ formattedStartDate }"
+msgstr ""
+
+#: src/LearningCircles/LearningCircleCard.jsx:55
+msgid "Ended ${ formattedEndDate }"
+msgstr ""
+
+#: src/LearningCircles/LearningCircleCard.jsx:57
+#, javascript-format
+msgid "Started ${ formattedStartDate }"
+msgstr ""
+
+#: src/LearningCircles/LearningCircleCard.jsx:59
+msgid "Starting ${ formattedStartDate }"
+msgstr ""
+
+#: src/LearningCircles/LearningCircleCard.jsx:105
+msgid "Meeting at ${ learningCircle.venue }"
+msgstr ""
+
+#: src/LearningCircles/LearningCircleCard.jsx:110
+msgid "View details"
+msgstr ""
+
+#: src/LearningCircles/LocationFilter.jsx:47
+msgid "Unable to detect location."
+msgstr ""
+
+#: src/LearningCircles/LocationFilter.jsx:59
+msgid "Geolocation is not supported by this browser."
+msgstr ""
+
+#: src/LearningCircles/LocationFilter.jsx:82
+msgid "Use my current location"
+msgstr ""
+
+#: src/LearningCircles/LocationFilter.jsx:87
+msgid "Detecting your location..."
+msgstr ""
+
+#: src/LearningCircles/LocationFilter.jsx:89
+msgid "Using your current location"
+msgstr ""
+
+#: src/LearningCircles/LocationFilter.jsx:114
+msgid "miles"
+msgstr ""
+
+#: src/LearningCircles/LocationFilter.jsx:114
+msgid "km"
+msgstr ""
+
+#: src/LearningCircles/LocationFilter.jsx:116
+#: src/Search/SearchTags.jsx:124
+#, javascript-format
+msgid "Within ${ value } ${ unit }"
+msgstr ""
+
+#: src/LearningCircles/LocationFilter.jsx:136
+msgid "Start typing a city name"
+msgstr ""
+
+#: src/Search/SearchBar.jsx:17
+msgid "Search"
+msgstr ""
+
+#: src/LearningCircleSignup/SignupSuccess.jsx:8
+msgid ""
+"Thank you for signing up. We've sent you an email introducing you to your "
+"facilitator and we'll send you a reminder two days before each meeting."
 msgstr ""
 
 #: src/Courses/FacilitatorGuideFilterForm.jsx:11
@@ -347,10 +353,4 @@ msgstr ""
 
 #: src/Courses/OrderCoursesForm.jsx:17
 msgid "Order By"
-msgstr ""
-
-#: src/LearningCircleSignup/SignupSuccess.jsx:8
-msgid ""
-"Thank you for signing up. We've sent you an email introducing you to your "
-"facilitator and we'll send you a reminder two days before each meeting."
 msgstr ""

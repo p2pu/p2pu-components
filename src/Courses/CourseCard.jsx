@@ -65,35 +65,35 @@ const CourseCard = (props) => {
           <div className="table-responsive">
             <table className="table">
               <tbody>
-                <tr className="topics">
-                  <th scope="row">Topics</th>
-                  <td className="topics-list">
-                    { topicsList.map((topic, index) => 
-                        <React.Fragment key={`${index}-topic`} >
-                          {!!index && ', '}{topic}
-                        </React.Fragment>
-                    )}
-                  </td>
+                <tr className="border-top-0">
+                  <th scope="row">{t`Creator`}</th>
+                  <td>{props.course.creator}</td>
                 </tr>
-                <tr className="provider">
-                  <th scope="row">{t`Provider`}</th>
-                  <td>{props.course.provider}</td>
+                <tr>
+                  <th scope="row">{t`Format`}</th>
+                  <td colSpan="2">{props.course.format }</td>
                 </tr>
-                { props.course.platform &&
-                  <tr className="platform">
-                    <th scope="row">{t`Platform`}</th>
-                    <td colSpan="2">{props.course.platform}</td>
-                  </tr>
-                }
                 <tr className="website">
                  <th scope="row">{t`Website`}</th>
                   <td colSpan="2">
                     <a href={props.course.link} rel="nofollow" target="_blank">{props.course.link}</a>
                   </td>
                 </tr>
-                <tr className="platform">
-                  <th scope="row">{t`Access`}</th>
-                  <td colSpan="2">{availability }</td>
+                { !!props.course.topics.length && 
+                  <tr className="topics">
+                    <th scope="row">Topics</th>
+                    <td className="topics-list">
+                      { topicsList.map((topic, index) => 
+                          <React.Fragment key={`${index}-topic`} >
+                            {!!index && ', '}{topic}
+                          </React.Fragment>
+                      )}
+                    </td>
+                  </tr>
+                }
+                <tr>
+                  <th scope="row">{t`Language`}</th>
+                  <td colSpan="2">{props.course.language_display }</td>
                 </tr>
               </tbody>
             </table>
