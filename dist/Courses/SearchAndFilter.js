@@ -41,15 +41,15 @@ var SearchAndFilter = function SearchAndFilter(props) {
     updateQueryParams: props.updateQueryParams,
     q: props.q
   })), /*#__PURE__*/React.createElement("div", {
-    className: "col-12"
+    className: "col-12 pt-3"
   }, /*#__PURE__*/React.createElement(OrderCoursesForm, props)), /*#__PURE__*/React.createElement("div", {
-    className: "col-12"
+    className: "col-12 pt-3"
   }, /*#__PURE__*/React.createElement(TopicsFilterForm, props)), /*#__PURE__*/React.createElement("div", {
-    className: "col-12"
+    className: "col-12 pt-3"
   }, /*#__PURE__*/React.createElement(LanguageFilterForm, props)), /*#__PURE__*/React.createElement("div", {
-    className: "col-12"
+    className: "col-12 pt-3"
   }, /*#__PURE__*/React.createElement(FacilitatorGuideFilterForm, props)), /*#__PURE__*/React.createElement("div", {
-    className: "col-12"
+    className: "col-12 pt-3"
   }, /*#__PURE__*/React.createElement(OerFilterForm, props)))));
 };
 

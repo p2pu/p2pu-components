@@ -130,7 +130,7 @@ var LanguageFilterForm = /*#__PURE__*/function (_Component) {
         handleChange: this.handleSelect,
         placeholder: t(_templateObject || (_templateObject = _taggedTemplateLiteral(["Select language(s)"])))
       }), /*#__PURE__*/React.createElement("div", {
-        className: "badges selected pt-4"
+        className: "badges selected pt-2"
       }, this.props.languages.map(function (lang) {
         return /*#__PURE__*/React.createElement("span", {
           key: "".concat(lang, "-badge"),

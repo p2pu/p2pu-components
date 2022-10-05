@@ -3,6 +3,7 @@ import ApiHelper from '../utils/apiHelper'
 import { t } from 'ttag'
 import Select from '../InputFields/Select';
 
+
 export default class TopicsFilterForm extends Component {
   constructor(props) {
     super(props)
@@ -57,14 +58,16 @@ export default class TopicsFilterForm extends Component {
             handleChange={this.onChange}
             placeholder={t`Select topic(s)`}
           />
-          <div className="badges selected pt-4">
-            { 
-              this.props.topics && topics.map(topic => 
-                <span key={`${topic}-badge`} className="badge topic-selected topic">
-                  <span className="material-icons dismiss" role="button" onClick={e => this.removeTopic(topic)}>close</span>{topic}</span>
-              )
-            }
-          </div>
+          { 
+            this.props.topics && <div className="badges selected pt-2">
+              { 
+                this.props.topics && topics.map(topic => 
+                  <span key={`${topic}-badge`} className="badge topic-selected topic">
+                    <span className="material-icons dismiss" role="button" onClick={e => this.removeTopic(topic)}>close</span>{topic}</span>
+                )
+              }
+            </div>
+          }
         </form>
       </>
     )

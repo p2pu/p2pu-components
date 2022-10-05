@@ -26,19 +26,19 @@ const SearchAndFilter = (props) => {
               q={props.q}
             />
           </div>
-          <div className="col-12">
+          <div className="col-12 pt-3">
             <OrderCoursesForm {...props} />
           </div>
-          <div className="col-12">
+          <div className="col-12 pt-3">
             <TopicsFilterForm {...props} />
           </div>
-          <div className="col-12">
+          <div className="col-12 pt-3">
             <LanguageFilterForm {...props} />
           </div>
-          <div className="col-12">
+          <div className="col-12 pt-3">
             <FacilitatorGuideFilterForm {...props} />
           </div>
-          <div className="col-12">
+          <div className="col-12 pt-3">
             <OerFilterForm {...props} />
           </div>
         </div>

@@ -19,6 +19,8 @@ import ApiHelper from '../utils/apiHelper';
 import { t } from 'ttag';
 import Select from '../InputFields/Select';
 
+var FilterBadges = function FilterBadges(props) {};
+
 var TopicsFilterForm = /*#__PURE__*/function (_Component) {
   _inherits(TopicsFilterForm, _Component);
 
@@ -114,8 +116,8 @@ var TopicsFilterForm = /*#__PURE__*/function (_Component) {
         value: null,
         handleChange: this.onChange,
         placeholder: t(_templateObject || (_templateObject = _taggedTemplateLiteral(["Select topic(s)"])))
-      }), /*#__PURE__*/React.createElement("div", {
-        className: "badges selected pt-4"
+      }), this.props.topics && /*#__PURE__*/React.createElement("div", {
+        className: "badges selected pt-2"
       }, this.props.topics && topics.map(function (topic) {
         return /*#__PURE__*/React.createElement("span", {
           key: "".concat(topic, "-badge"),
