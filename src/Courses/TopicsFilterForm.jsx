@@ -19,8 +19,7 @@ export default class TopicsFilterForm extends Component {
     const api = new ApiHelper(resourceType, this.props.origin);
     const params = {};
     const callback = (response) => {
-      const topics = Object.keys(response.topics).sort()
-      const options = this.mapArrayToSelectOptions(topics);
+      const options = this.mapArrayToSelectOptions(response.topics);
       this.setState({ options })
     }
 
@@ -38,13 +37,21 @@ export default class TopicsFilterForm extends Component {
     this.props.updateQueryParams({topics: this.props.topics.filter(t => t != topic)});
   }
 
-  mapArrayToSelectOptions = (array) => {
-    return array.map((topic) => ({ value: topic, label: topic }))
+  mapArrayToSelectOptions = (topics) => {
+    const topicArray = Object.keys(topics).sort()
+    return topicArray.map((topic) => ({ value: topic, label: topics[topic] }))
   }
 
   render() {
     let {topics = []} = this.props;
     let options = this.state.options.filter( option => topics.indexOf(option.value) == -1);
+
+    const topicDisplay = slug => {
+      const display = this.state.options.filter(option => slug == option.value);
+      if (display.length == 1)
+        return display[0].label;
+      return slug;
+    };
 
     return(
       <>
@@ -63,7 +70,7 @@ export default class TopicsFilterForm extends Component {
               { 
                 this.props.topics && topics.map(topic => 
                   <span key={`${topic}-badge`} className="badge topic-selected topic">
-                    <span className="material-icons dismiss" role="button" onClick={e => this.removeTopic(topic)}>close</span>{topic}</span>
+                    <span className="material-icons dismiss" role="button" onClick={e => this.removeTopic(topic)}>close</span>{topicDisplay(topic)}</span>
                 )
               }
             </div>

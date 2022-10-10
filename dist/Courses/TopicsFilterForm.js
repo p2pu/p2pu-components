@@ -19,8 +19,6 @@ import ApiHelper from '../utils/apiHelper';
 import { t } from 'ttag';
 import Select from '../InputFields/Select';
 
-var FilterBadges = function FilterBadges(props) {};
-
 var TopicsFilterForm = /*#__PURE__*/function (_Component) {
   _inherits(TopicsFilterForm, _Component);
 
@@ -39,9 +37,7 @@ var TopicsFilterForm = /*#__PURE__*/function (_Component) {
       var params = {};
 
       var callback = function callback(response) {
-        var topics = Object.keys(response.topics).sort();
-
-        var options = _this.mapArrayToSelectOptions(topics);
+        var options = _this.mapArrayToSelectOptions(response.topics);
 
         _this.setState({
           options: options
@@ -74,11 +70,12 @@ var TopicsFilterForm = /*#__PURE__*/function (_Component) {
       });
     });
 
-    _defineProperty(_assertThisInitialized(_this), "mapArrayToSelectOptions", function (array) {
-      return array.map(function (topic) {
+    _defineProperty(_assertThisInitialized(_this), "mapArrayToSelectOptions", function (topics) {
+      var topicArray = Object.keys(topics).sort();
+      return topicArray.map(function (topic) {
         return {
           value: topic,
-          label: topic
+          label: topics[topic]
         };
       });
     });
@@ -104,6 +101,16 @@ var TopicsFilterForm = /*#__PURE__*/function (_Component) {
       var options = this.state.options.filter(function (option) {
         return topics.indexOf(option.value) == -1;
       });
+
+      var topicDisplay = function topicDisplay(slug) {
+        var display = _this2.state.options.filter(function (option) {
+          return slug == option.value;
+        });
+
+        if (display.length == 1) return display[0].label;
+        return slug;
+      };
+
       return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("form", {
         className: "search"
       }, /*#__PURE__*/React.createElement("label", {
@@ -128,7 +135,7 @@ var TopicsFilterForm = /*#__PURE__*/function (_Component) {
           onClick: function onClick(e) {
             return _this2.removeTopic(topic);
           }
-        }, "close"), topic);
+        }, "close"), topicDisplay(topic));
       }))));
     }
   }]);

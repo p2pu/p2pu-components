@@ -155,38 +155,6 @@ msgstr ""
 msgid "Closed and completed"
 msgstr ""
 
-#: src/Search/DefaultNoResults.jsx:17
-#, javascript-format
-msgid "View ${ otherTabName } learning circles"
-msgstr ""
-
-#: src/Search/DefaultNoResults.jsx:28
-msgid "Contact this team"
-msgstr ""
-
-#: src/Search/DefaultNoResults.jsx:38
-msgid "There are no learning circles available right now."
-msgstr ""
-
-#: src/Courses/SearchSummary.jsx:14
-#: src/Search/SearchTags.jsx:205
-msgid "reset the search form"
-msgstr ""
-
-#: src/Courses/SearchSummary.jsx:22
-#: src/Search/SearchTags.jsx:167
-#, javascript-format
-msgid "Showing ${ props.searchResults.length } of ${ props.totalResults } result"
-msgid_plural "Showing ${ props.searchResults.length } of ${ props.totalResults } results"
-msgstr[0] ""
-msgstr[1] ""
-
-#: src/Courses/SearchSummary.jsx:32
-#: src/Search/SearchTags.jsx:214
-#, javascript-format
-msgid "To see more results, either remove some filters or ${ resetButton }"
-msgstr ""
-
 #: src/LearningCircles/LearningCircleCard.jsx:38
 #, javascript-format
 msgid ""
@@ -195,13 +163,13 @@ msgid ""
 msgstr ""
 
 #: src/LearningCircles/LearningCircleCard.jsx:38
+#, javascript-format
 msgid ""
 "${ formattedStartTime } to ${ formattedEndTime } (${ "
 "learningCircle.time_zone })"
 msgstr ""
 
 #: src/LearningCircles/LearningCircleCard.jsx:39
-#, javascript-format
 msgid "${ learningCircle.weeks } weeks starting ${ formattedStartDate }"
 msgstr ""
 
@@ -234,6 +202,38 @@ msgstr ""
 
 #: src/LearningCircles/LearningCircleCard.jsx:110
 msgid "View details"
+msgstr ""
+
+#: src/Search/DefaultNoResults.jsx:17
+#, javascript-format
+msgid "View ${ otherTabName } learning circles"
+msgstr ""
+
+#: src/Search/DefaultNoResults.jsx:28
+msgid "Contact this team"
+msgstr ""
+
+#: src/Search/DefaultNoResults.jsx:38
+msgid "There are no learning circles available right now."
+msgstr ""
+
+#: src/Courses/SearchSummary.jsx:14
+#: src/Search/SearchTags.jsx:205
+msgid "reset the search form"
+msgstr ""
+
+#: src/Courses/SearchSummary.jsx:22
+#: src/Search/SearchTags.jsx:167
+#, javascript-format
+msgid "Showing ${ props.searchResults.length } of ${ props.totalResults } result"
+msgid_plural "Showing ${ props.searchResults.length } of ${ props.totalResults } results"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/Courses/SearchSummary.jsx:32
+#: src/Search/SearchTags.jsx:214
+#, javascript-format
+msgid "To see more results, either remove some filters or ${ resetButton }"
 msgstr ""
 
 #: src/LearningCircles/LocationFilter.jsx:47
@@ -330,6 +330,14 @@ msgstr ""
 msgid "Submitting..."
 msgstr ""
 
+#: src/Courses/OrderCoursesForm.jsx:17
+msgid "Order By"
+msgstr ""
+
+#: src/Courses/TopicsFilterForm.jsx:66
+msgid "Select topic(s)"
+msgstr ""
+
 #: src/Courses/FacilitatorGuideFilterForm.jsx:11
 msgid "Facilitator guides"
 msgstr ""
@@ -340,14 +348,6 @@ msgstr ""
 
 #: src/Courses/LanguageFilterForm.jsx:67
 msgid "Select language(s)"
-msgstr ""
-
-#: src/Courses/TopicsFilterForm.jsx:62
-msgid "Select topic(s)"
-msgstr ""
-
-#: src/Courses/OrderCoursesForm.jsx:17
-msgid "Order By"
 msgstr ""
 
 #: src/LearningCircleSignup/SignupSuccess.jsx:8
