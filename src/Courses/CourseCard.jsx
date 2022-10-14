@@ -10,6 +10,7 @@ const CourseCard = (props) => {
   } = props;
 
   const availability = props.course.on_demand ? t`Always available` : t`Check availability`;
+  /*
   const handleFilterClick = topic => {
     return (event) => {
       event.preventDefault()
@@ -19,6 +20,7 @@ const CourseCard = (props) => {
   const topicsList = props.course.topics.slice(0, 5).map( topic => {
     return <a className='topic' onClick={handleFilterClick(topic)} href={""}>{topic}</a>
   });
+  */
   const colorClass = COLOR_CLASSES[(props.course.id % COLOR_CLASSES.length)];
 
   const rating_number = props.course.total_ratings;
@@ -83,11 +85,7 @@ const CourseCard = (props) => {
                   <tr className="topics">
                     <th scope="row">Topics</th>
                     <td className="topics-list">
-                      { topicsList.map((topic, index) => 
-                          <React.Fragment key={`${index}-topic`} >
-                            {!!index && ', '}{topic}
-                          </React.Fragment>
-                      )}
+                      { props.course.topics.slice(0, 5).join(', ')}
                     </td>
                   </tr>
                 }

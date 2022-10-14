@@ -12,23 +12,18 @@ var CourseCard = function CourseCard(props) {
       _props$moreInfo = props.moreInfo,
       moreInfo = _props$moreInfo === void 0 ? true : _props$moreInfo;
   var availability = props.course.on_demand ? t(_templateObject || (_templateObject = _taggedTemplateLiteral(["Always available"]))) : t(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["Check availability"])));
-
-  var handleFilterClick = function handleFilterClick(topic) {
-    return function (event) {
-      event.preventDefault();
-      props.updateQueryParams({
-        topics: [topic]
-      });
-    };
+  /*
+  const handleFilterClick = topic => {
+    return (event) => {
+      event.preventDefault()
+      props.updateQueryParams({ topics: [topic] })
+    }
   };
-
-  var topicsList = props.course.topics.slice(0, 5).map(function (topic) {
-    return /*#__PURE__*/React.createElement("a", {
-      className: "topic",
-      onClick: handleFilterClick(topic),
-      href: ""
-    }, topic);
+  const topicsList = props.course.topics.slice(0, 5).map( topic => {
+    return <a className='topic' onClick={handleFilterClick(topic)} href={""}>{topic}</a>
   });
+  */
+
   var colorClass = COLOR_CLASSES[props.course.id % COLOR_CLASSES.length];
   var rating_number = props.course.total_ratings;
   var rating = jt(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["", " ratings"])), rating_number);
@@ -113,11 +108,7 @@ var CourseCard = function CourseCard(props) {
     scope: "row"
   }, "Topics"), /*#__PURE__*/React.createElement("td", {
     className: "topics-list"
-  }, topicsList.map(function (topic, index) {
-    return /*#__PURE__*/React.createElement(React.Fragment, {
-      key: "".concat(index, "-topic")
-    }, !!index && ', ', topic);
-  }))), /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("th", {
+  }, props.course.topics.slice(0, 5).join(', '))), /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("th", {
     scope: "row"
   }, t(_templateObject10 || (_templateObject10 = _taggedTemplateLiteral(["Language"])))), /*#__PURE__*/React.createElement("td", {
     colSpan: "2"
