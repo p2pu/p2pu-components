@@ -22,6 +22,7 @@ var OrderCoursesForm = function OrderCoursesForm(props) {
     className: "form-label"
   }, t(_templateObject || (_templateObject = _taggedTemplateLiteral(["Order By"])))), /*#__PURE__*/React.createElement(Select, {
     name: "order",
+    inputId: "order-input",
     "aria-label": "Default select example",
     placeholder: "Order by popularity, rating, etc.",
     options: COURSES_SORT_OPTIONS,

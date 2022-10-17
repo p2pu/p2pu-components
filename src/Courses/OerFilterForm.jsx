@@ -11,15 +11,15 @@ const OerFilterForm = (props) => {
 
   return (
     <>
-      <form className="search">
-        <label htmlFor="search-input" className="form-label">OER mode</label>
+      <form className="filter">
+        <label htmlFor="oer-input" className="form-label">OER mode</label>
         <div className="input-group">
           <div className="form-check">
             <input 
               className="form-check-input"
+              id="oer-input"
               name="oer"
               type="checkbox"
-              id="online"
               checked={Boolean(props.oer)}
               onChange={handleChange}
             />

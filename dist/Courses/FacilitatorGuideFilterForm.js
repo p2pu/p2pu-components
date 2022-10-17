@@ -13,9 +13,9 @@ var FacilitatorGuideFilterForm = function FacilitatorGuideFilterForm(props) {
   };
 
   return /*#__PURE__*/React.createElement("form", {
-    className: "search"
+    className: "filter"
   }, /*#__PURE__*/React.createElement("label", {
-    htmlFor: "search-input",
+    htmlFor: "facilitator_guide",
     className: "form-label"
   }, t(_templateObject || (_templateObject = _taggedTemplateLiteral(["Facilitator guides"])))), /*#__PURE__*/React.createElement("div", {
     className: "input-group"

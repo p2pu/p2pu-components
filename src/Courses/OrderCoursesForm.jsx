@@ -17,6 +17,7 @@ const OrderCoursesForm = (props) => {
       <label htmlFor="order-input" className="form-label">{t`Order By`}</label>
       <Select
         name="order"
+        inputId="order-input"
         aria-label="Default select example"
         placeholder="Order by popularity, rating, etc."
         options={COURSES_SORT_OPTIONS}

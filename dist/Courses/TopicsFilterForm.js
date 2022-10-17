@@ -112,12 +112,13 @@ var TopicsFilterForm = /*#__PURE__*/function (_Component) {
       };
 
       return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("form", {
-        className: "search"
+        className: "filter"
       }, /*#__PURE__*/React.createElement("label", {
-        htmlFor: "search-input",
+        htmlFor: "topic-input",
         className: "form-label"
       }, "Topics"), /*#__PURE__*/React.createElement(Select, {
         name: 'topic',
+        inputId: "topic-input",
         options: options,
         isMulti: false,
         value: null,

@@ -7,8 +7,8 @@ const FacilitatorGuideFilterForm = (props) => {
   }
 
   return (
-    <form className="search">
-      <label htmlFor="search-input" className="form-label">{t`Facilitator guides`}</label>
+    <form className="filter">
+      <label htmlFor="facilitator_guide" className="form-label">{t`Facilitator guides`}</label>
       <div className="input-group">
         <div className="form-check">
           <input 

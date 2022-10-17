@@ -117,12 +117,13 @@ var LanguageFilterForm = /*#__PURE__*/function (_Component) {
       };
 
       return /*#__PURE__*/React.createElement("form", {
-        className: "search"
+        className: "filter"
       }, /*#__PURE__*/React.createElement("label", {
-        htmlFor: "search-input",
+        htmlFor: "languages-input",
         className: "form-label"
       }, "Languages"), /*#__PURE__*/React.createElement(Select, {
         name: 'languages',
+        inputId: "languages-input",
         classes: "no-flex",
         options: options,
         isMulti: false,

@@ -55,10 +55,11 @@ export default class TopicsFilterForm extends Component {
 
     return(
       <>
-        <form className="search">
-          <label htmlFor="search-input" className="form-label">Topics</label>
+        <form className="filter">
+          <label htmlFor="topic-input" className="form-label">Topics</label>
           <Select
             name={'topic'}
+            inputId="topic-input"
             options={options}
             isMulti={false}
             value={null}

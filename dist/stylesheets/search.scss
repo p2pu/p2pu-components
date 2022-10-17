@@ -26,6 +26,14 @@ a.learning-circle-card-link {
   flex-direction: column;
 }
 
+.filter {
+    .badges {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+  }
+}
+
 .search-container {
   display: flex;
   box-shadow: -2px 2px 6px 1px rgba(0, 0, 0, 0.1);

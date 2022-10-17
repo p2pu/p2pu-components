@@ -55,10 +55,11 @@ export default class LanguageFilterForm extends Component {
     };
 
     return(
-      <form className="search">
-        <label htmlFor="search-input" className="form-label">Languages</label>
+      <form className="filter">
+        <label htmlFor="languages-input" className="form-label">Languages</label>
         <Select
           name={'languages'}
+          inputId="languages-input"
           classes='no-flex'
           options={options}
           isMulti={false}
