@@ -43,7 +43,7 @@ var BrowseCourses = /*#__PURE__*/function (_React$Component) {
       }
 
       return /*#__PURE__*/React.createElement("div", {
-        className: "search-results row grid"
+        className: "search-results"
       }, results.map(function (course, index) {
         return /*#__PURE__*/React.createElement(CourseCard, {
           key: "course-card-".concat(index),
@@ -54,7 +54,7 @@ var BrowseCourses = /*#__PURE__*/function (_React$Component) {
           moreInfo: _this.props.moreInfo,
           onSelectResult: onSelectResult,
           buttonText: t(_templateObject || (_templateObject = _taggedTemplateLiteral(["Use this course"]))),
-          classes: "col-md-4 mb-4"
+          classes: "mb-4"
         });
       }));
     }

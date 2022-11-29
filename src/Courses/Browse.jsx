@@ -15,7 +15,7 @@ class BrowseCourses extends React.Component {
     }
 
     return (
-      <div className="search-results row grid">
+      <div className="search-results">
         {
           results.map((course, index) => (
             <CourseCard
@@ -27,7 +27,7 @@ class BrowseCourses extends React.Component {
               moreInfo={this.props.moreInfo}
               onSelectResult={onSelectResult}
               buttonText={t`Use this course`}
-              classes="col-md-4 mb-4"
+              classes="mb-4"
             />
           ))
         }

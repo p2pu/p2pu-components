@@ -34,11 +34,11 @@ var SearchCourses = /*#__PURE__*/function (_Component) {
       return /*#__PURE__*/React.createElement("div", {
         className: "row"
       }, /*#__PURE__*/React.createElement("div", {
-        className: "filter-sidebar sidebar sticky-top col-0 col-lg-4 col-xl-3"
+        className: "filter-sidebar sidebar col-0 col-lg-4 col-xl-3"
       }, /*#__PURE__*/React.createElement(SearchAndFilter, _extends({
         placeholder: SEARCH_PROPS[this.props.searchSubject].placeholder
       }, this.props))), /*#__PURE__*/React.createElement("div", {
-        className: "col-12 col-lg-8 col-xl-9 ps-lg-3 ps-xl-4"
+        className: "col-12 col-lg-8 col-xl-9"
       }, /*#__PURE__*/React.createElement(SearchSummary, this.props), /*#__PURE__*/React.createElement(BrowseCourses, this.props), this.props.isLoading && /*#__PURE__*/React.createElement("div", {
         className: "loader"
       })));

@@ -18,7 +18,7 @@ var SearchAndFilter = function SearchAndFilter(props) {
   }, /*#__PURE__*/React.createElement("span", {
     className: "material-icons"
   }, "filter_list"), " Search and filter"), /*#__PURE__*/React.createElement("div", {
-    className: "offcanvas offcanvas-start filters wrap pe-lg-3 pe-xl-4",
+    className: "filter-card offcanvas offcanvas-start filters wrap p-lg-3",
     tabindex: "-1",
     id: "course-filters",
     "aria-labelledby": "filters-label"

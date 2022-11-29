@@ -16,13 +16,13 @@ export default class SearchCourses extends Component {
   render() {
     return(
       <div className="row">
-        <div className="filter-sidebar sidebar sticky-top col-0 col-lg-4 col-xl-3">
+        <div className="filter-sidebar sidebar col-0 col-lg-4 col-xl-3">
           <SearchAndFilter
             placeholder= {SEARCH_PROPS[this.props.searchSubject].placeholder}
             {...this.props}
           />
         </div>
-        <div className="col-12 col-lg-8 col-xl-9 ps-lg-3 ps-xl-4">
+        <div className="col-12 col-lg-8 col-xl-9">
           <SearchSummary
             {...this.props}
           />
