@@ -42,10 +42,6 @@ msgstr ""
 msgid "Keyword, organization, facilitator, etc..."
 msgstr ""
 
-#: src/Courses/Browse.jsx:29
-msgid "Use this course"
-msgstr ""
-
 #: src/Courses/CourseCard.jsx:12
 msgid "Always available"
 msgstr ""
@@ -90,6 +86,10 @@ msgstr ""
 
 #: src/Courses/CourseCard.jsx:102
 msgid "More details"
+msgstr ""
+
+#: src/Courses/Browse.jsx:29
+msgid "Use this course"
 msgstr ""
 
 #: src/utils/constants.js:4
@@ -153,63 +153,6 @@ msgstr ""
 
 #: src/utils/constants.js:89
 msgid "Closed and completed"
-msgstr ""
-
-#: src/LearningCircleSignup/SignupForm.jsx:99
-msgid "More information."
-msgstr ""
-
-#: src/LearningCircleSignup/SignupForm.jsx:100
-msgid ""
-"I consent that P2PU may process my personal data provided here for the "
-"purpose of participating in this learning circle."
-msgstr ""
-
-#: src/LearningCircleSignup/SignupForm.jsx:107
-msgid "Name"
-msgstr ""
-
-#: src/LearningCircleSignup/SignupForm.jsx:116
-msgid "Email address"
-msgstr ""
-
-#: src/LearningCircleSignup/SignupForm.jsx:126
-msgid ""
-"If you'd like to receive weekly text messages reminding you of upcoming "
-"learning circle meetings, put your phone number here."
-msgstr ""
-
-#: src/LearningCircleSignup/SignupForm.jsx:134
-msgid "Your number won't be shared with other participants."
-msgstr ""
-
-#: src/LearningCircleSignup/SignupForm.jsx:136
-msgid "Why do you want to learn this topic?"
-msgstr ""
-
-#: src/LearningCircleSignup/SignupForm.jsx:145
-msgid ""
-"A successful study group requires the support of all of its members. How "
-"will you help your peers achieve their goals?"
-msgstr ""
-
-#: src/LearningCircleSignup/SignupForm.jsx:175
-msgid ""
-"I would like to receive emails about other future learning opportunities "
-"from P2PU."
-msgstr ""
-
-#: src/LearningCircleSignup/SignupForm.jsx:183
-#: src/LearningCircles/LearningCircleCard.jsx:110
-msgid "Sign up"
-msgstr ""
-
-#: src/LearningCircleSignup/SignupForm.jsx:186
-msgid "Back to search"
-msgstr ""
-
-#: src/LearningCircleSignup/SignupForm.jsx:190
-msgid "Submitting..."
 msgstr ""
 
 #: src/Search/DefaultNoResults.jsx:17
@@ -284,6 +227,11 @@ msgstr ""
 msgid "Meeting at ${ learningCircle.venue }"
 msgstr ""
 
+#: src/LearningCircleSignup/SignupForm.jsx:183
+#: src/LearningCircles/LearningCircleCard.jsx:110
+msgid "Sign up"
+msgstr ""
+
 #: src/LearningCircles/LearningCircleCard.jsx:110
 msgid "View details"
 msgstr ""
@@ -330,10 +278,56 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#: src/LearningCircleSignup/SignupSuccess.jsx:8
+#: src/LearningCircleSignup/SignupForm.jsx:99
+msgid "More information."
+msgstr ""
+
+#: src/LearningCircleSignup/SignupForm.jsx:100
 msgid ""
-"Thank you for signing up. We've sent you an email introducing you to your "
-"facilitator and we'll send you a reminder two days before each meeting."
+"I consent that P2PU may process my personal data provided here for the "
+"purpose of participating in this learning circle."
+msgstr ""
+
+#: src/LearningCircleSignup/SignupForm.jsx:107
+msgid "Name"
+msgstr ""
+
+#: src/LearningCircleSignup/SignupForm.jsx:116
+msgid "Email address"
+msgstr ""
+
+#: src/LearningCircleSignup/SignupForm.jsx:126
+msgid ""
+"If you'd like to receive weekly text messages reminding you of upcoming "
+"learning circle meetings, put your phone number here."
+msgstr ""
+
+#: src/LearningCircleSignup/SignupForm.jsx:134
+msgid "Your number won't be shared with other participants."
+msgstr ""
+
+#: src/LearningCircleSignup/SignupForm.jsx:136
+msgid "Why do you want to learn this topic?"
+msgstr ""
+
+#: src/LearningCircleSignup/SignupForm.jsx:145
+msgid ""
+"A successful study group requires the support of all of its members. How "
+"will you help your peers achieve their goals?"
+msgstr ""
+
+#: src/LearningCircleSignup/SignupForm.jsx:175
+msgid ""
+"I would like to receive emails about other future learning opportunities "
+"from P2PU."
+msgstr ""
+
+#: src/LearningCircleSignup/SignupForm.jsx:186
+msgid "Back to search"
+msgstr ""
+
+#: src/LearningCircleSignup/SignupForm.jsx:190
+msgid "Submitting..."
 msgstr ""
 
 #: src/Courses/FacilitatorGuideFilterForm.jsx:11
@@ -354,4 +348,10 @@ msgstr ""
 
 #: src/Courses/OrderCoursesForm.jsx:17
 msgid "Order By"
+msgstr ""
+
+#: src/LearningCircleSignup/SignupSuccess.jsx:8
+msgid ""
+"Thank you for signing up. We've sent you an email introducing you to your "
+"facilitator and we'll send you a reminder two days before each meeting."
 msgstr ""
