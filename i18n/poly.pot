@@ -42,6 +42,10 @@ msgstr ""
 msgid "Keyword, organization, facilitator, etc..."
 msgstr ""
 
+#: src/Courses/Browse.jsx:29
+msgid "Use this course"
+msgstr ""
+
 #: src/Courses/CourseCard.jsx:12
 msgid "Always available"
 msgstr ""
@@ -86,10 +90,6 @@ msgstr ""
 
 #: src/Courses/CourseCard.jsx:102
 msgid "More details"
-msgstr ""
-
-#: src/Courses/Browse.jsx:29
-msgid "Use this course"
 msgstr ""
 
 #: src/utils/constants.js:4
@@ -195,13 +195,13 @@ msgid ""
 msgstr ""
 
 #: src/LearningCircles/LearningCircleCard.jsx:38
+#, javascript-format
 msgid ""
 "${ formattedStartTime } to ${ formattedEndTime } (${ "
 "learningCircle.time_zone })"
 msgstr ""
 
 #: src/LearningCircles/LearningCircleCard.jsx:39
-#, javascript-format
 msgid "${ learningCircle.weeks } weeks starting ${ formattedStartDate }"
 msgstr ""
 
