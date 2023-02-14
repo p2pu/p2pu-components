@@ -5,9 +5,10 @@ import SearchProvider from "../../src/Search/SearchProvider";
 import BrowseCourses from "../../src/Courses/Browse";
 import SearchCourses from '../../src/Courses/SearchCourses'
 
+import "p2pu-theme/src/scss/base.scss";
 
+//import '../../dist/build.css';
 import "../../src/stylesheets/search.scss"
-import "p2pu-theme/src/scss/base.scss"
 
 
 class App extends React.Component {
