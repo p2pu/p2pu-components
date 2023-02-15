@@ -3,6 +3,10 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 
+#: src/Courses/Browse.jsx:29
+msgid "Use this course"
+msgstr ""
+
 #: src/Courses/CourseCard.jsx:12
 msgid "Always available"
 msgstr ""
@@ -49,10 +53,6 @@ msgstr ""
 msgid "More details"
 msgstr ""
 
-#: src/Courses/Browse.jsx:29
-msgid "Use this course"
-msgstr ""
-
 #: src/LearningCircles/LearningCircleSearch.jsx:18
 #: src/utils/constants.js:28
 msgid "Keyword, organization, facilitator, etc..."
@@ -90,6 +90,69 @@ msgstr ""
 
 #: src/LearningCircleSignup/LearningCircleSignup.jsx:43
 msgid "At ${ venueLink }"
+msgstr ""
+
+#: src/utils/constants.js:4
+#: src/utils/i18n.js:4
+msgid "Monday"
+msgstr ""
+
+#: src/utils/constants.js:5
+#: src/utils/i18n.js:5
+msgid "Tuesday"
+msgstr ""
+
+#: src/utils/constants.js:6
+#: src/utils/i18n.js:6
+msgid "Wednesday"
+msgstr ""
+
+#: src/utils/constants.js:7
+#: src/utils/i18n.js:7
+msgid "Thursday"
+msgstr ""
+
+#: src/utils/constants.js:8
+#: src/utils/i18n.js:8
+msgid "Friday"
+msgstr ""
+
+#: src/utils/constants.js:9
+#: src/utils/i18n.js:9
+msgid "Saturday"
+msgstr ""
+
+#: src/utils/constants.js:10
+#: src/utils/i18n.js:10
+msgid "Sunday"
+msgstr ""
+
+#: src/utils/constants.js:14
+msgid "Course title"
+msgstr ""
+
+#: src/utils/constants.js:15
+msgid "Popularity"
+msgstr ""
+
+#: src/utils/constants.js:16
+msgid "Community rating"
+msgstr ""
+
+#: src/utils/constants.js:17
+msgid "Recently added"
+msgstr ""
+
+#: src/utils/constants.js:33
+msgid "Title, subject, etc..."
+msgstr ""
+
+#: src/utils/constants.js:88
+msgid "Open"
+msgstr ""
+
+#: src/utils/constants.js:89
+msgid "Closed and completed"
 msgstr ""
 
 #: src/Courses/SearchSummary.jsx:14
@@ -212,69 +275,6 @@ msgstr ""
 
 #: src/LearningCircles/LocationFilter.jsx:136
 msgid "Start typing a city name"
-msgstr ""
-
-#: src/utils/constants.js:4
-#: src/utils/i18n.js:4
-msgid "Monday"
-msgstr ""
-
-#: src/utils/constants.js:5
-#: src/utils/i18n.js:5
-msgid "Tuesday"
-msgstr ""
-
-#: src/utils/constants.js:6
-#: src/utils/i18n.js:6
-msgid "Wednesday"
-msgstr ""
-
-#: src/utils/constants.js:7
-#: src/utils/i18n.js:7
-msgid "Thursday"
-msgstr ""
-
-#: src/utils/constants.js:8
-#: src/utils/i18n.js:8
-msgid "Friday"
-msgstr ""
-
-#: src/utils/constants.js:9
-#: src/utils/i18n.js:9
-msgid "Saturday"
-msgstr ""
-
-#: src/utils/constants.js:10
-#: src/utils/i18n.js:10
-msgid "Sunday"
-msgstr ""
-
-#: src/utils/constants.js:14
-msgid "Course title"
-msgstr ""
-
-#: src/utils/constants.js:15
-msgid "Popularity"
-msgstr ""
-
-#: src/utils/constants.js:16
-msgid "Community rating"
-msgstr ""
-
-#: src/utils/constants.js:17
-msgid "Recently added"
-msgstr ""
-
-#: src/utils/constants.js:33
-msgid "Title, subject, etc..."
-msgstr ""
-
-#: src/utils/constants.js:88
-msgid "Open"
-msgstr ""
-
-#: src/utils/constants.js:89
-msgid "Closed and completed"
 msgstr ""
 
 #: src/LearningCircleSignup/SignupForm.jsx:99
