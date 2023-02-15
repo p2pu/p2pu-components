@@ -6,37 +6,32 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import InputWrapper from '../InputWrapper';
 import "./switch.css";
-
 var SwitchWithLabels = function SwitchWithLabels(props) {
   var falseLabel = props.falseLabel,
-      trueLabel = props.trueLabel,
-      label = props.label,
-      name = props.name,
-      id = props.id,
-      required = props.required,
-      disabled = props.disabled,
-      errorMessage = props.errorMessage,
-      helpText = props.helpText,
-      classes = props.classes,
-      offColor = props.offColor,
-      onColor = props.onColor,
-      value = props.value,
-      handleChange = props.handleChange,
-      rest = _objectWithoutProperties(props, _excluded);
-
+    trueLabel = props.trueLabel,
+    label = props.label,
+    name = props.name,
+    id = props.id,
+    required = props.required,
+    disabled = props.disabled,
+    errorMessage = props.errorMessage,
+    helpText = props.helpText,
+    classes = props.classes,
+    offColor = props.offColor,
+    onColor = props.onColor,
+    value = props.value,
+    handleChange = props.handleChange,
+    rest = _objectWithoutProperties(props, _excluded);
   var bgColor = value ? onColor : offColor;
-
   var onChange = function onChange(event) {
     var checked = event.currentTarget.checked;
     handleChange(_defineProperty({}, name, checked));
   };
-
   var onClickLabel = function onClickLabel(checked) {
     return function () {
       handleChange(_defineProperty({}, name, checked));
     };
   };
-
   return /*#__PURE__*/React.createElement(InputWrapper, {
     label: label,
     name: name,
@@ -68,7 +63,6 @@ var SwitchWithLabels = function SwitchWithLabels(props) {
     onClick: onClickLabel(true)
   }, trueLabel)));
 };
-
 SwitchWithLabels.propTypes = {
   handleChange: PropTypes.func.isRequired,
   falseLabel: PropTypes.string.isRequired,
@@ -92,7 +86,7 @@ SwitchWithLabels.defaultProps = {
   offColor: '#515665',
   // dark gray
   onColor: '#05c6b4' // teal
-
 };
+
 export default SwitchWithLabels;
 //# sourceMappingURL=SwitchWithLabels.js.map

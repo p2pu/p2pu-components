@@ -1,17 +1,13 @@
 import _taggedTemplateLiteral from "@babel/runtime/helpers/taggedTemplateLiteral";
-
 var _templateObject, _templateObject2;
-
 import React from 'react';
 import { t } from 'ttag';
-
 var FacilitatorGuideFilterForm = function FacilitatorGuideFilterForm(props) {
   var handleChange = function handleChange(event) {
     props.updateQueryParams({
       facilitator_guide: event.currentTarget.checked
     });
   };
-
   return /*#__PURE__*/React.createElement("form", {
     className: "filter"
   }, /*#__PURE__*/React.createElement("label", {
@@ -33,6 +29,5 @@ var FacilitatorGuideFilterForm = function FacilitatorGuideFilterForm(props) {
     htmlFor: "facilitator_guide"
   }, t(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["Only show courses with facilitator guides"])))))));
 };
-
 export default FacilitatorGuideFilterForm;
 //# sourceMappingURL=FacilitatorGuideFilterForm.js.map

@@ -1,19 +1,15 @@
 import _extends from "@babel/runtime/helpers/extends";
 import _taggedTemplateLiteral from "@babel/runtime/helpers/taggedTemplateLiteral";
 import _objectWithoutProperties from "@babel/runtime/helpers/objectWithoutProperties";
-
 var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6;
-
 var _excluded = ["learningCircle"];
 import React, { useRef, useEffect } from 'react';
 import { ngettext, msgid, t, jt } from 'ttag';
 import SignupForm from './SignupForm';
 import { day, date, time } from '../utils/i18n';
-
 var LearningCircleSignup = function LearningCircleSignup(_ref) {
   var learningCircle = _ref.learningCircle,
-      rest = _objectWithoutProperties(_ref, _excluded);
-
+    rest = _objectWithoutProperties(_ref, _excluded);
   var form = useRef();
   useEffect(function () {
     return form.current.scrollIntoView({
@@ -54,6 +50,5 @@ var LearningCircleSignup = function LearningCircleSignup(_ref) {
     learningCircle: learningCircle
   }, rest)))));
 };
-
 export default LearningCircleSignup;
 //# sourceMappingURL=LearningCircleSignup.js.map

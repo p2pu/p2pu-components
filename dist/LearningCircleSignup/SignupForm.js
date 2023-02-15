@@ -1,13 +1,9 @@
 import _taggedTemplateLiteral from "@babel/runtime/helpers/taggedTemplateLiteral";
 import _defineProperty from "@babel/runtime/helpers/defineProperty";
 import _slicedToArray from "@babel/runtime/helpers/slicedToArray";
-
 var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8, _templateObject9, _templateObject10, _templateObject11, _templateObject12;
-
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
-
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
-
 import React, { useState } from 'react';
 import { t, jt } from 'ttag';
 import Promise from 'promise-polyfill';
@@ -16,7 +12,6 @@ import InputWithLabel from '../InputFields/InputWithLabel';
 import CheckboxWithLabel from '../InputFields/CheckboxWithLabel';
 import MobileInput from '../InputFields/MobileInput';
 import SignupSuccess from './SignupSuccess';
-
 var SignupForm = function SignupForm(props) {
   var initialState = {
     submitting: false,
@@ -31,23 +26,21 @@ var SignupForm = function SignupForm(props) {
     consent: false,
     errors: {}
   };
-
   var _useState = useState(initialState),
-      _useState2 = _slicedToArray(_useState, 2),
-      state = _useState2[0],
-      setState = _useState2[1];
-
+    _useState2 = _slicedToArray(_useState, 2),
+    state = _useState2[0],
+    setState = _useState2[1];
   var handleSubmit = function handleSubmit(e) {
-    e.preventDefault(); // Send data to signup API
-
+    e.preventDefault();
+    // Send data to signup API
     var name = state.name,
-        email = state.email,
-        mobile = state.mobile,
-        goals = state.goals,
-        support = state.support,
-        custom_question = state.custom_question,
-        consent = state.consent,
-        communications_opt_in = state.communications_opt_in;
+      email = state.email,
+      mobile = state.mobile,
+      goals = state.goals,
+      support = state.support,
+      custom_question = state.custom_question,
+      consent = state.consent,
+      communications_opt_in = state.communications_opt_in;
     var data = {
       learning_circle: props.learningCircle.id,
       name: name,
@@ -80,7 +73,8 @@ var SignupForm = function SignupForm(props) {
         setState(_objectSpread(_objectSpread({}, state), {}, {
           submitting: false,
           signupSuccess: true
-        })); // TODO props.onSignupSuccess;
+        }));
+        // TODO props.onSignupSuccess;
       } else {
         console.log('Error, signup failed: ' + JSON.stringify(json));
         setState(_objectSpread(_objectSpread({}, state), {}, {
@@ -89,37 +83,33 @@ var SignupForm = function SignupForm(props) {
         }));
       }
     })["catch"](function (error) {
-      console.log('Error: something went wrong with the request'); // check error
-
+      console.log('Error: something went wrong with the request');
+      // check error
       setState(_objectSpread(_objectSpread({}, state), {}, {
         submitting: false
       }));
     });
   };
-
   var getError = function getError(fieldName) {
     if (state.errors && state.errors[fieldName]) {
       return state.errors[fieldName];
     }
-
     return null;
   };
-
   var onDataChange = function onDataChange(data) {
     var callback = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
     setState(_objectSpread(_objectSpread({}, state), data), callback);
   };
-
   var name = state.name,
-      email = state.email,
-      mobile = state.mobile,
-      goals = state.goals,
-      support = state.support,
-      custom_question = state.custom_question,
-      consent = state.consent,
-      communications_opt_in = state.communications_opt_in;
+    email = state.email,
+    mobile = state.mobile,
+    goals = state.goals,
+    support = state.support,
+    custom_question = state.custom_question,
+    consent = state.consent,
+    communications_opt_in = state.communications_opt_in;
   var _props$gdprUrl = props.gdprUrl,
-      gdprUrl = _props$gdprUrl === void 0 ? '/gdpr' : _props$gdprUrl;
+    gdprUrl = _props$gdprUrl === void 0 ? '/gdpr' : _props$gdprUrl;
   var gdprLink = /*#__PURE__*/React.createElement("a", {
     href: gdprUrl,
     key: "gdprLink"
@@ -219,6 +209,5 @@ var SignupForm = function SignupForm(props) {
     className: "sr-only"
   }, t(_templateObject12 || (_templateObject12 = _taggedTemplateLiteral(["Submitting..."])))))));
 };
-
 export default SignupForm;
 //# sourceMappingURL=SignupForm.js.map

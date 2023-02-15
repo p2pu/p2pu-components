@@ -1,12 +1,9 @@
 import _taggedTemplateLiteral from "@babel/runtime/helpers/taggedTemplateLiteral";
-
 var _templateObject;
-
 import React from 'react';
 import { t } from 'ttag';
 import { COURSES_SORT_OPTIONS } from '../utils/constants';
 import Select from '../InputFields/Select';
-
 var OrderCoursesForm = function OrderCoursesForm(props) {
   var handleChange = function handleChange(_ref) {
     var order = _ref.order;
@@ -14,7 +11,6 @@ var OrderCoursesForm = function OrderCoursesForm(props) {
       order: order
     });
   };
-
   return /*#__PURE__*/React.createElement("form", {
     className: "filter"
   }, /*#__PURE__*/React.createElement("label", {
@@ -30,6 +26,5 @@ var OrderCoursesForm = function OrderCoursesForm(props) {
     handleChange: handleChange
   }));
 };
-
 export default OrderCoursesForm;
 //# sourceMappingURL=OrderCoursesForm.js.map

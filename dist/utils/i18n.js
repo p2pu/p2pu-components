@@ -1,8 +1,6 @@
 import _slicedToArray from "@babel/runtime/helpers/slicedToArray";
 import _taggedTemplateLiteral from "@babel/runtime/helpers/taggedTemplateLiteral";
-
 var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7;
-
 import { t } from 'ttag';
 var WEEK_DAYS = {
   Monday: t(_templateObject || (_templateObject = _taggedTemplateLiteral(["Monday"]))),
@@ -17,12 +15,11 @@ export function day(day_) {
   if (WEEK_DAYS.hasOwnProperty(day_)) {
     return WEEK_DAYS[day_];
   }
-
   return day_;
 }
 ;
-/* Convert a date (YYYY-MM-DD) to the locale format */
 
+/* Convert a date (YYYY-MM-DD) to the locale format */
 export function date(date_) {
   var locale = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'en-US';
   // Since a date without a time will be in UTC, the timeZone used for output should
@@ -38,15 +35,14 @@ export function date(date_) {
   });
   return localDate;
 }
-/* takes time formatted as hh:mm:ss and outputs it without seconds in the locale format */
 
+/* takes time formatted as hh:mm:ss and outputs it without seconds in the locale format */
 export function time(time_) {
   var _time_$split = time_.split(':'),
-      _time_$split2 = _slicedToArray(_time_$split, 3),
-      h = _time_$split2[0],
-      m = _time_$split2[1],
-      s = _time_$split2[2];
-
+    _time_$split2 = _slicedToArray(_time_$split, 3),
+    h = _time_$split2[0],
+    m = _time_$split2[1],
+    s = _time_$split2[2];
   var now = new Date();
   now.setHours(h);
   now.setMinutes(m);
@@ -93,7 +89,6 @@ export function isoCodeToLangName(code) {
   if (LANGUAGES.hasOwnProperty(code)) {
     return LANGUAGES[code].nativeName;
   }
-
   return code;
 }
 //# sourceMappingURL=i18n.js.map
