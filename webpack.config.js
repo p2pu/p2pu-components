@@ -16,6 +16,7 @@ const makeLocaleConfig = (locale) => {
       library: "p2pu-components",
       libraryTarget: 'commonjs2',
     },
+    devtool: 'source-map',
     module: {
       rules: [
         {

@@ -3,10 +3,6 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 
-#: src/Courses/Browse.jsx:29
-msgid "Use this course"
-msgstr ""
-
 #: src/Courses/CourseCard.jsx:12
 msgid "Always available"
 msgstr ""
@@ -51,6 +47,10 @@ msgstr ""
 
 #: src/Courses/CourseCard.jsx:102
 msgid "More details"
+msgstr ""
+
+#: src/Courses/Browse.jsx:29
+msgid "Use this course"
 msgstr ""
 
 #: src/LearningCircles/LearningCircleSearch.jsx:18
@@ -111,57 +111,7 @@ msgstr[1] ""
 msgid "To see more results, either remove some filters or ${ resetButton }"
 msgstr ""
 
-#: src/LearningCircles/LearningCircleCard.jsx:38
-#, javascript-format
-msgid ""
-"${ weekDay } from ${ formattedStartTime } to ${ formattedEndTime } (${ "
-"learningCircle.time_zone })"
-msgstr ""
-
-#: src/LearningCircles/LearningCircleCard.jsx:38
-msgid ""
-"${ formattedStartTime } to ${ formattedEndTime } (${ "
-"learningCircle.time_zone })"
-msgstr ""
-
-#: src/LearningCircles/LearningCircleCard.jsx:39
-#, javascript-format
-msgid "${ learningCircle.weeks } weeks starting ${ formattedStartDate }"
-msgstr ""
-
-#: src/LearningCircles/LearningCircleCard.jsx:39
-#, javascript-format
-msgid "${ learningCircle.weeks } meetings starting ${ formattedStartDate }"
-msgstr ""
-
-#: src/LearningCircles/LearningCircleCard.jsx:55
-msgid "Ended ${ formattedEndDate }"
-msgstr ""
-
-#: src/LearningCircles/LearningCircleCard.jsx:57
-#, javascript-format
-msgid "Started ${ formattedStartDate }"
-msgstr ""
-
-#: src/LearningCircles/LearningCircleCard.jsx:59
-msgid "Starting ${ formattedStartDate }"
-msgstr ""
-
-#: src/LearningCircles/LearningCircleCard.jsx:105
-msgid "Meeting at ${ learningCircle.venue }"
-msgstr ""
-
-#: src/LearningCircleSignup/SignupForm.jsx:183
-#: src/LearningCircles/LearningCircleCard.jsx:110
-msgid "Sign up"
-msgstr ""
-
-#: src/LearningCircles/LearningCircleCard.jsx:110
-msgid "View details"
-msgstr ""
-
 #: src/Search/DefaultNoResults.jsx:17
-#, javascript-format
 msgid "View ${ otherTabName } learning circles"
 msgstr ""
 
@@ -213,6 +163,55 @@ msgstr ""
 
 #: src/LearningCircles/LocationFilter.jsx:136
 msgid "Start typing a city name"
+msgstr ""
+
+#: src/LearningCircles/LearningCircleCard.jsx:38
+#, javascript-format
+msgid ""
+"${ weekDay } from ${ formattedStartTime } to ${ formattedEndTime } (${ "
+"learningCircle.time_zone })"
+msgstr ""
+
+#: src/LearningCircles/LearningCircleCard.jsx:38
+#, javascript-format
+msgid ""
+"${ formattedStartTime } to ${ formattedEndTime } (${ "
+"learningCircle.time_zone })"
+msgstr ""
+
+#: src/LearningCircles/LearningCircleCard.jsx:39
+msgid "${ learningCircle.weeks } weeks starting ${ formattedStartDate }"
+msgstr ""
+
+#: src/LearningCircles/LearningCircleCard.jsx:39
+#, javascript-format
+msgid "${ learningCircle.weeks } meetings starting ${ formattedStartDate }"
+msgstr ""
+
+#: src/LearningCircles/LearningCircleCard.jsx:55
+msgid "Ended ${ formattedEndDate }"
+msgstr ""
+
+#: src/LearningCircles/LearningCircleCard.jsx:57
+#, javascript-format
+msgid "Started ${ formattedStartDate }"
+msgstr ""
+
+#: src/LearningCircles/LearningCircleCard.jsx:59
+msgid "Starting ${ formattedStartDate }"
+msgstr ""
+
+#: src/LearningCircles/LearningCircleCard.jsx:105
+msgid "Meeting at ${ learningCircle.venue }"
+msgstr ""
+
+#: src/LearningCircleSignup/SignupForm.jsx:183
+#: src/LearningCircles/LearningCircleCard.jsx:110
+msgid "Sign up"
+msgstr ""
+
+#: src/LearningCircles/LearningCircleCard.jsx:110
+msgid "View details"
 msgstr ""
 
 #: src/LearningCircleSignup/SignupForm.jsx:99
