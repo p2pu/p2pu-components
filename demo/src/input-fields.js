@@ -11,7 +11,6 @@ import DatePickerWithLabel from "../../src/InputFields/DatePickerWithLabel"
 import ImageUploader from "../../src/InputFields/ImageUploader"
 import InputWithLabel from "../../src/InputFields/InputWithLabel"
 import URLInputWithLabel from "../../src/InputFields/URLInputWithLabel"
-import RangeSliderWithLabel from "../../src/InputFields/RangeSliderWithLabel"
 import SwitchWithLabels from "../../src/InputFields/SwitchWithLabels"
 import TextareaWithLabel from "../../src/InputFields/TextareaWithLabel"
 import TimePickerWithLabel from "../../src/InputFields/TimePickerWithLabel"
@@ -105,12 +104,6 @@ const App = () => {
         value={content['image-demo']}
         handleChange={handleChange}
         imageUploadUrl="http://localhost:8000/api/upload_image/"
-      />
-      <RangeSliderWithLabel
-        name="range-demo"
-        label="Range slider"
-        value={content['range-demo']}
-        handleChange={handleChange}
       />
       <SwitchWithLabels
         name="switch-demo"
