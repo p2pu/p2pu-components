@@ -3,7 +3,7 @@ var _templateObject, _templateObject2, _templateObject3, _templateObject4, _temp
 import { t } from 'ttag';
 export var MEETING_DAYS = [t(_templateObject || (_templateObject = _taggedTemplateLiteral(["Monday"]))), t(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["Tuesday"]))), t(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["Wednesday"]))), t(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["Thursday"]))), t(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["Friday"]))), t(_templateObject6 || (_templateObject6 = _taggedTemplateLiteral(["Saturday"]))), t(_templateObject7 || (_templateObject7 = _taggedTemplateLiteral(["Sunday"])))];
 export var COURSES_SORT_OPTIONS = [{
-  label: t(_templateObject8 || (_templateObject8 = _taggedTemplateLiteral(["Course title"]))),
+  label: t(_templateObject8 || (_templateObject8 = _taggedTemplateLiteral(["Resource title"]))),
   value: 'title'
 }, {
   label: t(_templateObject9 || (_templateObject9 = _taggedTemplateLiteral(["Popularity"]))),

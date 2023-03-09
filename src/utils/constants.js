@@ -11,7 +11,7 @@ export const MEETING_DAYS = [
 ];
 
 export const COURSES_SORT_OPTIONS = [
-  { label: t`Course title`, value: 'title' },
+  { label: t`Resource title`, value: 'title' },
   { label: t`Popularity`, value: 'usage' },
   { label: t`Community rating`, value: 'overall_rating' },
   { label: t`Recently added`, value: 'created_at' },
