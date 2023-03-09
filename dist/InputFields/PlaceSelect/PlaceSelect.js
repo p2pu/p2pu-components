@@ -8,15 +8,10 @@ import _possibleConstructorReturn from "@babel/runtime/helpers/possibleConstruct
 import _getPrototypeOf from "@babel/runtime/helpers/getPrototypeOf";
 import _defineProperty from "@babel/runtime/helpers/defineProperty";
 var _excluded = ["label", "name", "id", "value", "required", "disabled", "errorMessage", "helpText", "classes", "selectClasses", "handleInputChange", "noResultsText", "placeholder", "isClearable", "isMulti"];
-
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
-
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
-
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
-
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
-
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
@@ -40,29 +35,20 @@ var KANSAS_CITY_OPTION = {
     }
   }
 };
-
 var PlaceSelect = /*#__PURE__*/function (_Component) {
   _inherits(PlaceSelect, _Component);
-
   var _super = _createSuper(PlaceSelect);
-
   function PlaceSelect(props) {
     var _this;
-
     _classCallCheck(this, PlaceSelect);
-
     _this = _super.call(this, props);
-
     _defineProperty(_assertThisInitialized(_this), "handleSelect", function (selected) {
       var value = selected ? selected.value : null;
-
       _this.props.handleChange(_defineProperty({}, _this.props.name, value));
-
       _this.setState({
         selected: selected
       });
     });
-
     _defineProperty(_assertThisInitialized(_this), "searchPlaces", function (query) {
       var url = "".concat(ALGOLIA_ENDPOINT, "/query/");
       var data = {
@@ -78,54 +64,47 @@ var PlaceSelect = /*#__PURE__*/function (_Component) {
       }).then(function (res) {
         var options = res.data.hits.map(function (place) {
           return _this.generateCityOption(place);
-        }); // Kansas City, MO is missing from the Algolia places API
+        });
+        // Kansas City, MO is missing from the Algolia places API
         // so we're manually adding it in
         // TODO: don't do this
-
         if (query.toLowerCase().includes('kansas')) {
           options.unshift(KANSAS_CITY_OPTION);
         }
-
         return options;
       })["catch"](function (err) {
         console.log(err);
       });
     });
-
     _defineProperty(_assertThisInitialized(_this), "fetchPlaceById", function (placeId) {
       var url = "".concat(ALGOLIA_ENDPOINT, "/").concat(placeId);
       axios.get(url).then(function (res) {
         var value = _this.generateCityOption(res.data);
-
         _this.handleSelect(value);
       })["catch"](function (err) {
         console.log(err);
       });
     });
-
     _defineProperty(_assertThisInitialized(_this), "generateCityOption", function (place) {
       return {
         label: "".concat(place.locale_names["default"][0], ", ").concat(place.administrative[0], ", ").concat(place.country["default"]),
         value: place
       };
     });
-
     _this.state = {
       hits: [],
       selected: null
     };
     return _this;
   }
-
   _createClass(PlaceSelect, [{
     key: "componentDidMount",
     value: function componentDidMount() {
       if (this.props.value) {
         var _this$props = this.props,
-            value = _this$props.value,
-            name = _this$props.name,
-            handleChange = _this$props.handleChange;
-
+          value = _this$props.value,
+          name = _this$props.name,
+          handleChange = _this$props.handleChange;
         if (!!value.objectID) {
           this.fetchPlaceById(value.objectID);
         } else if (value.city === 'Kansas City, Missouri, United States of America') {
@@ -139,23 +118,22 @@ var PlaceSelect = /*#__PURE__*/function (_Component) {
     key: "render",
     value: function render() {
       var _this$props2 = this.props,
-          label = _this$props2.label,
-          name = _this$props2.name,
-          id = _this$props2.id,
-          value = _this$props2.value,
-          required = _this$props2.required,
-          disabled = _this$props2.disabled,
-          errorMessage = _this$props2.errorMessage,
-          helpText = _this$props2.helpText,
-          classes = _this$props2.classes,
-          selectClasses = _this$props2.selectClasses,
-          handleInputChange = _this$props2.handleInputChange,
-          noResultsText = _this$props2.noResultsText,
-          placeholder = _this$props2.placeholder,
-          isClearable = _this$props2.isClearable,
-          isMulti = _this$props2.isMulti,
-          rest = _objectWithoutProperties(_this$props2, _excluded);
-
+        label = _this$props2.label,
+        name = _this$props2.name,
+        id = _this$props2.id,
+        value = _this$props2.value,
+        required = _this$props2.required,
+        disabled = _this$props2.disabled,
+        errorMessage = _this$props2.errorMessage,
+        helpText = _this$props2.helpText,
+        classes = _this$props2.classes,
+        selectClasses = _this$props2.selectClasses,
+        handleInputChange = _this$props2.handleInputChange,
+        noResultsText = _this$props2.noResultsText,
+        placeholder = _this$props2.placeholder,
+        isClearable = _this$props2.isClearable,
+        isMulti = _this$props2.isMulti,
+        rest = _objectWithoutProperties(_this$props2, _excluded);
       var selected = this.state.selected;
       return /*#__PURE__*/React.createElement(InputWrapper, {
         label: label,
@@ -192,10 +170,8 @@ var PlaceSelect = /*#__PURE__*/function (_Component) {
       }, rest)));
     }
   }]);
-
   return PlaceSelect;
 }(Component);
-
 export { PlaceSelect as default };
 PlaceSelect.propTypes = {
   handleChange: PropTypes.func.isRequired,

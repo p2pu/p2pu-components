@@ -6,45 +6,37 @@ var _excluded = ["label", "name", "id", "value", "handleChange", "required", "di
 import React, { useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import InputWrapper from '../InputWrapper';
-
 var URLInputWithLabel = function URLInputWithLabel(props) {
   var _useState = useState(),
-      _useState2 = _slicedToArray(_useState, 2),
-      browserError = _useState2[0],
-      setBrowserError = _useState2[1];
-
+    _useState2 = _slicedToArray(_useState, 2),
+    browserError = _useState2[0],
+    setBrowserError = _useState2[1];
   var label = props.label,
-      name = props.name,
-      id = props.id,
-      value = props.value,
-      handleChange = props.handleChange,
-      required = props.required,
-      disabled = props.disabled,
-      classes = props.classes,
-      type = props.type,
-      errorMessage = props.errorMessage,
-      helpText = props.helpText,
-      placeholder = props.placeholder,
-      rest = _objectWithoutProperties(props, _excluded);
-
+    name = props.name,
+    id = props.id,
+    value = props.value,
+    handleChange = props.handleChange,
+    required = props.required,
+    disabled = props.disabled,
+    classes = props.classes,
+    type = props.type,
+    errorMessage = props.errorMessage,
+    helpText = props.helpText,
+    placeholder = props.placeholder,
+    rest = _objectWithoutProperties(props, _excluded);
   var inputEl = useRef();
-
   var onChange = function onChange(e) {
     setBrowserError(null);
     var value = e.currentTarget.value;
-
     if (value.length >= 5 && value.substr(0, 5) != 'https' && value.substr(0, 5) != 'http:') {
       return handleChange(_defineProperty({}, name, 'http://' + value));
     }
-
     handleChange(_defineProperty({}, name, value));
   };
-
   var checkValidity = function checkValidity() {
     var validationMessage = inputEl.current.validationMessage;
     setBrowserError(validationMessage);
   };
-
   var combinedErrorMessage = [browserError, errorMessage].filter(Boolean).join("; ");
   return /*#__PURE__*/React.createElement(InputWrapper, {
     label: label,
@@ -68,7 +60,6 @@ var URLInputWithLabel = function URLInputWithLabel(props) {
     className: "form-control"
   }, rest)));
 };
-
 URLInputWithLabel.defaultProps = {
   type: 'text',
   value: "",

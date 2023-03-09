@@ -7,54 +7,46 @@ import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import InputWrapper from '../InputWrapper';
 var displayFormat = 'MMMM d, yyyy';
-
 var formatDateString = function formatDateString(date) {
   var year = date.getFullYear();
   var month = "0".concat(date.getMonth() + 1).slice(-2);
   var day = "0".concat(date.getDate()).slice(-2);
   return "".concat(year, "-").concat(month, "-").concat(day);
 };
-
 var DatePickerWithLabel = function DatePickerWithLabel(props) {
   var _useState = useState(),
-      _useState2 = _slicedToArray(_useState, 2),
-      browserError = _useState2[0],
-      setBrowserError = _useState2[1];
-
+    _useState2 = _slicedToArray(_useState, 2),
+    browserError = _useState2[0],
+    setBrowserError = _useState2[1];
   var label = props.label,
-      name = props.name,
-      id = props.id,
-      value = props.value,
-      handleChange = props.handleChange,
-      handleBlur = props.handleBlur,
-      required = props.required,
-      disabled = props.disabled,
-      classes = props.classes,
-      type = props.type,
-      errorMessage = props.errorMessage,
-      helpText = props.helpText,
-      placeholder = props.placeholder,
-      labelPosition = props.labelPosition,
-      minDate = props.minDate,
-      maxDate = props.maxDate,
-      rest = _objectWithoutProperties(props, _excluded);
-
+    name = props.name,
+    id = props.id,
+    value = props.value,
+    handleChange = props.handleChange,
+    handleBlur = props.handleBlur,
+    required = props.required,
+    disabled = props.disabled,
+    classes = props.classes,
+    type = props.type,
+    errorMessage = props.errorMessage,
+    helpText = props.helpText,
+    placeholder = props.placeholder,
+    labelPosition = props.labelPosition,
+    minDate = props.minDate,
+    maxDate = props.maxDate,
+    rest = _objectWithoutProperties(props, _excluded);
   var inputEl = useRef();
-
   var onChange = function onChange(e) {
     setBrowserError(null);
     handleChange(_defineProperty({}, name, e.currentTarget.value));
   };
-
   var checkValidity = function checkValidity() {
     var validationMessage = inputEl.current.validationMessage;
     setBrowserError(validationMessage);
-
     if (handleBlur) {
       handleBlur(inputEl.current.value);
     }
   };
-
   var combinedErrorMessage = [browserError, errorMessage].filter(Boolean).join("; ");
   var min = minDate ? formatDateString(minDate) : null;
   var max = maxDate ? formatDateString(maxDate) : null;
@@ -82,7 +74,6 @@ var DatePickerWithLabel = function DatePickerWithLabel(props) {
     pattern: "\\d{4}-\\d{2}-\\d{2}"
   }, rest)));
 };
-
 DatePickerWithLabel.propTypes = {
   handleChange: PropTypes.func.isRequired,
   label: PropTypes.string.isRequired,

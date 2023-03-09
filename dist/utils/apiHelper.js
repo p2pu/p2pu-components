@@ -3,26 +3,21 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import { API_ENDPOINTS, DEFAULT_ORIGIN } from './constants';
 import jsonp from 'jsonp';
 import axios from 'axios';
-
 var ApiHelper = /*#__PURE__*/function () {
   function ApiHelper(resourceType) {
     var origin = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : DEFAULT_ORIGIN;
-
     _classCallCheck(this, ApiHelper);
-
     this.resourceType = resourceType;
     this.urlOrigin = origin;
     this.baseUrl = "".concat(origin).concat(API_ENDPOINTS[resourceType].baseUrl);
     this.validParams = API_ENDPOINTS[resourceType].searchParams;
   }
-
   _createClass(ApiHelper, [{
     key: "generateUrl",
     value: function generateUrl(params) {
       var baseUrl = this.baseUrl;
       var encodedParams = this.validParams.map(function (key) {
         var value = params[key];
-
         if (!!value && !(Array.isArray(value) && value.length == 0)) {
           // don't encode falsy values or empty arrays
           return "".concat(key, "=").concat(encodeURIComponent(value));
@@ -63,7 +58,6 @@ var ApiHelper = /*#__PURE__*/function () {
         if (res.data.errors) {
           return opts.onError(res.data);
         }
-
         opts.onSuccess(res.data);
       })["catch"](function (err) {
         console.log(err);
@@ -86,7 +80,6 @@ var ApiHelper = /*#__PURE__*/function () {
         if (res.data.errors) {
           return opts.onError(res.data);
         }
-
         opts.onSuccess(res.data);
       })["catch"](function (err) {
         console.log(err);
@@ -94,9 +87,7 @@ var ApiHelper = /*#__PURE__*/function () {
       });
     }
   }]);
-
   return ApiHelper;
 }();
-
 export { ApiHelper as default };
 //# sourceMappingURL=apiHelper.js.map

@@ -1,7 +1,5 @@
 import _taggedTemplateLiteral from "@babel/runtime/helpers/taggedTemplateLiteral";
-
 var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8, _templateObject9, _templateObject10, _templateObject11;
-
 import React from 'react';
 import { t } from "ttag";
 import { Card, CardTitle, CardBody } from '../Card';
@@ -29,11 +27,10 @@ var cardFormatting = {
     "class": 'closed'
   }
 };
-
 var LearningCircleCard = function LearningCircleCard(props) {
   var learningCircle = props.learningCircle,
-      locale = props.locale,
-      onSelectResult = props.onSelectResult;
+    locale = props.locale,
+    onSelectResult = props.onSelectResult;
   var formattedStartDate = date(learningCircle.start_date, locale);
   var formattedStartTime = time(learningCircle.meeting_time);
   var formattedEndDate = date(learningCircle.last_meeting_date, locale);
@@ -53,29 +50,23 @@ var LearningCircleCard = function LearningCircleCard(props) {
   var colorClass = cardFormatting[status].color;
   var cardLabel = cardFormatting[status].label;
   var dateLabel = t(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["Ended ", ""])), formattedEndDate);
-
   if (status === 'in_progress' || status === 'closed') {
     dateLabel = t(_templateObject6 || (_templateObject6 = _taggedTemplateLiteral(["Started ", ""])), formattedStartDate);
   } else if (status === 'upcoming') {
     dateLabel = t(_templateObject7 || (_templateObject7 = _taggedTemplateLiteral(["Starting ", ""])), formattedStartDate);
   }
-
   var onClick = function onClick(e) {
     e.preventDefault();
-
     if (onSelectResult) {
       onSelectResult(learningCircle);
     } else {
       window.location.href = learningCircle.url;
     }
   };
-
   var imageUrl = props.defaultImageUrl;
-
   if (learningCircle.image_url) {
     imageUrl = learningCircle.image_url;
   }
-
   return /*#__PURE__*/React.createElement("div", {
     className: "result-item grid-item col-md-6 col-lg-4"
   }, /*#__PURE__*/React.createElement("a", {
@@ -126,6 +117,5 @@ var LearningCircleCard = function LearningCircleCard(props) {
     className: "btn p2pu-btn btn-sm gray mx-auto d-block"
   }, isSignupOpen ? t(_templateObject10 || (_templateObject10 = _taggedTemplateLiteral(["Sign up"]))) : t(_templateObject11 || (_templateObject11 = _taggedTemplateLiteral(["View details"]))))))));
 };
-
 export default LearningCircleCard;
 //# sourceMappingURL=LearningCircleCard.js.map

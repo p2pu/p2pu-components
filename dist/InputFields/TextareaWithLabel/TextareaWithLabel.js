@@ -5,25 +5,22 @@ var _excluded = ["name", "id", "label", "value", "handleChange", "required", "di
 import React from 'react';
 import PropTypes from 'prop-types';
 import InputWrapper from '../InputWrapper';
-
 var TextareaWithLabel = function TextareaWithLabel(props) {
   var name = props.name,
-      id = props.id,
-      label = props.label,
-      value = props.value,
-      handleChange = props.handleChange,
-      required = props.required,
-      disabled = props.disabled,
-      errorMessage = props.errorMessage,
-      helpText = props.helpText,
-      classes = props.classes,
-      placeholder = props.placeholder,
-      rest = _objectWithoutProperties(props, _excluded);
-
+    id = props.id,
+    label = props.label,
+    value = props.value,
+    handleChange = props.handleChange,
+    required = props.required,
+    disabled = props.disabled,
+    errorMessage = props.errorMessage,
+    helpText = props.helpText,
+    classes = props.classes,
+    placeholder = props.placeholder,
+    rest = _objectWithoutProperties(props, _excluded);
   var onChange = function onChange(e) {
     props.handleChange(_defineProperty({}, props.name, e.currentTarget.value));
   };
-
   return /*#__PURE__*/React.createElement(InputWrapper, {
     label: label,
     name: name,
@@ -42,7 +39,6 @@ var TextareaWithLabel = function TextareaWithLabel(props) {
     className: "form-control"
   }, rest)));
 };
-
 TextareaWithLabel.defaultProps = {
   type: 'text',
   value: "",

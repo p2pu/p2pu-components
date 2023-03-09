@@ -1,14 +1,12 @@
 import React from 'react';
 import { t } from 'ttag';
 import SwitchWithLabels from '../InputFields/SwitchWithLabels';
-
 var OerFilterForm = function OerFilterForm(props) {
   var handleChange = function handleChange(event) {
     props.updateQueryParams({
       oer: event.currentTarget.checked
     });
   };
-
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("form", {
     className: "filter"
   }, /*#__PURE__*/React.createElement("label", {
@@ -30,6 +28,5 @@ var OerFilterForm = function OerFilterForm(props) {
     htmlFor: "oer"
   }, "Only show open educational resources (OER)")))));
 };
-
 export default OerFilterForm;
 //# sourceMappingURL=OerFilterForm.js.map

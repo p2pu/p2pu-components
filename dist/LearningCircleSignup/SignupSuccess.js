@@ -1,10 +1,7 @@
 import _taggedTemplateLiteral from "@babel/runtime/helpers/taggedTemplateLiteral";
-
 var _templateObject;
-
 import React from 'react';
 import { t } from 'ttag';
-
 var SignupSuccess = function SignupSuccess() {
   return /*#__PURE__*/React.createElement("div", {
     className: "container signup-success"
@@ -18,6 +15,5 @@ var SignupSuccess = function SignupSuccess() {
     src: "assets/img/library-rock.gif"
   }))));
 };
-
 export default SignupSuccess;
 //# sourceMappingURL=SignupSuccess.js.map

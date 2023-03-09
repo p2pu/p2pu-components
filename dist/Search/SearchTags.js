@@ -1,15 +1,13 @@
+import _typeof from "@babel/runtime/helpers/typeof";
 import _taggedTemplateLiteral from "@babel/runtime/helpers/taggedTemplateLiteral";
-
 var _templateObject, _templateObject2, _templateObject3, _templateObject4;
-
 import React from 'react';
 import { t, jt, ngettext, msgid } from 'ttag';
 import { isoCodeToLangName } from '../utils/i18n';
 import { MEETING_DAYS, SEARCH_SUBJECTS, COURSES_SORT_OPTIONS } from '../utils/constants';
-
 var SearchTag = function SearchTag(_ref) {
   var value = _ref.value,
-      onDelete = _ref.onDelete;
+    onDelete = _ref.onDelete;
   return /*#__PURE__*/React.createElement("div", {
     className: "search-tag"
   }, value, /*#__PURE__*/React.createElement("i", {
@@ -22,7 +20,6 @@ var SearchTag = function SearchTag(_ref) {
     }
   }, "clear"));
 };
-
 var SearchTags = function SearchTags(props) {
   var generateQueryTag = function generateQueryTag() {
     if (props.q) {
@@ -31,7 +28,6 @@ var SearchTags = function SearchTags(props) {
           q: null
         });
       };
-
       return [/*#__PURE__*/React.createElement(SearchTag, {
         key: "queryTag-0",
         value: props.q,
@@ -46,7 +42,6 @@ var SearchTags = function SearchTags(props) {
       })];
     }
   };
-
   var generateTeamNameTag = function generateTeamNameTag() {
     if (props.teamName) {
       var onDelete = function onDelete(value) {
@@ -57,7 +52,6 @@ var SearchTags = function SearchTags(props) {
         document.getElementById('team-title').style.display = 'none';
         document.getElementById('search-subtitle').style.display = 'block';
       };
-
       var humanReadableName = decodeURIComponent(props.teamName);
       return [/*#__PURE__*/React.createElement(SearchTag, {
         key: "queryTag-0",
@@ -73,7 +67,6 @@ var SearchTags = function SearchTags(props) {
       })];
     }
   };
-
   var generateLanguageTag = function generateLanguageTag() {
     if (props.languages && props.languages.length > 0) {
       var _onDelete = function onDelete(value) {
@@ -85,7 +78,6 @@ var SearchTags = function SearchTags(props) {
           languages: languages
         });
       };
-
       var introPhrase = props.languages.length === 1 ? 'in' : 'in';
       var languagesTagsArray = [/*#__PURE__*/React.createElement("span", {
         key: "languageTagIntro"
@@ -96,7 +88,6 @@ var SearchTags = function SearchTags(props) {
             key: "languageTag-".concat(index + 2)
           }, "or"));
         }
-
         var languageName = isoCodeToLangName(item);
         languagesTagsArray.push( /*#__PURE__*/React.createElement(SearchTag, {
           value: languageName,
@@ -109,7 +100,6 @@ var SearchTags = function SearchTags(props) {
       return languagesTagsArray;
     }
   };
-
   var generateOrderTag = function generateOrderTag() {
     if (props.searchSubject === 'courses' && props.order) {
       var onDelete = function onDelete(value) {
@@ -117,7 +107,6 @@ var SearchTags = function SearchTags(props) {
           order: null
         });
       };
-
       var order = COURSES_SORT_OPTIONS.find(function (order) {
         return order.value == props.order;
       });
@@ -130,7 +119,6 @@ var SearchTags = function SearchTags(props) {
       })];
     }
   };
-
   var generateOerTag = function generateOerTag() {
     if (props.oer) {
       var onDelete = function onDelete(value) {
@@ -138,7 +126,6 @@ var SearchTags = function SearchTags(props) {
           oer: false
         });
       };
-
       return [/*#__PURE__*/React.createElement("span", {
         key: "queryTagIntro"
       }, "that are "), /*#__PURE__*/React.createElement(SearchTag, {
@@ -148,7 +135,6 @@ var SearchTags = function SearchTags(props) {
       })];
     }
   };
-
   var generateOnlineTag = function generateOnlineTag() {
     if (props.online !== null) {
       var onDelete = function onDelete(value) {
@@ -156,7 +142,6 @@ var SearchTags = function SearchTags(props) {
           online: null
         });
       };
-
       if (props.online === 'true') {
         return [/*#__PURE__*/React.createElement(SearchTag, {
           key: "queryTag-0",
@@ -172,7 +157,6 @@ var SearchTags = function SearchTags(props) {
       }
     }
   };
-
   var generateTopicsTags = function generateTopicsTags() {
     if (props.topics && props.topics.length > 0) {
       var onDelete = function onDelete(value) {
@@ -184,7 +168,6 @@ var SearchTags = function SearchTags(props) {
           topics: topics
         });
       };
-
       var introPhrase = props.topics.length === 1 ? 'the topic' : 'the topics';
       var topicsTagsArray = [/*#__PURE__*/React.createElement("span", {
         key: "topicTagIntro"
@@ -197,7 +180,6 @@ var SearchTags = function SearchTags(props) {
             key: "topicTag-".concat(index + 2)
           }, "or"));
         }
-
         topicsTagsArray.push( /*#__PURE__*/React.createElement(SearchTag, {
           value: item,
           key: "topicTag-".concat(index),
@@ -207,14 +189,12 @@ var SearchTags = function SearchTags(props) {
       return topicsTagsArray;
     }
   };
-
   var generateLocationTag = function generateLocationTag() {
     if (props.latitude && props.longitude) {
       var unit = props.useMiles ? 'miles' : 'km';
       var value = props.useMiles ? props.distance * 0.62 : props.distance;
       value = Math.round(value / 5) * 5;
       var text = t(_templateObject || (_templateObject = _taggedTemplateLiteral(["Within ", " ", ""])), value, unit);
-
       var onDelete = function onDelete(value) {
         props.updateQueryParams({
           latitude: null,
@@ -222,7 +202,6 @@ var SearchTags = function SearchTags(props) {
           distance: 50
         });
       };
-
       return [/*#__PURE__*/React.createElement(SearchTag, {
         key: "locationTag-0",
         value: text,
@@ -241,7 +220,6 @@ var SearchTags = function SearchTags(props) {
           city: null
         });
       };
-
       return [/*#__PURE__*/React.createElement(SearchTag, {
         key: "locationTag-0",
         value: props.city,
@@ -256,35 +234,26 @@ var SearchTags = function SearchTags(props) {
       })];
     }
   };
-
   var generateTagsPhrase = function generateTagsPhrase(tag) {
     switch (tag) {
       case 'q':
         return generateQueryTag();
-
       case 'topics':
         return generateTopicsTags();
-
       case 'location':
         return generateLocationTag();
-
       case 'teamName':
         return generateTeamNameTag();
-
       case 'language':
         return generateLanguageTag();
-
       case 'order':
         return generateOrderTag();
-
       case 'oer':
         return generateOerTag();
-
       case 'online':
         return generateOnlineTag();
     }
   };
-
   var generateSearchSummary = function generateSearchSummary() {
     var searchSummaryItems = [];
     var forSearchSubject = /*#__PURE__*/React.createElement("span", {
@@ -297,35 +266,31 @@ var SearchTags = function SearchTags(props) {
     var resultsCount = /*#__PURE__*/React.createElement("span", {
       key: "resultsSummary-0"
     }, ngettext(msgid(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["Showing ", " of ", " result"])), props.searchResults.length, props.totalResults), "Showing ".concat(props.searchResults.length, " of ").concat(props.totalResults, " results"), props.totalResults));
-
     if (props.searchSubject === 'courses') {
       searchSummaryItems.push(resultsCount);
     }
-
     tagsToDisplay.map(function (tag) {
       var tagsArray = generateTagsPhrase(tag);
-
       if (!!tagsArray) {
         if (searchSummaryItems.length === 1) {
           // TODO searchSummaryItems.push(forSearchSubject)
-          if (tag === 'q' || tag === 'topics') {// TODO searchSummaryItems.push(withSpan)
+          if (tag === 'q' || tag === 'topics') {
+            // TODO searchSummaryItems.push(withSpan)
           }
-        } else {// TODO searchSummaryItems.push(<span key={`resultsSummary-${searchSummaryItems.length}`}>and</span>)
+        } else {
+          // TODO searchSummaryItems.push(<span key={`resultsSummary-${searchSummaryItems.length}`}>and</span>)
         }
-
         searchSummaryItems.push(tagsArray);
       }
     });
     return searchSummaryItems;
   };
-
   var reloadWindow = function reloadWindow() {
-    if (typeof window !== "undefined") {
+    if ((typeof window === "undefined" ? "undefined" : _typeof(window)) !== "undefined") {
       window.history.replaceState({}, document.title, window.location.pathname);
       window.location.reload();
     }
   };
-
   var noResults = props.searchResults.length === 0;
   var resetButton = /*#__PURE__*/React.createElement("button", {
     key: "reset-search",
@@ -340,6 +305,5 @@ var SearchTags = function SearchTags(props) {
     className: "clear-search"
   }, jt(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["To see more results, either remove some filters or ", ""])), resetButton)));
 };
-
 export default SearchTags;
 //# sourceMappingURL=SearchTags.js.map

@@ -1,7 +1,5 @@
 import _taggedTemplateLiteral from "@babel/runtime/helpers/taggedTemplateLiteral";
-
 var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8, _templateObject9, _templateObject10, _templateObject11, _templateObject12, _templateObject13, _templateObject14, _templateObject15;
-
 import { t } from 'ttag';
 export var MEETING_DAYS = [t(_templateObject || (_templateObject = _taggedTemplateLiteral(["Monday"]))), t(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["Tuesday"]))), t(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["Wednesday"]))), t(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["Thursday"]))), t(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["Friday"]))), t(_templateObject6 || (_templateObject6 = _taggedTemplateLiteral(["Saturday"]))), t(_templateObject7 || (_templateObject7 = _taggedTemplateLiteral(["Sunday"])))];
 export var COURSES_SORT_OPTIONS = [{
@@ -25,8 +23,8 @@ export var SEARCH_PROPS = {
   learningCircles: {
     filters: ['location'],
     placeholder: t(_templateObject12 || (_templateObject12 = _taggedTemplateLiteral(["Keyword, organization, facilitator, etc..."]))) //remove?
-
   },
+
   courses: {
     filters: ['topics', 'language', 'oer'],
     //facilitator_guide?
@@ -34,7 +32,8 @@ export var SEARCH_PROPS = {
     placeholder: t(_templateObject13 || (_templateObject13 = _taggedTemplateLiteral(["Title, subject, etc..."])))
   }
 };
-export var DEFAULT_ORIGIN = 'https://learningcircles.p2pu.org'; // export const DEFAULT_ORIGIN = 'http://localhost:8000'
+export var DEFAULT_ORIGIN = 'https://learningcircles.p2pu.org';
+// export const DEFAULT_ORIGIN = 'http://localhost:8000'
 
 export var API_ENDPOINTS = {
   learningCircle: "/api/learning-circle/",

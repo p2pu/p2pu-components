@@ -1,1 +1,1 @@
-{"version":3,"sources":["../../../src/InputFields/PlaceSelect/index.js"],"names":["PlaceSelect"],"mappings":"AAAA,OAAOA,WAAP,MAAwB,kBAAxB;AACA,eAAeA,WAAf","sourcesContent":["import PlaceSelect from './PlaceSelect.js';\nexport default PlaceSelect"],"file":"index.js"}
+{"version":3,"file":"index.js","names":["PlaceSelect"],"sources":["../../../src/InputFields/PlaceSelect/index.js"],"sourcesContent":["import PlaceSelect from './PlaceSelect.js';\nexport default PlaceSelect"],"mappings":"AAAA,OAAOA,WAAW,MAAM,kBAAkB;AAC1C,eAAeA,WAAW"}

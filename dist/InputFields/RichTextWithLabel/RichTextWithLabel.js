@@ -6,36 +6,32 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import InputWrapper from '../InputWrapper';
 import { Editor } from '@tinymce/tinymce-react';
-
 var TextareaWithLabel = function TextareaWithLabel(props) {
   var name = props.name,
-      id = props.id,
-      label = props.label,
-      value = props.value,
-      handleChange = props.handleChange,
-      required = props.required,
-      disabled = props.disabled,
-      errorMessage = props.errorMessage,
-      helpText = props.helpText,
-      classes = props.classes,
-      placeholder = props.placeholder,
-      apiKey = props.apiKey,
-      tinymceScriptSrc = props.tinymceScriptSrc,
-      maxLength = props.maxLength,
-      rest = _objectWithoutProperties(props, _excluded);
-
+    id = props.id,
+    label = props.label,
+    value = props.value,
+    handleChange = props.handleChange,
+    required = props.required,
+    disabled = props.disabled,
+    errorMessage = props.errorMessage,
+    helpText = props.helpText,
+    classes = props.classes,
+    placeholder = props.placeholder,
+    apiKey = props.apiKey,
+    tinymceScriptSrc = props.tinymceScriptSrc,
+    maxLength = props.maxLength,
+    rest = _objectWithoutProperties(props, _excluded);
   var _useState = useState(),
-      _useState2 = _slicedToArray(_useState, 2),
-      charCount = _useState2[0],
-      setCharCount = _useState2[1];
-
+    _useState2 = _slicedToArray(_useState, 2),
+    charCount = _useState2[0],
+    setCharCount = _useState2[1];
   var onChange = function onChange(input, editor) {
     var wordcount = editor.plugins.wordcount;
     var charCount = wordcount.body.getCharacterCount();
     setCharCount(charCount);
     props.handleChange(_defineProperty({}, props.name, input));
   };
-
   var erroMessageWithCharCount = charCount > maxLength ? "The text is too long: ".concat(charCount, "/").concat(maxLength, " characters.") : errorMessage;
   return /*#__PURE__*/React.createElement(InputWrapper, {
     label: label,
@@ -61,7 +57,6 @@ var TextareaWithLabel = function TextareaWithLabel(props) {
     }
   }));
 };
-
 TextareaWithLabel.defaultProps = {
   type: 'text',
   value: "",

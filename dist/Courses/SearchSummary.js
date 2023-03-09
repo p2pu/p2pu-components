@@ -1,18 +1,15 @@
 import _taggedTemplateLiteral from "@babel/runtime/helpers/taggedTemplateLiteral";
-
+import _typeof from "@babel/runtime/helpers/typeof";
 var _templateObject, _templateObject2, _templateObject3;
-
 import React, { Component } from 'react';
 import { t, jt, ngettext, msgid } from 'ttag';
-
 var SearchSummary = function SearchSummary(props) {
   var reloadWindow = function reloadWindow() {
-    if (typeof window !== "undefined") {
+    if ((typeof window === "undefined" ? "undefined" : _typeof(window)) !== "undefined") {
       window.history.replaceState({}, document.title, window.location.pathname);
       window.location.reload();
     }
   };
-
   var noResults = props.searchResults.length === 0;
   var resetButton = /*#__PURE__*/React.createElement("button", {
     key: "reset-search",
@@ -29,6 +26,5 @@ var SearchSummary = function SearchSummary(props) {
     className: "clear-search"
   }, jt(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["To see more results, either remove some filters or ", ""])), resetButton)));
 };
-
 export default SearchSummary;
 //# sourceMappingURL=SearchSummary.js.map

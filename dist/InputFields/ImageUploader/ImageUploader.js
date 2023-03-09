@@ -8,15 +8,10 @@ import _possibleConstructorReturn from "@babel/runtime/helpers/possibleConstruct
 import _getPrototypeOf from "@babel/runtime/helpers/getPrototypeOf";
 import _defineProperty from "@babel/runtime/helpers/defineProperty";
 var _excluded = ["label", "name", "value", "required", "disabled", "errorMessage", "helpText", "labelStyles", "inputStyles", "imgStyles", "acceptedMimetypes", "buttonText", "classes", "handleChange", "id", "imageUploadUrl"];
-
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
-
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
-
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
-
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
-
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
@@ -49,19 +44,13 @@ var defaultStyles = {
     marginRight: '6px'
   }
 };
-
 var ImageUploader = /*#__PURE__*/function (_Component) {
   _inherits(ImageUploader, _Component);
-
   var _super = _createSuper(ImageUploader);
-
   function ImageUploader(props) {
     var _this;
-
     _classCallCheck(this, ImageUploader);
-
     _this = _super.call(this, props);
-
     _defineProperty(_assertThisInitialized(_this), "saveImage", function (opts) {
       var url = opts.url;
       var data = opts.data;
@@ -76,43 +65,34 @@ var ImageUploader = /*#__PURE__*/function (_Component) {
         if (res.data.errors) {
           return opts.onError(res.data);
         }
-
         opts.onSuccess(res.data);
       })["catch"](function (err) {
         console.log(err);
         opts.onFail(err);
       });
     });
-
     _defineProperty(_assertThisInitialized(_this), "onChange", function (e) {
       var url = _this.props.imageUploadUrl;
       var file = e.currentTarget.files[0];
       var filename = slugify(file.name);
       var data = new FormData();
       data.append('image', file, filename);
-
       _this.setState({
         file: file
       });
-
       var onSuccess = function onSuccess(data) {
         _this.setState({
           image: data.image_url
         });
-
         _this.props.handleChange(_defineProperty({}, _this.props.name, data.image_url));
       };
-
       var onError = function onError(data) {
         console.log(data.errors);
-
         _this.props.handleChange(_defineProperty({}, _this.props.name, null));
       };
-
       var onFail = function onFail(err) {
         console.log(err);
       };
-
       var config = {
         headers: {
           'Content-Type': 'multipart/form-data'
@@ -126,42 +106,38 @@ var ImageUploader = /*#__PURE__*/function (_Component) {
         onError: onError,
         onFail: onFail
       };
-
       _this.saveImage(opts);
     });
-
     _this.state = {
       image: _this.props.image,
       file: null
     };
     return _this;
   }
-
   _createClass(ImageUploader, [{
     key: "render",
     value: function render() {
       var _this$props = this.props,
-          label = _this$props.label,
-          name = _this$props.name,
-          value = _this$props.value,
-          required = _this$props.required,
-          disabled = _this$props.disabled,
-          errorMessage = _this$props.errorMessage,
-          helpText = _this$props.helpText,
-          labelStyles = _this$props.labelStyles,
-          inputStyles = _this$props.inputStyles,
-          imgStyles = _this$props.imgStyles,
-          acceptedMimetypes = _this$props.acceptedMimetypes,
-          buttonText = _this$props.buttonText,
-          classes = _this$props.classes,
-          handleChange = _this$props.handleChange,
-          id = _this$props.id,
-          imageUploadUrl = _this$props.imageUploadUrl,
-          rest = _objectWithoutProperties(_this$props, _excluded);
-
+        label = _this$props.label,
+        name = _this$props.name,
+        value = _this$props.value,
+        required = _this$props.required,
+        disabled = _this$props.disabled,
+        errorMessage = _this$props.errorMessage,
+        helpText = _this$props.helpText,
+        labelStyles = _this$props.labelStyles,
+        inputStyles = _this$props.inputStyles,
+        imgStyles = _this$props.imgStyles,
+        acceptedMimetypes = _this$props.acceptedMimetypes,
+        buttonText = _this$props.buttonText,
+        classes = _this$props.classes,
+        handleChange = _this$props.handleChange,
+        id = _this$props.id,
+        imageUploadUrl = _this$props.imageUploadUrl,
+        rest = _objectWithoutProperties(_this$props, _excluded);
       var _this$state = this.state,
-          image = _this$state.image,
-          file = _this$state.file;
+        image = _this$state.image,
+        file = _this$state.file;
       return /*#__PURE__*/React.createElement(InputWrapper, {
         label: label,
         name: name,
@@ -198,10 +174,8 @@ var ImageUploader = /*#__PURE__*/function (_Component) {
       }))));
     }
   }]);
-
   return ImageUploader;
 }(Component);
-
 export { ImageUploader as default };
 ImageUploader.propTypes = {
   imageUploadUrl: PropTypes.string.isRequired,

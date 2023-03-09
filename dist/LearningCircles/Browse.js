@@ -4,21 +4,20 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import { OPEN_TAB_TEXT, CLOSED_TAB_TEXT } from '../utils/constants';
 import LearningCircleCard from './LearningCircleCard';
 import 'react-tabs/style/react-tabs.css';
-
 var BrowseLearningCircles = function BrowseLearningCircles(props) {
   var results = props.results,
-      onSelectResult = props.onSelectResult,
-      locale = props.locale,
-      columnBreakpoints = props.columnBreakpoints,
-      resultsCount = props.resultsCount,
-      signupOpenCount = props.signupOpenCount,
-      signupClosedCount = props.signupClosedCount,
-      resultsTab = props.resultsTab,
-      updateResultsTab = props.updateResultsTab,
-      NoResultsComponent = props.NoResultsComponent,
-      showNoResultsComponent = props.showNoResultsComponent,
-      contact = props.contact,
-      isLoading = props.isLoading;
+    onSelectResult = props.onSelectResult,
+    locale = props.locale,
+    columnBreakpoints = props.columnBreakpoints,
+    resultsCount = props.resultsCount,
+    signupOpenCount = props.signupOpenCount,
+    signupClosedCount = props.signupClosedCount,
+    resultsTab = props.resultsTab,
+    updateResultsTab = props.updateResultsTab,
+    NoResultsComponent = props.NoResultsComponent,
+    showNoResultsComponent = props.showNoResultsComponent,
+    contact = props.contact,
+    isLoading = props.isLoading;
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Tabs, {
     selectedIndex: resultsTab,
     onSelect: updateResultsTab
@@ -62,7 +61,6 @@ var BrowseLearningCircles = function BrowseLearningCircles(props) {
     className: "loader"
   }));
 };
-
 BrowseLearningCircles.defaultProps = {
   results: [],
   signupOpenCount: 0,

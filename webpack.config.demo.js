@@ -30,7 +30,6 @@ module.exports = ({locale}={}) => {
               plugins: null
             },
           },
-
           exclude: /node_modules/
         },
         {
@@ -47,7 +46,10 @@ module.exports = ({locale}={}) => {
             {
               loader: 'sass-loader',
               options: {
-                sourceMap: true
+                sourceMap: true,
+                sassOptions: {
+                  includePaths: [path.resolve('./node_modules/')]
+                }
               }
             }
           ]
@@ -85,6 +87,7 @@ module.exports = ({locale}={}) => {
       extensions: [".js", ".jsx", ".scss", ".css", ".svg"]
     },
     devServer: {
+      host: '0.0.0.0',
       port: 3001,
       contentBase: path.join(__dirname, 'demo/src/public'),
     },

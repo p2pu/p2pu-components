@@ -1,1 +1,1 @@
-{"version":3,"sources":["../../../src/InputFields/SelectWithLabel/index.js"],"names":["SelectWithLabel"],"mappings":"AAAA,OAAOA,eAAP,MAA4B,sBAA5B;AACA,eAAeA,eAAf","sourcesContent":["import SelectWithLabel from './SelectWithLabel.js';\nexport default SelectWithLabel"],"file":"index.js"}
+{"version":3,"file":"index.js","names":["SelectWithLabel"],"sources":["../../../src/InputFields/SelectWithLabel/index.js"],"sourcesContent":["import SelectWithLabel from './SelectWithLabel.js';\nexport default SelectWithLabel"],"mappings":"AAAA,OAAOA,eAAe,MAAM,sBAAsB;AAClD,eAAeA,eAAe"}

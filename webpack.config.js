@@ -13,9 +13,12 @@ const makeLocaleConfig = (locale) => {
     output: {
       path: path.join(__dirname, "dist"),
       filename: `[name].js`,
-      library: "p2pu-components",
-      libraryTarget: 'commonjs2',
+      library: {
+        name: "p2pu-components",
+        type: "umd",
+      },
     },
+    devtool: 'source-map',
     module: {
       rules: [
         {

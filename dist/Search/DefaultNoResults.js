@@ -1,15 +1,11 @@
 import _taggedTemplateLiteral from "@babel/runtime/helpers/taggedTemplateLiteral";
-
 var _templateObject, _templateObject2, _templateObject3;
-
 import React, { Component } from 'react';
 import { t } from 'ttag';
 import { OPEN_TAB_TEXT, CLOSED_TAB_TEXT } from '../utils/constants';
-
 var DefaultNoResults = function DefaultNoResults(props) {
   var renderLinks = function renderLinks() {
     var links = [];
-
     if (props.updateResultsTab) {
       var otherTab = props.tabIndex === 0 ? 1 : 0;
       var otherTabName = otherTab === 0 ? OPEN_TAB_TEXT : CLOSED_TAB_TEXT;
@@ -23,7 +19,6 @@ var DefaultNoResults = function DefaultNoResults(props) {
         className: "material-icons mr-1"
       }, "arrow_forward"), t(_templateObject || (_templateObject = _taggedTemplateLiteral(["View ", " learning circles"])), otherTabName)));
     }
-
     if (props.contact) {
       links.push( /*#__PURE__*/React.createElement("a", {
         key: "contact-btn",
@@ -33,14 +28,11 @@ var DefaultNoResults = function DefaultNoResults(props) {
         className: "material-icons mr-1"
       }, "alternate_email"), t(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["Contact this team"])))));
     }
-
     return links;
   };
-
   return /*#__PURE__*/React.createElement("div", {
     className: "my-4"
   }, /*#__PURE__*/React.createElement("p", null, t(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["There are no learning circles available right now."])))), renderLinks());
 };
-
 export default DefaultNoResults;
 //# sourceMappingURL=DefaultNoResults.js.map

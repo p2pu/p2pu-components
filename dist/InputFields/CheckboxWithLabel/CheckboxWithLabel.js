@@ -5,27 +5,24 @@ var _excluded = ["label", "name", "id", "value", "handleChange", "required", "di
 import React from 'react';
 import PropTypes from 'prop-types';
 import InputWrapper from '../InputWrapper';
-
 var CheckboxWithLabel = function CheckboxWithLabel(props) {
   var label = props.label,
-      name = props.name,
-      id = props.id,
-      value = props.value,
-      handleChange = props.handleChange,
-      required = props.required,
-      disabled = props.disabled,
-      classes = props.classes,
-      type = props.type,
-      errorMessage = props.errorMessage,
-      helpText = props.helpText,
-      placeholder = props.placeholder,
-      labelPosition = props.labelPosition,
-      rest = _objectWithoutProperties(props, _excluded);
-
+    name = props.name,
+    id = props.id,
+    value = props.value,
+    handleChange = props.handleChange,
+    required = props.required,
+    disabled = props.disabled,
+    classes = props.classes,
+    type = props.type,
+    errorMessage = props.errorMessage,
+    helpText = props.helpText,
+    placeholder = props.placeholder,
+    labelPosition = props.labelPosition,
+    rest = _objectWithoutProperties(props, _excluded);
   var onChange = function onChange(e) {
     props.handleChange(_defineProperty({}, props.name, e.currentTarget.checked));
   };
-
   return /*#__PURE__*/React.createElement(InputWrapper, {
     label: label,
     name: name,
@@ -44,7 +41,6 @@ var CheckboxWithLabel = function CheckboxWithLabel(props) {
     onChange: onChange
   }, rest)));
 };
-
 CheckboxWithLabel.propTypes = {
   handleChange: PropTypes.func.isRequired,
   label: PropTypes.string.isRequired,

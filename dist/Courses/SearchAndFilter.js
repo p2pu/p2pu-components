@@ -5,7 +5,6 @@ import TopicsFilterForm from './TopicsFilterForm';
 import LanguageFilterForm from './LanguageFilterForm';
 import OerFilterForm from './OerFilterForm';
 import FacilitatorGuideFilterForm from './FacilitatorGuideFilterForm';
-
 var SearchAndFilter = function SearchAndFilter(props) {
   return /*#__PURE__*/React.createElement("nav", {
     className: "navbar-expand-lg"
@@ -52,6 +51,5 @@ var SearchAndFilter = function SearchAndFilter(props) {
     className: "col-12 pt-3"
   }, /*#__PURE__*/React.createElement(OerFilterForm, props)))));
 };
-
 export default SearchAndFilter;
 //# sourceMappingURL=SearchAndFilter.js.map

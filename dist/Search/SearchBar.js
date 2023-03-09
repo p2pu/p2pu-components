@@ -1,15 +1,11 @@
 import _taggedTemplateLiteral from "@babel/runtime/helpers/taggedTemplateLiteral";
-
 var _templateObject;
-
 import React from 'react';
 import { t } from 'ttag';
-
 var SearchBar = function SearchBar(_ref) {
   var placeholder = _ref.placeholder,
-      updateQueryParams = _ref.updateQueryParams,
-      q = _ref.q;
-
+    updateQueryParams = _ref.updateQueryParams,
+    q = _ref.q;
   var onChange = function onChange(e) {
     var value = e.currentTarget.value;
     var query = value.replace(/^\s+/g, '');
@@ -17,11 +13,9 @@ var SearchBar = function SearchBar(_ref) {
       q: query
     });
   };
-
   var onSubmit = function onSubmit(e) {
     e.preventDefault();
   };
-
   return /*#__PURE__*/React.createElement("form", {
     className: "search",
     onSubmit: onSubmit
@@ -46,6 +40,5 @@ var SearchBar = function SearchBar(_ref) {
     className: "material-icons"
   }, "search"))));
 };
-
 export default SearchBar;
 //# sourceMappingURL=SearchBar.js.map

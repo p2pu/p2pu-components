@@ -3,29 +3,24 @@ import _typeof from "@babel/runtime/helpers/typeof";
 import _defineProperty from "@babel/runtime/helpers/defineProperty";
 import _objectWithoutProperties from "@babel/runtime/helpers/objectWithoutProperties";
 var _excluded = ["name", "id", "required", "disabled", "value", "errorMessage", "helpText", "classes", "selectClasses", "options", "handleChange", "isMulti"];
-
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
-
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
-
 import React from 'react';
 import { default as ReactSelect } from 'react-select';
-
 var Select = function Select(props) {
   var name = props.name,
-      id = props.id,
-      required = props.required,
-      disabled = props.disabled,
-      value = props.value,
-      errorMessage = props.errorMessage,
-      helpText = props.helpText,
-      classes = props.classes,
-      selectClasses = props.selectClasses,
-      options = props.options,
-      handleChange = props.handleChange,
-      isMulti = props.isMulti,
-      rest = _objectWithoutProperties(props, _excluded);
-
+    id = props.id,
+    required = props.required,
+    disabled = props.disabled,
+    value = props.value,
+    errorMessage = props.errorMessage,
+    helpText = props.helpText,
+    classes = props.classes,
+    selectClasses = props.selectClasses,
+    options = props.options,
+    handleChange = props.handleChange,
+    isMulti = props.isMulti,
+    rest = _objectWithoutProperties(props, _excluded);
   var customStyles = {
     indicatorSeparator: function indicatorSeparator(provided, state) {
       return _objectSpread(_objectSpread({}, provided), {}, {
@@ -33,28 +28,22 @@ var Select = function Select(props) {
       });
     }
   };
-
   var onChange = function onChange(selected) {
     if (!selected) {
       return handleChange(_defineProperty({}, name, null));
     }
-
     if (isMulti) {
       var _value = selected.map(function (s) {
         return s.value;
       });
-
       return handleChange(_defineProperty({}, name, _value));
     }
-
     return handleChange(_defineProperty({}, name, selected.value));
   };
-
   var getSelected = function getSelected(value) {
     if (!value) {
       return null;
     }
-
     if (isMulti && _typeof(value === 'object')) {
       return value.map(function (v) {
         return options.find(function (o) {
@@ -62,12 +51,10 @@ var Select = function Select(props) {
         });
       });
     }
-
     return options.find(function (o) {
       return o.value === value;
     });
   };
-
   var selected = getSelected(value);
   return /*#__PURE__*/React.createElement(ReactSelect, _extends({
     name: name,
@@ -91,6 +78,5 @@ var Select = function Select(props) {
     }
   }, rest));
 };
-
 export default Select;
 //# sourceMappingURL=Select.js.map
