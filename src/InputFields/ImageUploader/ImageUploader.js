@@ -4,6 +4,9 @@ import axios from 'axios';
 import slugify from 'slugify';
 import InputWrapper from '../InputWrapper'
 
+axios.defaults.xsrfCookieName = 'csrftoken'
+axios.defaults.xsrfHeaderName = 'X-CSRFToken'
+
 const defaultStyles = {
   preview: {
     maxWidth: '250px',

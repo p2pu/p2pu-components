@@ -3,10 +3,6 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 
-#: src/Courses/Browse.jsx:29
-msgid "Use this course"
-msgstr ""
-
 #: src/Courses/CourseCard.jsx:12
 msgid "Always available"
 msgstr ""
@@ -51,6 +47,10 @@ msgstr ""
 
 #: src/Courses/CourseCard.jsx:102
 msgid "More details"
+msgstr ""
+
+#: src/Courses/Browse.jsx:29
+msgid "Use this course"
 msgstr ""
 
 #: src/LearningCircles/LearningCircleSearch.jsx:18
@@ -123,6 +123,48 @@ msgstr ""
 msgid "There are no learning circles available right now."
 msgstr ""
 
+#: src/LearningCircles/LocationFilter.jsx:116
+#: src/Search/SearchTags.jsx:124
+#, javascript-format
+msgid "Within ${ value } ${ unit }"
+msgstr ""
+
+#: src/Search/SearchBar.jsx:17
+msgid "Search"
+msgstr ""
+
+#: src/LearningCircles/LocationFilter.jsx:47
+msgid "Unable to detect location."
+msgstr ""
+
+#: src/LearningCircles/LocationFilter.jsx:59
+msgid "Geolocation is not supported by this browser."
+msgstr ""
+
+#: src/LearningCircles/LocationFilter.jsx:82
+msgid "Use my current location"
+msgstr ""
+
+#: src/LearningCircles/LocationFilter.jsx:87
+msgid "Detecting your location..."
+msgstr ""
+
+#: src/LearningCircles/LocationFilter.jsx:89
+msgid "Using your current location"
+msgstr ""
+
+#: src/LearningCircles/LocationFilter.jsx:114
+msgid "miles"
+msgstr ""
+
+#: src/LearningCircles/LocationFilter.jsx:114
+msgid "km"
+msgstr ""
+
+#: src/LearningCircles/LocationFilter.jsx:136
+msgid "Start typing a city name"
+msgstr ""
+
 #: src/LearningCircles/LearningCircleCard.jsx:38
 #, javascript-format
 msgid ""
@@ -172,16 +214,6 @@ msgstr ""
 msgid "View details"
 msgstr ""
 
-#: src/Search/SearchBar.jsx:17
-msgid "Search"
-msgstr ""
-
-#: src/LearningCircles/LocationFilter.jsx:116
-#: src/Search/SearchTags.jsx:124
-#, javascript-format
-msgid "Within ${ value } ${ unit }"
-msgstr ""
-
 #: src/utils/constants.js:4
 #: src/utils/i18n.js:4
 msgid "Monday"
@@ -218,7 +250,7 @@ msgid "Sunday"
 msgstr ""
 
 #: src/utils/constants.js:14
-msgid "Course title"
+msgid "Resource title"
 msgstr ""
 
 #: src/utils/constants.js:15
@@ -243,38 +275,6 @@ msgstr ""
 
 #: src/utils/constants.js:89
 msgid "Closed and completed"
-msgstr ""
-
-#: src/LearningCircles/LocationFilter.jsx:47
-msgid "Unable to detect location."
-msgstr ""
-
-#: src/LearningCircles/LocationFilter.jsx:59
-msgid "Geolocation is not supported by this browser."
-msgstr ""
-
-#: src/LearningCircles/LocationFilter.jsx:82
-msgid "Use my current location"
-msgstr ""
-
-#: src/LearningCircles/LocationFilter.jsx:87
-msgid "Detecting your location..."
-msgstr ""
-
-#: src/LearningCircles/LocationFilter.jsx:89
-msgid "Using your current location"
-msgstr ""
-
-#: src/LearningCircles/LocationFilter.jsx:114
-msgid "miles"
-msgstr ""
-
-#: src/LearningCircles/LocationFilter.jsx:114
-msgid "km"
-msgstr ""
-
-#: src/LearningCircles/LocationFilter.jsx:136
-msgid "Start typing a city name"
 msgstr ""
 
 #: src/LearningCircleSignup/SignupForm.jsx:99
