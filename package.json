@@ -78,7 +78,7 @@
     "whatwg-fetch": "^3.6.2"
   },
   "dependencies": {
-    "@tinymce/tinymce-react": "^3.14.0",
+    "@tinymce/tinymce-react": "^4.3.0",
     "promise-polyfill": "^8.3.0",
     "query-string": "^5.0.0",
     "react-select": "^4.3.1",

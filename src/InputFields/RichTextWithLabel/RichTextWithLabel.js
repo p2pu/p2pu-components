@@ -25,11 +25,8 @@ const TextareaWithLabel = (props) => {
   const [ charCount, setCharCount ] = useState()
 
   const onChange = (input, editor) => {
-    const wordcount = editor.plugins.wordcount
-    const charCount = wordcount.body.getCharacterCount()
-
-    setCharCount(charCount)
     props.handleChange({ [props.name]: input })
+    setCharCount(input.length)
   }
 
   const erroMessageWithCharCount = charCount > maxLength ? `The text is too long: ${charCount}/${maxLength} characters.` : errorMessage
@@ -54,7 +51,7 @@ const TextareaWithLabel = (props) => {
           height: 300,
           menubar: false,
           plugins: [
-            'link lists wordcount'
+            'link lists'
           ],
           toolbar: 'undo redo | formatselect | bold italic | bullist numlist | link | removeformat',
           'valid_elements': 'p,h3,h4,h5,h6,strong,em,a,a[href|target=_blank|rel=noopener],ul,ol,li,div,span',

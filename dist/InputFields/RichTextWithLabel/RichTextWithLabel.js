@@ -27,10 +27,8 @@ var TextareaWithLabel = function TextareaWithLabel(props) {
     charCount = _useState2[0],
     setCharCount = _useState2[1];
   var onChange = function onChange(input, editor) {
-    var wordcount = editor.plugins.wordcount;
-    var charCount = wordcount.body.getCharacterCount();
-    setCharCount(charCount);
     props.handleChange(_defineProperty({}, props.name, input));
+    setCharCount(input.length);
   };
   var erroMessageWithCharCount = charCount > maxLength ? "The text is too long: ".concat(charCount, "/").concat(maxLength, " characters.") : errorMessage;
   return /*#__PURE__*/React.createElement(InputWrapper, {
@@ -50,7 +48,7 @@ var TextareaWithLabel = function TextareaWithLabel(props) {
     init: {
       height: 300,
       menubar: false,
-      plugins: ['link lists wordcount'],
+      plugins: ['link lists'],
       toolbar: 'undo redo | formatselect | bold italic | bullist numlist | link | removeformat',
       'valid_elements': 'p,h3,h4,h5,h6,strong,em,a,a[href|target=_blank|rel=noopener],ul,ol,li,div,span',
       'block_formats': 'Paragraph=p; Heading 1=h3; Heading 2=h4; Heading 3=h5'
