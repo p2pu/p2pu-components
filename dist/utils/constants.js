@@ -48,7 +48,7 @@ export var API_ENDPOINTS = {
   },
   courses: {
     baseUrl: "/api/courses/?",
-    searchParams: ['q', 'topics', 'order', 'limit', 'offset', 'languages', 'oer', 'facilitator_guide'],
+    searchParams: ['q', 'topics', 'order', 'limit', 'offset', 'languages', 'oer', 'facilitator_guide', 'team'],
     arrayItems: ['topics', 'languages', 'keywords'],
     privateParams: ['limit', 'offset']
   },

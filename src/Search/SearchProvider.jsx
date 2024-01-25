@@ -44,7 +44,7 @@ export default class SearchProvider extends Component {
       }
     })
 
-    let resultsTab;
+    let resultsTab; //??
 
     if (this.props.searchSubject === 'learningCircles') {
       defaults.signup = 'open'

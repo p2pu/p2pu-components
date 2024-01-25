@@ -44,7 +44,8 @@ var SearchProvider = /*#__PURE__*/function (_Component) {
           parsedParams[term] = [parsedParams[term]];
         }
       });
-      var resultsTab;
+      var resultsTab; //??
+
       if (_this.props.searchSubject === 'learningCircles') {
         defaults.signup = 'open';
         defaults.resultsTab = parsedParams.signup && parsedParams.signup == 'closed' ? 1 : 0;
