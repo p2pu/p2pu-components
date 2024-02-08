@@ -92,59 +92,9 @@ msgstr ""
 msgid "At ${ venueLink }"
 msgstr ""
 
-#: src/LearningCircles/LearningCircleCard.jsx:38
-#, javascript-format
-msgid ""
-"${ weekDay } from ${ formattedStartTime } to ${ formattedEndTime } (${ "
-"learningCircle.time_zone })"
-msgstr ""
-
-#: src/LearningCircles/LearningCircleCard.jsx:38
-#, javascript-format
-msgid ""
-"${ formattedStartTime } to ${ formattedEndTime } (${ "
-"learningCircle.time_zone })"
-msgstr ""
-
-#: src/LearningCircles/LearningCircleCard.jsx:39
-msgid "${ learningCircle.weeks } weeks starting ${ formattedStartDate }"
-msgstr ""
-
-#: src/LearningCircles/LearningCircleCard.jsx:39
-#, javascript-format
-msgid "${ learningCircle.weeks } meetings starting ${ formattedStartDate }"
-msgstr ""
-
-#: src/LearningCircles/LearningCircleCard.jsx:55
-msgid "Ended ${ formattedEndDate }"
-msgstr ""
-
-#: src/LearningCircles/LearningCircleCard.jsx:57
-#, javascript-format
-msgid "Started ${ formattedStartDate }"
-msgstr ""
-
-#: src/LearningCircles/LearningCircleCard.jsx:59
-msgid "Starting ${ formattedStartDate }"
-msgstr ""
-
-#: src/LearningCircles/LearningCircleCard.jsx:105
-msgid "Meeting at ${ learningCircle.venue }"
-msgstr ""
-
-#: src/LearningCircleSignup/SignupForm.jsx:183
-#: src/LearningCircles/LearningCircleCard.jsx:110
-msgid "Sign up"
-msgstr ""
-
-#: src/LearningCircles/LearningCircleCard.jsx:110
-msgid "View details"
-msgstr ""
-
-#: src/LearningCircles/LocationFilter.jsx:116
-#: src/Search/SearchTags.jsx:124
-#, javascript-format
-msgid "Within ${ value } ${ unit }"
+#: src/Courses/SearchSummary.jsx:14
+#: src/Search/SearchTags.jsx:205
+msgid "reset the search form"
 msgstr ""
 
 #: src/Courses/SearchSummary.jsx:22
@@ -155,55 +105,13 @@ msgid_plural "Showing ${ props.searchResults.length } of ${ props.totalResults }
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/Courses/SearchSummary.jsx:14
-#: src/Search/SearchTags.jsx:205
-msgid "reset the search form"
-msgstr ""
-
 #: src/Courses/SearchSummary.jsx:32
 #: src/Search/SearchTags.jsx:214
 #, javascript-format
 msgid "To see more results, either remove some filters or ${ resetButton }"
 msgstr ""
 
-#: src/Search/SearchBar.jsx:17
-msgid "Search"
-msgstr ""
-
-#: src/LearningCircles/LocationFilter.jsx:47
-msgid "Unable to detect location."
-msgstr ""
-
-#: src/LearningCircles/LocationFilter.jsx:59
-msgid "Geolocation is not supported by this browser."
-msgstr ""
-
-#: src/LearningCircles/LocationFilter.jsx:82
-msgid "Use my current location"
-msgstr ""
-
-#: src/LearningCircles/LocationFilter.jsx:87
-msgid "Detecting your location..."
-msgstr ""
-
-#: src/LearningCircles/LocationFilter.jsx:89
-msgid "Using your current location"
-msgstr ""
-
-#: src/LearningCircles/LocationFilter.jsx:114
-msgid "miles"
-msgstr ""
-
-#: src/LearningCircles/LocationFilter.jsx:114
-msgid "km"
-msgstr ""
-
-#: src/LearningCircles/LocationFilter.jsx:136
-msgid "Start typing a city name"
-msgstr ""
-
 #: src/Search/DefaultNoResults.jsx:17
-#, javascript-format
 msgid "View ${ otherTabName } learning circles"
 msgstr ""
 
@@ -213,58 +121,6 @@ msgstr ""
 
 #: src/Search/DefaultNoResults.jsx:38
 msgid "There are no learning circles available right now."
-msgstr ""
-
-#: src/LearningCircleSignup/SignupForm.jsx:99
-msgid "More information."
-msgstr ""
-
-#: src/LearningCircleSignup/SignupForm.jsx:100
-msgid ""
-"I consent that P2PU may process my personal data provided here for the "
-"purpose of participating in this learning circle."
-msgstr ""
-
-#: src/LearningCircleSignup/SignupForm.jsx:107
-msgid "Name"
-msgstr ""
-
-#: src/LearningCircleSignup/SignupForm.jsx:116
-msgid "Email address"
-msgstr ""
-
-#: src/LearningCircleSignup/SignupForm.jsx:126
-msgid ""
-"If you'd like to receive weekly text messages reminding you of upcoming "
-"learning circle meetings, put your phone number here."
-msgstr ""
-
-#: src/LearningCircleSignup/SignupForm.jsx:134
-msgid "Your number won't be shared with other participants."
-msgstr ""
-
-#: src/LearningCircleSignup/SignupForm.jsx:136
-msgid "Why do you want to learn this topic?"
-msgstr ""
-
-#: src/LearningCircleSignup/SignupForm.jsx:145
-msgid ""
-"A successful study group requires the support of all of its members. How "
-"will you help your peers achieve their goals?"
-msgstr ""
-
-#: src/LearningCircleSignup/SignupForm.jsx:175
-msgid ""
-"I would like to receive emails about other future learning opportunities "
-"from P2PU."
-msgstr ""
-
-#: src/LearningCircleSignup/SignupForm.jsx:186
-msgid "Back to search"
-msgstr ""
-
-#: src/LearningCircleSignup/SignupForm.jsx:190
-msgid "Submitting..."
 msgstr ""
 
 #: src/utils/constants.js:4
@@ -330,14 +186,151 @@ msgstr ""
 msgid "Closed and completed"
 msgstr ""
 
-#: src/Courses/OrderCoursesForm.jsx:17
-msgid "Order By"
+#: src/LearningCircles/LearningCircleCard.jsx:38
+#, javascript-format
+msgid ""
+"${ weekDay } from ${ formattedStartTime } to ${ formattedEndTime } (${ "
+"learningCircle.time_zone })"
 msgstr ""
 
-#: src/LearningCircleSignup/SignupSuccess.jsx:8
+#: src/LearningCircles/LearningCircleCard.jsx:38
+#, javascript-format
 msgid ""
-"Thank you for signing up. We've sent you an email introducing you to your "
-"facilitator and we'll send you a reminder two days before each meeting."
+"${ formattedStartTime } to ${ formattedEndTime } (${ "
+"learningCircle.time_zone })"
+msgstr ""
+
+#: src/LearningCircles/LearningCircleCard.jsx:39
+msgid "${ learningCircle.weeks } weeks starting ${ formattedStartDate }"
+msgstr ""
+
+#: src/LearningCircles/LearningCircleCard.jsx:39
+#, javascript-format
+msgid "${ learningCircle.weeks } meetings starting ${ formattedStartDate }"
+msgstr ""
+
+#: src/LearningCircles/LearningCircleCard.jsx:55
+msgid "Ended ${ formattedEndDate }"
+msgstr ""
+
+#: src/LearningCircles/LearningCircleCard.jsx:57
+#, javascript-format
+msgid "Started ${ formattedStartDate }"
+msgstr ""
+
+#: src/LearningCircles/LearningCircleCard.jsx:59
+msgid "Starting ${ formattedStartDate }"
+msgstr ""
+
+#: src/LearningCircles/LearningCircleCard.jsx:105
+msgid "Meeting at ${ learningCircle.venue }"
+msgstr ""
+
+#: src/LearningCircleSignup/SignupForm.jsx:183
+#: src/LearningCircles/LearningCircleCard.jsx:110
+msgid "Sign up"
+msgstr ""
+
+#: src/LearningCircles/LearningCircleCard.jsx:110
+msgid "View details"
+msgstr ""
+
+#: src/Search/SearchBar.jsx:17
+msgid "Search"
+msgstr ""
+
+#: src/LearningCircles/LocationFilter.jsx:47
+msgid "Unable to detect location."
+msgstr ""
+
+#: src/LearningCircles/LocationFilter.jsx:59
+msgid "Geolocation is not supported by this browser."
+msgstr ""
+
+#: src/LearningCircles/LocationFilter.jsx:82
+msgid "Use my current location"
+msgstr ""
+
+#: src/LearningCircles/LocationFilter.jsx:87
+msgid "Detecting your location..."
+msgstr ""
+
+#: src/LearningCircles/LocationFilter.jsx:89
+msgid "Using your current location"
+msgstr ""
+
+#: src/LearningCircles/LocationFilter.jsx:114
+msgid "miles"
+msgstr ""
+
+#: src/LearningCircles/LocationFilter.jsx:114
+msgid "km"
+msgstr ""
+
+#: src/LearningCircles/LocationFilter.jsx:116
+#: src/Search/SearchTags.jsx:124
+#, javascript-format
+msgid "Within ${ value } ${ unit }"
+msgstr ""
+
+#: src/LearningCircles/LocationFilter.jsx:136
+msgid "Start typing a city name"
+msgstr ""
+
+#: src/LearningCircleSignup/SignupForm.jsx:99
+msgid "More information."
+msgstr ""
+
+#: src/LearningCircleSignup/SignupForm.jsx:100
+msgid ""
+"I consent that P2PU may process my personal data provided here for the "
+"purpose of participating in this learning circle."
+msgstr ""
+
+#: src/LearningCircleSignup/SignupForm.jsx:107
+msgid "Name"
+msgstr ""
+
+#: src/LearningCircleSignup/SignupForm.jsx:116
+msgid "Email address"
+msgstr ""
+
+#: src/LearningCircleSignup/SignupForm.jsx:126
+msgid ""
+"If you'd like to receive weekly text messages reminding you of upcoming "
+"learning circle meetings, put your phone number here."
+msgstr ""
+
+#: src/LearningCircleSignup/SignupForm.jsx:134
+msgid "Your number won't be shared with other participants."
+msgstr ""
+
+#: src/LearningCircleSignup/SignupForm.jsx:136
+msgid "Why do you want to learn this topic?"
+msgstr ""
+
+#: src/LearningCircleSignup/SignupForm.jsx:145
+msgid ""
+"A successful study group requires the support of all of its members. How "
+"will you help your peers achieve their goals?"
+msgstr ""
+
+#: src/LearningCircleSignup/SignupForm.jsx:175
+msgid ""
+"I would like to receive emails about other future learning opportunities "
+"from P2PU."
+msgstr ""
+
+#: src/LearningCircleSignup/SignupForm.jsx:186
+msgid "Back to search"
+msgstr ""
+
+#: src/LearningCircleSignup/SignupForm.jsx:190
+msgid "Submitting..."
+msgstr ""
+
+#: src/Courses/OrderCoursesForm.jsx:17
+msgid "Order By"
 msgstr ""
 
 #: src/Courses/TopicsFilterForm.jsx:67
@@ -354,4 +347,10 @@ msgstr ""
 
 #: src/Courses/FacilitatorGuideFilterForm.jsx:22
 msgid "Only show courses with facilitator guides"
+msgstr ""
+
+#: src/LearningCircleSignup/SignupSuccess.jsx:8
+msgid ""
+"Thank you for signing up. We've sent you an email introducing you to your "
+"facilitator and we'll send you a reminder two days before each meeting."
 msgstr ""
