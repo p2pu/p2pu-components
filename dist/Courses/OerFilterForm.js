@@ -7,7 +7,7 @@ var OerFilterForm = function OerFilterForm(props) {
       oer: event.currentTarget.checked
     });
   };
-  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("form", {
+  return /*#__PURE__*/React.createElement("form", {
     className: "filter"
   }, /*#__PURE__*/React.createElement("label", {
     htmlFor: "oer-input",
@@ -25,8 +25,8 @@ var OerFilterForm = function OerFilterForm(props) {
     onChange: handleChange
   }), /*#__PURE__*/React.createElement("label", {
     className: "form-check-label",
-    htmlFor: "oer"
-  }, "Only show open educational resources (OER)")))));
+    htmlFor: "oer-input"
+  }, "Only show open educational resources (OER)"))));
 };
 export default OerFilterForm;
 //# sourceMappingURL=OerFilterForm.js.map
