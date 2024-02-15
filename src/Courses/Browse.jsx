@@ -10,12 +10,8 @@ class BrowseCourses extends React.Component {
   render() {
     const { results, updateQueryParams, onSelectResult, columnBreakpoints, isLoading } = this.props;
 
-    if (isLoading){
-      return <></>;
-    }
-
     return (
-      <div className="search-results">
+      <div className="search-results" aria-live="polite" aria-busy={isLoading}>
         {
           results.map((course, index) => (
             <CourseCard
@@ -31,6 +27,7 @@ class BrowseCourses extends React.Component {
             />
           ))
         }
+        { isLoading && <div className="loader"></div> }
       </div>
     );
   }
