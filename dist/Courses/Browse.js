@@ -27,9 +27,13 @@ var BrowseCourses = /*#__PURE__*/function (_React$Component) {
         onSelectResult = _this$props.onSelectResult,
         columnBreakpoints = _this$props.columnBreakpoints,
         isLoading = _this$props.isLoading;
-      if (isLoading) {
-        return /*#__PURE__*/React.createElement(React.Fragment, null);
+
+      /* TODO: do something less disruptive when loading!!
+      if (isLoading){
+        return <></>;
       }
+      */
+
       return /*#__PURE__*/React.createElement("div", {
         className: "search-results"
       }, results.map(function (course, index) {

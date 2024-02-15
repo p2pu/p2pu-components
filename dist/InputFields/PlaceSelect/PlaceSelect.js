@@ -17,6 +17,9 @@ import PropTypes from 'prop-types';
 import axios from 'axios';
 import AsyncSelect from 'react-select/async';
 import InputWrapper from '../InputWrapper';
+
+// TODO: Algolia API discontinued
+
 var ALGOLIA_ENDPOINT = 'https://places-dsn.algolia.net/1/places';
 var KANSAS_CITY_OPTION = {
   label: 'Kansas City, Missouri, United States of America',
