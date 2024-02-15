@@ -4,6 +4,8 @@ import axios from 'axios';
 import AsyncSelect from 'react-select/async';
 import InputWrapper from '../InputWrapper'
 
+// TODO: Algolia API discontinued
+
 const ALGOLIA_ENDPOINT = 'https://places-dsn.algolia.net/1/places'
 
 const KANSAS_CITY_OPTION = {

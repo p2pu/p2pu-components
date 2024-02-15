@@ -103,8 +103,8 @@ export default class SearchProvider extends Component {
 
   _updateQueryParams(params) {
     this.setState({ ...params, isLoading: true }, () => {
-      this.sendQuery()
-      this.updateURL()
+      this.sendQuery();
+      this.updateURL();
     })
   }
 
@@ -177,7 +177,8 @@ export default class SearchProvider extends Component {
               ...this.state,
               ...this.props
             })
-        )}
+          )
+        }
       </>
     )
   }
