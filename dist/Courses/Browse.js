@@ -27,15 +27,10 @@ var BrowseCourses = /*#__PURE__*/function (_React$Component) {
         onSelectResult = _this$props.onSelectResult,
         columnBreakpoints = _this$props.columnBreakpoints,
         isLoading = _this$props.isLoading;
-
-      /* TODO: do something less disruptive when loading!!
-      if (isLoading){
-        return <></>;
-      }
-      */
-
       return /*#__PURE__*/React.createElement("div", {
-        className: "search-results"
+        className: "search-results",
+        "aria-live": "polite",
+        "aria-busy": isLoading
       }, results.map(function (course, index) {
         return /*#__PURE__*/React.createElement(CourseCard, {
           key: "course-card-".concat(index),
@@ -48,6 +43,8 @@ var BrowseCourses = /*#__PURE__*/function (_React$Component) {
           buttonText: t(_templateObject || (_templateObject = _taggedTemplateLiteral(["Use this course"]))),
           classes: "mb-4"
         });
+      }), isLoading && /*#__PURE__*/React.createElement("div", {
+        className: "loader"
       }));
     }
   }]);
